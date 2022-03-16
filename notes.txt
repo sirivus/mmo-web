@@ -7,3 +7,6 @@ window.location = "https://www.javatpoint.com/";
 }  
 
 npm install npm-update-all -g
+
+npm install // to update dependencies
+download zipfile and import into project directory instead of cloning, to not conflict with main git repo.
