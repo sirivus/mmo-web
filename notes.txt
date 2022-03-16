@@ -5,3 +5,5 @@ npm install --save three
 function page_redirect(){  
 window.location = "https://www.javatpoint.com/";  
 }  
+
+npm install npm-update-all -g
