@@ -20,7 +20,7 @@ const game_1 = __importDefault(require("./game"));
 //dotenv.config({path: __dirname +'/.env'})
 dotenv_1.default.config();
 console.log('process.env.PORT = ' + process.env.PORT);
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3005;
 class App {
     constructor(port) {
         this.port = port;
