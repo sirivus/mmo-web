@@ -10,20 +10,22 @@
             margin: 0;
         }
     </style>
+
+    <script src="./node_modules/dat.gui/build/dat.gui.min.js"></script>
+
 </head>
 
 <body>
 
     <!--module import-->
     <script src="./node_modules/three/build/three.js"></script>
+    <script>
+        //wait for code module to load to work, takes a few tries
+        //split coding breaks code or modules breaks code
+    </script>
 
     <!--game-->
-    <script type="module">
-
-        import "./game3.js";
-        import "./node_modules/dat.gui/build/dat.gui.js";
-
-    </script>
+    <script type="module" src="./game3.js"> </script>
 </body>
 
 </html>

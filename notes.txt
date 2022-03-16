@@ -16,13 +16,15 @@ the only thing that matters is what language to code with
 metaverse.servegame.com
 Clicked {count} {count === 1 ? 'time' : 'times'}
 
-duplicated code or type error 
-also
-correct code but no import script
 also npm init or npm install is file path specific, must be inside folder path to add to package.json
 uninitiated npm installs without package.json file will not be saved
 
 must end in a file path for imports, not folder paths
     import "./node_modules/dat.gui/build/dat.gui.js";
-
+///
+./node_modules/dat.gui/build/dat.gui.min.js
+correct file path to stop breakage.
+//
 code clipping can mess with view of code-line in VScode browser
+
+version control through notes.txt

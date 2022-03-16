@@ -33,7 +33,6 @@ var render = function () {
 
 render();
 
-
 // dat gui
 var gui = new dat.GUI();
 var cameraGui = gui.addFolder("camera position");
