@@ -25,6 +25,14 @@
     //split coding breaks code or modules breaks code
 </script>
     <!--game-->
+
+<script>
+    ///////////////
+    //const      //
+    ///////////////
+    _winmargin = 15;
+</script>
+
 <script type="module" src="./game3.js"> </script>
 
 <button onclick="myFunction()">Click Me</button>
@@ -67,6 +75,23 @@
     mmo-web
     
 </div>
+<style>
+.info {
+    position: absolute;
+    top: 40px; left: 40px;
+}
+</style>
+<div id="info">
+    OKAYYYYY
+</div>
+<script>
+
+
+    const info = document.getElementById('info');
+    info.appendChild(stats.dom);
+    info.appendChild(renderer.domElement);
+</script>
+
 
 <script>
 //    /* Get the element you want displayed in fullscreen mode (a video in this example): */
@@ -86,11 +111,11 @@
 </script>
 
 <script>
-    
-    //blue two line
 
+    //blue two line
+    
     const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth - _winmargin, window.innerHeight);
     document.body.appendChild(renderer.domElement);
     const camera = new THREE.PerspectiveCamera(
         45,
@@ -111,6 +136,7 @@
     const line = new THREE.Line(geometry, material);
     scene.add(line);
     renderer.render(scene, camera);
+
     async function redirect(a) {
         let result;
         if (a > 0) {
@@ -122,5 +148,67 @@
         return result;
     }
     redirect(0);
+
+
+
+
+
+</script>
+
+<style>
+    /* Safari syntax */
+    :-webkit-full-screen {
+        background-color: yellow;
+    }
+
+    /* IE11 */
+    :-ms-fullscreen {
+        background-color: yellow;
+    }
+
+    /* Standard syntax */
+    :fullscreen {
+        background-color: yellow;
+    }
+
+    /* Style the button */
+    button {
+        padding: 0px;
+        font-size: 10px;
+    }
+</style>
+
+<h2>Fullscreen with JavaScript</h2>
+<p>Click on the "Open Fullscreen" button to open this page in fullscreen mode. <br> Close it by either clicking the "Esc"
+    key on your keyboard, or with the "Close Fullscreen" button.</p>
+
+<button onclick="openFullscreen();">Open Fullscreen</button>
+<button onclick="closeFullscreen();">Close Fullscreen</button>
+
+<script>
+    var elem = document.documentElement;
+    function openFullscreen() {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+        }
+    }
+
+    function closeFullscreen() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { /* Safari */
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE11 */
+            document.msExitFullscreen();
+        }
+    }
+</script>
+
+
+<script>
 
 </script>

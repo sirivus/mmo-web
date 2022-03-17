@@ -1,7 +1,8 @@
 //blue two line
 
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth -20, window.innerHeight);
+//
 document.body.appendChild(renderer.domElement);
 
 const camera = new THREE.PerspectiveCamera(
