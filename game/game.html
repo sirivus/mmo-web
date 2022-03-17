@@ -7,9 +7,21 @@
 <title>Project SIRI</title>
 <link rel="shortcut icon" type="image/png" href="./static/favicon.ico" />
 <style>
-    body {
-        margin: 0;
-    }
+
+    body { 
+    margin: 0; 
+    width: auto;
+    height: auto;
+    overflow: auto;
+}
+
+canvas { 
+  width: 100%; 
+  height: 100%;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/space-texture.jpg');
+  background-size: 500px;
+}
+
 </style>
 
 
@@ -19,6 +31,7 @@
 </script>
 <script src="./node_modules/dat.gui/build/dat.gui.min.js"></script>
 <script src="./node_modules/three/build/three.js"></script>
+<script src="./resize.js"></script>
     <!--module import-->
 <script>
     //wait for code module to load to work, takes a few tries
@@ -75,6 +88,7 @@
     mmo-web
     
 </div>
+
 <style>
 .info {
     color: rgb(255, 0, 242);
@@ -86,15 +100,19 @@
 }
 </style>
 <div class="info">
-    INFO
+    INFO &&&
 </div>
 okaoykoaky
 <script>
 
 
-    const info = document.getElementById('info');
-    info.appendChild(stats.dom);
-    info.appendChild(renderer.domElement);
+    //const info = document.getElementById('info');
+    //info.appendChild(stats.dom);
+    //info.appendChild(renderer.domElement);
+</script>
+
+<script>
+
 </script>
 
 
@@ -124,7 +142,7 @@ okaoykoaky
     document.body.appendChild(renderer.domElement);
     const camera = new THREE.PerspectiveCamera(
         45,
-        window.innerWidth / window.innerHeight,
+        (window.innerWidth - _winmargin) / window.innerHeight,
         1,
         500
     );
@@ -140,8 +158,13 @@ okaoykoaky
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
     const line = new THREE.Line(geometry, material);
     scene.add(line);
-    renderer.render(scene, camera);
+  
+    //request animation frame (_RAF) or setInterval //
+    setInterval(() => {
+        renderer.render(scene, camera);
+    }, 1000/60);
 
+    ////
     async function redirect(a) {
         let result;
         if (a > 0) {
