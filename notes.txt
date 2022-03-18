@@ -29,3 +29,33 @@ code clipping can mess with view of code-line in VScode browser
 dont word wrap
 
 version control through notes.txt
+
+//////////fps update
+let clock = new THREE.Clock();
+let delta = 0;
+// 30 fps or 24 fps
+let interval = 1 / 24;
+
+function update() {
+  var render = function () {
+    requestAnimationFrame(render);
+    delta += clock.getDelta();
+    cube.rotation.x += .06;
+    cube.rotation.y += .06;
+    camera.updateProjectionMatrix();
+    if (delta > interval) {
+      // The draw or time dependent code are here
+      renderer.render(scene, camera);
+      delta = delta % interval;
+    }
+  };
+  render();
+}
+update();
+////////// end
+
+You free three.js resource this by calling the dispose function on textures, geometries, and materials.
+    boxGeometry.dispose();
+    boxTexture.dispose();
+    boxMaterial.dispose();
+

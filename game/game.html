@@ -31,6 +31,7 @@ canvas {
 </script>
 <script src="./node_modules/dat.gui/build/dat.gui.min.js"></script>
 <script src="./node_modules/three/build/three.js"></script>
+<script src="./cleaner.js"></script>
 <script src="./resize.js"></script>
     <!--module import-->
 <script>
@@ -44,6 +45,9 @@ canvas {
     //const      //
     ///////////////
     _winmargin = 15;
+    _fps = 30; //motion capture all must be set to this value
+    _mocap = 30;
+    _worldspeed = 30;
 </script>
 
 <script type="module" src="./game3.js"> </script>
@@ -162,7 +166,7 @@ okaoykoaky
     //request animation frame (_RAF) or setInterval //
     setInterval(() => {
         renderer.render(scene, camera);
-    }, 1000/30); //30 fps
+    }, 1000/_fps); // use declared const _fps 24/30 fps
 
     ////
     async function redirect(a) {

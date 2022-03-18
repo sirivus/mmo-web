@@ -22,17 +22,27 @@ var light = new THREE.PointLight(0xffff00);
 light.position.set(10, 0, 25);
 scene.add(light);
 
-var render = function () {
-  requestAnimationFrame(render);
+let clock = new THREE.Clock();
+let delta = 0;
+// _fps = 30
+let interval = 1 / _fps;
 
-  cube.rotation.x += 0.1;
-  cube.rotation.y += 0.1;
-  camera.updateProjectionMatrix();
-
-  renderer.render(scene, camera);
-};
-
-render();
+function update() {
+  var render = function () {
+    requestAnimationFrame(render);
+    delta += clock.getDelta();
+    cube.rotation.x += .06;
+    cube.rotation.y += .06;
+    camera.updateProjectionMatrix();
+    if (delta > interval) {
+      // The draw or time dependent code are here
+      renderer.render(scene, camera);
+      delta = delta % interval;
+    }
+  };
+  render();
+}
+update();
 
 // dat gui
 var gui = new dat.GUI();
