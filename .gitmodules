@@ -1,6 +1,0 @@
-[submodule "game/examples/Pyramid-Scene"]
-	url = game/examples/Pyramid-Scene
-
-[submodule "mmo-web"]
-	path = mmo-web
-	url = https://github.com/sirivus/mmo-web/
