@@ -78,4 +78,6 @@ git push
 
 https://nozbe.github.io/WatermelonDB/Demo.html
 
+rm -rf TweenMaxWebGLParticlesExample
+rm -rf WatermelonDB
 
