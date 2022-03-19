@@ -81,3 +81,4 @@ https://nozbe.github.io/WatermelonDB/Demo.html
 rm -rf TweenMaxWebGLParticlesExample
 rm -rf WatermelonDB
 
+need both cli and source control of VSCode to see both for change accuracy.
