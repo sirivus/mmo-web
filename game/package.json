@@ -13,5 +13,10 @@
     "es-module-shims": "^1.5.1",
     "three": "^0.138.3"
   },
+  "directories": {
+    "example": "examples"
+  },
+  "devDependencies": {},
+  "keywords": [],
   "description": ""
 }
