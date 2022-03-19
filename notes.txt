@@ -66,3 +66,9 @@ git submodule update --init --recursive // this one, cd into target directory.
 
 git reset
 git ls-files -d -z | xargs -0 git checkout --
+
+only download to zipfile, move into project. clone is not able to do anything useful. except maybe clone into a local non repo,
+and copy paste into project.
+https://stackoverflow.com/questions/13698978/git-undoing-git-rm
+
+
