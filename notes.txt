@@ -61,4 +61,4 @@ You free three.js resource this by calling the dispose function on textures, geo
 
 git submodule update --init --remote
 fatal: No url found for submodule path 'examples/Pyramid-Scene' in .gitmodules
-
+git submodule set-url 'game/examples/Pyramid-Scene' 'game/exmaples/Pyramid-Scene'
