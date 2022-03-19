@@ -63,3 +63,6 @@ git submodule update --init --remote
 fatal: No url found for submodule path 'examples/Pyramid-Scene' in .gitmodules
 git submodule set-url 'game/examples/Pyramid-Scene' 'game/examples/Pyramid-Scene'
 git submodule update --init --recursive // this one, cd into target directory.
+
+git reset
+git ls-files -d -z | xargs -0 git checkout --
