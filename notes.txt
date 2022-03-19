@@ -71,4 +71,11 @@ only download to zipfile, move into project. clone is not able to do anything us
 and copy paste into project.
 https://stackoverflow.com/questions/13698978/git-undoing-git-rm
 
+git rm --cached
+git submodule add https://github.com/Nozbe/WatermelonDB  WatermelonDB
+git commit -m asd
+git push
+
+https://nozbe.github.io/WatermelonDB/Demo.html
+
 
