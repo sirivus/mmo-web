@@ -59,3 +59,6 @@ You free three.js resource this by calling the dispose function on textures, geo
     boxTexture.dispose();
     boxMaterial.dispose();
 
+git submodule update --init --remote
+fatal: No url found for submodule path 'examples/Pyramid-Scene' in .gitmodules
+
