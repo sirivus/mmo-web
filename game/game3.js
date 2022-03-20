@@ -8,7 +8,7 @@ var camera = new THREE.PerspectiveCamera(
 
 var renderer = new THREE.WebGLRenderer();
 //renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setSize(window.innerWidth - _winmargin, window.innerHeight);
+
 document.body.appendChild(renderer.domElement);
 
 var geometry = new THREE.BoxGeometry(20, 20, 20);
@@ -25,20 +25,22 @@ scene.add(light);
 let clock = new THREE.Clock();
 let delta = 0;
 // _fps = 30
-let interval = 1 / _fps;
+//let interval = 1 / _fps;
 
 function update() {
   var render = function () {
     requestAnimationFrame(render);
-    delta += clock.getDelta();
+    //delta += clock.getDelta();
+    renderer.setSize(window.innerWidth - _winmargin, window.innerHeight);
     cube.rotation.x += .06;
     cube.rotation.y += .06;
     camera.updateProjectionMatrix();
-    if (delta > interval) {
-      // The draw or time dependent code are here
-      renderer.render(scene, camera);
-      delta = delta % interval;
-    }
+    //if (delta > interval) {
+    //  // The draw or time dependent code are here
+    //  renderer.render(scene, camera);
+    //  delta = delta % interval;
+    //}
+    renderer.render(scene, camera);
   };
   render();
 }

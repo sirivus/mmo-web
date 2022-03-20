@@ -1,4 +1,4 @@
-//import * as THREE from "three";
+import * as THREE from "three";
 // Three.js - Cleanup
 // from https://threejs.org/manual/examples/cleanup-simple.html
 
