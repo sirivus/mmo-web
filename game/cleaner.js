@@ -1,7 +1,6 @@
+import * as THREE from "three";
 // Three.js - Cleanup
 // from https://threejs.org/manual/examples/cleanup-simple.html
-
-import * as THREE from "three";
 
 class ResourceTracker {
   constructor() {
