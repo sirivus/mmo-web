@@ -83,3 +83,10 @@ rm -rf WatermelonDB
 
 need both cli and source control of VSCode to see both for change accuracy.
 
+npm install --save three
+
+<meta http-equiv="Refresh" content="0; url='game/game.html'" />
+
+sigh.
+
+node copilot.js
