@@ -1,0 +1,39 @@
+<Script language="JavaScript">
+    //<!--
+    document.write("Apple".length + "<br>")
+    document.write("Macintosh".length + "<br>")
+    document.write("Macintosh".substring(0, 3) + "<br>")
+    document.write("Macintosh".substring(3, 5) + "<br>")
+    document.write("Macintosh".substring(5, "Macintosh".length) + "<br>")
+//-->
+</script>
+
+
+<script language="JavaScript">
+    // < !--
+    var message = 'Scroll this text by pressing the scroll button.'
+    function scrollMessage() {
+        document.scrollForm.textScroll.value = message
+        message = message.substring(1, message.length) + message.substring(0, 1)
+           setTimeout("scrollMessage()", 1000/60)
+           //highest fps ingame will look more fluid regardless of monitor refresh rate, most minimum interactionable or reactionable fps is 60.
+    }
+//-->
+</script>
+
+<form name="scrollForm">
+    <input type="text" name="textScroll" value="Scroll this text by pressing the scroll button." size="50">
+    <br>
+    <input type="button" value="Scroll!" name="buttonScroll" onClick="scrollMessage()">
+</form>
+
+<!--
+    The script contains a global variable message. 
+    It is written to the text box every time the function is called.
+     The last line of the function reconstructs the string message for the 
+     next time it is written to the text box. Notice that the substring()
+      method is used twice, the first time it returns the original message
+       without the first character. The second time it returns only the
+        first character of the string. This results in a new string with the 
+        first character moved to the end of the string. 
+-->
