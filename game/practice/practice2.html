@@ -1,0 +1,27 @@
+<!--
+<div style="width: innerwidth; height: canvas.height;">
+    <canvas id="c"></canvas>
+-->
+
+    <html>
+<head>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+    <body>
+        <div id="test" style="height: 100px;">Test</div>
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript">
+            //alert
+            ($("#test").css("height"));
+            console.log($("#test").css("height"))
+            if ($("#test").css("height") == "100px") {
+                console.log("true")
+                if ($('#test').css('height') == '100px') {
+                    console.log("dead")
+                }
+            }
+        </script>
+    </body>
+    
+    </html>

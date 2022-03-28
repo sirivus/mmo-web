@@ -10,12 +10,12 @@
   "dependencies": {
     "dat.gui": "^0.7.9",
     "es-module-shims": "^1.5.1",
+    "jquery": "^3.6.0",
     "three": "^0.138.3"
   },
   "directories": {
     "example": "examples"
   },
-  "devDependencies": {},
   "keywords": [],
   "description": ""
 }
