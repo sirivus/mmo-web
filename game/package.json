@@ -11,6 +11,7 @@
     "dat.gui": "^0.7.9",
     "es-module-shims": "^1.5.1",
     "jquery": "^3.6.0",
+    "terser": "^5.12.1",
     "three": "^0.138.3"
   },
   "directories": {
