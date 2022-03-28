@@ -9,10 +9,13 @@
 </head>
 
     <body>
-        <div id="test" style="height: 100px;">
+        <div id="test">
         <script>
-        if ($("#test").css("height") == "100px") {
-                ($("#test").css("height") = "10px")
+            document.querySelector('#test').style="height: 122px;"
+        if ($("#test").css("height") == "122px") {
+            //so the pixel change is working
+            //return 10
+                //($("#test").css("height") = "10px")
                 //console.log("10px done")
                 console.log(($("#test").css("height")) + " hi")
          }
