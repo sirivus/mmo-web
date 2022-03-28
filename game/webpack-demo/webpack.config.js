@@ -1,28 +1,42 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
+  mode: "production",
+  entry: {
+    index: {
+      import: "./src/index.js",
+      dependOn: "shared",
+    },
+    another: {
+      import: "./src/another-module.js",
+      dependOn: "shared",
+    },
+    shared: "lodash",
   },
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Caching",
+    }),
+  ],
+  output: {
+    filename: "[name].[contenthash].js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+  },
+  optimization: {
+    moduleIds: "deterministic",
+    runtimeChunk: "single",
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
 
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          name: "vendors",
 
-        type: "asset/resource",
+          chunks: "all",
+        },
       },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-
-        type: "asset/resource",
-      },
-    ],
+    },
   },
 };
