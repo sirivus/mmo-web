@@ -2,17 +2,40 @@
 
 
     window.addEventListener('keydown', (event) => {
-       
-        console.log(event.key)
+        switch (event.key) {
+            case 'w':
+                console.log('up')
+                break;
+            case 's':
+                console.log('down')
+                break;  
+            case 'a':
+                console.log('left')
+                break;
+            case 'd':
+                console.log('right')
+                break;
+            //case 'd':
+            //    console.log('up')
+            //    break;
+            //case 'd':
+            //    console.log('up')
+            //    break;
+            //case 'd':
+            //    console.log('up')
+            //    break;
+
+        }
+        //console.log(event.key)
         //console.log(event)
         
         //console.log(event)
         //if (event.key == 'ArrowLeft') {
         //    document.getElementById('left').click();
         //}
-        if (event.key == 'a') {
-            console.log('this character will move left now');
-        }        
+        //if (event.key == 'a') {
+        //    console.log('this character will move left now');
+        //}        
         //yay keyboard input works for anything now.
     })
 </script>
