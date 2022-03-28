@@ -1,0 +1,136 @@
+<Script language="JavaScript">
+    //<!--
+    document.write("Apple".length + "<br>")
+    document.write("Macintosh".length + "<br>")
+    document.write("Macintosh".substring(0, 3) + "<br>")
+    document.write("Macintosh".substring(3, 5) + "<br>")
+    document.write("Macintosh".substring(5, "Macintosh".length) + "<br>")
+//-->
+</script>
+
+
+<script language="JavaScript">
+    // < !--
+    var message = 'Scroll this text by pressing the scroll button.'
+    function scrollMessage() {
+        document.scrollForm.textScroll.value = message
+        message = message.substring(1, message.length) + message.substring(0, 1)
+           setTimeout("scrollMessage()", 1000/1)
+           //highest fps ingame will look more fluid regardless of monitor refresh rate, most minimum interactionable or reactionable fps is 60.
+           
+    }
+    window.onload = scrollMessage
+    console.log('message')
+
+    // Using a named property
+        //const obj2 = {
+        //    g: function* () {
+        //        let index = 0
+        //        while (true) {
+        //            yield index++
+        //        }
+        //    }
+        //};
+
+        // The same object using shorthand syntax
+        const obj2 = {
+            * g() {
+                //Uncaught SyntaxError: yield expression is only valid in generators
+                let index = 0
+                while (true) {
+                    yield index++
+                }
+            }
+        };
+
+        const it = obj2.g()
+        console.log(it.next().value)  // 0
+        console.log(it.next().value)  // 1
+        console.log(it.next().value)  // 2
+        console.log(it.next().value)  // 3
+        console.log(it.next().value)  // 4
+        console.log(it.next().value)  // 5
+        console.log(it.next().value)  // 6
+        console.log(it.next().value)  // 7
+        console.log(it.next().value)  // 8
+        console.log(it.next().value)  // 9
+        console.log(it.next().value)  // 10
+
+        function* gen() {
+                while (true) {
+                    let value = yield null;
+                    console.log(value);
+                }
+            }
+
+            const g = gen();
+            g.next(1);
+            // "{ value: null, done: false }"
+            g.next(1);
+            g.next(2);
+            g.next(3);
+            g.next(4);
+// 2
+// "{ value: null, done: false }"
+/*
+Sending values to the generator
+
+In this example, next is called with a value.
+
+Note that the first call does not log anything, because the generator was not yielding anything initially. 
+*/
+
+    function* idMaker() {
+        var index = 0;
+        while (true)
+            yield index++;
+    }
+
+    var gen = idMaker();
+
+    console.log(gen.next().value); // 0
+    console.log(gen.next().value); // 1
+    console.log(gen.next().value); // 2
+    console.log(gen.next().value); // 3
+// ...
+
+
+//-->
+</script>
+
+<noscript>
+    const obj = {
+    get property() { },
+    set property(value) { },
+    property(parameters…) { },
+    *generator(parameters…) { },
+    async property(parameters…) { },
+    async* generator(parameters…) { },
+
+    // with computed keys
+    get [property]() { },
+    set [property](value) { },
+    [property](parameters…) { },
+    *[generator](parameters…) { },
+    async [property](parameters…) { },
+    async*[generator](parameters…) { },
+    };
+</noscript>
+
+<form name="scrollForm">
+    <input type="text" name="textScroll" value="Scroll this text by pressing the scroll button." size="50">
+    <br>
+    <input type="button" value="Scroll!" name="buttonScroll" onClick="scrollMessage()">
+</form>
+
+<!--
+    The script contains a global variable message. 
+    It is written to the text box every time the function is called.
+     The last line of the function reconstructs the string message for the 
+     next time it is written to the text box. Notice that the substring()
+      method is used twice, the first time it returns the original message
+       without the first character. The second time it returns only the
+        first character of the string. This results in a new string with the 
+        first character moved to the end of the string. 
+-->
+
