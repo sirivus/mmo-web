@@ -9,7 +9,14 @@
 </head>
 
     <body>
-        <div id="test" style="height: 100px;">Test</div>
+        <div id="test" style="height: 100px;">
+        <script>
+        if ($("#test").css("height") == "100px") {
+                ($("#test").css("height") = "10px")
+                //console.log("10px done")
+                console.log(($("#test").css("height")) + " hi")
+         }
+        </script>Test</div>
         <script type="text/javascript" src="jquery.min.js"></script>
         <script type="text/javascript">
             //alert
