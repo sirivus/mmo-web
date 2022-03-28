@@ -90,3 +90,6 @@ npm install --save three
 sigh.
 
 node copilot.js
+
+//alt + z is word wrap on or off
+

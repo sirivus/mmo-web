@@ -18,6 +18,42 @@
             case ' ':
                 console.log('space')
                 break;            
+                /*
+                console logging detection, can note out. still detecting
+                when hit ' ' space, will set attack to true and do damage
+                set player.isAttacking = false
+
+                in detection after hit once
+                then goes into timeout
+                position = this.position //canceled
+                position: {
+                    x: this.position.x,
+                    y: this.position.y
+                }    //now an object, with a property 
+                now put into update(), to draw boxes correctly
+                attack.offset.x
+                need to create offset property inside attack object
+                //object
+                this.attackBox {
+                }
+                inside a constructor
+                of sprite class
+                offset is equal to offset: offset
+                now declare
+                inside another object, offset can be set:
+
+                offset: {
+                  x: 10,
+                  y: 5
+                }
+                
+                so now the offset property is into the enemy class, meddling with the offset property of the previously declared inside a constructor of the: const enemy = new Sprite ({
+                }) 
+
+                */
+               
+               //alt + z is word wrap on or off
+
             //case 'd':
             //    console.log('up')
             //    break;
@@ -42,3 +78,4 @@
         //yay keyboard input works for anything now.
     })
 </script>
+
