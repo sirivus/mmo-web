@@ -62,7 +62,8 @@ function drawCube(){
 
   console.log(x);
 
-        // use the world matrix of the position helper to
-      // position this mesh.
-      positionHelper.updateWorldMatrix(true, false);
-      mesh.applyMatrix4(positionHelper.matrixWorld);
+//        // use the world matrix of the position helper to
+//      // position this mesh.
+//      positionHelper.updateWorldMatrix(true, false);
+//      mesh.applyMatrix4(positionHelper.matrixWorld);
+
