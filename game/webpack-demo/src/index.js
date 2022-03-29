@@ -1,6 +1,7 @@
 import _ from "lodash";
 import Print from "./print.js";
 import { cube } from "./math.js";
+import { AsyncDependenciesBlock } from "webpack";
 
 function component() {
   //const element = document.createElement("div");
