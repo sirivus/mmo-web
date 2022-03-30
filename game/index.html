@@ -344,11 +344,7 @@ okay information
 
 
   function openFullscreen() {
-    //  void webkitEnterFullscreen();
-    //  void elem.webkitEnterFullscreen()
-    //  console.log($(elem.webkitDisplayingFullscreen));
-    document.requestFullscreen();
-    node.requestFullscreen();
+
     if (elem.requestFullscreen) {
       elem.requestFullscreen();
     } else if (elem.webkitRequestFullscreen) {
@@ -363,12 +359,6 @@ okay information
   }
 
   function closeFullscreen() {
-    //  void webkitExitFullscreen();
-    //  void elem.webkitExitFullscreen()
-    //  console.log(elem.webkitDisplayingFullscreen);
-    document.exitFullscreen();
-    node.exitFullscreen();
-    
 
     if (document.exitFullscreen) {
       document.exitFullscreen();
