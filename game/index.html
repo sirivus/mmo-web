@@ -344,7 +344,7 @@ okay information
 
 
   function openFullscreen() {
-      
+          void webkitEnterFullscreen();
     void elem.webkitEnterFullscreen()
 
 
@@ -362,8 +362,9 @@ okay information
   }
 
   function closeFullscreen() {
-
+    void webkitExitFullscreen();
     void elem.webkitExitFullscreen()
+
 
     if (document.exitFullscreen) {
       document.exitFullscreen();
