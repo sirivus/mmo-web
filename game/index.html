@@ -21,7 +21,40 @@
 
 <noscript> </noscript>
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="styles.css">
+
 <style>
+  .fx {
+    -webkit-display: flex;
+    display: flex;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .fx>div {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .fx>div:first-child {
+    width: 30%;
+  }
+
+  .flex {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  #test-target {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /*
+  @import url("./keyboardevent.css");
+  */
+  /* Using a url */
   body {
     margin: 0;
     width: auto;
@@ -36,6 +69,15 @@
     background-size: 500px;
   }
 </style>
+<script>
+  //document.que
+  //window.addEventListener("KeyboardEvent.code", function(event) {
+  //  console.log(event.KeyboardEvent.code);
+  //  event.KeyboardEvent.code == 27 ? window.close() : null;
+  //  //& console.log('hi') & console.log("space") : null;
+  //});
+
+</script>
 
 <script>
   // array();
@@ -60,10 +102,7 @@
   }
 </script>
 <!-- Remove this when import maps will be widely supported -->
-<script
-  async
-  src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"
-></script>
+<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
 <!--defer all modules-->
 <script defer type="module" src="./cleaner.js"></script>
 
@@ -136,7 +175,7 @@
     position: absolute;
     top: 75px;
     bottom: 0px;
-    left: 0px;
+    left: 10px;
     right: 0px;
     width: 0px;
     height: 0px;
@@ -270,6 +309,8 @@ okay information
 
 <button onclick="openFullscreen();">Open Fullscreen</button>
 <button onclick="closeFullscreen();">Close Fullscreen</button>
+
+<!--checkbox-->
 <p>Please click on the checkbox control.</p>
 
 <form>
@@ -289,16 +330,19 @@ okay information
     },
     false
   );
+  // end of checkbox //
 
   var elem = document.documentElement;
-  elem.addEventListener("keydown", function (e) {
-    var charCode = e.charCode || e.keyCode || e.which;
-    if (charCode == 27) {
-      console.log("Escape is not suppressed for lightbox!");
-      return e.preventDefault;
-    }
-  });
 
+  //elem.addEventListener("keydown", function (e) {
+  //  var charCode = e.charCode || e.keyCode || e.which;
+  //  if (charCode == 27) {
+  //    console.log("Escape is not suppressed for lightbox!");
+  //    return e.preventDefault;
+  //  }
+  //});
+  void webkitEnterFullscreen();
+  
   function openFullscreen() {
     if (elem.requestFullscreen) {
       elem.requestFullscreen();
@@ -328,14 +372,18 @@ okay information
   }
 
   document
+  //elem.fullscreenchange
     //  .querySelector("div.lightbox")
-    .addEventListener("keydown", function (e) {
-      var charCode = e.charCode || e.keyCode || e.which;
-      if (charCode == 27) {
-        alert("Escape is not suppressed for lightbox!");
-        return e.preventDefault;
-      }
-    });
+  //  elem.addEventListener("keydown", function (e) {
+  //    var charCode = e.charCode || e.keyCode || e.which;
+  //    if (charCode == 27) {
+  //      //this.asd = asd
+  //      console.log("Escape is not suppressed for lightbox!");
+  //      console.log(this.asd);
+  //      return event.preventDefault;
+  //
+  //    }
+  //  });
 </script>
 
 <script>
@@ -350,3 +398,98 @@ okay information
   }
   supports_html5_storage();
 </script>
+
+
+<!--keyboard input-->
+<script>
+  //elem.addEventListener('keyChar', (event) => {
+  //  console.log('keyChar')
+
+  window.addEventListener('keydown', (event) => {
+    switch (event.key) {
+      case 'w':
+        console.log('up')
+        break;
+      case 's':
+        console.log('down')
+        break;
+      case 'a':
+        console.log('left')
+        break;
+      case 'd':
+        console.log('right')
+        break;
+      case ' ':
+        console.log('space')
+        break;
+      /*
+      console logging detection, can note out. still detecting
+      when hit ' ' space, will set attack to true and do damage
+      set player.isAttacking = false
+
+      in detection after hit once
+      then goes into timeout
+      position = this.position //canceled
+      position: {
+          x: this.position.x,
+          y: this.position.y
+      }    //now an object, with a property 
+      now put into update(), to draw boxes correctly
+      attack.offset.x
+      need to create offset property inside attack object
+      //object
+      this.attackBox {
+      }
+      inside a constructor
+      of sprite class
+      offset is equal to offset: offset
+      now declare
+      inside another object, offset can be set:
+
+      offset: {
+        x: 10,
+        y: 5
+      }
+      
+      so now the offset property is into the enemy class, meddling with the offset property of the previously declared inside a constructor of the: const enemy = new Sprite ({
+      }) 
+
+      */
+
+      //alt + z is word wrap on or off
+
+      //case 'd':
+      //    console.log('up')
+      //    break;
+      //case 'd':
+      //    console.log('up')
+      //    break;
+      //case 'd':
+      //    console.log('up')
+      //    break;
+
+    }
+    //console.log(event.key)
+    //console.log(event)
+
+    //console.log(event)
+    //if (event.key == 'ArrowLeft') {
+    //    document.getElementById('left').click();
+    //}
+    //if (event.key == 'a') {
+    //    console.log('this character will move left now');
+    //}        
+    //yay keyboard input works for anything now.
+  })
+</script>
+
+<div class="fx">
+  <div>
+    <textarea rows="5" name="test-target" id="test-target"></textarea>
+    <button type="button" name="btn-reset" id="btn-reset">Reset</button>
+  </div>
+  <div class="flex">
+    <pre id="console-log"></pre>
+  </div>
+</div>
+<script type='module' src="./keyboardevent.js"></script>
