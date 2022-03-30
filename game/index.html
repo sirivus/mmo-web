@@ -67,19 +67,6 @@
 <script defer type="module" src="./cleaner.js"></script>
 
 <!--non-modules, none-->
-<script src="./node_modules/source-map/dist/source-map.min.js"></script>
-<script src="./dist/bundle.min.js"></script>
-<script>
-      const { minify } = require("terser");
-
-      var code = {
-          "file1.js": "function add(first, second) { return first + second; }",
-          "file2.js": "console.log(add(1 + 2, 3 + 4));"
-      };
-      var result = await minify(code);
-      console.log(result.code);
-  // function add(d,n){return d+n}console.log(add(3,7));
-</script>
 <script src="./node_modules/dat.gui/build/dat.gui.min.js"></script>
 <script src="./resize.js"></script>
 <script src="./node_modules/three/build/three.js"></script>
@@ -307,7 +294,7 @@ okay information
     var charCode = e.charCode || e.keyCode || e.which;
     if (charCode == 27) {
       console.log("Escape is not suppressed for lightbox!");
-      return event.preventDefault;
+      return e.preventDefault;
     }
   });
 
