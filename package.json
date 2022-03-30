@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/sirivus/mmo-web/issues"
   },
-  "homepage": "https://github.com/sirivus/mmo-web#readme"
+  "homepage": "https://github.com/sirivus/mmo-web#readme",
+  "devDependencies": {
+    "prettier": "2.6.1"
+  }
 }
