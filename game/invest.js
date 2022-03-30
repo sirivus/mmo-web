@@ -1,4 +1,4 @@
-
+event.preventDefault
 good = 1;
 
 if (good = 1 ) {
