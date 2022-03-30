@@ -307,6 +307,8 @@ okay information
             elem.requestFullscreen();
         } else if (elem.webkitRequestFullscreen) { /* Safari */
             elem.webkitRequestFullscreen();
+            elem.webkitEnterFullscreen(); // add
+            document.webkitEnterFullscreen(); // add
         } else if (elem.msRequestFullscreen) { /* IE11 */
             elem.msRequestFullscreen();
         }
@@ -317,6 +319,8 @@ okay information
             document.exitFullscreen();
         } else if (document.webkitExitFullscreen) { /* Safari */
             document.webkitExitFullscreen();
+            elem.webkitExitFullscreen(); //add
+            document.webkitExitFullscreen(); //add
         } else if (document.msExitFullscreen) { /* IE11 */
             document.msExitFullscreen();
         }
