@@ -21,3 +21,8 @@ class asd {
 // can use super.property to call the parent class's property.
 // can use super.property = value to set the parent class's property.
 
+function asd() {
+  
+  debugger;
+  
+} setInterval(asd, 10);
