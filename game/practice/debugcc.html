@@ -15,9 +15,23 @@
 </html>
 
 <script>
+    //Object
+    //ob
+    function asd() {
+        this.asd = asd
+        function a() {
+            with ('debugger') {
+            }
+            function b() {
+                while (() => {
+                    asd()
+                    debugger
+                }) { }
+            }
 
-debugger;
-
-
-//both works
+            //setInterval(asd(), 1000);
+        }
+    }
+    setInterval(asd(asd.a(),asd.b()), 10);
+    //asd();
 </script>
