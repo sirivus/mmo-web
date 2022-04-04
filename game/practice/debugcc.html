@@ -34,4 +34,13 @@
     }
     setInterval(asd(asd.a(),asd.b()), 10);
     //asd();
+
+    function animate(time) {
+            state.time = time * 0.001;
+
+            render();
+
+            requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
 </script>
