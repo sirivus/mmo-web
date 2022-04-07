@@ -10,7 +10,16 @@
 
 <body>
     <script>
-        let fker = class {
+        const fker = {
+                max() {
+                    return('baar')
+                }
+            };
+
+            console.log(fker.max('bar')); //outputs baar, the parameters in empty max() are not passed to the function.
+// expected output: "bar"
+////////////////////////////////////////////////////////////////////////////////
+/*        let fker = class {
             constructor (value){
                 value = 123
 return value
@@ -28,6 +37,29 @@ return value
             };
             console.log(Rectangle.name);
 // output: "Rectangle"
+*/
+/*``````````````
+var x = 10;
+
+function createFunction1() {
+    var x = 20;
+    return new Function('return x;'); // this |x| refers global |x|
+}
+
+function createFunction2() {
+    var x = 20;
+    function f() {
+        return x; // this |x| refers local |x| above
+    }
+    return f;
+}
+
+var f1 = createFunction1();
+console.log(f1());          // 10
+var f2 = createFunction2();
+console.log(f2());          // 20
+
+*/
     </script>
 </body>
 
