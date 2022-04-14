@@ -1,0 +1,17 @@
+to save onto database
+
+customer actions required:
+name an invoice number
+bank transfer ach only or multiple debit card transactions
+// for $6000 total
+can only offer 0.50% apy and ach transfer service 0.50% fee
+enter payment amount
+to this company, see company name and logo.
+customer email address
+pay as guest
+need to enter 4 digit code sent to customer email.
+would sign up with melio ACH account with verify deposits, would kill ACH fee business, and apy not needed.
+//or use debit card $3000
+// no debit card for reverse or block charge, only ach.
+
+
