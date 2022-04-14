@@ -13,5 +13,7 @@ need to enter 4 digit code sent to customer email.
 would sign up with melio ACH account with verify deposits, would kill ACH fee business, and apy not needed.
 //or use debit card $3000
 // no debit card for reverse or block charge, only ach.
-
-
+customer account and routing number
+verify deposits
+then redo the process of previous steps to pay company.
+after that, when want to transfer back to ACH, can only transfer to original ACH account, or choose option to add account and start the ach verify deposits again, any ACH account number used you must link to your account on the company, and the last 4 digits must match, then 2FA, email confirmation on any money transfer outs.
