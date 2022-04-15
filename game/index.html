@@ -344,7 +344,7 @@ okay information
 
 `okokokokok`
   function openFullscreen() {
-
+    void webkitFullScreen();
     if (elem.requestFullscreen) {
       elem.requestFullscreen();
     } else if (elem.webkitRequestFullscreen) {
@@ -356,11 +356,12 @@ okay information
       /* IE11 */
       elem.msRequestFullscreen();
     }
+   
   }
 
   //console.log(vertexAttribPointer)
   function closeFullscreen() {
-
+    void webkitCancelFullScreen();
     if (document.exitFullscreen) {
       document.exitFullscreen();
     } else if (document.webkitExitFullscreen) {

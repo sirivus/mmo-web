@@ -17,3 +17,5 @@ customer account and routing number
 verify deposits
 then redo the process of previous steps to pay company.
 after that, when want to transfer back to ACH, can only transfer to original ACH account, or choose option to add account and start the ach verify deposits again, any ACH account number used you must link to your account on the company, and the last 4 digits must match, then 2FA, email confirmation on any money transfer outs.
+then allow to pay to company and to specify which customer ACH to transfer too, must create a invoice number and enter customer ACH info. Each account must have history of transactions entered into customer company history account.
+everything must be automated.
