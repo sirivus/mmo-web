@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- data-main attribute tells require.js to load
+                 scripts/main.js after require.js loads. -->
+    <script async src="./require.js">//If this code is not in a define call,
+    //    //DO NOT use require('foo'), but use the async
+    //    //callback version:
+    //    require(['foo'], function (foo) {
+    //        //foo is now loaded.
+    //    });
+    </script>
+
+    <script type='module'>
+        import './google.js'
+
+    </script>
+    <script type='module'>
+        import './main.js'
+        </script>
+
+</body>
+</html>
