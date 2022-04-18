@@ -1,3 +1,5 @@
+type only 'git' in terminal to install git and github, git cli, in visual code should popup message asking to install.
+
 npm install --save three
 
 <meta http-equiv="Refresh" content="0; url='game/game.html'" />
