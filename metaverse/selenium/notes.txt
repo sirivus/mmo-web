@@ -1,0 +1,4 @@
+want to browser function all
+
+why using a terminal, would have to implement it.
+geckdriver not in path

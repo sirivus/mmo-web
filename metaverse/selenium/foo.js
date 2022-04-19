@@ -1,9 +1,9 @@
 //If this code is not in a define call,
 //DO NOT use require('foo'), but use the async
 //callback version:
-require(["foo"], function (foo) {
-  //foo is now loaded.
-});
+//require(["foo"], function (foo) {
+//  //foo is now loaded.
+//});
 
 var requirejs = require("requirejs");
 
