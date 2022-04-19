@@ -1,0 +1,18 @@
+//If this code is not in a define call,
+//DO NOT use require('foo'), but use the async
+//callback version:
+require(['foo'], function (foo) {
+    //foo is now loaded.
+});
+
+If you are using the simplified define wrapper, make sure you have require as the first argument to the definition function:
+
+define(function (require) {
+    var namedModule = require('name');
+});
+
+If you are listing dependencies in the dependency array, make sure that require and name are in the dependency array:
+
+define(['require', 'name'], function (require) {
+    var namedModule = require('name');
+});
