@@ -7,7 +7,9 @@ require(['foo'], function (foo) {
     //foo is now loaded.
 });
 */
-
+require(['selenium-webdriver'], function foo(Builder, By, Key, until ) {
+    //foo is now loaded.
+});
         //require([selenium-webdriver], 
         const { Builder, By, Key, until } = require('selenium-webdriver');
 
