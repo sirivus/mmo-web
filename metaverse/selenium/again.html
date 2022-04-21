@@ -7,16 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        const {Builder} = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
+    <script src="require.js"></script>
 
-const service = new chrome.ServiceBuilder('/path/to/chromedriver');
-const driver = new Builder().forBrowser('chrome').setChromeService(service).build();
-    </script>
+    <script src="../../node_modules/selenium-webdriver/firefox.js"></script>
 
-    <script async type="module">
-        import './again.js'
-    </script>
+    <script src="again.js"></script>
 </body>
 </html>
