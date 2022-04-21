@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./require.js"></script>
+    <script>
+        //Load common code that includes config, then load the app
+        //logic for this page. Do the requirejs calls here instead of
+        //a separate file so after a build there are only 2 HTTP
+        //requests instead of three.
+        requirejs(['common'], function (common) {
+            //js/common sets the baseUrl to be js/ so
+            //can just ask for 'app/main2' here instead
+            //of 'js/app/main2'
+            requirejs(['../../node_modules/selenium-webdriver/firefox'])
+            requirejs(['./again']);
+
+        });
+    </script>
+
 </head>
+
 <body>
-    <script src="require.js"></script>
 
-    <script src="../../node_modules/selenium-webdriver/firefox.js"></script>
+    <noscript>
+        <script src="../../node_modules/selenium-webdriver/firefox.js"></script>
+        <script src="again.js"></script>
+    </noscript>
 
-    <script src="again.js"></script>
 </body>
+
 </html>
