@@ -20,3 +20,7 @@ console.log(title);
 
 browser.quit();
 
+10,20,30,40,50,60,70,80,
+360
+480
+840

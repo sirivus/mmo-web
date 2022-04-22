@@ -1,1 +1,5 @@
+sudo -i
+
 browserify scripts/main.js -o bundle.js
+
+/Users/lhlh/mmo-web/metaverse/browserify
