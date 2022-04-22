@@ -1,5 +1,7 @@
 sudo -i
 
-browserify scripts/main.js -o bundle.js
+browserify scripts/main.js -o static/bundle.js
 
 /Users/lhlh/mmo-web/metaverse/browserify
+
+watchify scripts/main.js -o static/bundle.js
