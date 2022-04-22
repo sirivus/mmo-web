@@ -1,0 +1,16 @@
+from marionette_test import MarionetteTestCase
+
+class TestSomething(MarionetteTestCase):
+    def setUp(self):
+        # code to execute before any tests are run
+        MarionetteTestCase.setUp(self)
+
+    def test_foo(self):
+        # run test for 'foo'
+
+    def test_bar(self):
+        # run test for 'bar'
+
+    def tearDown(self):
+        # code to execute after all tests are run
+        MarionetteTestCase.tearDown(self)
