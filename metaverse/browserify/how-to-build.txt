@@ -5,3 +5,6 @@ browserify scripts/main.js -o static/bundle.js
 /Users/lhlh/mmo-web/metaverse/browserify
 
 watchify scripts/main.js -o static/bundle.js
+
+sudo (copy-paste link, for admin download)
+
