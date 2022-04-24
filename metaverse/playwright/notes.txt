@@ -6,3 +6,8 @@ done.
 
 need bounds checking for melio success or fail transaction and when things change.
 verify for receive and send into business ACH, have 2 bounds.
+
+am i a banking finance app, with opportunity to grow, or a game, or a online product/ecommerce store.
+the answer is yes.
+
+use brand is link of website, will save to browser histories is fine, would be nice to have a setup for PWA app.
