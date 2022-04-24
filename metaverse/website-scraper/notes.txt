@@ -1,0 +1,1 @@
+Set-Cookie: CSRF=e8b667; Secure; Domain=example.com

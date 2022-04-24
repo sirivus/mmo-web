@@ -1,0 +1,60 @@
+// Let us open our database
+var DBOpenRequest = window.indexedDB.open("toDoList", 4);
+
+DBOpenRequest.onsuccess = event => {
+  note.innerHTML += '<li>Database initialized.</li>';
+
+  // store the result of opening the database in the db variable.
+  // This is used a lot below
+  db = DBOpenRequest.result;
+
+  // Run the addData() function to add the data to the database
+  addData();
+};
+
+function addData() {
+  // Create a new object ready for being inserted into the IDB
+  var newItem = [ { taskTitle: "Walk dog", hours: 19, minutes: 30, day: 24, month: "December", year: 2013, notified: "no" } ];
+
+  // open a read/write db transaction, ready for adding the data
+  var transaction = db.transaction(["toDoList"], "readwrite");
+
+  // report on the success of opening the transaction
+  transaction.oncomplete = event => {
+    note.innerHTML += '<li>Transaction completed: database modification finished.</li>';
+  };
+
+  transaction.onerror = event => {
+    note.innerHTML += '<li>Transaction not opened due to error. Duplicate items not allowed.</li>';
+  };
+
+  // create an object store on the transaction
+  var objectStore = transaction.objectStore("toDoList");
+
+  // add our newItem object to the object store
+  var objectStoreRequest = objectStore.add(newItem[0]);
+
+  objectStoreRequest.onsuccess = event => {
+    // report the success of the request (this does not mean the item
+    // has been stored successfully in the DB - for that you need transaction.onsuccess)
+    note.innerHTML += '<li>Request successful.</li>';
+  };
+
+  // Return the database (IDBDatabase) connection with which this transaction is associated
+  transaction.db;
+};
+/*
+function asd(){
+    constructor (){var a: 5;
+    }
+    
+    Set-Cookie: CSRF=e8b667; Secure; Domain=example.com
+}
+*/
+var trans1 = db.transaction("foo", "readwrite");
+var trans2 = db.transaction("foo", "readwrite");
+var objectStore2 = trans2.objectStore("foo")
+var objectStore1 = trans1.objectStore("foo")
+objectStore2.put("2", "key");
+objectStore1.put("1", "key");
+
