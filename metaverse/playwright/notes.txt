@@ -3,3 +3,6 @@ has http implementations.
 i can code database.
 i can code GUI.
 done.
+
+need bounds checking for melio success or fail transaction and when things change.
+verify for receive and send into business ACH, have 2 bounds.
