@@ -1,0 +1,5 @@
+so playwright has require already.
+has http implementations.
+i can code database.
+i can code GUI.
+done.
