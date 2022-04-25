@@ -1,1 +1,7 @@
 Set-Cookie: CSRF=e8b667; Secure; Domain=example.com
+
+<script>Directly in a script</script>
+<!-- Inside an HTML comment -->
+<style>Directly in CSS</style>
+<div ToDefineAnAttribute=test />
+<ToDefineATag href="/test" />

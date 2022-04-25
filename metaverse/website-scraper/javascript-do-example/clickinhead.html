@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    function myFunction() {
+      document.getElementById("demo").innerHTML = "Paragraph changed.";
+    }
+  </script>
+</head>
+
+<body>
+
+  <h2>Demo JavaScript in Head</h2>
+
+  <p id="demo">A Paragraph</p>
+  <button type="button" onclick="myFunction()">Try it</button>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h2>Demo JavaScript in Body</h2>
+
+  <p id="demo">A Paragraph</p>
+
+  <button type="button" onclick="myFunction()">Try it</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("demo").innerHTML = "Paragraph changed.";
+    }
+  </script>
+
+</body>
+
+</html>
+
+<script>
+  function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed.";
+  }
+</script>
+<!--
+External JavaScript
+
+Scripts can also be placed in external files:
+External file: myScript.js
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+
+External scripts are practical when the same code is used in many different web pages.
+
+JavaScript files have the file extension .js.
+
+To use an external script, put the name of the script file in the src (source) attribute of a <script> tag:
+Example
+<script src="myScript.js"></script>
+
+You can place an external script reference in <head> or <body> as you like.
+
+The script will behave as if it was located exactly where the <script> tag is located.
+
+-->
+<!-- 
+
+  <!DOCTYPE html>
+<html>
+<body>
+
+<h2>Demo External JavaScript</h2>
+
+<p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<p>This example links to "myScript.js".</p>
+<p>(myFunction is stored in "myScript.js")</p>
+
+<script src="myScript.js"></script>
+
+</body>
+</html>
+  
+Demo External JavaScript
+
+Paragraph changed.
+
+This example links to "myScript.js".
+
+(myFunction is stored in "myScript.js") 
+-->
+
+<!--
+  Common Mistake¶
+
+There will be situations where you use a URL in different contexts. The most common one would be adding it to an href or src attribute of an <a> tag. In these scenarios, you should do URL encoding, followed by HTML attribute encoding.
+
+  url = "https://site.com?data=" + urlencode(parameter)
+<a href='attributeEncode(url)'>link</a>
+
+If you're using JavaScript to construct a URL Query Value, look into using window.encodeURIComponent(x). This is a Safe Sink and will automatically URL encode data in it.
+-->
