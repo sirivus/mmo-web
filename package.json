@@ -31,6 +31,10 @@
     "webpack": "^5.72.0"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.6.3",
+    "@mui/styled-engine-sc": "^5.6.1",
     "@nightwatch/selenium-server": "^4.1.2",
     "browserify": "^17.0.0",
     "cheerio": "^1.0.0-rc.10",
@@ -43,6 +47,7 @@
     "requirejs": "^2.3.6",
     "selenium-webdriver": "^4.1.1",
     "source-map-loader": "^3.0.1",
+    "styled-components": "^5.3.5",
     "ts-loader": "^9.2.8",
     "uniq": "^1.0.1",
     "watchify": "^4.0.0"
