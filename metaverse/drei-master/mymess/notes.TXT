@@ -1,0 +1,1 @@
+typescript tells error before loading in browser, nevermind was looking at javascript file
