@@ -6,3 +6,4 @@ npx playwright test
 
 npx playwright test --project=firefox
 
+tests anything requiring '@playwright/test'
