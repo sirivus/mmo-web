@@ -1,0 +1,30 @@
+//typescript
+///Users/lhlh/mmo-web/metaverse/payment-system/node_modules/@playwright/test/types/test.d.ts
+//PlaywrightTestConfig
+//export type PlaywrightTestConfig<TestArgs = {}, WorkerArgs = {}> = Config<PlaywrightTestOptions & TestArgs, PlaywrightWorkerOptions & WorkerArgs>;
+
+// playwright.config.ts
+import { PlaywrightTestConfig, devices } from '@playwright/test';
+
+const config: PlaywrightTestConfig = {
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  use: {
+    trace: 'on-first-retry',
+  },
+  projects: [
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
+  ],
+};
+export default config;
