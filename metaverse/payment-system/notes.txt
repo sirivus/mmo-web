@@ -1,0 +1,7 @@
+installed extension, use from extension sidebar
+`Playwright Test for VSCode`
+
+adopt typescript
+
+build and bake from codebase.
+
