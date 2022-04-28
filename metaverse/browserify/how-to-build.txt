@@ -8,3 +8,7 @@ watchify scripts/main.js -o static/bundle.js
 
 sudo (copy-paste link, for admin download)
 
+for automation, installed
+npm init playwright@latest
+
+
