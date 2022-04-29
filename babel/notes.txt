@@ -1,0 +1,11 @@
+npm run build
+check package.json for scripts to build or other.
+
+installed
+https://playwright.dev/docs/intro#installation
+npm init playwright@latest
+now playwright is working in my project, imports.
+
+npm-init
+Create a package.json file
+
