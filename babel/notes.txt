@@ -9,3 +9,12 @@ now playwright is working in my project, imports.
 npm-init
 Create a package.json file
 
+playwright only tests, not production.
+name file with extension spec.ts in folder tests, to test files.
+
+so far, using babel build, actually, can just to build all files into require/exports,
+ just compiles into older version of javascript.
+use tsc compiler for typrscript to javascript.
+success. \
+transcript compiled into javascript
+enter into terminal directory, tsc src/helloworld.ts

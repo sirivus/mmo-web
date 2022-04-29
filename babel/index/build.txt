@@ -1,0 +1,3 @@
+tsc 'file name'
+tsc 'file name' --outFile 'file name'
+
