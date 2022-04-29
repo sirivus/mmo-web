@@ -19,3 +19,5 @@ Successfully compiled 1 file with Babel (561ms).
 npm i 'express' 'path' 'ts-loader' 'typescript' 'webpack' 'webpack-cli' 'react
 ' 'react-dom'
 
+touch 'app.tsx' 'webpack-config.js' 'index.html' 'tsconfig.json'
+
