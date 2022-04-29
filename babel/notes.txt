@@ -13,7 +13,10 @@ playwright only tests, not production.
 name file with extension spec.ts in folder tests, to test files.
 
 so far, using babel build, actually, can just to build all files into require/exports,
- just compiles into older version of javascript.
+ just compiles into older version of javascript. \
+ nvm need to build with browserify
+babel is just a compiler
+
 use tsc compiler for typrscript to javascript.
 success. \
 transcript compiled into javascript
