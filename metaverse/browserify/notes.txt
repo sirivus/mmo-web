@@ -3,3 +3,21 @@ browserify script.js -o bundle.js -t [ babelify --presets [ @babel/preset-env @b
 npm update
 npm outdate
 //fixes all files
+
+error : src/text.d.ts:3:34 - error TS1183: An implementation cannot be declared in ambient contexts.
+Image
+These two things combined together are the problem:
+
+    I made a index.d.ts file
+
+    I am trying to assign a function to String.prototype.
+
+A d.ts file is a TypeScript declaration file. These files only declare types and cannot contain implementation code hence your two errors:
+
+    Statements are not allowed in ambient contexts.
+
+    An implementation cannot be declared in ambient contexts.
+
+Implementation code is code that is not a type annotation or an alternative way of describing this is implementation code is code that is executed during runtime.
+
+You probably aren't intending to write a declaration file – they are often only used to add types to libraries which aren't written in TypeScript. As a result you should rename your file from index.d.ts to index.ts.
