@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src -d lib",
-    "pretest": "tsc --incremental -p tests/tsconfig.json",
+    "pretest": "tsc --incremental -p tsconfig.json",
     "test": "playwright test -c tests-out"
   },
   "keywords": [],
