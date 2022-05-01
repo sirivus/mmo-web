@@ -1,0 +1,10 @@
+pip install -U pyinstaller
+
+pyinstaller your_program.py
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+
+cli add path pip
+export PATH="/Users/lhlh/Library/Python/3.8/bin:$PATH"
+/Users/lhlh/Library/Python/3.8/bin
