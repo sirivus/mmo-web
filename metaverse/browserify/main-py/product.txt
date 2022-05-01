@@ -1,0 +1,8 @@
+
+
+use javascript to redirect url on click and enter information on automation
+Run servers. In your browser.
+Yes, actually. WebContainers include a virtualized TCP network stack that's mapped to your browser's ServiceWorker API, enabling you to instantly create live Node.js servers on-demand that continue to work even when you go offline. Because it runs entirely within the browser security sandbox, server responses have less latency than localhost (!) and protects your web servers from localhost scraping attacks:
+https://blog.stackblitz.com/posts/introducing-webcontainers/
+
+

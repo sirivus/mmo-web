@@ -1,0 +1,4 @@
+git clone https://github.com/requirejs/text.git
+git clone https://github.com/requirejs/i18n.git
+git clone https://github.com/requirejs/domReady.git
+git clone https://github.com/requirejs/requirejs.git
