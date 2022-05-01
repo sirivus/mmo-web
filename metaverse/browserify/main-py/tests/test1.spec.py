@@ -1,0 +1,10 @@
+from playwright.sync_api import sync_playwright
+
+with sync_playwright() as p:
+    browser = p.webkit.launch()
+    page = browser.new_page()
+    page.goto("http://whatsmyuseragent.org/")
+    page.screenshot(path="example.png")
+    browser.close()
+
+    firefox.launch(headless=False, slow_mo=50)
