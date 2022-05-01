@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "example.js",
   "scripts": {
-    "bro": "browserify main.js -o bundle/main.js"
+    "bro": "browserify success/launch1.js -o success/dist/launch1.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "electron": "^18.2.0",
     "playwright": "^1.21.1",
     "playwright-core": "^1.21.1",
     "uniq": "^1.0.1"

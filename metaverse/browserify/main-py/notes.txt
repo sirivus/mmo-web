@@ -103,4 +103,4 @@ Commands:
   show-report [report]                   show HTML report
   help [command]                         display help for command
 
-  
+  npm run bro //browserify building
