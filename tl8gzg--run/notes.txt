@@ -6,3 +6,5 @@ don't need care for rename dir, just build ng.
 
 npm install will install all dependencies.
 npm init will create package.json file.
+
+just installed almost 600mb project.
