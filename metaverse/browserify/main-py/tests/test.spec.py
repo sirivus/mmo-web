@@ -10,7 +10,7 @@ def run(playwright: Playwright) -> None:
 
     # Go to https://www.wikipedia.org/
     page.goto("https://www.wikipedia.org/")
-
+a
     # Click input[name="search"]
     page.locator("input[name=\"search\"]").click()
 
