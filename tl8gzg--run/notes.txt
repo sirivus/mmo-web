@@ -1,3 +1,8 @@
 npm run ng, script in package.json
 
 npm run ng s, worked for serve option.
+
+don't need care for rename dir, just build ng.
+
+npm install will install all dependencies.
+npm init will create package.json file.
