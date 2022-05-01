@@ -1,0 +1,1 @@
+make ts transpiled file work in JS.
