@@ -9,3 +9,4 @@ cli add path pip
 saves in local folder path.
 export PATH="/Users/lhlh/Library/Python/3.8/bin:$PATH"
 /Users/lhlh/Library/Python/3.8/bin
+modules is just running scripts from package.
