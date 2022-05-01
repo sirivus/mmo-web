@@ -49,3 +49,6 @@ playwright = sync_playwright().start()
 note
 
 Bundling the browsers with the executables will generate bigger binaries. It is recommended to only bundle the browsers you use.
+
+main-py % sudo -H python3 -m pip install --upgrade pip
+-H is global command.
