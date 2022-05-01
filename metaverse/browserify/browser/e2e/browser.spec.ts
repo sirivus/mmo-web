@@ -1,4 +1,5 @@
 //wrong typescript code for testing playwright test
+//therefore, no detection in test directory.
 
 const { chromium } = require('playwright');  // Or 'firefox' or 'webkit'.
 
