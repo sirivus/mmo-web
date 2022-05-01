@@ -1,0 +1,2 @@
+in MS vcode, will have to run npm run ng generate component product-alerts
+node runs ng or any module component.
