@@ -1,4 +1,20 @@
+https://pyinstaller.org/en/stable/installation.html
 pip install -U pyinstaller
+pyinstaller --version
+
+Installed commands
+
+The complete installation places these commands on the execution path:
+
+    pyinstaller is the main command to build a bundled application. See Using PyInstaller.
+
+    pyi-makespec is used to create a spec file. See Using Spec Files.
+
+    pyi-archive_viewer is used to inspect a bundled application. See Inspecting Archives.
+
+    pyi-bindepend is used to display dependencies of an executable. See Inspecting Executables.
+
+    pyi-grab_version is used to extract a version resource from a Windows executable. See Capturing Windows Version Data.
 
 pyinstaller your_program.py
 
