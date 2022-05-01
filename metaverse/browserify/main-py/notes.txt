@@ -108,3 +108,7 @@ Commands:
   build successfully, but html live view won't do anything, error.
   also might want use electron as bundler than browserify.
   or app usage.
+  
+  can not work nodejs on browser environment.. what now. require. loading errors. no script execution.
+  seems like browserify is not working on browser environment.
+  browser can control the tabs by itself.
