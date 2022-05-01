@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "example.js",
   "scripts": {
-    "bro": "browserify success/launch1.js -o success/dist/launch1.js"
+    "bro": "browserify success/launch1.js -o success/dist/launch1.js",
+    "browserify": "browserify success/launch1.js -o --standalone mylib > success/dist/launch1.js --standalone"
   },
   "author": "",
   "license": "ISC",

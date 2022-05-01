@@ -3,3 +3,4 @@ choose target javascript
 
 problem:
 now have to build it successfully.
+bundled files are nonconvertible to original useful code. must be original copy.
