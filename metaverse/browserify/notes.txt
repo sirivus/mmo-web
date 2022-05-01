@@ -21,3 +21,5 @@ A d.ts file is a TypeScript declaration file. These files only declare types and
 Implementation code is code that is not a type annotation or an alternative way of describing this is implementation code is code that is executed during runtime.
 
 You probably aren't intending to write a declaration file – they are often only used to add types to libraries which aren't written in TypeScript. As a result you should rename your file from index.d.ts to index.ts.
+
+have to stop building dependencies in each directory file, must be in root. mmo-web.

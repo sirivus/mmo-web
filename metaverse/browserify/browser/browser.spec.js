@@ -11,4 +11,6 @@ const { chromium } = require('playwright');  // Or 'firefox' or 'webkit'.
 //import ignore from 'electron/index.js';
 //ignore();
 
+//ignore(builtinModules, { commonjsBugFix: true })
+
 //module.exports = {"browser": true}
