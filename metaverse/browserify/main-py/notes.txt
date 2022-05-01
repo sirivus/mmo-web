@@ -104,3 +104,7 @@ Commands:
   help [command]                         display help for command
 
   npm run bro //browserify building
+
+  build successfully, but html live view won't do anything, error.
+  also might want use electron as bundler than browserify.
+  or app usage.
