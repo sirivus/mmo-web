@@ -1,3 +1,5 @@
+//wrong typescript code for testing playwright test
+
 const { chromium } = require('playwright');  // Or 'firefox' or 'webkit'.
 
 (async () => {
