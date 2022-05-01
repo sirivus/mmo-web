@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "main": "example.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bro": "browserify main.js -o bundle/main.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "playright": "^0.0.22",
-    "playwright-core": "^1.21.1"
+    "playwright": "^1.21.1",
+    "playwright-core": "^1.21.1",
+    "uniq": "^1.0.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.21.1",
+    "browserify": "^17.0.0"
   }
 }
