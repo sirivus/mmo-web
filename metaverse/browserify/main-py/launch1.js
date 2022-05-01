@@ -1,3 +1,6 @@
+import { createRequire } from './require';
+const require = createRequire(import.meta.url);
+
 const { chromium } = require('playwright');
 
 (async () => {
