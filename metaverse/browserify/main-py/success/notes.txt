@@ -1,0 +1,2 @@
+npx playwright codegen wikipedia.org
+choose target javascript
