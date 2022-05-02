@@ -1,0 +1,5 @@
+npm i puppeteer-core
+npm i puppeteer-core
+node example.js
+
+installed modules and imported them and run them. package.
