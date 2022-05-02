@@ -1,0 +1,12 @@
+4.37gb
+
+lhlh@lhs-MacBook-Pro mmo-web % touch size.txt
+lhlh@lhs-MacBook-Pro mmo-web % cat >> size.txt
+4.37gb
+^C
+lhlh@lhs-MacBook-Pro mmo-web % cat size.txt
+4.37gb
+lhlh@lhs-MacBook-Pro mmo-web % 
+
+lhlh@lhs-MacBook-Pro mmo-web % open size.txt
+lhlh@lhs-MacBook-Pro mmo-web % 
