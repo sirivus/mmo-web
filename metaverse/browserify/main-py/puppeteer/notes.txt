@@ -6,3 +6,4 @@ installed modules and imported them and run them. package.
 
 github traverse directory in url.
 npm package added from terminal path. package.json
+actually, probably from the last initialization of npm init, initialization.
