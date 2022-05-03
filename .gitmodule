@@ -1,6 +1,6 @@
 [submodule "domReady"] 
    path = metaverse/browserify/main-py/requirejs/domReady
-   url = https://github.com/requirejs/text.git
+   url = https://github.com/requirejs/domReady.git
 
 [submodule "i18n"] 
    path = metaverse/browserify/main-py/requirejs/i18n
