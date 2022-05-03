@@ -1,0 +1,7 @@
+
+https://developer.mozilla.org/en-US/docs/Web/API/Window
+
+References
+Web APIs
+Window
+Window.open()
