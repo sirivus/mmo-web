@@ -3,17 +3,33 @@
 	url = https://github.com/Nozbe/WatermelonDB
 
 [submodule "requirejs/domReady"]
-	path = requirejs/domReady
+	path = metaverse/browserify/main-py/requirejs/domReady
 	url = https://github.com/requirejs/domReady.git
 
 [submodule "requirejs/text"]
-	path = requirejs/text
+	path = metaverse/browserify/main-py/requirejs/text
 	url = https://github.com/requirejs/text.git
 
 [submodule "requirejs/i18n"]
-	path = requirejs/i18n
+	path = metaverse/browserify/main-py/requirejs/i18n
 	url = https://github.com/requirejs/i18n.git
 
 [submodule "requirejs/requirejs"]
-	path = requirejs/requirejs
+	path = metaverse/browserify/main-py/requirejs/requirejs
+	url = https://github.com/requirejs/requirejs.git
+
+[submodule "requirejs/domReady"]
+	path = metaverse/browserify/main-py/requirejs-old/domReady
+	url = https://github.com/requirejs/domReady.git
+
+[submodule "requirejs/text"]
+	path = metaverse/browserify/main-py/requirejs-old/text
+	url = https://github.com/requirejs/text.git
+
+[submodule "requirejs/i18n"]
+	path = metaverse/browserify/main-py/requirejs-old/i18n
+	url = https://github.com/requirejs/i18n.git
+
+[submodule "requirejs/requirejs"]
+	path = metaverse/browserify/main-py/requirejs-old/requirejs
 	url = https://github.com/requirejs/requirejs.git
