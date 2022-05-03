@@ -107,3 +107,5 @@ then push changes.
 lhlh@lhs-MacBook-Pro mmo-web % git submodule init 
 fatal: No url found for submodule path 'metaverse/browserify/main-py/requirejs-old/domReady' in .gitmodules
 lhlh@lhs-MacBook-Pro mmo-web % 
+
+git rm --cached . -r
