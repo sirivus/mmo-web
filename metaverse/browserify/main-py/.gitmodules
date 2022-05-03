@@ -13,7 +13,3 @@
 [submodule "requirejs/requirejs"]
 	path = requirejs/requirejs
 	url = https://github.com/requirejs/requirejs.git
-	
-[submodule "requirejs/usr/bin/git"]
-	path = requirejs/usr/bin/git
-	url = https://github.com/requirejs/domReady.git

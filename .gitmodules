@@ -1,3 +1,19 @@
 [submodule "WatermelonDB"]
 	path = WatermelonDB
 	url = https://github.com/Nozbe/WatermelonDB
+
+[submodule "requirejs/domReady"]
+	path = requirejs/domReady
+	url = https://github.com/requirejs/domReady.git
+
+[submodule "requirejs/text"]
+	path = requirejs/text
+	url = https://github.com/requirejs/text.git
+
+[submodule "requirejs/i18n"]
+	path = requirejs/i18n
+	url = https://github.com/requirejs/i18n.git
+
+[submodule "requirejs/requirejs"]
+	path = requirejs/requirejs
+	url = https://github.com/requirejs/requirejs.git

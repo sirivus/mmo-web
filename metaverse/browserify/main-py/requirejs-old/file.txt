@@ -1,0 +1,8 @@
+git clone https://github.com/requirejs/text.git
+git clone https://github.com/requirejs/i18n.git
+git clone https://github.com/requirejs/domReady.git
+git clone https://github.com/requirejs/requirejs.git
+
+git submodule add https://github.com/requirejs/i18n.git
+/Users/lhlh/mmo-web/metaverse/browserify/main-py/.gitmodules
+delete folder locally then submodule add, readd.
