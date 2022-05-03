@@ -97,3 +97,9 @@ node copilot.js
 
 //alt + z is word wrap on or off
 
+git pull \
+is git fetch and git merge \
+do git add . \ 
+then stage changes. \
+then commit changes. \
+then push changes.
