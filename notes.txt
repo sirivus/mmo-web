@@ -109,3 +109,5 @@ fatal: No url found for submodule path 'metaverse/browserify/main-py/requirejs-o
 lhlh@lhs-MacBook-Pro mmo-web % 
 
 git rm --cached . -r
+
+i have to git push from cli or nothing will push to remote.
