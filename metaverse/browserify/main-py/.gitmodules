@@ -1,0 +1,8 @@
+[submodule "requirejs/domReady"]
+	path = requirejs/domReady
+	url = https://github.com/requirejs/domReady.git
+
+[submodule "requirejs/text"]
+	path = requirejs/text
+	url = https://github.com/requirejs/text.git
+
