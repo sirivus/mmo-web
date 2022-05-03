@@ -6,3 +6,6 @@
 	path = requirejs/text
 	url = https://github.com/requirejs/text.git
 
+[submodule "requirejs/i18n"]
+	path = requirejs/i18n
+	url = https://github.com/requirejs/i18n.git
