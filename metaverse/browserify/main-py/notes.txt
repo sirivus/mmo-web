@@ -1,0 +1,114 @@
+https://pyinstaller.org/en/stable/installation.html
+pip install -U pyinstaller
+pyinstaller --version
+
+Installed commands
+
+The complete installation places these commands on the execution path:
+
+    pyinstaller is the main command to build a bundled application. See Using PyInstaller.
+
+    pyi-makespec is used to create a spec file. See Using Spec Files.
+
+    pyi-archive_viewer is used to inspect a bundled application. See Inspecting Archives.
+
+    pyi-bindepend is used to display dependencies of an executable. See Inspecting Executables.
+
+    pyi-grab_version is used to extract a version resource from a Windows executable. See Capturing Windows Version Data.
+
+pyinstaller your_program.py
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+
+cli add path pip
+saves in local folder path.
+export PATH="/Users/lhlh/Library/Python/3.8/bin:$PATH"
+/Users/lhlh/Library/Python/3.8/bin
+modules is just running scripts from package.
+
+PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium
+pyinstaller -F main.py
+build python 'main.spec' without file extension name.
+
+>>> from playwright.sync_api import sync_playwright
+>>> playwright = sync_playwright().start()
+
+from playwright.sync_api import sync_playwright
+playwright = sync_playwright().start()
+
+# Use playwright.chromium, playwright.firefox or playwright.webkit
+# Pass headless=False to launch() to see the browser UI
+>>> browser = playwright.chromium.launch()
+>>> page = browser.new_page()
+>>> page.goto("http://whatsmyuseragent.org/")
+>>> page.screenshot(path="example.png")
+>>> browser.close()
+>>> playwright.stop()
+
+note
+
+Bundling the browsers with the executables will generate bigger binaries. It is recommended to only bundle the browsers you use.
+
+main-py % sudo -H python3 -m pip install --upgrade pip
+-H is global command.
+
+mistyped package install playright, need playwright
+# Run from your project's root directory
+npm init playwright@latest
+# Or create a new project
+npm init playwright@latest new-project
+
+This will create a configuration file, optionally add examples, a GitHub Action workflow and a first test example.spec.ts. You can now jump directly to writing assertions section.
+Manually
+
+Add dependency and install browsers.
+
+npm i -D @playwright/test
+# install supported browsers
+npx playwright install
+
+inside file causing error.
+
+PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install
+
+# For Playwright Test
+PLAYWRIGHT_FIREFOX_DOWNLOAD_HOST=203.0.113.3 PLAYWRIGHT_DOWNLOAD_HOST=192.0.2.1 npx playwright install
+
+# For Playwright Library
+PLAYWRIGHT_FIREFOX_DOWNLOAD_HOST=203.0.113.3 PLAYWRIGHT_DOWNLOAD_HOST=192.0.2.1 npm install playwright
+
+npx playwright codegen wikipedia.org
+
+lhlh@lhs-MacBook-Pro main-py % npx playwright
+Usage: npx playwright [options] [command]
+
+Options:
+  -V, --version                          output the version number
+  -h, --help                             display help for command
+
+Commands:
+  open [options] [url]                   open page in browser specified via -b, --browser
+  codegen [options] [url]                open page and generate code for user actions
+  install [options] [browser...]         ensure browsers necessary for this version of Playwright are installed
+  install-deps [options] [browser...]    install dependencies necessary to run browsers (will ask for sudo
+                                         permissions)
+  cr [options] [url]                     open page in Chromium
+  ff [options] [url]                     open page in Firefox
+  wk [options] [url]                     open page in WebKit
+  screenshot [options] <url> <filename>  capture a page screenshot
+  pdf [options] <url> <filename>         save page as pdf
+  show-trace [options] [trace...]        Show trace viewer
+  test [options] [test-filter...]        Run tests with Playwright Test
+  show-report [report]                   show HTML report
+  help [command]                         display help for command
+
+  npm run bro //browserify building
+
+  build successfully, but html live view won't do anything, error.
+  also might want use electron as bundler than browserify.
+  or app usage.
+  
+  can not work nodejs on browser environment.. what now. require. loading errors. no script execution.
+  seems like browserify is not working on browser environment.
+  browser can control the tabs by itself.
