@@ -9,7 +9,11 @@
 [submodule "requirejs/i18n"]
 	path = requirejs/i18n
 	url = https://github.com/requirejs/i18n.git
-	
+
 [submodule "requirejs/requirejs"]
 	path = requirejs/requirejs
 	url = https://github.com/requirejs/requirejs.git
+	
+[submodule "requirejs/usr/bin/git"]
+	path = requirejs/usr/bin/git
+	url = https://github.com/requirejs/domReady.git
