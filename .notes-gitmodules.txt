@@ -1,0 +1,6 @@
+[submodule "domReady"]
+	path = domReady
+	url = https://github.com/requirejs/domReady.git
+[submodule "i18n"]
+	path = i18n
+	url = https://github.com/requirejs/i18n.git

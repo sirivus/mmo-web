@@ -1,1 +1,0 @@
-git+https://github.com/pypa/sampleproject.git@main
