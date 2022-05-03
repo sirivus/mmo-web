@@ -10,12 +10,16 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "domReady": "github:requirejs/domReady",
     "electron": "^18.2.0",
+    "i18n": "github:requirejs/i18n",
     "node": "^17.7.2",
     "playwright": "^1.21.1",
     "playwright-core": "^1.21.1",
     "puppeteer": "^13.7.0",
     "puppeteer-core": "^13.7.0",
+    "requirejs": "github:requirejs/requirejs",
+    "text": "github:requirejs/text",
     "uniq": "^1.0.1"
   },
   "devDependencies": {
