@@ -112,3 +112,7 @@ Commands:
   can not work nodejs on browser environment.. what now. require. loading errors. no script execution.
   seems like browserify is not working on browser environment.
   browser can control the tabs by itself.
+
+  CLI using GIT is dangerous, or importing submodules. have to download? and import instead of using git clone.
+  delete .git from inside folder causing submodule error, and to avoid adding submodule file, .modules.
+  
