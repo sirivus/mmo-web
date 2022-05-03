@@ -4,3 +4,21 @@
 [submodule "i18n"]
 	path = i18n
 	url = https://github.com/requirejs/i18n.git
+
+
+save//
+
+[submodule "domReady"]
+	path = metaverse/browserify/main-py/requirejs/domReady
+	url = https://github.com/requirejs/domReady.git
+[submodule "i18n"]
+	path = metaverse/browserify/main-py/requirejs/i18n
+	url = https://github.com/requirejs/i18n.git
+[submodule "requirejs"]
+	path = metaverse/browserify/main-py/requirejs/requirejs
+	url = https://github.com/requirejs/requirejs.git
+[submodule "text"]
+	path = metaverse/browserify/main-py/requirejs/text
+	url = https://github.com/requirejs/text.git
+
+
