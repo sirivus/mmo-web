@@ -111,3 +111,11 @@ lhlh@lhs-MacBook-Pro mmo-web %
 git rm --cached . -r
 
 i have to git push from cli or nothing will push to remote.
+
+https://docs.github.com/en/rest
+two websites hosted in parallel. well if i do that, both are public. pointless
+only need one access point.
+serve straight to client, no server.
+the server will be for only interacters permitted.
+curl https://api.github.com/users/sirivus
+
