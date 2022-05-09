@@ -28,6 +28,7 @@
     "babelify": "^10.0.0",
     "chromedriver": "^100.0.0",
     "cypress": "^9.5.4",
+    "docker": "^1.0.0",
     "geckodriver": "^3.0.1",
     "prettier": "2.6.1",
     "typescript": "^4.6.3",
