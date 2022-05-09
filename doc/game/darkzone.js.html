@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>darkzone.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/darkzone.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>darkzone.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+<p>Three.js - Lights - Spot w/Helper
+from https://threejs.org/manual/examples/lights-spot-w-helper.html</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> THREE <span class="hljs-keyword">from</span> <span class="hljs-string">"three"</span>;
+<span class="hljs-keyword">import</span> { OrbitControls } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://unpkg.com/three@0.138.3/examples/jsm/controls/OrbitControls.js"</span>;
+<span class="hljs-keyword">import</span> { GUI } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://unpkg.com/three@0.138.3/examples/jsm/libs/lil-gui.module.min.js"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"#c"</span>);
+  <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer({ canvas });
+
+  <span class="hljs-keyword">const</span> fov = <span class="hljs-number">45</span>;
+  <span class="hljs-keyword">const</span> aspect = <span class="hljs-number">2</span>; <span class="hljs-comment">// the canvas default</span>
+  <span class="hljs-keyword">const</span> near = <span class="hljs-number">0.1</span>;
+  <span class="hljs-keyword">const</span> far = <span class="hljs-number">100</span>;
+  <span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.set(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>);
+
+  <span class="hljs-keyword">const</span> controls = <span class="hljs-keyword">new</span> OrbitControls(camera, canvas);
+  controls.target.set(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>);
+  controls.update();
+
+  <span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();
+  scene.background = <span class="hljs-keyword">new</span> THREE.Color(<span class="hljs-string">"black"</span>);
+
+  {
+    <span class="hljs-keyword">const</span> planeSize = <span class="hljs-number">40</span>;
+
+    <span class="hljs-keyword">const</span> loader = <span class="hljs-keyword">new</span> THREE.TextureLoader();
+    <span class="hljs-keyword">const</span> texture = loader.load(
+      <span class="hljs-string">"https://threejs.org/manual/examples/resources/images/checker.png"</span>
+    );
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.magFilter = THREE.NearestFilter;
+    <span class="hljs-keyword">const</span> repeats = planeSize / <span class="hljs-number">2</span>;
+    texture.repeat.set(repeats, repeats);
+
+    <span class="hljs-keyword">const</span> planeGeo = <span class="hljs-keyword">new</span> THREE.PlaneGeometry(planeSize, planeSize);
+    <span class="hljs-keyword">const</span> planeMat = <span class="hljs-keyword">new</span> THREE.MeshPhongMaterial({
+      <span class="hljs-attr">map</span>: texture,
+      <span class="hljs-attr">side</span>: THREE.DoubleSide,
+    });
+    <span class="hljs-keyword">const</span> mesh = <span class="hljs-keyword">new</span> THREE.Mesh(planeGeo, planeMat);
+    mesh.rotation.x = <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">-0.5</span>;
+    scene.add(mesh);
+  }
+  {
+    <span class="hljs-keyword">const</span> cubeSize = <span class="hljs-number">4</span>;
+    <span class="hljs-keyword">const</span> cubeGeo = <span class="hljs-keyword">new</span> THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
+    <span class="hljs-keyword">const</span> cubeMat = <span class="hljs-keyword">new</span> THREE.MeshPhongMaterial({ <span class="hljs-attr">color</span>: <span class="hljs-string">"#8AC"</span> });
+    <span class="hljs-keyword">const</span> mesh = <span class="hljs-keyword">new</span> THREE.Mesh(cubeGeo, cubeMat);
+    mesh.position.set(cubeSize + <span class="hljs-number">1</span>, cubeSize / <span class="hljs-number">2</span>, <span class="hljs-number">0</span>);
+    scene.add(mesh);
+  }
+  {
+    <span class="hljs-keyword">const</span> sphereRadius = <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">const</span> sphereWidthDivisions = <span class="hljs-number">32</span>;
+    <span class="hljs-keyword">const</span> sphereHeightDivisions = <span class="hljs-number">16</span>;
+    <span class="hljs-keyword">const</span> sphereGeo = <span class="hljs-keyword">new</span> THREE.SphereGeometry(
+      sphereRadius,
+      sphereWidthDivisions,
+      sphereHeightDivisions
+    );
+    <span class="hljs-keyword">const</span> sphereMat = <span class="hljs-keyword">new</span> THREE.MeshPhongMaterial({ <span class="hljs-attr">color</span>: <span class="hljs-string">"#CA8"</span> });
+    <span class="hljs-keyword">const</span> mesh = <span class="hljs-keyword">new</span> THREE.Mesh(sphereGeo, sphereMat);
+    mesh.position.set(-sphereRadius - <span class="hljs-number">1</span>, sphereRadius + <span class="hljs-number">2</span>, <span class="hljs-number">0</span>);
+    scene.add(mesh);
+  }
+
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ColorGUIHelper</span> </span>{
+    <span class="hljs-keyword">constructor</span>(object, prop) {
+      <span class="hljs-keyword">this</span>.object = object;
+      <span class="hljs-keyword">this</span>.prop = prop;
+    }
+    <span class="hljs-keyword">get</span> value() {
+      <span class="hljs-keyword">return</span> <span class="hljs-string">`#<span class="hljs-subst">${<span class="hljs-keyword">this</span>.object[<span class="hljs-keyword">this</span>.prop].getHexString()}</span>`</span>;
+    }
+    <span class="hljs-keyword">set</span> value(hexString) {
+      <span class="hljs-keyword">this</span>.object[<span class="hljs-keyword">this</span>.prop].set(hexString);
+    }
+  }
+
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DegRadHelper</span> </span>{
+    <span class="hljs-keyword">constructor</span>(obj, prop) {
+      <span class="hljs-keyword">this</span>.obj = obj;
+      <span class="hljs-keyword">this</span>.prop = prop;
+    }
+    <span class="hljs-keyword">get</span> value() {
+      <span class="hljs-keyword">return</span> THREE.MathUtils.radToDeg(<span class="hljs-keyword">this</span>.obj[<span class="hljs-keyword">this</span>.prop]);
+    }
+    <span class="hljs-keyword">set</span> value(v) {
+      <span class="hljs-keyword">this</span>.obj[<span class="hljs-keyword">this</span>.prop] = THREE.MathUtils.degToRad(v);
+    }
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeXYZGUI</span>(<span class="hljs-params">gui, vector3, name, onChangeFn</span>) </span>{
+    <span class="hljs-keyword">const</span> folder = gui.addFolder(name);
+    folder.add(vector3, <span class="hljs-string">"x"</span>, <span class="hljs-number">-10</span>, <span class="hljs-number">10</span>).onChange(onChangeFn);
+    folder.add(vector3, <span class="hljs-string">"y"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>).onChange(onChangeFn);
+    folder.add(vector3, <span class="hljs-string">"z"</span>, <span class="hljs-number">-10</span>, <span class="hljs-number">10</span>).onChange(onChangeFn);
+    folder.open();
+  }
+
+  {
+    <span class="hljs-keyword">const</span> color = <span class="hljs-number">0xffffff</span>;
+    <span class="hljs-keyword">const</span> intensity = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> light = <span class="hljs-keyword">new</span> THREE.SpotLight(color, intensity);
+    light.position.set(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">0</span>);
+    light.target.position.set(<span class="hljs-number">-5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+    scene.add(light);
+    scene.add(light.target);
+
+    <span class="hljs-keyword">const</span> helper = <span class="hljs-keyword">new</span> THREE.SpotLightHelper(light);
+    scene.add(helper);
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateLight</span>(<span class="hljs-params"></span>) </span>{
+      light.target.updateMatrixWorld();
+      helper.update();
+    }
+    updateLight();
+
+    <span class="hljs-keyword">const</span> gui = <span class="hljs-keyword">new</span> GUI();
+    gui.addColor(<span class="hljs-keyword">new</span> ColorGUIHelper(light, <span class="hljs-string">"color"</span>), <span class="hljs-string">"value"</span>).name(<span class="hljs-string">"color"</span>);
+    gui.add(light, <span class="hljs-string">"intensity"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0.01</span>);
+    gui.add(light, <span class="hljs-string">"distance"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">40</span>).onChange(updateLight);
+    gui
+      .add(<span class="hljs-keyword">new</span> DegRadHelper(light, <span class="hljs-string">"angle"</span>), <span class="hljs-string">"value"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">90</span>)
+      .name(<span class="hljs-string">"angle"</span>)
+      .onChange(updateLight);
+    gui.add(light, <span class="hljs-string">"penumbra"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0.01</span>);
+
+    makeXYZGUI(gui, light.position, <span class="hljs-string">"position"</span>, updateLight);
+    makeXYZGUI(gui, light.target.position, <span class="hljs-string">"target"</span>, updateLight);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resizeRendererToDisplaySize</span>(<span class="hljs-params">renderer</span>) </span>{
+    <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+    <span class="hljs-keyword">const</span> width = canvas.clientWidth;
+    <span class="hljs-keyword">const</span> height = canvas.clientHeight;
+    <span class="hljs-keyword">const</span> needResize = canvas.width !== width || canvas.height !== height;
+    <span class="hljs-keyword">if</span> (needResize) {
+      renderer.setSize(width, height, <span class="hljs-literal">false</span>);
+    }
+    <span class="hljs-keyword">return</span> needResize;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (resizeRendererToDisplaySize(renderer)) {
+      <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+
+    renderer.render(scene, camera);
+
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
+}
+
+main();
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

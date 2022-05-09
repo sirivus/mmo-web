@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>script.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "metaverse/browserify/script.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>script.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">"use strict"</span>;
+<span class="hljs-keyword">var</span> __awaiter = (<span class="hljs-keyword">this</span> &amp;&amp; <span class="hljs-keyword">this</span>.__awaiter) || <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">thisArg, _arguments, P, generator</span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">adopt</span>(<span class="hljs-params">value</span>) </span>{ <span class="hljs-keyword">return</span> value <span class="hljs-keyword">instanceof</span> P ? value : <span class="hljs-keyword">new</span> P(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve</span>) </span>{ resolve(value); }); }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> (P || (P = <span class="hljs-built_in">Promise</span>))(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve, reject</span>) </span>{
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fulfilled</span>(<span class="hljs-params">value</span>) </span>{ <span class="hljs-keyword">try</span> { step(generator.next(value)); } <span class="hljs-keyword">catch</span> (e) { reject(e); } }
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rejected</span>(<span class="hljs-params">value</span>) </span>{ <span class="hljs-keyword">try</span> { step(generator[<span class="hljs-string">"throw"</span>](value)); } <span class="hljs-keyword">catch</span> (e) { reject(e); } }
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">step</span>(<span class="hljs-params">result</span>) </span>{ result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+<span class="hljs-keyword">var</span> __generator = (<span class="hljs-keyword">this</span> &amp;&amp; <span class="hljs-keyword">this</span>.__generator) || <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">thisArg, body</span>) </span>{
+    <span class="hljs-keyword">var</span> _ = { <span class="hljs-attr">label</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">sent</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">if</span> (t[<span class="hljs-number">0</span>] &amp; <span class="hljs-number">1</span>) <span class="hljs-keyword">throw</span> t[<span class="hljs-number">1</span>]; <span class="hljs-keyword">return</span> t[<span class="hljs-number">1</span>]; }, <span class="hljs-attr">trys</span>: [], <span class="hljs-attr">ops</span>: [] }, f, y, t, g;
+    <span class="hljs-keyword">return</span> g = { <span class="hljs-attr">next</span>: verb(<span class="hljs-number">0</span>), <span class="hljs-string">"throw"</span>: verb(<span class="hljs-number">1</span>), <span class="hljs-string">"return"</span>: verb(<span class="hljs-number">2</span>) }, <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">Symbol</span> === <span class="hljs-string">"function"</span> &amp;&amp; (g[<span class="hljs-built_in">Symbol</span>.iterator] = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>; }), g;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">verb</span>(<span class="hljs-params">n</span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">v</span>) </span>{ <span class="hljs-keyword">return</span> step([n, v]); }; }
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">step</span>(<span class="hljs-params">op</span>) </span>{
+        <span class="hljs-keyword">if</span> (f) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">"Generator is already executing."</span>);
+        <span class="hljs-keyword">while</span> (_) <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">if</span> (f = <span class="hljs-number">1</span>, y &amp;&amp; (t = op[<span class="hljs-number">0</span>] &amp; <span class="hljs-number">2</span> ? y[<span class="hljs-string">"return"</span>] : op[<span class="hljs-number">0</span>] ? y[<span class="hljs-string">"throw"</span>] || ((t = y[<span class="hljs-string">"return"</span>]) &amp;&amp; t.call(y), <span class="hljs-number">0</span>) : y.next) &amp;&amp; !(t = t.call(y, op[<span class="hljs-number">1</span>])).done) <span class="hljs-keyword">return</span> t;
+            <span class="hljs-keyword">if</span> (y = <span class="hljs-number">0</span>, t) op = [op[<span class="hljs-number">0</span>] &amp; <span class="hljs-number">2</span>, t.value];
+            <span class="hljs-keyword">switch</span> (op[<span class="hljs-number">0</span>]) {
+                <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>: <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: t = op; <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>: _.label++; <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: op[<span class="hljs-number">1</span>], <span class="hljs-attr">done</span>: <span class="hljs-literal">false</span> };
+                <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>: _.label++; y = op[<span class="hljs-number">1</span>]; op = [<span class="hljs-number">0</span>]; <span class="hljs-keyword">continue</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-number">7</span>: op = _.ops.pop(); _.trys.pop(); <span class="hljs-keyword">continue</span>;
+                <span class="hljs-keyword">default</span>:
+                    <span class="hljs-keyword">if</span> (!(t = _.trys, t = t.length &gt; <span class="hljs-number">0</span> &amp;&amp; t[t.length - <span class="hljs-number">1</span>]) &amp;&amp; (op[<span class="hljs-number">0</span>] === <span class="hljs-number">6</span> || op[<span class="hljs-number">0</span>] === <span class="hljs-number">2</span>)) { _ = <span class="hljs-number">0</span>; <span class="hljs-keyword">continue</span>; }
+                    <span class="hljs-keyword">if</span> (op[<span class="hljs-number">0</span>] === <span class="hljs-number">3</span> &amp;&amp; (!t || (op[<span class="hljs-number">1</span>] &gt; t[<span class="hljs-number">0</span>] &amp;&amp; op[<span class="hljs-number">1</span>] &lt; t[<span class="hljs-number">3</span>]))) { _.label = op[<span class="hljs-number">1</span>]; <span class="hljs-keyword">break</span>; }
+                    <span class="hljs-keyword">if</span> (op[<span class="hljs-number">0</span>] === <span class="hljs-number">6</span> &amp;&amp; _.label &lt; t[<span class="hljs-number">1</span>]) { _.label = t[<span class="hljs-number">1</span>]; t = op; <span class="hljs-keyword">break</span>; }
+                    <span class="hljs-keyword">if</span> (t &amp;&amp; _.label &lt; t[<span class="hljs-number">2</span>]) { _.label = t[<span class="hljs-number">2</span>]; _.ops.push(op); <span class="hljs-keyword">break</span>; }
+                    <span class="hljs-keyword">if</span> (t[<span class="hljs-number">2</span>]) _.ops.pop();
+                    _.trys.pop(); <span class="hljs-keyword">continue</span>;
+            }
+            op = body.call(thisArg, _);
+        } <span class="hljs-keyword">catch</span> (e) { op = [<span class="hljs-number">6</span>, e]; y = <span class="hljs-number">0</span>; } <span class="hljs-keyword">finally</span> { f = t = <span class="hljs-number">0</span>; }
+        <span class="hljs-keyword">if</span> (op[<span class="hljs-number">0</span>] &amp; <span class="hljs-number">5</span>) <span class="hljs-keyword">throw</span> op[<span class="hljs-number">1</span>]; <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: op[<span class="hljs-number">0</span>] ? op[<span class="hljs-number">1</span>] : <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>, <span class="hljs-attr">done</span>: <span class="hljs-literal">true</span> };
+    }
+};
+exports.__esModule = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">var</span> test_1 = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@playwright/test"</span>);
+(<span class="hljs-number">0</span>, test_1.test)(<span class="hljs-string">'test'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">_a</span>) </span>{
+    <span class="hljs-keyword">var</span> page = _a.page;
+    <span class="hljs-keyword">return</span> __awaiter(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>, <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>, <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> __generator(<span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">_b</span>) </span>{
+            <span class="hljs-keyword">switch</span> (_b.label) {
+                <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>: 
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>Go to https://app.meliopayments.com/meliome/pay/metaverse</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                <span class="hljs-keyword">return</span> [<span class="hljs-number">4</span> <span class="hljs-comment">/*yield*/</span>, page.goto(<span class="hljs-string">'https://app.meliopayments.com/meliome/pay/metaverse'</span>)];
+                <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>Go to https://app.meliopayments.com/meliome/pay/metaverse</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    _b.sent();
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>Click [data-testid=&quot;input-totalAmount&quot;]</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    <span class="hljs-keyword">return</span> [<span class="hljs-number">4</span> <span class="hljs-comment">/*yield*/</span>, page.locator(<span class="hljs-string">'[data-testid="input-totalAmount"]'</span>).click()];
+                <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>Click [data-testid=&quot;input-totalAmount&quot;]</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    _b.sent();
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>Fill [data-testid=&quot;input-totalAmount&quot;]</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    <span class="hljs-keyword">return</span> [<span class="hljs-number">4</span> <span class="hljs-comment">/*yield*/</span>, page.locator(<span class="hljs-string">'[data-testid="input-totalAmount"]'</span>).fill(<span class="hljs-string">'1'</span>)];
+                <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
+</div>
+<p>Fill [data-testid=&quot;input-totalAmount&quot;]</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    _b.sent();
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
+</div>
+<p>Click [data-testid=&quot;input-invoiceNumber&quot;]</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    <span class="hljs-keyword">return</span> [<span class="hljs-number">4</span> <span class="hljs-comment">/*yield*/</span>, page.locator(<span class="hljs-string">'[data-testid="input-invoiceNumber"]'</span>).click()];
+                <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9"></a>
+</div>
+<p>Click [data-testid=&quot;input-invoiceNumber&quot;]</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    _b.sent();
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-10" id="section-10"></a>
+</div>
+<p>Fill [data-testid=&quot;input-invoiceNumber&quot;]</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    <span class="hljs-keyword">return</span> [<span class="hljs-number">4</span> <span class="hljs-comment">/*yield*/</span>, page.locator(<span class="hljs-string">'[data-testid="input-invoiceNumber"]'</span>).fill(<span class="hljs-string">'1'</span>)];
+                <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-11" id="section-11"></a>
+</div>
+<p>Fill [data-testid=&quot;input-invoiceNumber&quot;]</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    _b.sent();
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-12" id="section-12"></a>
+</div>
+<p>Click [data-testid=&quot;button-guests.register.buttonText&quot;]</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    <span class="hljs-keyword">return</span> [<span class="hljs-number">4</span> <span class="hljs-comment">/*yield*/</span>, page.locator(<span class="hljs-string">'[data-testid="button-guests\\.register\\.buttonText"]'</span>).click()];
+                <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-13" id="section-13"></a>
+</div>
+<p>Click [data-testid=&quot;button-guests.register.buttonText&quot;]</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">                    _b.sent();
+                    <span class="hljs-keyword">return</span> [<span class="hljs-number">4</span> <span class="hljs-comment">/*yield*/</span>, (<span class="hljs-number">0</span>, test_1.expect)(page).toHaveURL(<span class="hljs-string">'https://app.meliopayments.com/meliome/pay/metaverse/signUp'</span>)];
+                <span class="hljs-keyword">case</span> <span class="hljs-number">7</span>:
+                    _b.sent();
+                    <span class="hljs-keyword">return</span> [<span class="hljs-number">2</span> <span class="hljs-comment">/*return*/</span>];
+            }
+        });
+    });
+});
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

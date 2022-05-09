@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Complete_sushi_roll.py</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "metaverse/Activetuts_PythonBot/Complete_sushi_roll.py";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+      <div class="heading h2">
+        <a href="#legend">LEGEND:</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#big-list-of-seat-check-functions">Big List of Seat Check Functions</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#im.save-os.getcwd-+-seatfourbubble.png-png">im.save(os.getcwd() + &#39;\SeatFourBubble.png&#39;, &#39;PNG&#39;)</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#im.save-os.getcwd-+-seatfivebubble.png-png">im.save(os.getcwd() + &#39;\SeatFiveBubble.png&#39;, &#39;PNG&#39;)</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#im.save-os.getcwd-+-seatsixbubble.png-png">im.save(os.getcwd() + &#39;\SeatSixBubble.png&#39;, &#39;PNG&#39;)</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#end-getseat-functions">#END getSeat Functions</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#begin-checkbubs">Begin Checkbubs</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-sushitypess1*20">print sushiTypes[s1]*20</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#time.sleep-1">time.sleep(1)</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#sys.exit">sys.exit()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#sys.exit-1">sys.exit()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#sys.exit-2">sys.exit()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#sys.exit-3">sys.exit()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#sys.exit-4">sys.exit()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#sys.exit-5">sys.exit()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#sys.exit-6">sys.exit()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#sys.exit-7">sys.exit()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#time.sleep-1-1">time.sleep(1)</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#menuloc-phone-mousepos-xpad+550ypad+406-so_rice-mousepos-xpad+505ypad+290">
+#menuLoc = {&#39;phone&#39;:         mousePos((xPad+550,yPad+406)),
+&#39;SO_rice&#39;:       mousePos((xPad+505,yPad+290)),</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#ord_rice-mousepos-xpad+540ypad+290">&#39;Ord_rice&#39;:      mousePos((xPad+540,yPad+290)),</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#so_topping-mousepos-xpad+505ypad+270">&#39;SO_topping&#39;:    mousePos((xPad+505,yPad+270)),</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#so_sake-mousepos-xpad+505ypad+315">&#39;SO_sake&#39;:       mousePos((xPad+505,yPad+315)),</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#so_close-mousepos-xpad+588ypad+342">&#39;SO_close&#39;:      mousePos((xPad+588,yPad+342)),</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#t_shrimp-mousepos-xpad+480ypad+220">&#39;T_shrimp&#39;:      mousePos((xPad+480,yPad+220)),</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#t_unagi-mousepos-xpad+560ypad+220">&#39;T_unagi&#39;:       mousePos((xPad+560,yPad+220)),</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#t_nori-mousepos-xpad+480ypad+280">&#39;T_nori&#39;:        mousePos((xPad+480,yPad+280)),</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#t_roe-mousepos-xpad+580ypad+280">&#39;T_roe&#39;:         mousePos((xPad+580,yPad+280)),</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#t_salmon-mousepos-xpad+480ypad+330">&#39;T_salmon&#39;:      mousePos((xPad+480,yPad+330)),</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#t_close-mousepos-xpad+595ypad+335">&#39;T_close&#39;:       mousePos((xPad+595,yPad+335)),</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#d_normal-mousepos-xpad+490ypad+290">&#39;D_normal&#39;:      mousePos((xPad+490,yPad+290)),</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#d_express-mousepos-xpad+580ypad+290">&#39;D_express&#39;:     mousePos((xPad+580,yPad+290)),}</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-ran-main">print &#39;Ran Main()&#39;</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#while-true">while True:</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#checkbubs">checkBubs()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#b-getseatone">b = getSeatOne()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#if-all-ab">if all(a==b):</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-true">print &#39;true&#39;</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#else">else:</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-false">print &#39;false&#39;</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#b-getseattwo">
+b = getSeatTwo()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#if-all-ab-1">if all(a==b):</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-true-1">print &#39;true&#39;</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#else-1">else:</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-false-1">print &#39;false&#39;</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#b-getseatthree">
+b = getSeatThree()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#if-all-ab-2">if all(a==b):</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-true-2">print &#39;true&#39;</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#else-2">else:</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-false-2">print &#39;false&#39;</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#b-getseatfour">
+b = getSeatFour()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#if-all-ab-3">if all(a==b):</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-true-3">print &#39;true&#39;</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#else-3">else:</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-false-3">print &#39;false&#39;</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#b-getseatfive">
+b = getSeatFive()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#if-all-ab-4">if all(a==b):</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-true-4">print &#39;true&#39;</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#else-4">else:</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-false-4">print &#39;false&#39;</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#b-getseatsix">
+b = getSeatSix()</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#if-all-ab-5">if all(a==b):</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-true-5">print &#39;true&#39;</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#else-5">else:</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#print-false-5">print &#39;false&#39;</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>Complete_sushi_roll.py</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python"><span class="hljs-keyword">import</span> os, sys
+<span class="hljs-keyword">import</span> Image, ImageGrab, ImageOps
+<span class="hljs-keyword">import</span> time, random
+<span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randrange
+<span class="hljs-keyword">import</span> win32api, win32con
+<span class="hljs-keyword">from</span> numpy <span class="hljs-keyword">import</span> *
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="legend">
+  <h2>
+    <a href="#legend" name="legend" class="pilcrow"></a>
+LEGEND:
+  </h2>
+</div>
+<p>Day 1 Goal: 800Yen  - Bot Score: 1440Yen
+Day 1 Goal: 1500Yen - Bot Score: 2740Yen
+Day 3 Goal: 2300Yen - Bot Score: 3100Yen
+Day 4 Goal: 3200Yen - Bot Score: 6290Yen
+Day 5 Goal: 4200Yen - Bot Score: 6390Yen
+Day 6 Goal: 5300Yen - Bot Score: 6360Yen (this score was with a broken bot)
+Day 5 Goal: 6500Yen - Bot Score: Yen</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<hr>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>Define play area</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">topLeft = (<span class="hljs-number">157</span>,<span class="hljs-number">346</span>)
+bottomRight = (<span class="hljs-number">796</span>,<span class="hljs-number">825</span>)
+xPad, yPad = <span class="hljs-number">156</span>, <span class="hljs-number">345</span>
+
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>#Grabs entire play area</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">grab</span><span class="hljs-params">()</span>:</span>
+    box= (<span class="hljs-number">157</span>,<span class="hljs-number">346</span>,<span class="hljs-number">796</span>,<span class="hljs-number">825</span>)
+    table = (<span class="hljs-number">157</span>,<span class="hljs-number">556</span>,<span class="hljs-number">796</span>,<span class="hljs-number">557</span>)
+    im = ImageGrab.grab(box)
+    im.save(os.getcwd() + <span class="hljs-string">'\\Grab001.png'</span>, <span class="hljs-string">'PNG'</span>)
+    <span class="hljs-keyword">return</span> im
+
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>pixlocation 380,183</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mousePos</span><span class="hljs-params">(x=<span class="hljs-params">(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)</span>)</span>:</span>
+    win32api.SetCursorPos(x)
+
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getPlates</span><span class="hljs-params">(loc)</span>:</span>
+    box = (xPad, yPad+<span class="hljs-number">205</span>, xPad+<span class="hljs-number">638</span>, yPad+<span class="hljs-number">205</span>)  
+    im = ImageGrab.grab(box)
+    
+    <span class="hljs-keyword">return</span> im.getpixel(loc)
+    
+     
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">garbageCollection</span><span class="hljs-params">()</span>:</span>
+    mousePos((xPad+<span class="hljs-number">365</span>,yPad+<span class="hljs-number">315</span>))
+    leftClick()
+    time.sleep(<span class="hljs-number">.04</span>)
+    leftClick()
+    leftClick()
+    leftClick()
+    time.sleep(<span class="hljs-number">.04</span>)
+    
+    
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="big-list-of-seat-check-functions">
+  <h2>
+    <a href="#big-list-of-seat-check-functions" name="big-list-of-seat-check-functions" class="pilcrow"></a>
+Big List of Seat Check Functions
+  </h2>
+</div>
+<p>#table color = 238,219,169</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">    
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getSeatOne</span><span class="hljs-params">()</span>:</span>
+
+    im = ImageOps.grayscale(ImageGrab.grab
+                            ((xPad+<span class="hljs-number">25</span>,yPad+<span class="hljs-number">60</span>,xPad+<span class="hljs-number">88</span>,yPad+<span class="hljs-number">76</span>)))
+    a = array(im.getcolors())
+    im.save(os.getcwd() + <span class="hljs-string">'\\SeatOneBubble.png'</span>, <span class="hljs-string">'PNG'</span>)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">'table 1 bubble = %d'</span> % a.sum()
+    <span class="hljs-keyword">return</span> a.sum()
+    
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getSeatTwo</span><span class="hljs-params">()</span>:</span>
+    im = ImageOps.grayscale(ImageGrab.grab
+                            ((xPad+<span class="hljs-number">126</span>,yPad+<span class="hljs-number">60</span>,xPad+<span class="hljs-number">189</span>,yPad+<span class="hljs-number">76</span>)))
+    im.save(os.getcwd() + <span class="hljs-string">'\\SeatTwoBubble.png'</span>, <span class="hljs-string">'PNG'</span>)
+    a = array(im.getcolors())
+    <span class="hljs-keyword">print</span> <span class="hljs-string">'table 2 bubble = %d'</span> % a.sum()
+    <span class="hljs-keyword">return</span> a.sum()
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getSeatThree</span><span class="hljs-params">()</span>:</span>
+    im = ImageOps.grayscale(ImageGrab.grab
+                            ((xPad+<span class="hljs-number">227</span>,yPad+<span class="hljs-number">60</span>,xPad+<span class="hljs-number">290</span>,yPad+<span class="hljs-number">76</span>)))
+    a = array(im.getcolors())
+    im.save(os.getcwd() + <span class="hljs-string">'\\SeatThreeBubble.png'</span>, <span class="hljs-string">'PNG'</span>)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">'table 3 bubble = %d'</span> % a.sum()
+    <span class="hljs-keyword">return</span> a.sum()
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getSeatFour</span><span class="hljs-params">()</span>:</span>
+    im = ImageOps.grayscale(ImageGrab.grab
+                            ((xPad+<span class="hljs-number">328</span>,yPad+<span class="hljs-number">60</span>,xPad+<span class="hljs-number">391</span>,yPad+<span class="hljs-number">76</span>)))
+    a = array(im.getcolors())
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="im.save-os.getcwd-+-seatfourbubble.png-png">
+  <h1>
+    <a href="#im.save-os.getcwd-+-seatfourbubble.png-png" name="im.save-os.getcwd-+-seatfourbubble.png-png" class="pilcrow"></a>
+im.save(os.getcwd() + '\SeatFourBubble.png', 'PNG')
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">    <span class="hljs-keyword">print</span> <span class="hljs-string">'table 4 bubble = %d'</span> % a.sum()
+    <span class="hljs-keyword">return</span> a.sum()
+    
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getSeatFive</span><span class="hljs-params">()</span>:</span>
+    im = ImageOps.grayscale(ImageGrab.grab
+                            ((xPad+<span class="hljs-number">429</span>,yPad+<span class="hljs-number">60</span>,xPad+<span class="hljs-number">492</span>,yPad+<span class="hljs-number">76</span>)))
+    a = array(im.getcolors())
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="im.save-os.getcwd-+-seatfivebubble.png-png">
+  <h1>
+    <a href="#im.save-os.getcwd-+-seatfivebubble.png-png" name="im.save-os.getcwd-+-seatfivebubble.png-png" class="pilcrow"></a>
+im.save(os.getcwd() + '\SeatFiveBubble.png', 'PNG')
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">    <span class="hljs-keyword">print</span> <span class="hljs-string">'table 5 bubble = %d'</span> % a.sum()
+    <span class="hljs-keyword">return</span> a.sum()
+    
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getSeatSix</span><span class="hljs-params">()</span>:</span>
+    im = ImageOps.grayscale(ImageGrab.grab
+                            ((xPad+<span class="hljs-number">530</span>,yPad+<span class="hljs-number">60</span>,xPad+<span class="hljs-number">593</span>,yPad+<span class="hljs-number">76</span>)))
+    a = array(im.getcolors())
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="im.save-os.getcwd-+-seatsixbubble.png-png">
+  <h1>
+    <a href="#im.save-os.getcwd-+-seatsixbubble.png-png" name="im.save-os.getcwd-+-seatsixbubble.png-png" class="pilcrow"></a>
+im.save(os.getcwd() + '\SeatSixBubble.png', 'PNG')
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">    <span class="hljs-keyword">print</span> <span class="hljs-string">'table 6 bubble = %d'</span> % a.sum()
+    <span class="hljs-keyword">return</span> a.sum()
+
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="end-getseat-functions">
+  <h2>
+    <a href="#end-getseat-functions" name="end-getseat-functions" class="pilcrow"></a>
+#END getSeat Functions
+  </h2>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="begin-checkbubs">
+  <h2>
+    <a href="#begin-checkbubs" name="begin-checkbubs" class="pilcrow"></a>
+Begin Checkbubs
+  </h2>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">checkBubs</span><span class="hljs-params">()</span>:</span>
+    garbageCollection()
+    <span class="hljs-keyword">print</span> <span class="hljs-string">'CheckBubs() -- Begin'</span>
+    <span class="hljs-keyword">global</span> s1cooking
+    <span class="hljs-keyword">global</span> s2cooking
+    <span class="hljs-keyword">global</span> s3cooking
+    <span class="hljs-keyword">global</span> s4cooking
+    <span class="hljs-keyword">global</span> s5cooking
+    <span class="hljs-keyword">global</span> s6cooking
+    
+    <span class="hljs-keyword">global</span> cookTime1
+    <span class="hljs-keyword">global</span> cookTime2
+    <span class="hljs-keyword">global</span> cookTime3
+    <span class="hljs-keyword">global</span> cookTime4
+    <span class="hljs-keyword">global</span> cookTime5
+    <span class="hljs-keyword">global</span> cookTime6
+
+    
+    bareTable = (<span class="hljs-number">238</span>,<span class="hljs-number">219</span>,<span class="hljs-number">169</span>)
+    
+    
+    garbageCollection()
+    s1 = getSeatOne()
+    <span class="hljs-keyword">if</span> blankBubs[<span class="hljs-string">'s1'</span>] == s1:
+        s1cooking = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">if</span> (time.time() - cookTime1) &gt; <span class="hljs-number">15</span>:
+        s1cooking = <span class="hljs-literal">False</span>
+    checkFood()
+    <span class="hljs-keyword">if</span> s1 != blankBubs[<span class="hljs-string">'s1'</span>] <span class="hljs-keyword">and</span> s1cooking == <span class="hljs-literal">False</span>:
+        <span class="hljs-keyword">if</span> sushiTypes.has_key(s1):
+            <span class="hljs-keyword">print</span> <span class="hljs-string">'table 1 is occupied and needs %s'</span> % sushiTypes[s1]
+            makeFood(sushiTypes[s1])
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="print-sushitypess1*20">
+  <h1>
+    <a href="#print-sushitypess1*20" name="print-sushitypess1*20" class="pilcrow"></a>
+print sushiTypes[s1]*20
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">            s1cooking = <span class="hljs-literal">True</span>
+            cookTime1 = time.time()
+            
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-string">'sushi not found!'</span>
+        
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'table one unoccupied'</span>
+
+    garbageCollection()
+    
+    s2 = getSeatTwo()
+    <span class="hljs-keyword">if</span> blankBubs[<span class="hljs-string">'s2'</span>] == <span class="hljs-literal">True</span>:
+        s2cooking = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">if</span> (time.time() - cookTime2) &gt; <span class="hljs-number">14</span>:
+        s2cooking = <span class="hljs-literal">False</span>
+        
+    checkFood()
+    <span class="hljs-keyword">if</span> s2 != blankBubs[<span class="hljs-string">'s2'</span>] <span class="hljs-keyword">and</span> s2cooking == <span class="hljs-literal">False</span>:
+        <span class="hljs-keyword">if</span> sushiTypes.has_key(s2):
+            <span class="hljs-keyword">print</span> <span class="hljs-string">'table 2 is occupied and needs %s'</span> % sushiTypes[s2]
+            makeFood(sushiTypes[s2])
+            s2cooking = <span class="hljs-literal">True</span>
+            cookTime2 = time.time()
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-string">'sushi not found!'</span>
+        
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'table two unoccupied'</span>
+
+
+    garbageCollection()
+
+    s3 = getSeatThree()
+    <span class="hljs-keyword">if</span> blankBubs[<span class="hljs-string">'s3'</span>] == <span class="hljs-literal">True</span>:
+        s3cooking = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">if</span> (time.time() - cookTime3) &gt; <span class="hljs-number">15</span>:
+        s3cooking = <span class="hljs-literal">False</span>
+        
+    checkFood()
+    <span class="hljs-keyword">if</span> s3 != blankBubs[<span class="hljs-string">'s3'</span>]<span class="hljs-keyword">and</span> s3cooking == <span class="hljs-literal">False</span>:
+        <span class="hljs-keyword">if</span> sushiTypes.has_key(s3):
+            <span class="hljs-keyword">print</span> <span class="hljs-string">'table 3 is occupied and needs %s'</span> % sushiTypes[s3]
+            makeFood(sushiTypes[s3])
+            s3cooking = <span class="hljs-literal">True</span>
+            cookTime3 = time.time()
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-string">'sushi not found!'</span>
+        
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'table three unoccupied'</span>
+
+    garbageCollection()
+
+        
+    checkFood()
+    s4 = getSeatFour()
+    <span class="hljs-keyword">if</span> blankBubs[<span class="hljs-string">'s4'</span>] == <span class="hljs-literal">True</span>:
+        s4cooking = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">if</span> (time.time() - cookTime4) &gt; <span class="hljs-number">16</span>:
+        s4cooking = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">if</span> s4 != blankBubs[<span class="hljs-string">'s4'</span>] <span class="hljs-keyword">and</span> s4cooking == <span class="hljs-literal">False</span>:
+        <span class="hljs-keyword">if</span> sushiTypes.has_key(s4):
+            <span class="hljs-keyword">print</span> <span class="hljs-string">'table 4 is occupied and needs %s'</span> % sushiTypes[s4]
+            makeFood(sushiTypes[s4])
+            s4cooking = <span class="hljs-literal">True</span>
+            cookTime4 = time.time()
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-string">'sushi not found!'</span>
+        
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'table Four unoccupied'</span>
+
+    garbageCollection()
+
+        
+    checkFood()
+    s5 = getSeatFive()
+    <span class="hljs-keyword">if</span> blankBubs[<span class="hljs-string">'s5'</span>] == <span class="hljs-literal">True</span>:
+        s5cooking = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">if</span> (time.time() - cookTime5) &gt; <span class="hljs-number">17</span>:
+        s5cooking = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">if</span> s5 != blankBubs[<span class="hljs-string">'s5'</span>] <span class="hljs-keyword">and</span> s5cooking == <span class="hljs-literal">False</span>:
+        <span class="hljs-keyword">if</span> sushiTypes.has_key(s5):
+            <span class="hljs-keyword">print</span> <span class="hljs-string">'table 5 is occupied and needs %s'</span> % sushiTypes[s5]
+            makeFood(sushiTypes[s5])
+            s5cooking = <span class="hljs-literal">True</span>
+            cookTime5 = time.time()
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-string">'sushi not found!'</span>
+        
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'table Five unoccupied'</span>
+
+    garbageCollection()
+
+        
+    checkFood()
+    s6 = getSeatSix()
+    <span class="hljs-keyword">if</span> blankBubs[<span class="hljs-string">'s6'</span>] == <span class="hljs-literal">True</span>:
+        s6cooking = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">if</span> (time.time() - cookTime6) &gt; <span class="hljs-number">18</span>:
+        s6cooking = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">if</span> s6 != blankBubs[<span class="hljs-string">'s6'</span>] <span class="hljs-keyword">and</span> s6cooking == <span class="hljs-literal">False</span>:
+        <span class="hljs-keyword">if</span> sushiTypes.has_key(s6):
+            <span class="hljs-keyword">print</span> <span class="hljs-string">'table 6 is occupied and needs %s'</span> % sushiTypes[s6]
+            makeFood(sushiTypes[s6])
+            s6cooking = <span class="hljs-literal">True</span>
+            cookTime6 = time.time()
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-string">'sushi not found!'</span>
+        
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'table Six unoccupied'</span>
+        
+    checkFood()
+    clearTables()
+    garbageCollection()
+    <span class="hljs-keyword">print</span> <span class="hljs-string">'CheckBubs() -- End'</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foldMat</span><span class="hljs-params">()</span>:</span>
+    mousePos((xPad+<span class="hljs-number">150</span>,yPad+<span class="hljs-number">370</span>))
+    leftClick()
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="time.sleep-1">
+  <h1>
+    <a href="#time.sleep-1" name="time.sleep-1" class="pilcrow"></a>
+time.sleep(1)
+  </h1>
+</div>
+<p>Above is temporary</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clearTables</span><span class="hljs-params">()</span>:</span>
+    mousePos(plateLoc[<span class="hljs-string">'Mouse_t1'</span>])
+    leftClick()
+    mousePos(plateLoc[<span class="hljs-string">'Mouse_t2'</span>])
+    leftClick()
+    mousePos(plateLoc[<span class="hljs-string">'Mouse_t3'</span>])
+    leftClick()
+    mousePos(plateLoc[<span class="hljs-string">'Mouse_t4'</span>])
+    leftClick()
+    mousePos(plateLoc[<span class="hljs-string">'Mouse_t5'</span>])
+    leftClick()
+    mousePos(plateLoc[<span class="hljs-string">'Mouse_t6'</span>])
+    leftClick()
+    garbageCollection()
+    time.sleep(<span class="hljs-number">.1</span>)
+                      
+
+    
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">makeFood</span><span class="hljs-params">(food)</span>:</span>
+    rice = (xPad+<span class="hljs-number">90</span>,yPad+<span class="hljs-number">330</span>)
+    nori = (xPad+<span class="hljs-number">30</span>,yPad+<span class="hljs-number">380</span>)
+    roe  = (xPad+<span class="hljs-number">90</span>,yPad+<span class="hljs-number">380</span>)
+
+
+    <span class="hljs-keyword">if</span> food == <span class="hljs-string">'caliroll'</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'Making a caliroll'</span>
+        foodOnHand[<span class="hljs-string">'rice'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'nori'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'roe'</span>] -= <span class="hljs-number">1</span>
+        mousePos(rice)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(nori)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(roe)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        foldMat()
+        time.sleep(<span class="hljs-number">.05</span>)
+        garbageCollection()
+        time.sleep(<span class="hljs-number">1.5</span>)
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="sys.exit">
+  <h1>
+    <a href="#sys.exit" name="sys.exit" class="pilcrow"></a>
+sys.exit()
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">    
+    <span class="hljs-keyword">elif</span> food == <span class="hljs-string">'onigiri'</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'Making a onigiri'</span>
+        foodOnHand[<span class="hljs-string">'rice'</span>] -= <span class="hljs-number">2</span>
+        foodOnHand[<span class="hljs-string">'nori'</span>] -= <span class="hljs-number">1</span>
+        mousePos(rice)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(rice)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(nori)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        foldMat()
+        time.sleep(<span class="hljs-number">.05</span>)
+        garbageCollection()
+        time.sleep(<span class="hljs-number">1.5</span>)
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="sys.exit-1">
+  <h1>
+    <a href="#sys.exit-1" name="sys.exit-1" class="pilcrow"></a>
+sys.exit()
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">    <span class="hljs-keyword">elif</span> food == <span class="hljs-string">'gunkan'</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'Making a gunkan'</span>
+        foodOnHand[<span class="hljs-string">'rice'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'nori'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'roe'</span>] -= <span class="hljs-number">2</span>
+        mousePos(rice)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(nori)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(roe)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(roe)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        foldMat()
+        time.sleep(<span class="hljs-number">.05</span>)
+        garbageCollection()
+        time.sleep(<span class="hljs-number">1.5</span>)
+        <span class="hljs-keyword">print</span> foodOnHand.keys()
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="sys.exit-2">
+  <h1>
+    <a href="#sys.exit-2" name="sys.exit-2" class="pilcrow"></a>
+sys.exit()
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+    <span class="hljs-keyword">if</span> food == <span class="hljs-string">'salmon'</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'Making a salmonroll'</span>
+        foodOnHand[<span class="hljs-string">'rice'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'nori'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'salmon'</span>] -= <span class="hljs-number">2</span>
+        mousePos(rice)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(nori)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(salmon)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        mousePos(salmon)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        foldMat()
+        time.sleep(<span class="hljs-number">.05</span>)
+        garbageCollection()
+        <span class="hljs-keyword">print</span> foodOnHand.keys()
+        time.sleep(<span class="hljs-number">1.5</span>)
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="sys.exit-3">
+  <h1>
+    <a href="#sys.exit-3" name="sys.exit-3" class="pilcrow"></a>
+sys.exit()
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+
+    <span class="hljs-keyword">if</span> food == <span class="hljs-string">'shrimpsushi'</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'Making a shrimpSushi Roll'</span>
+        foodOnHand[<span class="hljs-string">'rice'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'nori'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'shrimp'</span>] -= <span class="hljs-number">2</span>
+        mousePos(rice)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(nori)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(shrimp)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        mousePos(shrimp)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        foldMat()
+        time.sleep(<span class="hljs-number">.05</span>)
+        garbageCollection()
+        <span class="hljs-keyword">print</span> foodOnHand.keys()
+        time.sleep(<span class="hljs-number">1.5</span>)
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="sys.exit-4">
+  <h1>
+    <a href="#sys.exit-4" name="sys.exit-4" class="pilcrow"></a>
+sys.exit()
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+
+
+
+    <span class="hljs-keyword">if</span> food == <span class="hljs-string">'unagiroll'</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'Making a unagiri Roll'</span>
+        foodOnHand[<span class="hljs-string">'rice'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'nori'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'unagi'</span>] -= <span class="hljs-number">2</span>
+        mousePos(rice)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        mousePos(nori)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        mousePos(unagi)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        mousePos(unagi)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        foldMat()
+        time.sleep(<span class="hljs-number">.05</span>)
+        garbageCollection()
+        <span class="hljs-keyword">print</span> foodOnHand.keys()
+        time.sleep(<span class="hljs-number">1.5</span>)
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="sys.exit-5">
+  <h1>
+    <a href="#sys.exit-5" name="sys.exit-5" class="pilcrow"></a>
+sys.exit()
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+
+
+
+    <span class="hljs-keyword">if</span> food == <span class="hljs-string">'dragonroll'</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">'Making a dragon roll'</span>
+        foodOnHand[<span class="hljs-string">'rice'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'roe'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'nori'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'unagi'</span>] -= <span class="hljs-number">2</span>
+        mousePos(rice)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(rice)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(nori)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(roe)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(unagi)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        mousePos(unagi)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        foldMat()
+        time.sleep(<span class="hljs-number">.05</span>)
+        garbageCollection()
+        <span class="hljs-keyword">print</span> foodOnHand.keys()
+        time.sleep(<span class="hljs-number">1.5</span>)
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="sys.exit-6">
+  <h1>
+    <a href="#sys.exit-6" name="sys.exit-6" class="pilcrow"></a>
+sys.exit()
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+
+
+
+    <span class="hljs-keyword">if</span> food == <span class="hljs-string">'combo'</span>:
+        foodOnHand[<span class="hljs-string">'rice'</span>] -= <span class="hljs-number">2</span>
+        foodOnHand[<span class="hljs-string">'roe'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'nori'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'unagi'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'salmon'</span>] -= <span class="hljs-number">1</span>
+        foodOnHand[<span class="hljs-string">'shrimp'</span>] -= <span class="hljs-number">1</span>
+        mousePos(rice)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(rice)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(nori)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(roe)
+        leftClick()
+        time.sleep(<span class="hljs-number">.05</span>)
+        mousePos(unagi)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        mousePos(shrimp)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        mousePos(salmon)
+        leftClick()
+        time.sleep(<span class="hljs-number">.1</span>)
+        foldMat()
+        time.sleep(<span class="hljs-number">.05</span>)
+        garbageCollection()
+        <span class="hljs-keyword">print</span> foodOnHand.keys()
+        time.sleep(<span class="hljs-number">1.5</span>)
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="sys.exit-7">
+  <h1>
+    <a href="#sys.exit-7" name="sys.exit-7" class="pilcrow"></a>
+sys.exit()
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">        
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">debugCheckBubbles</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">print</span> getSeatOne()
+    <span class="hljs-keyword">print</span> getSeatTwo()
+    <span class="hljs-keyword">print</span> getSeatThree()
+    <span class="hljs-keyword">print</span> getSeatFour()
+    <span class="hljs-keyword">print</span> getSeatFive()
+    <span class="hljs-keyword">print</span> getSeatSix()
+    
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">checkFood</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">for</span> i, j <span class="hljs-keyword">in</span> foodOnHand.items():
+        <span class="hljs-keyword">if</span> i == <span class="hljs-string">'nori'</span> <span class="hljs-keyword">or</span> i == <span class="hljs-string">'rice'</span> <span class="hljs-keyword">or</span> i == <span class="hljs-string">'roe'</span>:
+            <span class="hljs-keyword">if</span> j &lt;= <span class="hljs-number">4</span>:
+                <span class="hljs-keyword">print</span> <span class="hljs-string">'%s is low and needs to be replenished'</span> % i
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="time.sleep-1-1">
+  <h1>
+    <a href="#time.sleep-1-1" name="time.sleep-1-1" class="pilcrow"></a>
+time.sleep(1)
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">                buyFood(i)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">if</span> j&lt;<span class="hljs-number">4</span>:
+                <span class="hljs-keyword">print</span> <span class="hljs-string">'need to buy %s'</span> % i
+                <span class="hljs-keyword">print</span> <span class="hljs-string">'only have %d on hand'</span> % j
+                buyFood(i)
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-24" id="section-24"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">def buyFood(food):
+    print 'buyFood()\n'*4
+
+
+    
+    if food == 'rice':
+        mousePos(menuLoc['phone'])
+        time.sleep(.1)
+        leftClick()
+        mousePos(menuLoc['SO_rice'])
+        time.sleep(.1)
+        leftClick()
+        s = grab()
+        if s.getpixel((520,270)) != (118,83,85):
+            
+            print 'rice is available'
+            mousePos(menuLoc['Ord_rice'])
+            time.sleep(.1)
+            leftClick()
+            mousePos(menuLoc['D_normal'])
+            time.sleep(.1)
+            leftClick()
+            foodOnHand['rice']+=10
+            clearTables()
+            time.sleep(2.5)
+        else:
+            if foodOnHand[food] &gt;=3:
+                print 's.getpixel() ==  %s' % str(s.getpixel((520,270)))
+                print 'rice is NOT available'
+                mousePos(menuLoc['SO_close'])
+                leftClick()
+            else:
+                print ('rice is NOT available. Do not have enough to continue.\
+                            Must wait')
+                mousePos(menuLoc['SO_close'])
+                leftClick()
+                clearTables()
+                garbageCollection()
+                time.sleep(1)
+                clearTables()
+                garbageCollection()
+                buyFood(food)
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-25" id="section-25"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">    if food == 'shrimp':
+        mousePos(menuLoc['phone'])
+        time.sleep(.1)
+        leftClick()
+        mousePos(menuLoc['SO_topping'])
+        time.sleep(.1)
+        leftClick()
+        s = grab()
+        if s.getpixel(menuLoc['col_shrimp']) != (127,71,47):
+            print 's.getpixel() ==  %s\n' % str(s.getpixel((520,270)))
+            print 'shrimp is available\n'
+            mousePos(menuLoc['T_shrimp'])
+            time.sleep(.1)
+            leftClick()
+            mousePos(menuLoc['D_normal'])
+            time.sleep(.1)
+            leftClick()
+            foodOnHand['shrimp']+=5
+            time.sleep(3)
+        else:
+            print 'Shrimp was not available!\n'*4
+            if foodOnHand[food] &gt;=2:
+                print 's.getpixel() ==  %s' % str(s.getpixel((520,270)))
+                print 'shrimp is NOT available'
+                mousePos(menuLoc['SO_close'])
+                time.sleep(.1)
+                leftClick()
+            else:
+                print ('shrimp is NOT available. Cannot continue \
+                        until replenished')
+                mousePos(menuLoc['SO_close'])
+                leftClick()
+                clearTables()
+                garbageCollection()
+                time.sleep(1)
+                clearTables()
+                garbageCollection()
+                buyFood(food) 
+
+
+
+
+
+    if food == 'unagi':
+        mousePos(menuLoc['phone'])
+        time.sleep(.1)
+        leftClick()
+        mousePos(menuLoc['SO_topping'])
+        time.sleep(.1)
+        leftClick()
+        s = grab()
+        if s.getpixel(menuLoc['col_unagi']) != (94,49,8):
+            
+            print 'unagi is available\n'
+            mousePos(menuLoc['T_unagi'])
+            time.sleep(.1)
+            leftClick()
+            mousePos(menuLoc['D_normal'])
+            time.sleep(.1)
+            leftClick()
+            foodOnHand['unagi']+=5
+            time.sleep(3)
+        else:
+            if foodOnHand[food] &gt;=2:
+                print 's.getpixel() ==  %s' % str(s.getpixel((520,270)))
+                print 'unagi is NOT available'
+                mousePos(menuLoc['SO_close'])
+                leftClick()
+            else:
+                mousePos(menuLoc['SO_close'])
+                leftClick()
+                clearTables()
+                garbageCollection()
+                time.sleep(1)
+                clearTables()
+                garbageCollection()
+                buyFood(food)
+
+
+
+    if food == 'nori':
+        mousePos(menuLoc['phone'])
+        time.sleep(.1)
+        leftClick()
+        mousePos(menuLoc['SO_topping'])
+        time.sleep(.1)
+        leftClick()
+        s = grab()
+        if s.getpixel(menuLoc['col_nori']) != (33,30,11):
+            print 's.getpixel() ==  %s\n' % str(s.getpixel((520,270)))
+            print 'nori is available'
+            mousePos(menuLoc['T_nori'])
+            time.sleep(.1)
+            leftClick()
+            mousePos(menuLoc['D_normal'])
+            time.sleep(.1)
+            leftClick()
+            foodOnHand['nori']+=10
+            time.sleep(3)
+        else:
+            if foodOnHand[food] &gt;=3:
+                print 's.getpixel() ==  %s' % str(s.getpixel((520,270)))
+                print 'nori is NOT available\n'
+                mousePos(menuLoc['SO_close'])
+                leftClick()
+            else:
+                mousePos(menuLoc['SO_close'])
+                leftClick()
+                clearTables()
+                garbageCollection()
+                time.sleep(1)
+                clearTables()
+                garbageCollection()
+                buyFood(food)
+            
+
+
+
+    if food == 'roe':
+        mousePos(menuLoc['phone'])
+        time.sleep(.1)
+        leftClick()
+        mousePos(menuLoc['SO_topping'])
+        time.sleep(.1)
+        leftClick()
+        s = grab()
+        if s.getpixel(menuLoc['col_roe']) != (127,61,0):
+            print 's.getpixel() ==  %s\n' % str(s.getpixel((520,270)))
+            print 'roe is available'
+            mousePos(menuLoc['T_roe'])
+            time.sleep(.1)
+            leftClick()
+            mousePos(menuLoc['D_normal'])
+            time.sleep(.1)
+            leftClick()
+            foodOnHand['roe']+=10
+            time.sleep(3)
+        else:
+            if foodOnHand[food] &gt;=3:    
+                print 'roe is NOT available\n'
+                mousePos(menuLoc['SO_close'])
+                leftClick()
+                time.sleep(2)
+            else:
+                mousePos(menuLoc['SO_close'])
+                leftClick()
+                clearTables()
+                garbageCollection()
+                time.sleep(1)
+                clearTables()
+                garbageCollection()
+                buyFood(food)
+
+
+
+    if food == 'salmon':
+        mousePos(menuLoc['phone'])
+        time.sleep(.1)
+        leftClick()
+        mousePos(menuLoc['SO_topping'])
+        time.sleep(.1)
+        leftClick()
+        s = grab()
+        if s.getpixel(menuLoc['col_salmon']) != (127,71,47):
+            
+            print 'salmon is available\n'
+            mousePos(menuLoc['T_salmon'])
+            time.sleep(.1)
+            leftClick()
+            mousePos(menuLoc['D_normal'])
+            time.sleep(.1)
+            leftClick()
+            foodOnHand['salmon']+=5
+            time.sleep(3)
+        else:
+            if foodOnHand[food] &gt;=2:    
+                print 'salmon is NOT available'
+                mousePos(menuLoc['SO_close'])
+                leftClick()
+            else:
+                mousePos(menuLoc['SO_close'])
+                leftClick()
+                clearTables()
+                garbageCollection()
+                time.sleep(2)
+                clearTables()
+                garbageCollection()
+                buyFood(food) 
+
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="menuloc-phone-mousepos-xpad+550ypad+406-so_rice-mousepos-xpad+505ypad+290">
+  <h1>
+    <a href="#menuloc-phone-mousepos-xpad+550ypad+406-so_rice-mousepos-xpad+505ypad+290" name="menuloc-phone-mousepos-xpad+550ypad+406-so_rice-mousepos-xpad+505ypad+290" class="pilcrow"></a>
+</h1>
+<p>#menuLoc = {'phone':         mousePos((xPad+550,yPad+406)),</p>
+<h1>'SO_rice':       mousePos((xPad+505,yPad+290)),
+  </h1>
+</div>
+<div class="pilwrap" id="ord_rice-mousepos-xpad+540ypad+290">
+  <h1>
+    <a href="#ord_rice-mousepos-xpad+540ypad+290" name="ord_rice-mousepos-xpad+540ypad+290" class="pilcrow"></a>
+'Ord_rice':      mousePos((xPad+540,yPad+290)),
+  </h1>
+</div>
+<div class="pilwrap" id="so_topping-mousepos-xpad+505ypad+270">
+  <h1>
+    <a href="#so_topping-mousepos-xpad+505ypad+270" name="so_topping-mousepos-xpad+505ypad+270" class="pilcrow"></a>
+'SO_topping':    mousePos((xPad+505,yPad+270)),
+  </h1>
+</div>
+<div class="pilwrap" id="so_sake-mousepos-xpad+505ypad+315">
+  <h1>
+    <a href="#so_sake-mousepos-xpad+505ypad+315" name="so_sake-mousepos-xpad+505ypad+315" class="pilcrow"></a>
+'SO_sake':       mousePos((xPad+505,yPad+315)),
+  </h1>
+</div>
+<div class="pilwrap" id="so_close-mousepos-xpad+588ypad+342">
+  <h1>
+    <a href="#so_close-mousepos-xpad+588ypad+342" name="so_close-mousepos-xpad+588ypad+342" class="pilcrow"></a>
+'SO_close':      mousePos((xPad+588,yPad+342)),
+  </h1>
+</div>
+<div class="pilwrap" id="t_shrimp-mousepos-xpad+480ypad+220">
+  <h1>
+    <a href="#t_shrimp-mousepos-xpad+480ypad+220" name="t_shrimp-mousepos-xpad+480ypad+220" class="pilcrow"></a>
+'T_shrimp':      mousePos((xPad+480,yPad+220)),
+  </h1>
+</div>
+<div class="pilwrap" id="t_unagi-mousepos-xpad+560ypad+220">
+  <h1>
+    <a href="#t_unagi-mousepos-xpad+560ypad+220" name="t_unagi-mousepos-xpad+560ypad+220" class="pilcrow"></a>
+'T_unagi':       mousePos((xPad+560,yPad+220)),
+  </h1>
+</div>
+<div class="pilwrap" id="t_nori-mousepos-xpad+480ypad+280">
+  <h1>
+    <a href="#t_nori-mousepos-xpad+480ypad+280" name="t_nori-mousepos-xpad+480ypad+280" class="pilcrow"></a>
+'T_nori':        mousePos((xPad+480,yPad+280)),
+  </h1>
+</div>
+<div class="pilwrap" id="t_roe-mousepos-xpad+580ypad+280">
+  <h1>
+    <a href="#t_roe-mousepos-xpad+580ypad+280" name="t_roe-mousepos-xpad+580ypad+280" class="pilcrow"></a>
+'T_roe':         mousePos((xPad+580,yPad+280)),
+  </h1>
+</div>
+<div class="pilwrap" id="t_salmon-mousepos-xpad+480ypad+330">
+  <h1>
+    <a href="#t_salmon-mousepos-xpad+480ypad+330" name="t_salmon-mousepos-xpad+480ypad+330" class="pilcrow"></a>
+'T_salmon':      mousePos((xPad+480,yPad+330)),
+  </h1>
+</div>
+<div class="pilwrap" id="t_close-mousepos-xpad+595ypad+335">
+  <h1>
+    <a href="#t_close-mousepos-xpad+595ypad+335" name="t_close-mousepos-xpad+595ypad+335" class="pilcrow"></a>
+'T_close':       mousePos((xPad+595,yPad+335)),
+  </h1>
+</div>
+<div class="pilwrap" id="d_normal-mousepos-xpad+490ypad+290">
+  <h1>
+    <a href="#d_normal-mousepos-xpad+490ypad+290" name="d_normal-mousepos-xpad+490ypad+290" class="pilcrow"></a>
+'D_normal':      mousePos((xPad+490,yPad+290)),
+  </h1>
+</div>
+<div class="pilwrap" id="d_express-mousepos-xpad+580ypad+290">
+  <h1>
+    <a href="#d_express-mousepos-xpad+580ypad+290" name="d_express-mousepos-xpad+580ypad+290" class="pilcrow"></a>
+'D_express':     mousePos((xPad+580,yPad+290)),}
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">    
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">leftClick</span><span class="hljs-params">()</span>:</span>
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)
+    time.sleep(<span class="hljs-number">.01</span>)
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Click."</span>
+    time.sleep(<span class="hljs-number">.01</span>)
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-27" id="section-27"></a>
+</div>
+<hr>
+<p>Specific game actions</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clickPlay</span><span class="hljs-params">()</span>:</span>
+    mousePos((xPad+<span class="hljs-number">380</span> , yPad+<span class="hljs-number">183</span>))
+    leftClick()
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-28" id="section-28"></a>
+</div>
+<hr>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-29" id="section-29"></a>
+</div>
+<p>GLOBALS</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+blankBubs = {<span class="hljs-string">'s1'</span>:<span class="hljs-number">6588</span>,
+             <span class="hljs-string">'s2'</span>:<span class="hljs-number">5986</span>,
+             <span class="hljs-string">'s3'</span>:<span class="hljs-number">11698</span>,
+             <span class="hljs-string">'s4'</span>:<span class="hljs-number">10724</span>,
+             <span class="hljs-string">'s5'</span>:<span class="hljs-number">7249</span>,
+             <span class="hljs-string">'s6'</span>:<span class="hljs-number">8921</span>}
+
+
+sushiTypes = {<span class="hljs-number">3954</span>:<span class="hljs-string">'onigiri'</span>, 
+              <span class="hljs-number">4427</span>:<span class="hljs-string">'caliroll'</span>,
+              <span class="hljs-number">3961</span>:<span class="hljs-string">'gunkan'</span>,
+              <span class="hljs-number">3758</span>:<span class="hljs-string">'salmon'</span>,
+              <span class="hljs-number">4205</span>:<span class="hljs-string">'shrimpsushi'</span>,
+              <span class="hljs-number">4177</span>:<span class="hljs-string">'unagiroll'</span>,
+              <span class="hljs-number">4424</span>:<span class="hljs-string">'dragonroll'</span>,
+              <span class="hljs-number">4422</span>:<span class="hljs-string">'dragonroll'</span>,
+              <span class="hljs-number">4431</span>:<span class="hljs-string">'combo'</span>,
+              <span class="hljs-number">4461</span>:<span class="hljs-string">'combo'</span>}
+
+
+
+
+toMake = {<span class="hljs-string">'onigiri'</span>:<span class="hljs-number">0</span>,
+           <span class="hljs-string">'caliroll'</span>:<span class="hljs-number">0</span>,
+           <span class="hljs-string">'gunkan'</span>:<span class="hljs-number">0</span>}
+
+
+plateLoc = {<span class="hljs-string">'t1'</span>:(<span class="hljs-number">90</span>,<span class="hljs-number">0</span>),
+            <span class="hljs-string">'t2'</span>:(<span class="hljs-number">191</span>,<span class="hljs-number">0</span>),
+            <span class="hljs-string">'t3'</span>:(<span class="hljs-number">292</span>,<span class="hljs-number">0</span>),
+            <span class="hljs-string">'t4'</span>:(<span class="hljs-number">393</span>,<span class="hljs-number">0</span>),
+            <span class="hljs-string">'t5'</span>:(<span class="hljs-number">464</span>,<span class="hljs-number">0</span>),
+            <span class="hljs-string">'t6'</span>:(<span class="hljs-number">595</span>,<span class="hljs-number">0</span>),
+            <span class="hljs-string">'Mouse_t1'</span>:(xPad+<span class="hljs-number">90</span>, yPad+<span class="hljs-number">205</span>),
+            <span class="hljs-string">'Mouse_t2'</span>:(xPad+<span class="hljs-number">191</span>,yPad+<span class="hljs-number">205</span>),
+            <span class="hljs-string">'Mouse_t3'</span>:(xPad+<span class="hljs-number">292</span>,yPad+<span class="hljs-number">205</span>),
+            <span class="hljs-string">'Mouse_t4'</span>:(xPad+<span class="hljs-number">393</span>,yPad+<span class="hljs-number">205</span>),
+            <span class="hljs-string">'Mouse_t5'</span>:(xPad+<span class="hljs-number">494</span>,yPad+<span class="hljs-number">205</span>),
+            <span class="hljs-string">'Mouse_t6'</span>:(xPad+<span class="hljs-number">595</span>,yPad+<span class="hljs-number">205</span>)}
+
+
+foodOnHand = {<span class="hljs-string">'shrimp'</span>:<span class="hljs-number">5</span>,
+              <span class="hljs-string">'rice'</span>:<span class="hljs-number">10</span>,
+              <span class="hljs-string">'nori'</span>:<span class="hljs-number">10</span>,
+              <span class="hljs-string">'roe'</span>:<span class="hljs-number">10</span>,
+              <span class="hljs-string">'salmon'</span>:<span class="hljs-number">5</span>,
+              <span class="hljs-string">'unagi'</span>:<span class="hljs-number">5</span>} 
+
+
+
+
+rice =    (xPad+<span class="hljs-number">90</span>,yPad+<span class="hljs-number">330</span>)
+shrimp =  (xPad+<span class="hljs-number">30</span>,yPad+<span class="hljs-number">330</span>)
+nori =    (xPad+<span class="hljs-number">30</span>,yPad+<span class="hljs-number">380</span>)
+roe  =    (xPad+<span class="hljs-number">90</span>,yPad+<span class="hljs-number">380</span>)
+salmon=   (xPad+<span class="hljs-number">30</span>,yPad+<span class="hljs-number">430</span>)
+unagi=    (xPad+<span class="hljs-number">90</span>,yPad+<span class="hljs-number">430</span>)
+
+s1cooking = <span class="hljs-literal">False</span>
+cookTime1 = <span class="hljs-number">0</span>
+
+s2cooking = <span class="hljs-literal">False</span>
+cookTime2 = <span class="hljs-number">0</span>
+
+s3cooking = <span class="hljs-literal">False</span>
+cookTime3 = <span class="hljs-number">0</span>
+
+s4cooking = <span class="hljs-literal">False</span>
+cookTime4 = <span class="hljs-number">0</span>
+
+s5cooking = <span class="hljs-literal">False</span>
+cookTime5 = <span class="hljs-number">0</span>
+
+s6cooking = <span class="hljs-literal">False</span>
+cookTime6 = <span class="hljs-number">0</span>
+
+
+menuLoc = {<span class="hljs-string">'phone'</span>:         (xPad+<span class="hljs-number">550</span>,yPad+<span class="hljs-number">406</span>),
+           <span class="hljs-string">'SO_rice'</span>:       (xPad+<span class="hljs-number">505</span>,yPad+<span class="hljs-number">290</span>),
+           <span class="hljs-string">'Ord_rice'</span>:      (xPad+<span class="hljs-number">540</span>,yPad+<span class="hljs-number">290</span>),
+           <span class="hljs-string">'SO_topping'</span>:    (xPad+<span class="hljs-number">505</span>,yPad+<span class="hljs-number">270</span>),
+           <span class="hljs-string">'SO_sake'</span>:       (xPad+<span class="hljs-number">505</span>,yPad+<span class="hljs-number">315</span>),
+           <span class="hljs-string">'SO_close'</span>:      (xPad+<span class="hljs-number">588</span>,yPad+<span class="hljs-number">342</span>),
+           <span class="hljs-string">'T_shrimp'</span>:      (xPad+<span class="hljs-number">480</span>,yPad+<span class="hljs-number">220</span>),
+           <span class="hljs-string">'T_unagi'</span>:       (xPad+<span class="hljs-number">560</span>,yPad+<span class="hljs-number">220</span>),
+           <span class="hljs-string">'T_nori'</span>:        (xPad+<span class="hljs-number">480</span>,yPad+<span class="hljs-number">280</span>),
+           <span class="hljs-string">'T_roe'</span>:         (xPad+<span class="hljs-number">580</span>,yPad+<span class="hljs-number">280</span>),
+           <span class="hljs-string">'T_salmon'</span>:      (xPad+<span class="hljs-number">480</span>,yPad+<span class="hljs-number">330</span>),
+           <span class="hljs-string">'T_close'</span>:       (xPad+<span class="hljs-number">595</span>,yPad+<span class="hljs-number">335</span>),
+           <span class="hljs-string">'D_normal'</span>:      (xPad+<span class="hljs-number">490</span>,yPad+<span class="hljs-number">290</span>),
+           <span class="hljs-string">'D_express'</span>:     (xPad+<span class="hljs-number">580</span>,yPad+<span class="hljs-number">290</span>),
+
+
+           <span class="hljs-string">'col_shrimp'</span>:      (<span class="hljs-number">480</span>,<span class="hljs-number">220</span>),
+           <span class="hljs-string">'col_unagi'</span>:       (<span class="hljs-number">560</span>,<span class="hljs-number">220</span>),
+           <span class="hljs-string">'col_nori'</span>:        (<span class="hljs-number">480</span>,<span class="hljs-number">280</span>),
+           <span class="hljs-string">'col_roe'</span>:         (<span class="hljs-number">580</span>,<span class="hljs-number">280</span>),
+           <span class="hljs-string">'col_salmon'</span>:      (<span class="hljs-number">480</span>,<span class="hljs-number">330</span>),}
+           
+            
+    
+
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    getSeatOne()
+    getSeatTwo()
+    getSeatThree()
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="print-ran-main">
+  <h1>
+    <a href="#print-ran-main" name="print-ran-main" class="pilcrow"></a>
+print 'Ran Main()'
+  </h1>
+</div>
+<div class="pilwrap" id="while-true">
+  <h1>
+    <a href="#while-true" name="while-true" class="pilcrow"></a>
+while True:
+  </h1>
+</div>
+<div class="pilwrap" id="checkbubs">
+  <h1>
+    <a href="#checkbubs" name="checkbubs" class="pilcrow"></a>
+checkBubs()
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">    
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    main()
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="b-getseatone">
+  <h1>
+    <a href="#b-getseatone" name="b-getseatone" class="pilcrow"></a>
+b = getSeatOne()
+  </h1>
+</div>
+<div class="pilwrap" id="if-all-ab">
+  <h1>
+    <a href="#if-all-ab" name="if-all-ab" class="pilcrow"></a>
+if all(a==b):
+  </h1>
+</div>
+<div class="pilwrap" id="print-true">
+  <h1>
+    <a href="#print-true" name="print-true" class="pilcrow"></a>
+print 'true'
+  </h1>
+</div>
+<div class="pilwrap" id="else">
+  <h1>
+    <a href="#else" name="else" class="pilcrow"></a>
+else:
+  </h1>
+</div>
+<div class="pilwrap" id="print-false">
+  <h1>
+    <a href="#print-false" name="print-false" class="pilcrow"></a>
+print 'false'
+  </h1>
+</div>
+<div class="pilwrap" id="b-getseattwo">
+  <h1>
+    <a href="#b-getseattwo" name="b-getseattwo" class="pilcrow"></a>
+</h1>
+<h1>b = getSeatTwo()
+  </h1>
+</div>
+<div class="pilwrap" id="if-all-ab-1">
+  <h1>
+    <a href="#if-all-ab-1" name="if-all-ab-1" class="pilcrow"></a>
+if all(a==b):
+  </h1>
+</div>
+<div class="pilwrap" id="print-true-1">
+  <h1>
+    <a href="#print-true-1" name="print-true-1" class="pilcrow"></a>
+print 'true'
+  </h1>
+</div>
+<div class="pilwrap" id="else-1">
+  <h1>
+    <a href="#else-1" name="else-1" class="pilcrow"></a>
+else:
+  </h1>
+</div>
+<div class="pilwrap" id="print-false-1">
+  <h1>
+    <a href="#print-false-1" name="print-false-1" class="pilcrow"></a>
+print 'false'
+  </h1>
+</div>
+<div class="pilwrap" id="b-getseatthree">
+  <h1>
+    <a href="#b-getseatthree" name="b-getseatthree" class="pilcrow"></a>
+</h1>
+<h1>b = getSeatThree()
+  </h1>
+</div>
+<div class="pilwrap" id="if-all-ab-2">
+  <h1>
+    <a href="#if-all-ab-2" name="if-all-ab-2" class="pilcrow"></a>
+if all(a==b):
+  </h1>
+</div>
+<div class="pilwrap" id="print-true-2">
+  <h1>
+    <a href="#print-true-2" name="print-true-2" class="pilcrow"></a>
+print 'true'
+  </h1>
+</div>
+<div class="pilwrap" id="else-2">
+  <h1>
+    <a href="#else-2" name="else-2" class="pilcrow"></a>
+else:
+  </h1>
+</div>
+<div class="pilwrap" id="print-false-2">
+  <h1>
+    <a href="#print-false-2" name="print-false-2" class="pilcrow"></a>
+print 'false'
+  </h1>
+</div>
+<div class="pilwrap" id="b-getseatfour">
+  <h1>
+    <a href="#b-getseatfour" name="b-getseatfour" class="pilcrow"></a>
+</h1>
+<h1>b = getSeatFour()
+  </h1>
+</div>
+<div class="pilwrap" id="if-all-ab-3">
+  <h1>
+    <a href="#if-all-ab-3" name="if-all-ab-3" class="pilcrow"></a>
+if all(a==b):
+  </h1>
+</div>
+<div class="pilwrap" id="print-true-3">
+  <h1>
+    <a href="#print-true-3" name="print-true-3" class="pilcrow"></a>
+print 'true'
+  </h1>
+</div>
+<div class="pilwrap" id="else-3">
+  <h1>
+    <a href="#else-3" name="else-3" class="pilcrow"></a>
+else:
+  </h1>
+</div>
+<div class="pilwrap" id="print-false-3">
+  <h1>
+    <a href="#print-false-3" name="print-false-3" class="pilcrow"></a>
+print 'false'
+  </h1>
+</div>
+<div class="pilwrap" id="b-getseatfive">
+  <h1>
+    <a href="#b-getseatfive" name="b-getseatfive" class="pilcrow"></a>
+</h1>
+<h1>b = getSeatFive()
+  </h1>
+</div>
+<div class="pilwrap" id="if-all-ab-4">
+  <h1>
+    <a href="#if-all-ab-4" name="if-all-ab-4" class="pilcrow"></a>
+if all(a==b):
+  </h1>
+</div>
+<div class="pilwrap" id="print-true-4">
+  <h1>
+    <a href="#print-true-4" name="print-true-4" class="pilcrow"></a>
+print 'true'
+  </h1>
+</div>
+<div class="pilwrap" id="else-4">
+  <h1>
+    <a href="#else-4" name="else-4" class="pilcrow"></a>
+else:
+  </h1>
+</div>
+<div class="pilwrap" id="print-false-4">
+  <h1>
+    <a href="#print-false-4" name="print-false-4" class="pilcrow"></a>
+print 'false'
+  </h1>
+</div>
+<div class="pilwrap" id="b-getseatsix">
+  <h1>
+    <a href="#b-getseatsix" name="b-getseatsix" class="pilcrow"></a>
+</h1>
+<h1>b = getSeatSix()
+  </h1>
+</div>
+<div class="pilwrap" id="if-all-ab-5">
+  <h1>
+    <a href="#if-all-ab-5" name="if-all-ab-5" class="pilcrow"></a>
+if all(a==b):
+  </h1>
+</div>
+<div class="pilwrap" id="print-true-5">
+  <h1>
+    <a href="#print-true-5" name="print-true-5" class="pilcrow"></a>
+print 'true'
+  </h1>
+</div>
+<div class="pilwrap" id="else-5">
+  <h1>
+    <a href="#else-5" name="else-5" class="pilcrow"></a>
+else:
+  </h1>
+</div>
+<div class="pilwrap" id="print-false-5">
+  <h1>
+    <a href="#print-false-5" name="print-false-5" class="pilcrow"></a>
+print 'false'
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="python">
+   
+    
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

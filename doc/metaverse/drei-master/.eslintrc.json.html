@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>.eslintrc.json</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "metaverse/drei-master/.eslintrc.json";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>.eslintrc.json</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="json">{
+  <span class="hljs-attr">"env"</span>: {
+    <span class="hljs-attr">"browser"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"shared-node-browser"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"es6"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"node"</span>: <span class="hljs-literal">true</span>
+  },
+  <span class="hljs-attr">"extends"</span>: [
+    <span class="hljs-string">"prettier"</span>,
+    <span class="hljs-string">"plugin:prettier/recommended"</span>,
+    <span class="hljs-string">"plugin:react-hooks/recommended"</span>,
+    <span class="hljs-string">"plugin:import/errors"</span>,
+    <span class="hljs-string">"plugin:import/warnings"</span>
+  ],
+  <span class="hljs-attr">"plugins"</span>: [<span class="hljs-string">"@typescript-eslint"</span>, <span class="hljs-string">"react"</span>, <span class="hljs-string">"prettier"</span>, <span class="hljs-string">"react-hooks"</span>, <span class="hljs-string">"import"</span>],
+  <span class="hljs-attr">"parser"</span>: <span class="hljs-string">"@typescript-eslint/parser"</span>,
+  <span class="hljs-attr">"parserOptions"</span>: {
+    <span class="hljs-attr">"ecmaFeatures"</span>: {
+      <span class="hljs-attr">"ecmaVersion"</span>: <span class="hljs-number">2018</span>,
+      <span class="hljs-attr">"jsx"</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">"sourceType"</span>: <span class="hljs-string">"module"</span>
+  },
+  <span class="hljs-attr">"rules"</span>: {
+    <span class="hljs-attr">"curly"</span>: [<span class="hljs-string">"error"</span>, <span class="hljs-string">"multi-line"</span>, <span class="hljs-string">"consistent"</span>],
+    <span class="hljs-attr">"no-console"</span>: <span class="hljs-string">"off"</span>,
+    <span class="hljs-attr">"no-empty-pattern"</span>: <span class="hljs-string">"error"</span>,
+    <span class="hljs-attr">"no-duplicate-imports"</span>: <span class="hljs-string">"error"</span>,
+    <span class="hljs-attr">"prefer-const"</span>: <span class="hljs-string">"error"</span>,
+    <span class="hljs-attr">"import/no-unresolved"</span>: [<span class="hljs-string">"error"</span>, { <span class="hljs-attr">"commonjs"</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">"amd"</span>: <span class="hljs-literal">true</span> }],
+    <span class="hljs-attr">"import/export"</span>: <span class="hljs-string">"error"</span>,
+    <span class="hljs-attr">"import/named"</span>: <span class="hljs-string">"off"</span>,
+    <span class="hljs-attr">"import/no-named-as-default"</span>: <span class="hljs-string">"off"</span>,
+    <span class="hljs-attr">"import/no-named-as-default-member"</span>: <span class="hljs-string">"off"</span>,
+    <span class="hljs-attr">"import/namespace"</span>: <span class="hljs-string">"off"</span>,
+    <span class="hljs-attr">"import/default"</span>: <span class="hljs-string">"off"</span>,
+    <span class="hljs-attr">"@typescript-eslint/explicit-module-boundary-types"</span>: <span class="hljs-string">"off"</span>,
+    <span class="hljs-attr">"no-unused-vars"</span>: [<span class="hljs-string">"off"</span>],
+    <span class="hljs-attr">"react/jsx-uses-react"</span>: <span class="hljs-string">"error"</span>,
+    <span class="hljs-attr">"react/jsx-uses-vars"</span>: <span class="hljs-string">"error"</span>,
+    <span class="hljs-attr">"react-hooks/exhaustive-deps"</span>: <span class="hljs-string">"off"</span>,
+    <span class="hljs-attr">"@typescript-eslint/no-unused-vars"</span>: [<span class="hljs-string">"error"</span>, { <span class="hljs-attr">"argsIgnorePattern"</span>: <span class="hljs-string">"^_"</span>, <span class="hljs-attr">"varsIgnorePattern"</span>: <span class="hljs-string">"^_"</span> }],
+    <span class="hljs-attr">"@typescript-eslint/no-use-before-define"</span>: <span class="hljs-string">"off"</span>,
+    <span class="hljs-attr">"@typescript-eslint/no-empty-function"</span>: <span class="hljs-string">"off"</span>,
+    <span class="hljs-attr">"@typescript-eslint/no-empty-interface"</span>: <span class="hljs-string">"off"</span>,
+    <span class="hljs-attr">"@typescript-eslint/no-explicit-any"</span>: <span class="hljs-string">"off"</span>
+  },
+  <span class="hljs-attr">"settings"</span>: {
+    <span class="hljs-attr">"react"</span>: {
+      <span class="hljs-attr">"version"</span>: <span class="hljs-string">"detect"</span>
+    },
+    <span class="hljs-attr">"import/extensions"</span>: [<span class="hljs-string">".js"</span>, <span class="hljs-string">".jsx"</span>, <span class="hljs-string">".ts"</span>, <span class="hljs-string">".tsx"</span>],
+    <span class="hljs-attr">"import/parsers"</span>: {
+      <span class="hljs-attr">"@typescript-eslint/parser"</span>: [<span class="hljs-string">".js"</span>, <span class="hljs-string">".jsx"</span>, <span class="hljs-string">".ts"</span>, <span class="hljs-string">".tsx"</span>]
+    },
+    <span class="hljs-attr">"import/resolver"</span>: {
+      <span class="hljs-attr">"node"</span>: {
+        <span class="hljs-attr">"extensions"</span>: [<span class="hljs-string">".js"</span>, <span class="hljs-string">".jsx"</span>, <span class="hljs-string">".ts"</span>, <span class="hljs-string">".tsx"</span>, <span class="hljs-string">".json"</span>],
+        <span class="hljs-attr">"paths"</span>: [<span class="hljs-string">"src"</span>]
+      }
+    }
+  },
+  <span class="hljs-attr">"overrides"</span>: [
+    {
+      <span class="hljs-attr">"files"</span>: [<span class="hljs-string">"src"</span>],
+      <span class="hljs-attr">"parserOptions"</span>: {
+        <span class="hljs-attr">"project"</span>: [<span class="hljs-string">"./tsconfig.json"</span>, <span class="hljs-string">"./storybook/tsconfig.json"</span>]
+      }
+    }
+  ]
+}
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

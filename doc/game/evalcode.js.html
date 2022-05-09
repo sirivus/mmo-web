@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>evalcode.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/evalcode.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>evalcode.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.scriptExecuted1648555488371) {
+    <span class="hljs-keyword">return</span>;
+  }
+  <span class="hljs-keyword">var</span> script = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"script"</span>);
+  script.setAttribute(<span class="hljs-string">"type"</span>, <span class="hljs-string">"text/javascript"</span>);
+  script.textContent =
+    <span class="hljs-string">"\n            (function () {\n                try {\n                    \n                } catch (ex) {\n                    console.error('Error executing js: ' + ex);\n                }\n            })();\n            "</span>;
+  <span class="hljs-keyword">var</span> FRAME_REQUESTS_LIMIT = <span class="hljs-number">500</span>;
+  <span class="hljs-keyword">var</span> frameRequests = <span class="hljs-number">0</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">waitParent</span>(<span class="hljs-params"></span>) </span>{
+    frameRequests += <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">var</span> parent = <span class="hljs-built_in">document</span>.head || <span class="hljs-built_in">document</span>.documentElement;
+    <span class="hljs-keyword">if</span> (parent) {
+      <span class="hljs-keyword">try</span> {
+        parent.appendChild(script);
+        parent.removeChild(script);
+      } <span class="hljs-keyword">catch</span> (e) {
+      } <span class="hljs-keyword">finally</span> {
+        <span class="hljs-built_in">window</span>.scriptExecuted1648555488371 = <span class="hljs-literal">true</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+      }
+    }
+    <span class="hljs-keyword">if</span> (frameRequests &lt; FRAME_REQUESTS_LIMIT) {
+      requestAnimationFrame(waitParent);
+    }
+  }
+  waitParent();
+})();
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

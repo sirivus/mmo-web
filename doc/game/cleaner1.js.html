@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>cleaner1.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/cleaner1.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>cleaner1.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> THREE <span class="hljs-keyword">from</span> <span class="hljs-string">"three"</span>;
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>Three.js - Cleanup
+from https://threejs.org/manual/examples/cleanup-simple.html</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ResourceTracker</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">this</span>.resources = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>();
+  }
+  track(resource) {
+    <span class="hljs-keyword">if</span> (!resource) {
+      <span class="hljs-keyword">return</span> resource;
+    }
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>handle children and when material is an array of materials or
+uniform is array of textures</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(resource)) {
+      resource.forEach(<span class="hljs-function">(<span class="hljs-params">resource</span>) =&gt;</span> <span class="hljs-keyword">this</span>.track(resource));
+      <span class="hljs-keyword">return</span> resource;
+    }
+
+    <span class="hljs-keyword">if</span> (resource.dispose || resource <span class="hljs-keyword">instanceof</span> THREE.Object3D) {
+      <span class="hljs-keyword">this</span>.resources.add(resource);
+    }
+    <span class="hljs-keyword">if</span> (resource <span class="hljs-keyword">instanceof</span> THREE.Object3D) {
+      <span class="hljs-keyword">this</span>.track(resource.geometry);
+      <span class="hljs-keyword">this</span>.track(resource.material);
+      <span class="hljs-keyword">this</span>.track(resource.children);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (resource <span class="hljs-keyword">instanceof</span> THREE.Material) {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>We have to check if there are any textures on the material</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> value <span class="hljs-keyword">of</span> <span class="hljs-built_in">Object</span>.values(resource)) {
+        <span class="hljs-keyword">if</span> (value <span class="hljs-keyword">instanceof</span> THREE.Texture) {
+          <span class="hljs-keyword">this</span>.track(value);
+        }
+      }
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>We also have to check if any uniforms reference textures or arrays of textures</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      <span class="hljs-keyword">if</span> (resource.uniforms) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> value <span class="hljs-keyword">of</span> <span class="hljs-built_in">Object</span>.values(resource.uniforms)) {
+          <span class="hljs-keyword">if</span> (value) {
+            <span class="hljs-keyword">const</span> uniformValue = value.value;
+            <span class="hljs-keyword">if</span> (
+              uniformValue <span class="hljs-keyword">instanceof</span> THREE.Texture ||
+              <span class="hljs-built_in">Array</span>.isArray(uniformValue)
+            ) {
+              <span class="hljs-keyword">this</span>.track(uniformValue);
+            }
+          }
+        }
+      }
+    }
+    <span class="hljs-keyword">return</span> resource;
+  }
+  untrack(resource) {
+    <span class="hljs-keyword">this</span>.resources.delete(resource);
+  }
+  dispose() {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> resource <span class="hljs-keyword">of</span> <span class="hljs-keyword">this</span>.resources) {
+      <span class="hljs-keyword">if</span> (resource <span class="hljs-keyword">instanceof</span> THREE.Object3D) {
+        <span class="hljs-keyword">if</span> (resource.parent) {
+          resource.parent.remove(resource);
+        }
+      }
+      <span class="hljs-keyword">if</span> (resource.dispose) {
+        resource.dispose();
+      }
+    }
+    <span class="hljs-keyword">this</span>.resources.clear();
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"#c"</span>);
+  <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer({ canvas });
+
+  <span class="hljs-keyword">const</span> fov = <span class="hljs-number">75</span>;
+  <span class="hljs-keyword">const</span> aspect = <span class="hljs-number">2</span>; <span class="hljs-comment">// the canvas default</span>
+  <span class="hljs-keyword">const</span> near = <span class="hljs-number">0.1</span>;
+  <span class="hljs-keyword">const</span> far = <span class="hljs-number">5</span>;
+  <span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.z = <span class="hljs-number">2</span>;
+
+  <span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();
+  <span class="hljs-keyword">const</span> cubes = []; <span class="hljs-comment">// an array we can use to rotate the cubes</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addStuffToScene</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> resTracker = <span class="hljs-keyword">new</span> ResourceTracker();
+    <span class="hljs-keyword">const</span> track = resTracker.track.bind(resTracker);
+
+    <span class="hljs-keyword">const</span> boxWidth = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> boxHeight = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> boxDepth = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> geometry = track(
+      <span class="hljs-keyword">new</span> THREE.BoxGeometry(boxWidth, boxHeight, boxDepth)
+    );
+
+    <span class="hljs-keyword">const</span> loader = <span class="hljs-keyword">new</span> THREE.TextureLoader();
+
+    <span class="hljs-keyword">const</span> material = track(
+      <span class="hljs-keyword">new</span> THREE.MeshBasicMaterial({
+        <span class="hljs-attr">map</span>: track(
+          loader.load(
+            <span class="hljs-string">"https://threejs.org/manual/examples/resources/images/wall.jpg"</span>
+          )
+        ),
+      })
+    );
+    <span class="hljs-keyword">const</span> cube = track(<span class="hljs-keyword">new</span> THREE.Mesh(geometry, material));
+    scene.add(cube);
+    cubes.push(cube); <span class="hljs-comment">// add to our list of cubes to rotate</span>
+    <span class="hljs-keyword">return</span> resTracker;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">waitSeconds</span>(<span class="hljs-params">seconds = <span class="hljs-number">0</span></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> setTimeout(resolve, seconds * <span class="hljs-number">1000</span>));
+  }
+
+  <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">process</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">for</span> (;;) {
+      <span class="hljs-keyword">const</span> resTracker = addStuffToScene();
+      <span class="hljs-keyword">await</span> waitSeconds(<span class="hljs-number">2</span>);
+      cubes.length = <span class="hljs-number">0</span>; <span class="hljs-comment">// remove the cubes</span>
+      resTracker.dispose();
+      <span class="hljs-keyword">await</span> waitSeconds(<span class="hljs-number">1</span>);
+    }
+  }
+  process();
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resizeRendererToDisplaySize</span>(<span class="hljs-params">renderer</span>) </span>{
+    <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+    <span class="hljs-keyword">const</span> width = canvas.clientWidth;
+    <span class="hljs-keyword">const</span> height = canvas.clientHeight;
+    <span class="hljs-keyword">const</span> needResize = canvas.width !== width || canvas.height !== height;
+    <span class="hljs-keyword">if</span> (needResize) {
+      renderer.setSize(width, height, <span class="hljs-literal">false</span>);
+    }
+    <span class="hljs-keyword">return</span> needResize;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">time</span>) </span>{
+    time *= <span class="hljs-number">0.001</span>;
+
+    <span class="hljs-keyword">if</span> (resizeRendererToDisplaySize(renderer)) {
+      <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+
+    cubes.forEach(<span class="hljs-function">(<span class="hljs-params">cube, ndx</span>) =&gt;</span> {
+      <span class="hljs-keyword">const</span> speed = <span class="hljs-number">0.2</span> + ndx * <span class="hljs-number">0.1</span>;
+      <span class="hljs-keyword">const</span> rot = time * speed;
+      cube.rotation.x = rot;
+      cube.rotation.y = rot;
+    });
+
+    renderer.render(scene, camera);
+
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
+}
+
+main();
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

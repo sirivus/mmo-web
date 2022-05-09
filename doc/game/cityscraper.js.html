@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>cityscraper.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/cityscraper.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>cityscraper.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> THREE <span class="hljs-keyword">from</span> <span class="hljs-string">"three"</span>;
+<span class="hljs-keyword">import</span> { OrbitControls } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://threejs.org/examples/jsm/controls/OrbitControls.js"</span>;
+<span class="hljs-keyword">import</span> { GLTFLoader } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://threejs.org/examples/jsm/loaders/GLTFLoader.js"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"#c"</span>);
+  <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer({ canvas });
+  renderer.outputEncoding = THREE.sRGBEncoding;
+
+  <span class="hljs-keyword">const</span> fov = <span class="hljs-number">45</span>;
+  <span class="hljs-keyword">const</span> aspect = <span class="hljs-number">2</span>; <span class="hljs-comment">// the canvas default</span>
+  <span class="hljs-keyword">const</span> near = <span class="hljs-number">0.1</span>;
+  <span class="hljs-keyword">const</span> far = <span class="hljs-number">100</span>;
+  <span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.set(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>);
+
+  <span class="hljs-keyword">const</span> controls = <span class="hljs-keyword">new</span> OrbitControls(camera, canvas);
+  controls.target.set(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>);
+  controls.update();
+
+  <span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();
+  scene.background = <span class="hljs-keyword">new</span> THREE.Color(<span class="hljs-string">"black"</span>);
+
+  {
+    <span class="hljs-keyword">const</span> planeSize = <span class="hljs-number">40</span>;
+
+    <span class="hljs-keyword">const</span> loader = <span class="hljs-keyword">new</span> THREE.TextureLoader();
+    <span class="hljs-keyword">const</span> texture = loader.load(
+      <span class="hljs-string">"https://threejs.org/manual/examples/resources/images/checker.png"</span>
+    );
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.magFilter = THREE.NearestFilter;
+    <span class="hljs-keyword">const</span> repeats = planeSize / <span class="hljs-number">2</span>;
+    texture.repeat.set(repeats, repeats);
+
+    <span class="hljs-keyword">const</span> planeGeo = <span class="hljs-keyword">new</span> THREE.PlaneGeometry(planeSize, planeSize);
+    <span class="hljs-keyword">const</span> planeMat = <span class="hljs-keyword">new</span> THREE.MeshPhongMaterial({
+      <span class="hljs-attr">map</span>: texture,
+      <span class="hljs-attr">side</span>: THREE.DoubleSide,
+    });
+    <span class="hljs-keyword">const</span> mesh = <span class="hljs-keyword">new</span> THREE.Mesh(planeGeo, planeMat);
+    mesh.rotation.x = <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">-0.5</span>;
+    scene.add(mesh);
+  }
+
+  {
+    <span class="hljs-keyword">const</span> skyColor = <span class="hljs-number">0xb1e1ff</span>; <span class="hljs-comment">// light blue</span>
+    <span class="hljs-keyword">const</span> groundColor = <span class="hljs-number">0xb97a20</span>; <span class="hljs-comment">// brownish orange</span>
+    <span class="hljs-keyword">const</span> intensity = <span class="hljs-number">0.6</span>;
+    <span class="hljs-keyword">const</span> light = <span class="hljs-keyword">new</span> THREE.HemisphereLight(skyColor, groundColor, intensity);
+    scene.add(light);
+  }
+
+  {
+    <span class="hljs-keyword">const</span> color = <span class="hljs-number">0xffffff</span>;
+    <span class="hljs-keyword">const</span> intensity = <span class="hljs-number">0.8</span>;
+    <span class="hljs-keyword">const</span> light = <span class="hljs-keyword">new</span> THREE.DirectionalLight(color, intensity);
+    light.position.set(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span>);
+    scene.add(light);
+    scene.add(light.target);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">frameArea</span>(<span class="hljs-params">sizeToFitOnScreen, boxSize, boxCenter, camera</span>) </span>{
+    <span class="hljs-keyword">const</span> halfSizeToFitOnScreen = sizeToFitOnScreen * <span class="hljs-number">0.5</span>;
+    <span class="hljs-keyword">const</span> halfFovY = THREE.MathUtils.degToRad(camera.fov * <span class="hljs-number">0.5</span>);
+    <span class="hljs-keyword">const</span> distance = halfSizeToFitOnScreen / <span class="hljs-built_in">Math</span>.tan(halfFovY);
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>compute a unit vector that points in the direction the camera is now
+in the xz plane from the center of the box</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> direction = <span class="hljs-keyword">new</span> THREE.Vector3()
+      .subVectors(camera.position, boxCenter)
+      .multiply(<span class="hljs-keyword">new</span> THREE.Vector3(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+      .normalize();
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>move the camera to a position distance units way from the center
+in whatever direction the camera was from the center already</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    camera.position.copy(direction.multiplyScalar(distance).add(boxCenter));
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>pick some near and far values for the frustum that
+will contain the box.</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    camera.near = boxSize / <span class="hljs-number">100</span>;
+    camera.far = boxSize * <span class="hljs-number">100</span>;
+
+    camera.updateProjectionMatrix();
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>point the camera to look at the center of the box</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    camera.lookAt(boxCenter.x, boxCenter.y, boxCenter.z);
+  }
+
+  {
+    <span class="hljs-keyword">const</span> gltfLoader = <span class="hljs-keyword">new</span> GLTFLoader();
+    gltfLoader.load(
+      <span class="hljs-string">"https://threejs.org/manual/examples/resources/models/cartoon_lowpoly_small_city_free_pack/scene.gltf"</span>,
+      (gltf) =&gt; {
+        <span class="hljs-keyword">const</span> root = gltf.scene;
+        scene.add(root);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>compute the box that contains all the stuff
+from root and below</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-keyword">const</span> box = <span class="hljs-keyword">new</span> THREE.Box3().setFromObject(root);
+
+        <span class="hljs-keyword">const</span> boxSize = box.getSize(<span class="hljs-keyword">new</span> THREE.Vector3()).length();
+        <span class="hljs-keyword">const</span> boxCenter = box.getCenter(<span class="hljs-keyword">new</span> THREE.Vector3());
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
+</div>
+<p>set the camera to frame the box</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        frameArea(boxSize * <span class="hljs-number">0.5</span>, boxSize, boxCenter, camera);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
+</div>
+<p>update the Trackball controls to handle the new size</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        controls.maxDistance = boxSize * <span class="hljs-number">10</span>;
+        controls.target.copy(boxCenter);
+        controls.update();
+      }
+    );
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resizeRendererToDisplaySize</span>(<span class="hljs-params">renderer</span>) </span>{
+    <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+    <span class="hljs-keyword">const</span> width = canvas.clientWidth;
+    <span class="hljs-keyword">const</span> height = canvas.clientHeight;
+    <span class="hljs-keyword">const</span> needResize = canvas.width !== width || canvas.height !== height;
+    <span class="hljs-keyword">if</span> (needResize) {
+      renderer.setSize(width, height, <span class="hljs-literal">false</span>);
+    }
+    <span class="hljs-keyword">return</span> needResize;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (resizeRendererToDisplaySize(renderer)) {
+      <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+
+    renderer.render(scene, camera);
+
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
+}
+
+main();
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

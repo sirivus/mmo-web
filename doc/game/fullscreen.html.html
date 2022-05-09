@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>fullscreen.html</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/fullscreen.html";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>fullscreen.html</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="html">
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-comment">/* Safari syntax */</span>
+        <span class="hljs-selector-pseudo">:-webkit-full-screen</span> {
+            <span class="hljs-attribute">background-color</span>: yellow;
+        }
+
+        <span class="hljs-comment">/* IE11 */</span>
+        <span class="hljs-selector-pseudo">:-ms-fullscreen</span> {
+            <span class="hljs-attribute">background-color</span>: yellow;
+        }
+
+        <span class="hljs-comment">/* Standard syntax */</span>
+        <span class="hljs-selector-pseudo">:fullscreen</span> {
+            <span class="hljs-attribute">background-color</span>: yellow;
+        }
+
+        <span class="hljs-comment">/* Style the button */</span>
+        <span class="hljs-selector-tag">button</span> {
+            <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+            <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Fullscreen with JavaScript<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Click on the "Open Fullscreen" button to open this page in fullscreen mode. Close it by either clicking the "Esc"
+        key on your keyboard, or with the "Close Fullscreen" button.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"openFullscreen();"</span>&gt;</span>Open Fullscreen<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"closeFullscreen();"</span>&gt;</span>Close Fullscreen<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">var</span> elem = <span class="hljs-built_in">document</span>.documentElement;
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">openFullscreen</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">if</span> (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (elem.webkitRequestFullscreen) { <span class="hljs-comment">/* Safari */</span>
+                elem.webkitRequestFullscreen();
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (elem.msRequestFullscreen) { <span class="hljs-comment">/* IE11 */</span>
+                elem.msRequestFullscreen();
+            }
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">closeFullscreen</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.exitFullscreen) {
+                <span class="hljs-built_in">document</span>.exitFullscreen();
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.webkitExitFullscreen) { <span class="hljs-comment">/* Safari */</span>
+                <span class="hljs-built_in">document</span>.webkitExitFullscreen();
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.msExitFullscreen) { <span class="hljs-comment">/* IE11 */</span>
+                <span class="hljs-built_in">document</span>.msExitFullscreen();
+            }
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

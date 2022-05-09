@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>realtime.html</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "metaverse/realtime.html";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>realtime.html</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Time and Date<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-keyword">@import</span> url(<span class="hljs-string">"https://fonts.googleapis.com/css2?family=Fredoka+One&amp;display=swap"</span>);
+    <span class="hljs-keyword">@import</span> url(<span class="hljs-string">"https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"</span>);
+
+    <span class="hljs-selector-class">.font-fredoka</span> {
+        <span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Fredoka One"</span>, cursive;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"font-fredoka m-0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">import</span> {
+            html,
+            render,
+            useEffect,
+            useState
+        } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://unpkg.com/htm/preact/standalone.module.js"</span>;
+
+        <span class="hljs-keyword">const</span> getDateLocaleString = <span class="hljs-function">(<span class="hljs-params">date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(</span>)) =&gt;</span>
+            date.toLocaleString(<span class="hljs-string">"en-US"</span>, {
+                <span class="hljs-attr">day</span>: <span class="hljs-string">"2-digit"</span>,
+                <span class="hljs-attr">hour12</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-attr">month</span>: <span class="hljs-string">"long"</span>,
+                <span class="hljs-attr">weekday</span>: <span class="hljs-string">"short"</span>,
+                <span class="hljs-attr">year</span>: <span class="hljs-string">"numeric"</span>,
+                <span class="hljs-attr">hour</span>: <span class="hljs-string">"2-digit"</span>,
+                <span class="hljs-attr">minute</span>: <span class="hljs-string">"2-digit"</span>,
+                <span class="hljs-attr">second</span>: <span class="hljs-string">"2-digit"</span>
+            });
+
+        <span class="hljs-comment">/**
+         * Hook to get date and time information.
+         *
+         * @returns {[weekday: string, dayAndMonth: string, year: string, time: string]} Tuple of 4 elements with date information.
+         */</span>
+        <span class="hljs-keyword">const</span> useDateTimeTuple = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            <span class="hljs-keyword">const</span> [dateLocaleString, setDateLocaleString] = useState(
+                getDateLocaleString(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>())
+            );
+
+            useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                <span class="hljs-keyword">const</span> interval = setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                    setDateLocaleString(getDateLocaleString(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()));
+                }, <span class="hljs-number">500</span>);
+                <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> clearInterval(interval);
+            }, []);
+
+            <span class="hljs-keyword">return</span> dateLocaleString.split(<span class="hljs-string">", "</span>);
+        };
+
+        <span class="hljs-comment">/**
+         * DateTime component.
+         */</span>
+        <span class="hljs-keyword">const</span> DateTime = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            <span class="hljs-keyword">const</span> [weekday, dayAndMonth, year, time] = useDateTimeTuple();
+
+            <span class="hljs-keyword">return</span> html`<span class="xml">
+          <span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex h-screen items-center justify-center w-screen"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-2 text-blue-700 text-7xl"</span>&gt;</span></span><span class="hljs-subst">${time}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-2 text-red-400 text-5xl uppercase"</span>&gt;</span></span><span class="hljs-subst">${weekday}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-2 text-red-400 text-2xl uppercase"</span>&gt;</span>
+              </span><span class="hljs-subst">${dayAndMonth}</span><span class="xml">, </span><span class="hljs-subst">${year}</span><span class="xml">
+            <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+        `</span>;
+        };
+
+        render(html`<span class="xml"><span class="hljs-tag">&lt;</span></span><span class="hljs-subst">${DateTime}</span><span class="xml"><span class="hljs-tag"> /&gt;</span>`</span>, <span class="hljs-built_in">document</span>.body);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

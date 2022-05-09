@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>gltf-animations.html</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/gltf-animations.html";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>gltf-animations.html</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Three.js TypeScript Tutorials by Sean Bradley : https://sbcode.net/threejs<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"author"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Sean Bradley"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/stylesheets/style.css"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-tag">body</span> {
+            <span class="hljs-attribute">overflow</span>: hidden;
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span>;
+        }
+
+        <span class="hljs-selector-tag">a</span> {
+            <span class="hljs-attribute">color</span>: <span class="hljs-number">#ffffff</span>;
+        }
+
+        <span class="hljs-selector-id">#progressBar</span> {
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">24px</span>;
+            <span class="hljs-attribute">position</span>: absolute;
+            <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+            <span class="hljs-attribute">top</span>: <span class="hljs-number">25px</span>;
+            <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">250px</span>;
+        }
+
+        <span class="hljs-selector-id">#instructions</span> {
+            <span class="hljs-attribute">color</span>: white;
+            <span class="hljs-attribute">position</span>: absolute;
+            <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+            <span class="hljs-attribute">top</span>: <span class="hljs-number">10px</span>;
+            <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">220px</span>;
+            <span class="hljs-attribute">font-family</span>: monospace;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Import maps polyfill --&gt;</span>
+    <span class="hljs-comment">&lt;!-- Remove this when import maps will be widely supported --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">async</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./node_modules/es-module-shims/dist/es-module-shims.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"importmap"</span>&gt;</span><span class="actionscript">
+            {
+                <span class="hljs-string">"imports"</span>: {
+                    <span class="hljs-string">"three"</span>: <span class="hljs-string">"/build/three.module.js"</span>,
+                    <span class="hljs-string">"three/examples/jsm/controls/OrbitControls"</span>: <span class="hljs-string">"/jsm/controls/OrbitControls.js"</span>,
+                    <span class="hljs-string">"three/examples/jsm/loaders/GLTFLoader"</span>: <span class="hljs-string">"/jsm/loaders/GLTFLoader.js"</span>,
+                    <span class="hljs-string">"three/examples/jsm/libs/stats.module"</span>: <span class="hljs-string">"/jsm/libs/stats.module.js"</span>,
+                    <span class="hljs-string">"dat.gui"</span>: <span class="hljs-string">"/dat.gui"</span>
+                }
+            }
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./gltf-animations.html"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"vwSrcLink"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span><span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">progress</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"progressBar"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">progress</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"instructions"</span>&gt;</span>
+        Model from <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.mixamo.com"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"nofollow noopener"</span>&gt;</span>Mixamo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> THREE <span class="hljs-keyword">from</span> <span class="hljs-string">'three'</span>
+        <span class="hljs-keyword">import</span> { OrbitControls } <span class="hljs-keyword">from</span> <span class="hljs-string">'three/examples/jsm/controls/OrbitControls'</span>
+        <span class="hljs-keyword">import</span> { GLTFLoader } <span class="hljs-keyword">from</span> <span class="hljs-string">'three/examples/jsm/loaders/GLTFLoader'</span>
+        <span class="hljs-keyword">import</span> Stats <span class="hljs-keyword">from</span> <span class="hljs-string">'three/examples/jsm/libs/stats.module'</span>
+        <span class="hljs-keyword">import</span> { GUI } <span class="hljs-keyword">from</span> <span class="hljs-string">'dat.gui'</span>
+        <span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> THREE.Scene()
+        <span class="hljs-keyword">const</span> axesHelper = <span class="hljs-keyword">new</span> THREE.AxesHelper(<span class="hljs-number">5</span>)
+        scene.add(axesHelper)
+        <span class="hljs-keyword">var</span> light1 = <span class="hljs-keyword">new</span> THREE.PointLight()
+        light1.position.set(<span class="hljs-number">2.5</span>, <span class="hljs-number">2.5</span>, <span class="hljs-number">2.5</span>)
+        scene.add(light1)
+        <span class="hljs-keyword">var</span> light2 = <span class="hljs-keyword">new</span> THREE.PointLight()
+        light2.position.set(<span class="hljs-number">-2.5</span>, <span class="hljs-number">2.5</span>, <span class="hljs-number">2.5</span>)
+        scene.add(light2)
+        <span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(<span class="hljs-number">75</span>, <span class="hljs-built_in">window</span>.innerWidth / <span class="hljs-built_in">window</span>.innerHeight, <span class="hljs-number">0.01</span>, <span class="hljs-number">1000</span>)
+        camera.position.set(<span class="hljs-number">0.8</span>, <span class="hljs-number">1.4</span>, <span class="hljs-number">1.0</span>)
+        <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer()
+        renderer.setSize(<span class="hljs-built_in">window</span>.innerWidth, <span class="hljs-built_in">window</span>.innerHeight)
+        <span class="hljs-built_in">document</span>.body.appendChild(renderer.domElement)
+        <span class="hljs-keyword">const</span> controls = <span class="hljs-keyword">new</span> OrbitControls(camera, renderer.domElement)
+        controls.screenSpacePanning = <span class="hljs-literal">true</span>
+        controls.target.set(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">let</span> mixer
+        <span class="hljs-keyword">let</span> modelReady = <span class="hljs-literal">false</span>
+        <span class="hljs-keyword">let</span> animationActions = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>()
+        <span class="hljs-keyword">let</span> activeAction
+        <span class="hljs-keyword">let</span> lastAction
+        <span class="hljs-keyword">const</span> gltfLoader = <span class="hljs-keyword">new</span> GLTFLoader()
+        gltfLoader.load(
+            <span class="hljs-string">'models/vanguard.glb'</span>,
+            (gltf) =&gt; {
+                <span class="hljs-comment">// gltf.scene.scale.set(.01, .01, .01)</span>
+                mixer = <span class="hljs-keyword">new</span> THREE.AnimationMixer(gltf.scene)
+                <span class="hljs-keyword">let</span> animationAction = mixer.clipAction(gltf.animations[<span class="hljs-number">0</span>])
+                animationActions.push(animationAction)
+                animationsFolder.add(animations, <span class="hljs-string">'default'</span>)
+                activeAction = animationActions[<span class="hljs-number">0</span>]
+                scene.add(gltf.scene)
+                <span class="hljs-comment">//add an animation from another file</span>
+                gltfLoader.load(
+                    <span class="hljs-string">'models/vanguard@samba.glb'</span>,
+                    (gltf) =&gt; {
+                        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'loaded samba'</span>)
+                        <span class="hljs-keyword">let</span> animationAction = mixer.clipAction(gltf.animations[<span class="hljs-number">0</span>])
+                        animationActions.push(animationAction)
+                        animationsFolder.add(animations, <span class="hljs-string">'samba'</span>)
+                        <span class="hljs-comment">//add an animation from another file</span>
+                        gltfLoader.load(
+                            <span class="hljs-string">'models/vanguard@bellydance.glb'</span>,
+                            (gltf) =&gt; {
+                                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'loaded bellydance'</span>)
+                                <span class="hljs-keyword">let</span> animationAction = mixer.clipAction(gltf.animations[<span class="hljs-number">0</span>])
+                                animationActions.push(animationAction)
+                                animationsFolder.add(animations, <span class="hljs-string">'bellydance'</span>)
+                                <span class="hljs-comment">//add an animation from another file</span>
+                                gltfLoader.load(
+                                    <span class="hljs-string">'models/vanguard@goofyrunning.glb'</span>,
+                                    (gltf) =&gt; {
+                                        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'loaded goofyrunning'</span>)
+                                        gltf.animations[<span class="hljs-number">0</span>].tracks.shift() <span class="hljs-comment">//delete the specific track that moves the object forward while running</span>
+                                        <span class="hljs-keyword">let</span> animationAction = mixer.clipAction(gltf.animations[<span class="hljs-number">0</span>])
+                                        animationActions.push(animationAction)
+                                        animationsFolder.add(animations, <span class="hljs-string">'goofyrunning'</span>)
+                                        progressBar.style.display = <span class="hljs-string">'none'</span>
+                                        modelReady = <span class="hljs-literal">true</span>
+                                    },
+                                    (xhr) =&gt; {
+                                        <span class="hljs-keyword">if</span> (xhr.lengthComputable) {
+                                            <span class="hljs-keyword">var</span> percentComplete = (xhr.loaded / xhr.total) * <span class="hljs-number">100</span>
+                                            progressBar.value = percentComplete
+                                            progressBar.style.display = <span class="hljs-string">'block'</span>
+                                        }
+                                    },
+                                    (error) =&gt; {
+                                        <span class="hljs-built_in">console</span>.log(error)
+                                    }
+                                )
+                            },
+                            (xhr) =&gt; {
+                                <span class="hljs-keyword">if</span> (xhr.lengthComputable) {
+                                    <span class="hljs-keyword">var</span> percentComplete = (xhr.loaded / xhr.total) * <span class="hljs-number">100</span>
+                                    progressBar.value = percentComplete
+                                    progressBar.style.display = <span class="hljs-string">'block'</span>
+                                }
+                            },
+                            (error) =&gt; {
+                                <span class="hljs-built_in">console</span>.log(error)
+                            }
+                        )
+                    },
+                    (xhr) =&gt; {
+                        <span class="hljs-keyword">if</span> (xhr.lengthComputable) {
+                            <span class="hljs-keyword">var</span> percentComplete = (xhr.loaded / xhr.total) * <span class="hljs-number">100</span>
+                            progressBar.value = percentComplete
+                            progressBar.style.display = <span class="hljs-string">'block'</span>
+                        }
+                    },
+                    (error) =&gt; {
+                        <span class="hljs-built_in">console</span>.log(error)
+                    }
+                )
+            },
+            (xhr) =&gt; {
+                <span class="hljs-keyword">if</span> (xhr.lengthComputable) {
+                    <span class="hljs-keyword">var</span> percentComplete = (xhr.loaded / xhr.total) * <span class="hljs-number">100</span>
+                    progressBar.value = percentComplete
+                    progressBar.style.display = <span class="hljs-string">'block'</span>
+                }
+            },
+            (error) =&gt; {
+                <span class="hljs-built_in">console</span>.log(error)
+            }
+        )
+        <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'resize'</span>, onWindowResize, <span class="hljs-literal">false</span>)
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onWindowResize</span>(<span class="hljs-params"></span>) </span>{
+            camera.aspect = <span class="hljs-built_in">window</span>.innerWidth / <span class="hljs-built_in">window</span>.innerHeight
+            camera.updateProjectionMatrix()
+            renderer.setSize(<span class="hljs-built_in">window</span>.innerWidth, <span class="hljs-built_in">window</span>.innerHeight)
+            render()
+        }
+        <span class="hljs-keyword">const</span> stats = Stats()
+        <span class="hljs-built_in">document</span>.body.appendChild(stats.dom)
+        <span class="hljs-keyword">var</span> animations = {
+            <span class="hljs-attr">default</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                setAction(animationActions[<span class="hljs-number">0</span>])
+            },
+            <span class="hljs-attr">samba</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                setAction(animationActions[<span class="hljs-number">1</span>])
+            },
+            <span class="hljs-attr">bellydance</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                setAction(animationActions[<span class="hljs-number">2</span>])
+            },
+            <span class="hljs-attr">goofyrunning</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                setAction(animationActions[<span class="hljs-number">3</span>])
+            },
+        }
+        <span class="hljs-keyword">const</span> setAction = <span class="hljs-function">(<span class="hljs-params">toAction</span>) =&gt;</span> {
+            <span class="hljs-keyword">if</span> (toAction != activeAction) {
+                lastAction = activeAction
+                activeAction = toAction
+                <span class="hljs-comment">//lastAction.stop()</span>
+                lastAction.fadeOut(<span class="hljs-number">1</span>)
+                activeAction.reset()
+                activeAction.fadeIn(<span class="hljs-number">1</span>)
+                activeAction.play()
+            }
+        }
+        <span class="hljs-keyword">const</span> gui = <span class="hljs-keyword">new</span> GUI()
+        <span class="hljs-keyword">const</span> animationsFolder = gui.addFolder(<span class="hljs-string">'Animations'</span>)
+        animationsFolder.open()
+        <span class="hljs-keyword">const</span> clock = <span class="hljs-keyword">new</span> THREE.Clock()
+        <span class="hljs-keyword">var</span> animate = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            requestAnimationFrame(animate)
+            controls.update()
+            <span class="hljs-keyword">if</span> (modelReady) mixer.update(clock.getDelta())
+            render()
+            stats.update()
+        }
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params"></span>) </span>{
+            renderer.render(scene, camera)
+        }
+        animate()
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>practice.html</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "game/practice/practice.html";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>practice.html</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="html"><span class="hljs-tag">&lt;<span class="hljs-name">Script</span> <span class="hljs-attr">language</span>=<span class="hljs-string">"JavaScript"</span>&gt;</span>
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<pre><code>//    
+document.write(&quot;Apple&quot;.length + &quot;&lt;br&gt;&quot;)
+document.write(&quot;Macintosh&quot;.length + &quot;&lt;br&gt;&quot;)
+document.write(&quot;Macintosh&quot;.substring(0, 3) + &quot;&lt;br&gt;&quot;)
+document.write(&quot;Macintosh&quot;.substring(3, 5) + &quot;&lt;br&gt;&quot;)
+document.write(&quot;Macintosh&quot;.substring(5, &quot;Macintosh&quot;.length) + &quot;&lt;br&gt;&quot;)
+</code></pre>
+<p>//</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="html"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">language</span>=<span class="hljs-string">"JavaScript"</span>&gt;</span><span class="javascript">
+    <span class="hljs-comment">// &lt; !--</span>
+    <span class="hljs-keyword">var</span> message = <span class="hljs-string">'Scroll this text by pressing the scroll button.'</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scrollMessage</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">document</span>.scrollForm.textScroll.value = message
+        message = message.substring(<span class="hljs-number">1</span>, message.length) + message.substring(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>)
+           setTimeout(<span class="hljs-string">"scrollMessage()"</span>, <span class="hljs-number">1000</span>/<span class="hljs-number">1</span>)
+           <span class="hljs-comment">//highest fps ingame will look more fluid regardless of monitor refresh rate, most minimum interactionable or reactionable fps is 60.</span>
+           
+    }
+    <span class="hljs-built_in">window</span>.onload = scrollMessage
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'message'</span>)
+
+    <span class="hljs-comment">// Using a named property</span>
+        <span class="hljs-comment">//const obj2 = {</span>
+        <span class="hljs-comment">//    g: function* () {</span>
+        <span class="hljs-comment">//        let index = 0</span>
+        <span class="hljs-comment">//        while (true) {</span>
+        <span class="hljs-comment">//            yield index++</span>
+        <span class="hljs-comment">//        }</span>
+        <span class="hljs-comment">//    }</span>
+        <span class="hljs-comment">//};</span>
+
+        <span class="hljs-comment">// The same object using shorthand syntax</span>
+        <span class="hljs-keyword">const</span> obj2 = {
+            * g() {
+                <span class="hljs-comment">//Uncaught SyntaxError: yield expression is only valid in generators</span>
+                <span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>
+                <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+                    <span class="hljs-keyword">yield</span> index++
+                }
+            }
+        };
+
+        <span class="hljs-keyword">const</span> it = obj2.g()
+        <span class="hljs-built_in">console</span>.log(it.next().value)  <span class="hljs-comment">// 0</span>
+        <span class="hljs-built_in">console</span>.log(it.next().value)  <span class="hljs-comment">// 1</span>
+        <span class="hljs-built_in">console</span>.log(it.next().value)  <span class="hljs-comment">// 2</span>
+        <span class="hljs-built_in">console</span>.log(it.next().value)  <span class="hljs-comment">// 3</span>
+        <span class="hljs-built_in">console</span>.log(it.next().value)  <span class="hljs-comment">// 4</span>
+        <span class="hljs-built_in">console</span>.log(it.next().value)  <span class="hljs-comment">// 5</span>
+        <span class="hljs-built_in">console</span>.log(it.next().value)  <span class="hljs-comment">// 6</span>
+        <span class="hljs-built_in">console</span>.log(it.next().value)  <span class="hljs-comment">// 7</span>
+        <span class="hljs-built_in">console</span>.log(it.next().value)  <span class="hljs-comment">// 8</span>
+        <span class="hljs-built_in">console</span>.log(it.next().value)  <span class="hljs-comment">// 9</span>
+        <span class="hljs-built_in">console</span>.log(it.next().value)  <span class="hljs-comment">// 10</span>
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gen</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+                    <span class="hljs-keyword">let</span> value = <span class="hljs-keyword">yield</span> <span class="hljs-literal">null</span>;
+                    <span class="hljs-built_in">console</span>.log(value);
+                }
+            }
+
+            <span class="hljs-keyword">const</span> g = gen();
+            g.next(<span class="hljs-number">1</span>);
+            <span class="hljs-comment">// "{ value: null, done: false }"</span>
+            g.next(<span class="hljs-number">1</span>);
+            g.next(<span class="hljs-number">2</span>);
+            g.next(<span class="hljs-number">3</span>);
+            g.next(<span class="hljs-number">4</span>);
+<span class="hljs-comment">// 2</span>
+<span class="hljs-comment">// "{ value: null, done: false }"</span>
+<span class="hljs-comment">/*
+Sending values to the generator
+
+In this example, next is called with a value.
+
+Note that the first call does not log anything, because the generator was not yielding anything initially. 
+*/</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">idMaker</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> index = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>)
+            <span class="hljs-keyword">yield</span> index++;
+    }
+
+    <span class="hljs-keyword">var</span> gen = idMaker();
+
+    <span class="hljs-built_in">console</span>.log(gen.next().value); <span class="hljs-comment">// 0</span>
+    <span class="hljs-built_in">console</span>.log(gen.next().value); <span class="hljs-comment">// 1</span>
+    <span class="hljs-built_in">console</span>.log(gen.next().value); <span class="hljs-comment">// 2</span>
+    <span class="hljs-built_in">console</span>.log(gen.next().value); <span class="hljs-comment">// 3</span>
+<span class="hljs-comment">// ...</span>
+
+
+<span class="hljs-comment">//--&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>
+    const obj = {
+    get property() { },
+    set property(value) { },
+    property(parameters…) { },
+    *generator(parameters…) { },
+    async property(parameters…) { },
+    async* generator(parameters…) { },
+
+    // with computed keys
+    get [property]() { },
+    set [property](value) { },
+    [property](parameters…) { },
+    *[generator](parameters…) { },
+    async [property](parameters…) { },
+    async*[generator](parameters…) { },
+    };
+<span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"scrollForm"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"textScroll"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Scroll this text by pressing the scroll button."</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"50"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Scroll!"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"buttonScroll"</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">"scrollMessage()"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>The script contains a global variable message.
+It is written to the text box every time the function is called.
+The last line of the function reconstructs the string message for the
+next time it is written to the text box. Notice that the substring()
+method is used twice, the first time it returns the original message
+without the first character. The second time it returns only the
+first character of the string. This results in a new string with the
+first character moved to the end of the string.</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="html">
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

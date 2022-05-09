@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>copilot.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/copilot.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>copilot.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">countto10</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(i &lt; <span class="hljs-number">10</span>){
+        i++;
+            <span class="hljs-built_in">console</span>.log(i);
+    }
+
+}countto10();
+
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>count to 50</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">countto50</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(i &lt; <span class="hljs-number">50</span>){
+        i++;
+            <span class="hljs-built_in">console</span>.log(i);
+    }
+
+}countto50();
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>draw a cube</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawCube</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(i &lt; <span class="hljs-number">10</span>){
+        i++;
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"*"</span>);
+    }
+
+}   drawCube();             
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>function addLight(...pos) {
+const color = 0xffffff;
+const intensity = 1;
+const light = new THREE.DirectionalLight(color, intensity);
+light.position.set(...pos);
+scene.add(light);
+}
+addLight(-1, 2, 4);
+addLight(2, -2, 3);</p>
+<p>function addGround() {
+const color = 0xffffff;
+const intensity = 1;
+const light = new THREE.DirectionalLight(color, intensity);
+light.position.set(0, -1, 0);
+scene.add(light);
+} addGround();        //add a ground  //add a ground      //add a ground</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">asd</span> (<span class="hljs-params"></span>) </span>{
+      x = <span class="hljs-number">15</span>;
+      y: <span class="hljs-number">5</span>
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">aok</span> (<span class="hljs-params"></span>) </span>{
+          q = <span class="hljs-number">9</span>;
+      }
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>return 5</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  }
+    asd();
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>asd;</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
+</div>
+<p>if use var declare inside function, is private scope. there is publc scope.</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+  <span class="hljs-built_in">console</span>.log(x);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
+</div>
+<pre><code>   // use the world matrix of the position helper to
+ // position this mesh.
+ positionHelper.updateWorldMatrix(true, false);
+ mesh.applyMatrix4(positionHelper.matrixWorld);
+</code></pre>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

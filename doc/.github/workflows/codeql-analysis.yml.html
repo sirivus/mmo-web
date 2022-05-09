@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>codeql-analysis.yml</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = ".github/workflows/codeql-analysis.yml";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>codeql-analysis.yml</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+<p>For most projects, this workflow file will not need changing; you simply need
+to commit it to your repository.</p>
+<p>You may wish to alter this file to override the set of languages analyzed,
+or to provide custom queries or build logic.</p>
+<p>******** NOTE ********
+We have attempted to detect the languages in your repository. Please check
+the <code>language</code> matrix defined below to confirm you have the correct set of
+supported CodeQL languages.</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">"CodeQL"</span>
+
+<span class="hljs-attr">on:</span>
+  <span class="hljs-attr">push:</span>
+    <span class="hljs-attr">branches:</span> <span class="hljs-string">[</span> <span class="hljs-string">main</span> <span class="hljs-string">]</span>
+  <span class="hljs-attr">pull_request:</span>
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>The branches below must be a subset of the branches above</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="yaml">    <span class="hljs-attr">branches:</span> <span class="hljs-string">[</span> <span class="hljs-string">main</span> <span class="hljs-string">]</span>
+  <span class="hljs-attr">schedule:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">cron:</span> <span class="hljs-string">'19 15 * * 2'</span>
+
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">analyze:</span>
+    <span class="hljs-attr">name:</span> <span class="hljs-string">Analyze</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">permissions:</span>
+      <span class="hljs-attr">actions:</span> <span class="hljs-string">read</span>
+      <span class="hljs-attr">contents:</span> <span class="hljs-string">read</span>
+      <span class="hljs-attr">security-events:</span> <span class="hljs-string">write</span>
+
+    <span class="hljs-attr">strategy:</span>
+      <span class="hljs-attr">fail-fast:</span> <span class="hljs-literal">false</span>
+      <span class="hljs-attr">matrix:</span>
+        <span class="hljs-attr">language:</span> <span class="hljs-string">[</span> <span class="hljs-string">'javascript'</span> <span class="hljs-string">]</span>
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
+Learn more about CodeQL language support at https://git.io/codeql-language-support</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="yaml">
+    <span class="hljs-attr">steps:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span> <span class="hljs-string">repository</span>
+      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>Initializes the CodeQL tools for scanning.</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="yaml">    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Initialize</span> <span class="hljs-string">CodeQL</span>
+      <span class="hljs-attr">uses:</span> <span class="hljs-string">github/codeql-action/init@v1</span>
+      <span class="hljs-attr">with:</span>
+        <span class="hljs-attr">languages:</span> <span class="hljs-string">${{</span> <span class="hljs-string">matrix.language</span> <span class="hljs-string">}}</span>
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>If you wish to specify custom queries, you can do so here or in a config file.
+By default, queries listed here will override any specified in a config file.
+Prefix the list here with &quot;+&quot; to use these queries and those in the config file.
+queries: ./path/to/local/query, your-org/your-repo/queries@main</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="yaml">
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
+If this step fails, then you should remove it and run the build manually (see below)</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="yaml">    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Autobuild</span>
+      <span class="hljs-attr">uses:</span> <span class="hljs-string">github/codeql-action/autobuild@v1</span>
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
+</div>
+<p>ℹ️ Command-line programs to run using the OS shell.
+📚 https://git.io/JvXDl</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="yaml">
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
+</div>
+<p>✏️ If the Autobuild fails above, remove it and uncomment the following three lines
+and modify them (or add more) to build your code if your project
+uses a compiled language</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="yaml">
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9"></a>
+</div>
+<ul>
+<li>run: |
+make bootstrap
+make release</li>
+</ul>
+
+        </td>
+        <td class="code highlight">
+          <pre class="yaml">
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Perform</span> <span class="hljs-string">CodeQL</span> <span class="hljs-string">Analysis</span>
+      <span class="hljs-attr">uses:</span> <span class="hljs-string">github/codeql-action/analyze@v1</span>
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

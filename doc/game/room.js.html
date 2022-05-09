@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>room.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/room.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+      <div class="heading h1">
+        <a href="#sourceurlhttps-threejs.orgexamplesjsmenvironmentsroomenvironment.js">sourceURL=https://threejs.org/examples/jsm/environments/RoomEnvironment.js</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>room.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>https://github.com/google/model-viewer/blob/master/packages/model-viewer/src/three-components/EnvironmentScene.ts</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+<span class="hljs-keyword">import</span> {
+  BackSide,
+  BoxGeometry,
+  Mesh,
+  MeshBasicMaterial,
+  MeshStandardMaterial,
+  PointLight,
+  Scene,
+} <span class="hljs-keyword">from</span> <span class="hljs-comment">/*'three'*/</span> <span class="hljs-string">"blob:https://threejs.org/bcf47adb-b8cb-4c33-9f9d-53b318fa3973"</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RoomEnvironment</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Scene</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">super</span>();
+
+    <span class="hljs-keyword">const</span> geometry = <span class="hljs-keyword">new</span> BoxGeometry();
+    geometry.deleteAttribute(<span class="hljs-string">"uv"</span>);
+
+    <span class="hljs-keyword">const</span> roomMaterial = <span class="hljs-keyword">new</span> MeshStandardMaterial({ <span class="hljs-attr">side</span>: BackSide });
+    <span class="hljs-keyword">const</span> boxMaterial = <span class="hljs-keyword">new</span> MeshStandardMaterial();
+
+    <span class="hljs-keyword">const</span> mainLight = <span class="hljs-keyword">new</span> PointLight(<span class="hljs-number">0xffffff</span>, <span class="hljs-number">5.0</span>, <span class="hljs-number">28</span>, <span class="hljs-number">2</span>);
+    mainLight.position.set(<span class="hljs-number">0.418</span>, <span class="hljs-number">16.199</span>, <span class="hljs-number">0.3</span>);
+    <span class="hljs-keyword">this</span>.add(mainLight);
+
+    <span class="hljs-keyword">const</span> room = <span class="hljs-keyword">new</span> Mesh(geometry, roomMaterial);
+    room.position.set(<span class="hljs-number">-0.757</span>, <span class="hljs-number">13.219</span>, <span class="hljs-number">0.717</span>);
+    room.scale.set(<span class="hljs-number">31.713</span>, <span class="hljs-number">28.305</span>, <span class="hljs-number">28.591</span>);
+    <span class="hljs-keyword">this</span>.add(room);
+
+    <span class="hljs-keyword">const</span> box1 = <span class="hljs-keyword">new</span> Mesh(geometry, boxMaterial);
+    box1.position.set(<span class="hljs-number">-10.906</span>, <span class="hljs-number">2.009</span>, <span class="hljs-number">1.846</span>);
+    box1.rotation.set(<span class="hljs-number">0</span>, <span class="hljs-number">-0.195</span>, <span class="hljs-number">0</span>);
+    box1.scale.set(<span class="hljs-number">2.328</span>, <span class="hljs-number">7.905</span>, <span class="hljs-number">4.651</span>);
+    <span class="hljs-keyword">this</span>.add(box1);
+
+    <span class="hljs-keyword">const</span> box2 = <span class="hljs-keyword">new</span> Mesh(geometry, boxMaterial);
+    box2.position.set(<span class="hljs-number">-5.607</span>, <span class="hljs-number">-0.754</span>, <span class="hljs-number">-0.758</span>);
+    box2.rotation.set(<span class="hljs-number">0</span>, <span class="hljs-number">0.994</span>, <span class="hljs-number">0</span>);
+    box2.scale.set(<span class="hljs-number">1.97</span>, <span class="hljs-number">1.534</span>, <span class="hljs-number">3.955</span>);
+    <span class="hljs-keyword">this</span>.add(box2);
+
+    <span class="hljs-keyword">const</span> box3 = <span class="hljs-keyword">new</span> Mesh(geometry, boxMaterial);
+    box3.position.set(<span class="hljs-number">6.167</span>, <span class="hljs-number">0.857</span>, <span class="hljs-number">7.803</span>);
+    box3.rotation.set(<span class="hljs-number">0</span>, <span class="hljs-number">0.561</span>, <span class="hljs-number">0</span>);
+    box3.scale.set(<span class="hljs-number">3.927</span>, <span class="hljs-number">6.285</span>, <span class="hljs-number">3.687</span>);
+    <span class="hljs-keyword">this</span>.add(box3);
+
+    <span class="hljs-keyword">const</span> box4 = <span class="hljs-keyword">new</span> Mesh(geometry, boxMaterial);
+    box4.position.set(<span class="hljs-number">-2.017</span>, <span class="hljs-number">0.018</span>, <span class="hljs-number">6.124</span>);
+    box4.rotation.set(<span class="hljs-number">0</span>, <span class="hljs-number">0.333</span>, <span class="hljs-number">0</span>);
+    box4.scale.set(<span class="hljs-number">2.002</span>, <span class="hljs-number">4.566</span>, <span class="hljs-number">2.064</span>);
+    <span class="hljs-keyword">this</span>.add(box4);
+
+    <span class="hljs-keyword">const</span> box5 = <span class="hljs-keyword">new</span> Mesh(geometry, boxMaterial);
+    box5.position.set(<span class="hljs-number">2.291</span>, <span class="hljs-number">-0.756</span>, <span class="hljs-number">-2.621</span>);
+    box5.rotation.set(<span class="hljs-number">0</span>, <span class="hljs-number">-0.286</span>, <span class="hljs-number">0</span>);
+    box5.scale.set(<span class="hljs-number">1.546</span>, <span class="hljs-number">1.552</span>, <span class="hljs-number">1.496</span>);
+    <span class="hljs-keyword">this</span>.add(box5);
+
+    <span class="hljs-keyword">const</span> box6 = <span class="hljs-keyword">new</span> Mesh(geometry, boxMaterial);
+    box6.position.set(<span class="hljs-number">-2.193</span>, <span class="hljs-number">-0.369</span>, <span class="hljs-number">-5.547</span>);
+    box6.rotation.set(<span class="hljs-number">0</span>, <span class="hljs-number">0.516</span>, <span class="hljs-number">0</span>);
+    box6.scale.set(<span class="hljs-number">3.875</span>, <span class="hljs-number">3.487</span>, <span class="hljs-number">2.986</span>);
+    <span class="hljs-keyword">this</span>.add(box6);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>-x right</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> light1 = <span class="hljs-keyword">new</span> Mesh(geometry, createAreaLightMaterial(<span class="hljs-number">50</span>));
+    light1.position.set(<span class="hljs-number">-16.116</span>, <span class="hljs-number">14.37</span>, <span class="hljs-number">8.208</span>);
+    light1.scale.set(<span class="hljs-number">0.1</span>, <span class="hljs-number">2.428</span>, <span class="hljs-number">2.739</span>);
+    <span class="hljs-keyword">this</span>.add(light1);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>-x left</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> light2 = <span class="hljs-keyword">new</span> Mesh(geometry, createAreaLightMaterial(<span class="hljs-number">50</span>));
+    light2.position.set(<span class="hljs-number">-16.109</span>, <span class="hljs-number">18.021</span>, <span class="hljs-number">-8.207</span>);
+    light2.scale.set(<span class="hljs-number">0.1</span>, <span class="hljs-number">2.425</span>, <span class="hljs-number">2.751</span>);
+    <span class="hljs-keyword">this</span>.add(light2);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>+x</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> light3 = <span class="hljs-keyword">new</span> Mesh(geometry, createAreaLightMaterial(<span class="hljs-number">17</span>));
+    light3.position.set(<span class="hljs-number">14.904</span>, <span class="hljs-number">12.198</span>, <span class="hljs-number">-1.832</span>);
+    light3.scale.set(<span class="hljs-number">0.15</span>, <span class="hljs-number">4.265</span>, <span class="hljs-number">6.331</span>);
+    <span class="hljs-keyword">this</span>.add(light3);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>+z</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> light4 = <span class="hljs-keyword">new</span> Mesh(geometry, createAreaLightMaterial(<span class="hljs-number">43</span>));
+    light4.position.set(<span class="hljs-number">-0.462</span>, <span class="hljs-number">8.89</span>, <span class="hljs-number">14.52</span>);
+    light4.scale.set(<span class="hljs-number">4.38</span>, <span class="hljs-number">5.441</span>, <span class="hljs-number">0.088</span>);
+    <span class="hljs-keyword">this</span>.add(light4);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>-z</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> light5 = <span class="hljs-keyword">new</span> Mesh(geometry, createAreaLightMaterial(<span class="hljs-number">20</span>));
+    light5.position.set(<span class="hljs-number">3.235</span>, <span class="hljs-number">11.486</span>, <span class="hljs-number">-12.541</span>);
+    light5.scale.set(<span class="hljs-number">2.5</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">0.1</span>);
+    <span class="hljs-keyword">this</span>.add(light5);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
+</div>
+<p>+y</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> light6 = <span class="hljs-keyword">new</span> Mesh(geometry, createAreaLightMaterial(<span class="hljs-number">100</span>));
+    light6.position.set(<span class="hljs-number">0.0</span>, <span class="hljs-number">20.0</span>, <span class="hljs-number">0.0</span>);
+    light6.scale.set(<span class="hljs-number">1.0</span>, <span class="hljs-number">0.1</span>, <span class="hljs-number">1.0</span>);
+    <span class="hljs-keyword">this</span>.add(light6);
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createAreaLightMaterial</span>(<span class="hljs-params">intensity</span>) </span>{
+  <span class="hljs-keyword">const</span> material = <span class="hljs-keyword">new</span> MeshBasicMaterial();
+  material.color.setScalar(intensity);
+  <span class="hljs-keyword">return</span> material;
+}
+
+<span class="hljs-keyword">export</span> { RoomEnvironment };
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="sourceurlhttps-threejs.orgexamplesjsmenvironmentsroomenvironment.js">
+  <h1>
+    <a href="#sourceurlhttps-threejs.orgexamplesjsmenvironmentsroomenvironment.js" name="sourceurlhttps-threejs.orgexamplesjsmenvironmentsroomenvironment.js" class="pilcrow"></a>
+sourceURL=https://threejs.org/examples/jsm/environments/RoomEnvironment.js
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

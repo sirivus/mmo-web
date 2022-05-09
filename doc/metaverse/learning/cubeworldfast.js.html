@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>cubeworldfast.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "metaverse/learning/cubeworldfast.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>cubeworldfast.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+<p>Three.js - Lots of Objects - Merged
+from https://threejs.org/manual/examples/lots-of-objects-merged.html</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> THREE <span class="hljs-keyword">from</span> <span class="hljs-string">"three"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> BufferGeometryUtils <span class="hljs-keyword">from</span> <span class="hljs-string">"https://unpkg.com/three@0.139.2/examples/jsm/utils/BufferGeometryUtils.js"</span>;
+<span class="hljs-keyword">import</span> { OrbitControls } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://unpkg.com/three@0.139.2/examples/jsm/controls/OrbitControls.js"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"#c"</span>);
+  <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer({ canvas });
+
+  <span class="hljs-keyword">const</span> fov = <span class="hljs-number">60</span>;
+  <span class="hljs-keyword">const</span> aspect = <span class="hljs-number">2</span>; <span class="hljs-comment">// the canvas default</span>
+  <span class="hljs-keyword">const</span> near = <span class="hljs-number">0.1</span>;
+  <span class="hljs-keyword">const</span> far = <span class="hljs-number">10</span>;
+  <span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.z = <span class="hljs-number">2.5</span>;
+
+  <span class="hljs-keyword">const</span> controls = <span class="hljs-keyword">new</span> OrbitControls(camera, canvas);
+  controls.enableDamping = <span class="hljs-literal">true</span>;
+  controls.enablePan = <span class="hljs-literal">false</span>;
+  controls.minDistance = <span class="hljs-number">1.2</span>;
+  controls.maxDistance = <span class="hljs-number">4</span>;
+  controls.update();
+
+  <span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();
+  scene.background = <span class="hljs-keyword">new</span> THREE.Color(<span class="hljs-string">"black"</span>);
+
+  {
+    <span class="hljs-keyword">const</span> loader = <span class="hljs-keyword">new</span> THREE.TextureLoader();
+    <span class="hljs-keyword">const</span> texture = loader.load(
+      <span class="hljs-string">"https://threejs.org/manual/examples/resources/images/world.jpg"</span>,
+      render
+    );
+    <span class="hljs-keyword">const</span> geometry = <span class="hljs-keyword">new</span> THREE.SphereGeometry(<span class="hljs-number">1</span>, <span class="hljs-number">64</span>, <span class="hljs-number">32</span>);
+    <span class="hljs-keyword">const</span> material = <span class="hljs-keyword">new</span> THREE.MeshBasicMaterial({ <span class="hljs-attr">map</span>: texture });
+    scene.add(<span class="hljs-keyword">new</span> THREE.Mesh(geometry, material));
+  }
+
+  <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadFile</span>(<span class="hljs-params">url</span>) </span>{
+    <span class="hljs-keyword">const</span> req = <span class="hljs-keyword">await</span> fetch(url);
+    <span class="hljs-keyword">return</span> req.text();
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseData</span>(<span class="hljs-params">text</span>) </span>{
+    <span class="hljs-keyword">const</span> data = [];
+    <span class="hljs-keyword">const</span> settings = { data };
+    <span class="hljs-keyword">let</span> max;
+    <span class="hljs-keyword">let</span> min;
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>split into lines</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    text.split(<span class="hljs-string">"\n"</span>).forEach(<span class="hljs-function">(<span class="hljs-params">line</span>) =&gt;</span> {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>split the line by whitespace</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      <span class="hljs-keyword">const</span> parts = line.trim().split(<span class="hljs-regexp">/\s+/</span>);
+      <span class="hljs-keyword">if</span> (parts.length === <span class="hljs-number">2</span>) {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>only 2 parts, must be a key/value pair</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        settings[parts[<span class="hljs-number">0</span>]] = <span class="hljs-built_in">parseFloat</span>(parts[<span class="hljs-number">1</span>]);
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (parts.length &gt; <span class="hljs-number">2</span>) {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>more than 2 parts, must be data</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-keyword">const</span> values = parts.map(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> {
+          <span class="hljs-keyword">const</span> value = <span class="hljs-built_in">parseFloat</span>(v);
+          <span class="hljs-keyword">if</span> (value === settings.NODATA_value) {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
+          }
+          max = <span class="hljs-built_in">Math</span>.max(max === <span class="hljs-literal">undefined</span> ? value : max, value);
+          min = <span class="hljs-built_in">Math</span>.min(min === <span class="hljs-literal">undefined</span> ? value : min, value);
+          <span class="hljs-keyword">return</span> value;
+        });
+        data.push(values);
+      }
+    });
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign(settings, { min, max });
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addBoxes</span>(<span class="hljs-params">file</span>) </span>{
+    <span class="hljs-keyword">const</span> { min, max, data } = file;
+    <span class="hljs-keyword">const</span> range = max - min;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>these helpers will make it easy to position the boxes
+We can rotate the lon helper on its Y axis to the longitude</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> lonHelper = <span class="hljs-keyword">new</span> THREE.Object3D();
+    scene.add(lonHelper);
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
+</div>
+<p>We rotate the latHelper on its X axis to the latitude</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> latHelper = <span class="hljs-keyword">new</span> THREE.Object3D();
+    lonHelper.add(latHelper);
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
+</div>
+<p>The position helper moves the object to the edge of the sphere</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> positionHelper = <span class="hljs-keyword">new</span> THREE.Object3D();
+    positionHelper.position.z = <span class="hljs-number">1</span>;
+    latHelper.add(positionHelper);
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9"></a>
+</div>
+<p>Used to move the center of the cube so it scales from the position Z axis</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> originHelper = <span class="hljs-keyword">new</span> THREE.Object3D();
+    originHelper.position.z = <span class="hljs-number">0.5</span>;
+    positionHelper.add(originHelper);
+
+    <span class="hljs-keyword">const</span> lonFudge = <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">0.5</span>;
+    <span class="hljs-keyword">const</span> latFudge = <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">-0.135</span>;
+    <span class="hljs-keyword">const</span> geometries = [];
+    data.forEach(<span class="hljs-function">(<span class="hljs-params">row, latNdx</span>) =&gt;</span> {
+      row.forEach(<span class="hljs-function">(<span class="hljs-params">value, lonNdx</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span> (value === <span class="hljs-literal">undefined</span>) {
+          <span class="hljs-keyword">return</span>;
+        }
+        <span class="hljs-keyword">const</span> amount = (value - min) / range;
+
+        <span class="hljs-keyword">const</span> boxWidth = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">const</span> boxHeight = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">const</span> boxDepth = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">const</span> geometry = <span class="hljs-keyword">new</span> THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-10" id="section-10"></a>
+</div>
+<p>adjust the helpers to point to the latitude and longitude</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        lonHelper.rotation.y =
+          THREE.MathUtils.degToRad(lonNdx + file.xllcorner) + lonFudge;
+        latHelper.rotation.x =
+          THREE.MathUtils.degToRad(latNdx + file.yllcorner) + latFudge;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-11" id="section-11"></a>
+</div>
+<p>use the world matrix of the origin helper to
+position this geometry</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        positionHelper.scale.set(
+          <span class="hljs-number">0.005</span>,
+          <span class="hljs-number">0.005</span>,
+          THREE.MathUtils.lerp(<span class="hljs-number">0.01</span>, <span class="hljs-number">0.5</span>, amount)
+        );
+        originHelper.updateWorldMatrix(<span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>);
+        geometry.applyMatrix4(originHelper.matrixWorld);
+
+        geometries.push(geometry);
+      });
+    });
+
+    <span class="hljs-keyword">const</span> mergedGeometry = BufferGeometryUtils.mergeBufferGeometries(
+      geometries,
+      <span class="hljs-literal">false</span>
+    );
+    <span class="hljs-keyword">const</span> material = <span class="hljs-keyword">new</span> THREE.MeshBasicMaterial({ <span class="hljs-attr">color</span>: <span class="hljs-string">"red"</span> });
+    <span class="hljs-keyword">const</span> mesh = <span class="hljs-keyword">new</span> THREE.Mesh(mergedGeometry, material);
+    scene.add(mesh);
+  }
+
+  loadFile(
+    <span class="hljs-string">"https://threejs.org/manual/examples/resources/data/gpw/gpw_v4_basic_demographic_characteristics_rev10_a000_014mt_2010_cntm_1_deg.asc"</span>
+  )
+    .then(parseData)
+    .then(addBoxes)
+    .then(render);
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resizeRendererToDisplaySize</span>(<span class="hljs-params">renderer</span>) </span>{
+    <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+    <span class="hljs-keyword">const</span> width = canvas.clientWidth;
+    <span class="hljs-keyword">const</span> height = canvas.clientHeight;
+    <span class="hljs-keyword">const</span> needResize = canvas.width !== width || canvas.height !== height;
+    <span class="hljs-keyword">if</span> (needResize) {
+      renderer.setSize(width, height, <span class="hljs-literal">false</span>);
+    }
+    <span class="hljs-keyword">return</span> needResize;
+  }
+
+  <span class="hljs-keyword">let</span> renderRequested = <span class="hljs-literal">false</span>;
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params"></span>) </span>{
+    renderRequested = <span class="hljs-literal">undefined</span>;
+
+    <span class="hljs-keyword">if</span> (resizeRendererToDisplaySize(renderer)) {
+      <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  render();
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">requestRenderIfNotRequested</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (!renderRequested) {
+      renderRequested = <span class="hljs-literal">true</span>;
+      requestAnimationFrame(render);
+    }
+  }
+
+  controls.addEventListener(<span class="hljs-string">"change"</span>, requestRenderIfNotRequested);
+  <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"resize"</span>, requestRenderIfNotRequested);
+}
+
+main();
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

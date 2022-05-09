@@ -1,0 +1,2501 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>README.md</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "metaverse/drei-master/README.md";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+      <div class="heading h3">
+        <a href="#basic-usage">Basic usage:</a>
+      </div>
+
+      <div class="heading h3">
+        <a href="#react-native">React-native:</a>
+      </div>
+
+      <div class="heading h3">
+        <a href="#index">Index</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#cameras">Cameras</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#perspectivecamera">PerspectiveCamera</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#orthographiccamera">OrthographicCamera</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#cubecamera">CubeCamera</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#controls">Controls</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#transformcontrols">TransformControls</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#scrollcontrols">ScrollControls</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#presentationcontrols">PresentationControls</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#shapes">Shapes</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#roundedbox">RoundedBox</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#screenquad">ScreenQuad</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#abstractions">Abstractions</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#image">Image</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#text">Text</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#line">Line</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#quadraticbezierline">QuadraticBezierLine</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#cubicbezierline">CubicBezierLine</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#positionalaudio">PositionalAudio</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#billboard">Billboard</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#gizmohelper">GizmoHelper</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#effects">Effects</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#gradienttexture">GradientTexture</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#edges">Edges</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#trail">Trail</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#sampler">Sampler</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#computedattribute">ComputedAttribute</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#clone">Clone</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#useanimations">useAnimations</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#shaders">Shaders</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#meshreflectormaterial">MeshReflectorMaterial</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#meshwobblematerial">MeshWobbleMaterial</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#meshdistortmaterial">MeshDistortMaterial</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#pointmaterial">PointMaterial</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#softshadows">softShadows</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#shadermaterial">shaderMaterial</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#modifiers">Modifiers</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#curvemodifier">CurveModifier</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#misc">Misc</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usecontextbridge">useContextBridge</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#html">Html</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#cycleraycast">CycleRaycast</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#select">Select</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#stats">Stats</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usedepthbuffer">useDepthBuffer</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usefbo">useFBO</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usecamera">useCamera</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usehelper">useHelper</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usedetectgpu">useDetectGPU</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#useaspect">useAspect</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usecursor">useCursor</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#useintersect">useIntersect</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#useboxprojectedenv">useBoxProjectedEnv</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usetrail">useTrail</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#loading">Loading</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#loader">Loader</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#useprogress">useProgress</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usegltf">useGLTF</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usefbx">useFBX</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usetexture">useTexture</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usektx2">useKTX2</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usecubetexture">useCubeTexture</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#performance">Performance</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#instances">Instances</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#merged">Merged</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#points">Points</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#segments">Segments</a>
+      </div>
+
+      <div class="heading h5">
+        <a href="#prop-based">Prop based:</a>
+      </div>
+
+      <div class="heading h5">
+        <a href="#ref-based-for-fast-updates">Ref based (for fast updates):</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#detailed">Detailed</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#preload">Preload</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#bakeshadows">BakeShadows</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#meshbounds">meshBounds</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#adaptivedpr">AdaptiveDpr</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#adaptiveevents">AdaptiveEvents</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usebvh">useBVH</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#portals">Portals</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#view">View</a>
+      </div>
+
+      <div class="heading h1">
+        <a href="#staging">Staging</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#center">Center</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#bounds">Bounds</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#camerashake">CameraShake</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#float">Float</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#stage">Stage</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#backdrop">Backdrop</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#shadow">Shadow</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#contactshadows">ContactShadows</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#spotlight">SpotLight</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#environment">Environment</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#lightformer">Lightformer</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#sky">Sky</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#stars">Stars</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#sparkles">Sparkles</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#cloud">Cloud</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usematcaptexture">useMatcapTexture</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#usenormaltexture">useNormalTexture</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="docs markdown"><p><img src="logo.jpg" alt="logo"></p>
+<p><a href="https://www.npmjs.com/package/@react-three/drei"><img src="https://img.shields.io/npm/v/@react-three/drei?style=flat&amp;colorA=000000&amp;colorB=000000" alt="Version"></a>
+<a href="https://www.npmjs.com/package/@react-three/drei"><img src="https://img.shields.io/npm/dt/@react-three/drei.svg?style=flat&amp;colorA=000000&amp;colorB=000000" alt="Downloads"></a>
+<a href="https://discord.gg/poimandres"><img src="https://img.shields.io/discord/740090768164651008?style=flat&amp;colorA=000000&amp;colorB=000000&amp;label=discord&amp;logo=discord&amp;logoColor=ffffff" alt="Discord Shield"></a></p>
+<p>A growing collection of useful helpers and fully functional, ready-made abstractions for <a href="https://github.com/pmndrs/react-three-fiber">@react-three/fiber</a>. If you make a component that is generic enough to be useful to others, think about making it available here through a PR!</p>
+<pre><code class="bash">npm install @react-three/drei
+</code></pre>
+<p>:point_right: this package is using the stand-alone <a href="https://github.com/pmndrs/three-stdlib"><code>three-stdlib</code></a> instead of <a href="https://github.com/mrdoob/three.js/tree/master/examples/jsm"><code>three/examples/jsm</code></a>. :point_left:</p>
+<div class="pilwrap" id="basic-usage">
+  <h3>
+    <a href="#basic-usage" name="basic-usage" class="pilcrow"></a>
+Basic usage:
+  </h3>
+</div>
+<pre><code class="jsx"><span class="hljs-keyword">import</span> { PerspectiveCamera, PositionalAudio, ... } <span class="hljs-keyword">from</span> <span class="hljs-string">'@react-three/drei'</span>
+</code></pre>
+<div class="pilwrap" id="react-native">
+  <h3>
+    <a href="#react-native" name="react-native" class="pilcrow"></a>
+React-native:
+  </h3>
+</div>
+<pre><code class="jsx"><span class="hljs-keyword">import</span> { PerspectiveCamera, PositionalAudio, ... } <span class="hljs-keyword">from</span> <span class="hljs-string">'@react-three/drei/native'</span>
+</code></pre>
+<p>The <code>native</code> route of the library <strong>does not</strong> export <code>Html</code> or <code>Loader</code>. The default export of the library is <code>web</code> which <strong>does</strong> export <code>Html</code> and <code>Loader</code>.</p>
+<div class="pilwrap" id="index">
+  <h3>
+    <a href="#index" name="index" class="pilcrow"></a>
+Index
+  </h3>
+</div>
+<table>
+  <tr>
+    <td valign="top">
+      <ul>
+        <li><a href="#cameras">Cameras</a></li>
+        <ul>
+          <li><a href="#perspectivecamera">PerspectiveCamera</a></li>
+          <li><a href="#orthographiccamera">OrthographicCamera</a></li>
+          <li><a href="#cubecamera">CubeCamera</a></li>
+        </ul>
+        <li><a href="#controls">Controls</a></li>
+        <ul>
+          <li><a href="#controls">Controls</a></li>
+          <li><a href="#controls">FlyControls</a></li>
+          <li><a href="#controls">MapControls</a></li>
+          <li><a href="#controls">DeviceOrientationControls</a></li>
+          <li><a href="#controls">TrackballControls</a></li>
+          <li><a href="#controls">ArcballControls</a></li>
+          <li><a href="#controls">PointerLockControls</a></li>
+          <li><a href="#controls">FirstPersonControls</a></li>
+          <li><a href="#transformcontrols">TransformControls</a></li>
+          <li><a href="#scrollcontrols">ScrollControls</a></li>
+          <li><a href="#presentationcontrols">PresentationControls</a></li>
+        </ul>
+        <li><a href="#abstractions">Abstractions</a></li>
+        <ul>
+          <li><a href="#image">Image</a></li>
+          <li><a href="#text">Text</a></li>
+          <li><a href="#line">Line</a></li>
+          <li><a href="#quadraticbezierline">QuadraticBezierLine</a></li>
+          <li><a href="#cubicbezierline">CubicBezierLine</a></li>
+          <li><a href="#positionalaudio">PositionalAudio</a></li>
+          <li><a href="#billboard">Billboard</a></li>
+          <li><a href="#gizmohelper">GizmoHelper</a></li>
+          <li><a href="#effects">Effects</a></li>
+          <li><a href="#gradienttexture">GradientTexture</a></li>
+          <li><a href="#edges">Edges</a></li>
+          <li><a href="#trail">Trail</a></li>
+          <li><a href="#sampler">Sampler</a></li>
+          <li><a href="#computedattribute">Computed Attribute</a></li>
+          <li><a href="#clone">Clone</a></li>
+          <li><a href="#useanimations">useAnimations</a></li>
+        </ul>
+        <li><a href="#shaders">Shaders</a></li>
+        <ul>
+          <li><a href="#meshreflectormaterial">MeshReflectorMaterial</a></li>
+          <li><a href="#meshwobblematerial">MeshWobbleMaterial</a></li>
+          <li><a href="#meshdistortmaterial">MeshDistortMaterial</a></li>
+          <li><a href="#pointmaterial">PointMaterial</a></li>
+          <li><a href="#softshadows">softShadows</a></li>
+          <li><a href="#shadermaterial">shaderMaterial</a></li>
+        </ul>
+        <li><a href="#modifiers">Modifiers</a></li>
+        <ul>
+          <li><a href="#curvemodifier">CurveModifier</a></li>
+        </ul>
+      </ul>
+    </td>
+    <td valign="top">
+      <ul>
+        <li><a href="#misc">Misc</a></li>
+        <ul>
+          <li><a href="#html">Html</a></li>
+          <li><a href="#cycleraycast">CycleRaycast</a></li>
+          <li><a href="#select">Select</a></li>
+          <li><a href="#stats">Stats</a></li>
+          <li><a href="#usedepthbuffer">useDepthBuffer</a></li>
+          <li><a href="#usecontextbridge">useContextBridge</a></li>
+          <li><a href="#usefbo">useFBO</a></li>
+          <li><a href="#usecamera">useCamera</a></li>
+          <li><a href="#usedetectgpu">useDetectGPU</a></li>
+          <li><a href="#usehelper">useHelper</a></li>
+          <li><a href="#useaspect">useAspect</a></li>
+          <li><a href="#usecursor">useCursor</a></li>
+          <li><a href="#useintersect">useIntersect</a></li>
+          <li><a href="#useboxprojectedenv">useBoxProjectedEnv</a></li>
+          <li><a href="#useTrail">useTrail</a></li>
+        </ul>
+        <li><a href="#loading">Loaders</a></li>
+        <ul>
+          <li><a href="#loader">Loader</a></li>
+          <li><a href="#useprogress">useProgress</a></li>
+          <li><a href="#usegltf">useGLTF</a></li>
+          <li><a href="#usefbx">useFBX</a></li>
+          <li><a href="#usetexture">useTexture</a></li>
+          <li><a href="#usektx2">useKTX2</a></li>
+          <li><a href="#usecubetexture">useCubeTexture</a></li>
+        </ul>
+        <li><a href="#performance">Performance</a></li>
+        <ul>
+          <li><a href="#instances">Instances</a></li>
+          <li><a href="#merged">Merged</a></li>
+          <li><a href="#points">Points</a></li>
+          <li><a href="#segments">Segments</a></li>
+          <li><a href="#detailed">Detailed</a></li>
+          <li><a href="#preload">Preload</a></li>
+          <li><a href="#bakeshadows">BakeShadows</a></li>
+          <li><a href="#meshbounds">meshBounds</a></li>
+          <li><a href="#adaptivedpr">AdaptiveDpr</a></li>
+          <li><a href="#adaptiveevents">AdaptiveEvents</a></li>
+          <li><a href="#usebvh">useBVH</a></li>
+        </ul>
+        <li><a href="#portals">Portals</a></li>        
+        <ul>
+          <li><a href="#view">View</a></li>
+        </ul>
+      </ul>
+    </td>
+    <td valign="top">
+      <ul>
+        <li><a href="#shapes">Shapes</a></li>
+        <ul>
+          <li><a href="#shapes">Plane</a></li>
+          <li><a href="#shapes">Box</a></li>
+          <li><a href="#shapes">Sphere</a></li>
+          <li><a href="#shapes">Circle</a></li>
+          <li><a href="#shapes">Cone</a></li>
+          <li><a href="#shapes">Cylinder</a></li>
+          <li><a href="#shapes">Tube</a></li>
+          <li><a href="#shapes">Torus</a></li>
+          <li><a href="#shapes">TorusKnot</a></li>
+          <li><a href="#shapes">Ring</a></li>
+          <li><a href="#shapes">Tetrahedron</a></li>
+          <li><a href="#shapes">Polyhedron</a></li>
+          <li><a href="#shapes">Icosahedron</a></li>
+          <li><a href="#shapes">Octahedron</a></li>
+          <li><a href="#shapes">Dodecahedron</a></li>
+          <li><a href="#shapes">Extrude</a></li>
+          <li><a href="#shapes">Lathe</a></li>
+          <li><a href="#roundedbox">RoundedBox</a></li>
+          <li><a href="#screenquad">Screenquad</a></li>
+        </ul>
+        <li><a href="#staging">Staging</a></li>
+        <ul>
+          <li><a href="#center">Center</a></li>
+          <li><a href="#bounds">Bounds</a></li>
+          <li><a href="#camerashake">CameraShake</a></li>
+          <li><a href="#float">Float</a></li>
+          <li><a href="#stage">Stage</a></li>
+          <li><a href="#backdrop">Backdrop</a></li>
+          <li><a href="#environment">Environment</a></li>
+          <li><a href="#lightformer">Lightformer</a></li>
+          <li><a href="#spotlight">SpotLight</a></li>
+          <li><a href="#shadow">Shadow</a></li>
+          <li><a href="#contactshadows">ContactShadows</a></li>
+          <li><a href="#sky">Sky</a></li>
+          <li><a href="#stars">Stars</a></li>
+          <li><a href="#sparkles">Sparkles</a></li>
+          <li><a href="#cloud">Cloud</a></li>
+          <li><a href="#usematcaptexture">useMatcapTexture</a></li>
+          <li><a href="#usenormaltexture">useNormalTexture</a></li>
+        </ul>
+      </ul>
+    </td>
+  </tr>
+</table>
+<div class="pilwrap" id="cameras">
+  <h1>
+    <a href="#cameras" name="cameras" class="pilcrow"></a>
+Cameras
+  </h1>
+</div>
+<div class="pilwrap" id="perspectivecamera">
+  <h4>
+    <a href="#perspectivecamera" name="perspectivecamera" class="pilcrow"></a>
+PerspectiveCamera
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/camera-perspectivecamera--perspective-camera-scene-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A responsive <a href="https://threejs.org/docs/#api/en/cameras/PerspectiveCamera">THREE.PerspectiveCamera</a> that can set itself as the default.</p>
+<pre><code class="jsx">&lt;PerspectiveCamera makeDefault {...props} /&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mesh</span> /&gt;</span></span>
+</code></pre>
+<p>You can also give it children, which will now occupy the same position as the camera and follow along as it moves.</p>
+<pre><code class="jsx">&lt;PerspectiveCamera makeDefault {...props}&gt;
+  &lt;mesh /&gt;
+&lt;/PerspectiveCamera&gt;
+</code></pre>
+<p>You can also drive it manually, it won't be responsive and you have to calculate aspect ration yourself.</p>
+<pre><code class="jsx">&lt;PerspectiveCamera manual aspect={...} onUpdate={(c) =&gt; c.updateProjectionMatrix()}&gt;
+</code></pre>
+<div class="pilwrap" id="orthographiccamera">
+  <h4>
+    <a href="#orthographiccamera" name="orthographiccamera" class="pilcrow"></a>
+OrthographicCamera
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/camera-orthographiccamera--orthographic-camera-scene-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A responsive <a href="https://threejs.org/docs/#api/en/cameras/OrthographicCamera">THREE.OrthographicCamera</a> that can set itself as the default.</p>
+<pre><code class="jsx">&lt;OrthographicCamera makeDefault {...props}&gt;
+  &lt;mesh /&gt;
+&lt;/OrthographicCamera&gt;
+</code></pre>
+<div class="pilwrap" id="cubecamera">
+  <h4>
+    <a href="#cubecamera" name="cubecamera" class="pilcrow"></a>
+CubeCamera
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/camera-cubecamera--default-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A <a href="https://threejs.org/docs/#api/en/cameras/CubeCamera">THREE.CubeCamera</a> that returns its texture as a render-prop. It makes children invisible while rendering to the internal buffer so that they are not included in the reflection.</p>
+<p>Using the <code>frames</code> prop you can control if this camera renders indefinitively or statically (a given number of times).
+If you have two static objects in the scene, make it <code>frames={2}</code> for instance, so that both objects get to &quot;see&quot; one another in the reflections, which takes multiple renders.
+If you have moving objects, unset the prop and use a smaller <code>resolution</code> instead.</p>
+<pre><code class="jsx">&lt;CubeCamera resolution={256} frames={Infinity} fog={customFog} near={1} far={1000}&gt;
+  {(texture) =&gt; (
+    &lt;mesh&gt;
+      &lt;sphereGeometry /&gt;
+      &lt;meshStandardMaterial envMap={texture} /&gt;
+    &lt;/mesh&gt;
+  )}
+&lt;/CubeCamera&gt;
+</code></pre>
+<div class="pilwrap" id="controls">
+  <h1>
+    <a href="#controls" name="controls" class="pilcrow"></a>
+Controls
+  </h1>
+</div>
+<p>If available controls have damping enabled by default, they manage their own updates, remove themselves on unmount, are compatible with the <code>frameloop=&quot;demand&quot;</code> canvas-flag. They inherit all props from their underlying <a href="https://github.com/mrdoob/three.js/tree/master/examples/jsm/controls">THREE controls</a>. They are the first effects to run before all other useFrames, to ensure that other components may mutate the camera on top of them.</p>
+<p>Some controls allow you to set <code>makeDefault</code>, similar to, for instance, PerspectiveCamera. This will set @react-three/fiber's <code>controls</code> field in the root store. This can make it easier in situations where you want controls to be known and other parts of the app could respond to it. Some drei controls already take it into account, like CameraShake, Gizmo and TransformControls.</p>
+<p>Drei currently exports OrbitControls <a href="https://drei.vercel.app/?path=/story/controls-orbitcontrols--orbit-controls-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a>, MapControls <a href="https://drei.vercel.app/?path=/story/controls-mapcontrols--map-controls-scene-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a>, TrackballControls, ArcballControls, FlyControls, DeviceOrientationControls, PointerLockControls <a href="https://drei.vercel.app/?path=/story/controls-pointerlockcontrols--pointer-lock-controls-scene-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a>, FirstPersonControls <a href="https://drei.vercel.app/?path=/story/controls-firstpersoncontrols--first-person-controls-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>All controls react to the default camera. If you have a <code>&lt;PerspectiveCamera makeDefault /&gt;</code> in your scene, they will control it. If you need to inject an imperative camera or one that isn't the default, use the <code>camera</code> prop: <code>&lt;OrbitControls camera={MyCamera} /&gt;</code>.</p>
+<p>PointerLockControls additionally supports a <code>selector</code> prop, which enables the binding of <code>click</code> event handlers for control activation to other elements than <code>document</code> (e.g. a 'Click here to play' button). All elements matching the <code>selector</code> prop will activate the controls. It will also center raycast events by default, so regular onPointerOver/etc events on meshes will continue to work.</p>
+<div class="pilwrap" id="transformcontrols">
+  <h1>
+    <a href="#transformcontrols" name="transformcontrols" class="pilcrow"></a>
+TransformControls
+  </h1>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/controls-transformcontrols--transform-controls-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/btsbj"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/btsbj/screenshot.png" alt="Tranform controls"/></a>
+</p>
+<p>An abstraction around <a href="https://threejs.org/docs/#examples/en/controls/TransformControls">THREE.TransformControls</a>.</p>
+<p>You can wrap objects which then receive a transform gizmo.</p>
+<pre><code class="jsx">&lt;TransformControls mode="translate"&gt;
+  &lt;mesh /&gt;
+&lt;/TransformControls&gt;
+</code></pre>
+<p>You could also reference the object which might make it easier to exchange the target. Now the object does not have to be part of the same sub-graph. References can be plain objects or React.MutableRefObjects.</p>
+<pre><code class="jsx">&lt;TransformControls object={mesh} mode=<span class="hljs-string">"translate"</span>&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mesh</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{mesh}</span> /&gt;</span></span>
+</code></pre>
+<p>If you are using other controls (Orbit, Trackball, etc), you will notice how they interfere, dragging one will affect the other. Default-controls will temporarily be disabled automatically when the user is pulling on the transform gizmo.</p>
+<pre><code class="jsx">&lt;TransformControls mode=<span class="hljs-string">"translate"</span> /&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">OrbitControls</span> <span class="hljs-attr">makeDefault</span> /&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="scrollcontrols">
+  <h1>
+    <a href="#scrollcontrols" name="scrollcontrols" class="pilcrow"></a>
+ScrollControls
+  </h1>
+</div>
+<p><img src="https://img.shields.io/badge/-Dom%C2%A0only-red" alt=""></p>
+<p>
+  <a href="https://codesandbox.io/s/l4klb"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/l4klb/screenshot.png" alt="Horizontal tiles"/></a>
+  <a href="https://codesandbox.io/s/4m0d0"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/4m0d0/screenshot.png" alt="M1 scroll"/></a>
+  <a href="https://codesandbox.io/s/gsm1y"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/gsm1y/screenshot.png" alt="useIntersect"/></a>
+  <a href="https://codesandbox.io/s/x8gvs"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/x8gvs/screenshot.png" alt="Infinite scroll"/></a>
+  <a href="https://codesandbox.io/s/yjhzv"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/yjhzv/screenshot.png" alt="Vertical scroll"/></a>
+  <a href="https://codesandbox.io/s/4jr4p"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/4jr4p/screenshot.png" alt="GLTF and useScroll"/></a>
+</p>
+<p>Scroll controls create a HTML scroll container in front of the canvas. Everything you drop into the <code>&lt;Scroll&gt;</code> component will be affected.</p>
+<p>You can listen and react to scroll with the <code>useScroll</code> hook which gives you useful data like the current scroll <code>offset</code>, <code>delta</code> and functions for range finding: <code>range</code>, <code>curve</code> and <code>visible</code>. The latter functions are especially useful if you want to react to the scroll offset, for instance if you wanted to fade things in and out if they are in or out of view.</p>
+<pre><code class="jsx">&lt;ScrollControls
+  pages={3} // Each page takes 100% of the height of the canvas
+  distance={1} // A factor that increases scroll bar travel (default: 1)
+  damping={4} // Friction, higher is faster (default: 4)
+  horizontal={false} // Can also scroll horizontally (default: false)
+  infinite={false} // Can also scroll infinitely (default: false)
+&gt;
+  {/* You can have components in here, they are not scrolled, but they can still
+      react to scroll by using useScroll! */}
+  &lt;Scroll&gt;
+    &lt;Foo position={[0, 0, 0]} /&gt;
+    &lt;Foo position={[0, viewport.height, 0]} /&gt;
+    &lt;Foo position={[0, viewport.height * 1, 0]} /&gt;
+  &lt;/Scroll&gt;
+  &lt;Scroll html&gt;
+    &lt;h1&gt;html in here (optional)&lt;/h1&gt;
+    &lt;h1 style={{ top: '100vh' }}&gt;second page&lt;/h1&gt;
+    &lt;h1 style={{ top: '200vh' }}&gt;third page&lt;/h1&gt;
+  &lt;/Scroll&gt;
+&lt;/ScrollControls&gt;
+
+function Foo(props) {
+  const ref = useRef()
+  const data = useScroll()
+  useFrame(() =&gt; {
+    // data.offset = current scroll position, between 0 and 1, dampened
+    // data.delta = current delta, between 0 and 1, dampened
+
+    // Will be 0 when the scrollbar is at the starting position,
+    // then increase to 1 until 1 / 3 of the scroll distance is reached
+    const a = data.range(0, 1 / 3)
+    // Will start increasing when 1 / 3 of the scroll distance is reached,
+    // and reach 1 when it reaches 2 / 3rds.
+    const b = data.range(1 / 3, 1 / 3)
+        // Same as above but with a margin of 0.1 on both ends
+    const c = data.range(1 / 3, 1 / 3, 0.1)
+    // Will move between 0-1-0 for the selected range
+    const d = data.curve(1 / 3, 1 / 3)
+    // Same as above, but with a margin of 0.1 on both ends
+    const d = data.curve(1 / 3, 1 / 3, 0.1)
+    // Returns true if the offset is in range and false if it isn't
+    const e = data.visible(2 / 3, 1 / 3)
+    // The visible function can also receive a margin
+    const f = data.visible(2 / 3, 1 / 3, 0.1)
+  })
+  return &lt;mesh ref={ref} {...props} /&gt;
+</code></pre>
+<div class="pilwrap" id="presentationcontrols">
+  <h1>
+    <a href="#presentationcontrols" name="presentationcontrols" class="pilcrow"></a>
+PresentationControls
+  </h1>
+</div>
+<p><img src="https://img.shields.io/badge/-Dom%C2%A0only-red" alt=""></p>
+<p>
+  <a href="https://codesandbox.io/s/kheke"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/kheke/screenshot.png" alt="Journey stage 1"/></a>
+  <a href="https://codesandbox.io/s/qyz5r"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/qyz5r/screenshot.png" alt="Watch"/></a>
+</p>
+<p>Semi-OrbitControls with spring-physics, polar zoom and snap-back, for presentational purposes. These controls do not turn the camera but will spin their contents. They will not suddenly come to rest when they reach limits like OrbitControls do, but rather smoothly anticipate stopping position.</p>
+<pre><code class="jsx">&lt;PresentationControls
+  global={false} // Spin globally or by dragging the model
+  cursor={true} // Whether to toggle cursor style on drag
+  snap={false} // Snap-back to center (can also be a spring config)
+  speed={1} // Speed factor
+  zoom={1} // Zoom factor when half the polar-max is reached
+  rotation={[0, 0, 0]} // Default rotation
+  polar={[0, Math.PI / 2]} // Vertical limits
+  azimuth={[-Infinity, Infinity]} // Horizontal limits
+  config={{ mass: 1, tension: 170, friction: 26 }} // Spring config
+&gt;
+  &lt;mesh /&gt;
+&lt;/PresentationControls&gt;
+</code></pre>
+<div class="pilwrap" id="shapes">
+  <h1>
+    <a href="#shapes" name="shapes" class="pilcrow"></a>
+Shapes
+  </h1>
+</div>
+<p><a href="https://threejs.org/docs/#api/en/core/BufferGeometry">Buffer-geometry</a> short-cuts for Plane, Box, Sphere, Circle, Cone, Cylinder, Tube, Torus, TorusKnot, Ring, Tetrahedron, Polyhedron, Icosahedron, Octahedron, Dodecahedron, Extrude, Lathe.</p>
+<pre><code class="jsx">&lt;Plane args={[<span class="hljs-number">2</span>, <span class="hljs-number">2</span>]} /&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Sphere</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meshBasicMaterial</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"hotpink"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Sphere</span>&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="roundedbox">
+  <h4>
+    <a href="#roundedbox" name="roundedbox" class="pilcrow"></a>
+RoundedBox
+  </h4>
+</div>
+<p>A box buffer geometry with rounded corners, done with extrusion.</p>
+<pre><code class="jsx">&lt;RoundedBox args={[1, 1, 1]} radius={0.05} smoothness={4} {...meshProps}&gt;
+  &lt;meshPhongMaterial color="#f3f3f3" wireframe /&gt;
+&lt;/RoundedBox&gt;
+</code></pre>
+<div class="pilwrap" id="screenquad">
+  <h4>
+    <a href="#screenquad" name="screenquad" class="pilcrow"></a>
+ScreenQuad
+  </h4>
+</div>
+<pre><code class="jsx">&lt;ScreenQuad&gt;
+  &lt;myMaterial /&gt;
+&lt;/ScreenQuad&gt;
+</code></pre>
+<p>A triangle that fills the screen, ideal for full-screen fragment shader work (raymarching, postprocessing).
+👉 <a href="https://www.cginternals.com/en/blog/2018-01-10-screen-aligned-quads-and-triangles.html">Why a triangle?</a>
+👉 <a href="https://medium.com/@luruke/simple-postprocessing-in-three-js-91936ecadfb7">Use as a post processing mesh</a></p>
+<div class="pilwrap" id="abstractions">
+  <h1>
+    <a href="#abstractions" name="abstractions" class="pilcrow"></a>
+Abstractions
+  </h1>
+</div>
+<div class="pilwrap" id="image">
+  <h4>
+    <a href="#image" name="image" class="pilcrow"></a>
+Image
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/l4klb"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/l4klb/screenshot.png" alt="Horizontal tiles"/></a>
+  <a href="https://codesandbox.io/s/gsm1y"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/gsm1y/screenshot.png" alt="useIntersect"/></a>
+  <a href="https://codesandbox.io/s/x8gvs"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/x8gvs/screenshot.png" alt="Infinite scroll"/></a>
+  <a href="https://codesandbox.io/s/yjhzv"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/yjhzv/screenshot.png" alt="Vertical scroll"/></a>
+</p>
+<p>A shader-based image component with auto-cover (similar to css/background: cover).</p>
+<pre><code class="jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Foo</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> ref = useRef()
+  useFrame(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    ref.current.material.zoom = ... <span class="hljs-comment">// 1 and higher</span>
+    ref.current.material.grayscale = ... <span class="hljs-comment">// between 0 and 1</span>
+    ref.current.material.color.set(...) <span class="hljs-comment">// mix-in color</span>
+  })
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"/file.jpg"</span> /&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="text">
+  <h4>
+    <a href="#text" name="text" class="pilcrow"></a>
+Text
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/abstractions-text--text-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a> <img src="https://img.shields.io/badge/-suspense-brightgreen" alt=""></p>
+<p>
+  <a href="https://codesandbox.io/s/yup2o"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/yup2o/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Hi-quality text rendering w/ signed distance fields (SDF) and antialiasing, using <a href="https://github.com/protectwise/troika/tree/master/packages/troika-3d-text">troika-3d-text</a>. All of troikas props are valid! Text is suspense-based!</p>
+<pre><code class="jsx">&lt;Text color="black" anchorX="center" anchorY="middle"&gt;
+  hello world!
+&lt;/Text&gt;
+</code></pre>
+<p>Text will suspend while loading the font data, but in order to completely avoid FOUC you can pass the characters it needs to render.</p>
+<pre><code class="jsx">&lt;Text font={fontUrl} characters="abcdefghijklmnopqrstuvwxyz0123456789!"&gt;
+  hello world!
+&lt;/Text&gt;
+</code></pre>
+<div class="pilwrap" id="line">
+  <h4>
+    <a href="#line" name="line" class="pilcrow"></a>
+Line
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/abstractions-line--basic-line"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>Renders a THREE.Line2.</p>
+<pre><code class="jsx">&lt;Line
+  points={[[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], ...]}       <span class="hljs-comment">// Array of points</span>
+  color=<span class="hljs-string">"black"</span>                   <span class="hljs-comment">// Default</span>
+  lineWidth={<span class="hljs-number">1</span>}                   <span class="hljs-comment">// In pixels (default)</span>
+  dashed={<span class="hljs-literal">false</span>}                  <span class="hljs-comment">// Default</span>
+  vertexColors={[[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], ...]} <span class="hljs-comment">// Optional array of RGB values for each point</span>
+  {...lineProps}                  <span class="hljs-comment">// All THREE.Line2 props are valid</span>
+  {...materialProps}              <span class="hljs-comment">// All THREE.LineMaterial props are valid</span>
+/&gt;
+</code></pre>
+<div class="pilwrap" id="quadraticbezierline">
+  <h4>
+    <a href="#quadraticbezierline" name="quadraticbezierline" class="pilcrow"></a>
+QuadraticBezierLine
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/abstractions-line--quadratic-bezier"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/2ij9u"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/2ij9u/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Renders a THREE.Line2 using THREE.QuadraticBezierCurve3 for interpolation.</p>
+<pre><code class="jsx">&lt;QuadraticBezierLine
+  start={[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]}               <span class="hljs-comment">// Starting point, can be an array or a vec3</span>
+  end={[<span class="hljs-number">10</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>]}               <span class="hljs-comment">// Ending point, can be an array or a vec3</span>
+  mid={[<span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>]}                 <span class="hljs-comment">// Optional control point, can be an array or a vec3</span>
+  color=<span class="hljs-string">"black"</span>                   <span class="hljs-comment">// Default</span>
+  lineWidth={<span class="hljs-number">1</span>}                   <span class="hljs-comment">// In pixels (default)</span>
+  dashed={<span class="hljs-literal">false</span>}                  <span class="hljs-comment">// Default</span>
+  vertexColors={[[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], ...]} <span class="hljs-comment">// Optional array of RGB values for each point</span>
+  {...lineProps}                  <span class="hljs-comment">// All THREE.Line2 props are valid</span>
+  {...materialProps}              <span class="hljs-comment">// All THREE.LineMaterial props are valid</span>
+/&gt;
+</code></pre>
+<p>You can also update the line runtime.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> ref = useRef()
+useFrame(<span class="hljs-function">(<span class="hljs-params">state</span>) =&gt;</span> {
+  ref.current.setPoints(
+    [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
+    [<span class="hljs-number">10</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
+    <span class="hljs-comment">// [5, 0, 0] // Optional: mid-point</span>
+  )
+}, [])
+<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">QuadraticBezierLine</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span> /&gt;</span></span>
+}
+</code></pre>
+<div class="pilwrap" id="cubicbezierline">
+  <h4>
+    <a href="#cubicbezierline" name="cubicbezierline" class="pilcrow"></a>
+CubicBezierLine
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/abstractions-line--cubic-bezier"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>Renders a THREE.Line2 using THREE.CubicBezierCurve3 for interpolation.</p>
+<pre><code class="jsx">&lt;CubicBezierLine
+  start={[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]}               <span class="hljs-comment">// Starting point</span>
+  end={[<span class="hljs-number">10</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>]}               <span class="hljs-comment">// Ending point</span>
+  midA={[<span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]}                <span class="hljs-comment">// First control point</span>
+  midB={[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>]}                <span class="hljs-comment">// Second control point</span>
+  color=<span class="hljs-string">"black"</span>                   <span class="hljs-comment">// Default</span>
+  lineWidth={<span class="hljs-number">1</span>}                   <span class="hljs-comment">// In pixels (default)</span>
+  dashed={<span class="hljs-literal">false</span>}                  <span class="hljs-comment">// Default</span>
+  vertexColors={[[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], ...]} <span class="hljs-comment">// Optional array of RGB values for each point</span>
+  {...lineProps}                  <span class="hljs-comment">// All THREE.Line2 props are valid</span>
+  {...materialProps}              <span class="hljs-comment">// All THREE.LineMaterial props are valid</span>
+/&gt;
+</code></pre>
+<div class="pilwrap" id="positionalaudio">
+  <h4>
+    <a href="#positionalaudio" name="positionalaudio" class="pilcrow"></a>
+PositionalAudio
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/gkfhr"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/gkfhr/screenshot.png" alt="Demo"/></a>
+</p>
+<p><a href="https://drei.vercel.app/?path=/story/abstractions-positionalaudio--positional-audio-scene-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a> <img src="https://img.shields.io/badge/-suspense-brightgreen" alt=""></p>
+<p>A wrapper around <a href="https://threejs.org/docs/#api/en/audio/PositionalAudio">THREE.PositionalAudio</a>. Add this to groups or meshes to tie them to a sound that plays when the camera comes near.</p>
+<pre><code class="jsx">&lt;PositionalAudio
+  url=<span class="hljs-string">"/sound.mp3"</span>
+  distance={<span class="hljs-number">1</span>}
+  loop
+  {...props} <span class="hljs-comment">// All THREE.PositionalAudio props are valid</span>
+/&gt;
+</code></pre>
+<div class="pilwrap" id="billboard">
+  <h4>
+    <a href="#billboard" name="billboard" class="pilcrow"></a>
+Billboard
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/abstractions-billboard--billboard-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>Adds a <code>&lt;group /&gt;</code> that always faces the camera.</p>
+<pre><code class="jsx">&lt;Billboard
+  follow={true}
+  lockX={false}
+  lockY={false}
+  lockZ={false} // Lock the rotation on the z axis (default=false)
+&gt;
+  &lt;Text fontSize={1}&gt;I'm a billboard&lt;/Text&gt;
+&lt;/Billboard&gt;
+</code></pre>
+<div class="pilwrap" id="gizmohelper">
+  <h4>
+    <a href="#gizmohelper" name="gizmohelper" class="pilcrow"></a>
+GizmoHelper
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/gizmos-gizmohelper--gizmo-helper-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>Used by widgets that visualize and control camera position.</p>
+<p>Two example gizmos are included: GizmoViewport and GizmoViewcube, and <code>useGizmoContext</code> makes it easy to create your own.</p>
+<p>Make sure to set the <code>makeDefault</code> prop on your controls, in that case you do not have to define the onTarget and onUpdate props.</p>
+<pre><code class="jsx">&lt;GizmoHelper
+  alignment="bottom-right" // widget alignment within scene
+  margin={[80, 80]} // widget margins (X, Y)
+  onUpdate={/* called during camera animation  */}
+  onTarget={/* return current camera target (e.g. from orbit controls) to center animation */}
+  renderPriority={/* use renderPriority to prevent the helper from disappearing if there is another useFrame(..., 1)*/}
+&gt;
+  &lt;GizmoViewport axisColors={['red', 'green', 'blue']} labelColor="black" /&gt;
+  {/* alternative: &lt;GizmoViewcube /&gt; */}
+&lt;/GizmoHelper&gt;
+</code></pre>
+<div class="pilwrap" id="effects">
+  <h4>
+    <a href="#effects" name="effects" class="pilcrow"></a>
+Effects
+  </h4>
+</div>
+<p>Abstraction around threes own <a href="https://threejs.org/docs/#examples/en/postprocessing/EffectComposer">EffectComposer</a>. By default it will prepend a render-pass and a gammacorrection-pass. Children are cloned, <code>attach</code> is given to them automatically. You can only use passes or effects in there.</p>
+<pre><code class="jsx">import { SSAOPass } from "three-stdlib"
+
+extend({ SSAOPass })
+
+&lt;Effects multisamping={8} renderIndex={1} disableGamma={false} disableRenderPass={false} disableRender={false}&gt;
+  &lt;sSAOPass args={[scene, camera, 100, 100]} kernelRadius={1.2} kernelSize={0} /&gt;
+&lt;/Effects&gt;
+</code></pre>
+<div class="pilwrap" id="gradienttexture">
+  <h4>
+    <a href="#gradienttexture" name="gradienttexture" class="pilcrow"></a>
+GradientTexture
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/l03yb"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/l03yb/screenshot.png" alt="Demo"/></a>
+</p>
+<p>A declarative THREE.Texture which attaches to &quot;map&quot; by default. You can use this to create gradient backgrounds.</p>
+<pre><code class="jsx">&lt;mesh&gt;
+  &lt;planeGeometry /&gt;
+  &lt;meshBasicMaterial&gt;
+    &lt;GradientTexture
+      stops={[0, 1]} // As many stops as you want
+      colors={['aquamarine', 'hotpink']} // Colors need to match the number of stops
+      size={1024} // Size is optional, default = 1024
+    /&gt;
+  &lt;/meshBasicMaterial&gt;
+&lt;/mesh&gt;
+</code></pre>
+<div class="pilwrap" id="edges">
+  <h4>
+    <a href="#edges" name="edges" class="pilcrow"></a>
+Edges
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/ny3p4"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/ny3p4/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Abstracts <a href="https://threejs.org/docs/#api/en/geometries/EdgesGeometry">THREE.EdgesGeometry</a>. It pulls the geometry automatically from its parent, optionally you can ungroup it and give it a <code>geometry</code> prop. You can give it children, for instance a custom material.</p>
+<pre><code class="jsx">&lt;mesh&gt;
+  &lt;boxGeometry /&gt;
+  &lt;meshBasicMaterial /&gt;
+  &lt;Edges
+    scale={1.1}
+    threshold={15} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
+    color="white"
+  /&gt;
+&lt;/mesh&gt;
+</code></pre>
+<div class="pilwrap" id="trail">
+  <h4>
+    <a href="#trail" name="trail" class="pilcrow"></a>
+Trail
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-trail--use-trail-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A declarative, <code>three.MeshLine</code> based Trails implementation. You can attach it to any mesh and it will give it a beautiful trail.</p>
+<p>Props defined bellow with their default values.</p>
+<pre><code class="jsx">&lt;Trail
+  width={0.2} // Width of the line
+  color={'hotpink'} // Color of the line
+  length={1} // Length of the line
+  decay={1} // How fast the line fades away
+  local={false} // Wether to use the target's world or local positions
+  stride={0} // Min distance between previous and current point
+  interval={1} // Number of frames to wait before next calculation
+  target={undefined} // Optional target. This object will produce the trail.
+  attenuation={(width) =&gt; width} // A function to define the width in each point along it.
+&gt;
+  {/* If `target` is not defined, Trail will use the first `Object3D` child as the target. */}
+  &lt;mesh&gt;
+    &lt;sphereGeometry /&gt;
+    &lt;meshBasicMaterial /&gt;
+  &lt;/mesh&gt;
+
+  {/* You can optionally define a custom meshLineMaterial to use. */}
+  {/* &lt;meshLineMaterial color={"red"} /&gt; */}
+&lt;/Trail&gt;
+</code></pre>
+<p>👉 Inspired by <a href="https://spite.github.io/codevember-2021/9/">TheSpite's Codevember 2021 #9</a></p>
+<div class="pilwrap" id="sampler">
+  <h4>
+    <a href="#sampler" name="sampler" class="pilcrow"></a>
+Sampler
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-sampler--sampler-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/ehflx3">
+    <img width="20%" src="https://codesandbox.io/api/v1/sandboxes/ehflx3/screenshot.png" alt="Demo"/>
+  </a> <br />
+  <small>– <a href="https://codesandbox.io/s/ehflx3">Complex Demo</a> by <a href="https://twitter.com/CantBeFaraz">@CantBeFaraz</a></small> <br />
+  <small>– <a href="https://codesandbox.io/s/k6rcp2">Simple Demo</a> by <a href="https://twitter.com/ggsimm">@ggsimm</a></small>
+</p>
+<p>Declarative abstraction around MeshSurfaceSampler &amp; InstancedMesh.
+It samples points from the passed mesh and transforms an InstancedMesh's matrix to distribute instances on the points.</p>
+<p>Check the demos &amp; code for more.</p>
+<p>You can either pass a Mesh and InstancedMesh as children:</p>
+<pre><code class="tsx">// This simple example scatters 1000 spheres on the surface of the sphere mesh.
+&lt;Sampler
+  weight={&quot;normal&quot;} // the name of the attribute to be used as sampling weight
+  transform={transformPoint} // a function that transforms each instance given a sample. See the examples for more.
+&gt;
+  &lt;mesh&gt;
+    &lt;sphereGeometry args={[2]} /&gt;
+  &lt;/mesh&gt;
+
+  &lt;instancedMesh args={[null, null, 1_000]}&gt;
+    &lt;sphereGeometry args={[0.1]}&gt;
+  &lt;/instancedMesh&gt;
+&lt;/Sampler&gt;
+</code></pre>
+<p>or use refs when you can't compose declaratively:</p>
+<pre><code class="tsx">const { nodes } = useGLTF('my/mesh/url')
+const mesh = useRef(nodes)
+const instances = useRef()
+
+return &lt;&gt;
+  &lt;instancedMesh args={[null, null, 1_000]}&gt;
+    &lt;sphereGeometry args={[0.1]}&gt;
+  &lt;/instancedMesh&gt;
+
+  &lt;Sampler mesh={mesh} instances={instances}&gt;
+&lt;/&gt;
+</code></pre>
+<div class="pilwrap" id="computedattribute">
+  <h4>
+    <a href="#computedattribute" name="computedattribute" class="pilcrow"></a>
+ComputedAttribute
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-sampler--sampler-weight-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>Create and attach an attribute declaratively.</p>
+<pre><code class="tsx">&lt;sphereGeometry&gt;
+  &lt;ComputedAttribute
+    // attribute will be added to the geometry with this name
+    name=&quot;my-attribute-name&quot;
+    compute={(geometry) =&gt; {
+      // ...someLogic;
+      return new THREE.BufferAttribute([1, 2, 3], 1)
+    }}
+    // you can pass any BufferAttribute prop to this component, eg.
+    usage={THREE.StaticReadUsage}
+  /&gt;
+&lt;/sphereGeometry&gt;
+</code></pre>
+<div class="pilwrap" id="clone">
+  <h4>
+    <a href="#clone" name="clone" class="pilcrow"></a>
+Clone
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/42glz0"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/42glz0/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Declarative abstraction around THREE.Object3D.clone. This is useful when you want to create a shallow copy of an existing fragment (and Object3D, Groups, etc) into your scene, for instance a group from a loaded GLTF. This clone is now re-usable, but it will still refer to the original geometries and materials.</p>
+<pre><code class="ts">&lt;Clone
+  <span class="hljs-comment">/** Any pre-existing THREE.Object3D (groups, meshes, ...), or an array of objects */</span>
+  object: THREE.Object3D | THREE.Object3D[]
+  <span class="hljs-comment">/** Children will be placed within the object, or within the group that holds arrayed objects */</span>
+  children?: React.ReactNode
+  <span class="hljs-comment">/** Can clone materials and/or geometries deeply (default: false) */</span>
+  deep?: <span class="hljs-built_in">boolean</span> | <span class="hljs-string">'materialsOnly'</span> | <span class="hljs-string">'geometriesOnly'</span>
+  <span class="hljs-comment">/** The property keys it will shallow-clone (material, geometry, visible, ...) */</span>
+  keys?: <span class="hljs-built_in">string</span>[]
+  <span class="hljs-comment">/** Can either spread over props or fill in JSX children, applies to every mesh within */</span>
+  inject?: MeshProps | React.ReactNode | <span class="hljs-function">(<span class="hljs-params">(<span class="hljs-params">object: THREE.Object3D</span>) =&gt; React.ReactNode</span>)
+  /** <span class="hljs-params">Short</span> <span class="hljs-params">access</span> <span class="hljs-params">castShadow</span>, <span class="hljs-params">applied</span> <span class="hljs-params">to</span> <span class="hljs-params">every</span> <span class="hljs-params">mesh</span> <span class="hljs-params">within</span> */
+  <span class="hljs-params">castShadow</span>?: <span class="hljs-params">boolean</span>
+  /** <span class="hljs-params">Short</span> <span class="hljs-params">access</span> <span class="hljs-params">receiveShadow</span>, <span class="hljs-params">applied</span> <span class="hljs-params">to</span> <span class="hljs-params">every</span> <span class="hljs-params">mesh</span> <span class="hljs-params">within</span> */
+  <span class="hljs-params">receiveShadow</span>?: <span class="hljs-params">boolean</span>
+/&gt;
+</span></code></pre>
+<p>You create a shallow clone by passing a pre-existing object to the <code>object</code> prop.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> { nodes } = useGLTF(url)
+<span class="hljs-keyword">return</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Clone</span> <span class="hljs-attr">object</span>=<span class="hljs-string">{nodes.table}</span> /&gt;</span></span>
+</code></pre>
+<p>Or, multiple objects:</p>
+<pre><code class="jsx">&lt;Clone object={[nodes.foo, nodes.bar]} /&gt;
+</code></pre>
+<p>You can dynamically insert objects, these will apply to anything that isn't a group or a plain object3d (meshes, lines, etc):</p>
+<pre><code class="jsx">&lt;Clone object={nodes.table} inject={&lt;meshStandardMaterial color=<span class="hljs-string">"green"</span> /&gt;} /&gt;
+</code></pre>
+<p>Or make inserts conditional:</p>
+<pre><code class="jsx">&lt;Clone object={nodes.table} inject={
+  {(object) =&gt; (object.name === <span class="hljs-string">'table'</span> ? <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">meshStandardMaterial</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"green"</span> /&gt;</span></span> : <span class="hljs-literal">null</span>)}
+} /&gt;
+</code></pre>
+<div class="pilwrap" id="useanimations">
+  <h4>
+    <a href="#useanimations" name="useanimations" class="pilcrow"></a>
+useAnimations
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/abstractions-useanimations--use-animations-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/pecl6"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/pecl6/screenshot.png" alt="Demo"/></a>
+</p>
+<p>A hook that abstracts <a href="https://threejs.org/docs/#api/en/animation/AnimationMixer">AnimationMixer</a>.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> { nodes, materials, animations } = useGLTF(url)
+<span class="hljs-keyword">const</span> { ref, mixer, names, actions, clips } = useAnimations(animations)
+useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  actions?.jump.play()
+})
+<span class="hljs-keyword">return</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mesh</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span> /&gt;</span></span>
+</code></pre>
+<p>The hook can also take a pre-existing root (which can be a plain object3d or a reference to one):</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> { scene, animations } = useGLTF(url)
+<span class="hljs-keyword">const</span> { actions } = useAnimations(animations, scene)
+<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">primitive</span> <span class="hljs-attr">object</span>=<span class="hljs-string">{scene}</span> /&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="shaders">
+  <h1>
+    <a href="#shaders" name="shaders" class="pilcrow"></a>
+Shaders
+  </h1>
+</div>
+<div class="pilwrap" id="meshreflectormaterial">
+  <h4>
+    <a href="#meshreflectormaterial" name="meshreflectormaterial" class="pilcrow"></a>
+MeshReflectorMaterial
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/shaders-meshreflectormaterial--reflector-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/lx2h8"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/lx2h8/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/l900i"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/l900i/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Easily add reflections and/or blur to any mesh. It takes surface roughness into account for a more realistic effect. This material extends from <a href="https://threejs.org/docs/#api/en/materials/MeshStandardMaterial">THREE.MeshStandardMaterial</a> and accepts all its props.</p>
+<pre><code class="jsx">&lt;mesh&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">planeGeometry</span> /&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MeshReflectorMaterial</span>
+    <span class="hljs-attr">blur</span>=<span class="hljs-string">{[0,</span> <span class="hljs-attr">0</span>]} // <span class="hljs-attr">Blur</span> <span class="hljs-attr">ground</span> <span class="hljs-attr">reflections</span> (<span class="hljs-attr">width</span>, <span class="hljs-attr">heigt</span>), <span class="hljs-attr">0</span> <span class="hljs-attr">skips</span> <span class="hljs-attr">blur</span>
+    <span class="hljs-attr">mixBlur</span>=<span class="hljs-string">{0}</span> // <span class="hljs-attr">How</span> <span class="hljs-attr">much</span> <span class="hljs-attr">blur</span> <span class="hljs-attr">mixes</span> <span class="hljs-attr">with</span> <span class="hljs-attr">surface</span> <span class="hljs-attr">roughness</span> (<span class="hljs-attr">default</span> = <span class="hljs-string">1)</span>
+    <span class="hljs-attr">mixStrength</span>=<span class="hljs-string">{1}</span> // <span class="hljs-attr">Strength</span> <span class="hljs-attr">of</span> <span class="hljs-attr">the</span> <span class="hljs-attr">reflections</span>
+    <span class="hljs-attr">mixContrast</span>=<span class="hljs-string">{1}</span> // <span class="hljs-attr">Contrast</span> <span class="hljs-attr">of</span> <span class="hljs-attr">the</span> <span class="hljs-attr">reflections</span>
+    <span class="hljs-attr">resolution</span>=<span class="hljs-string">{256}</span> // <span class="hljs-attr">Off-buffer</span> <span class="hljs-attr">resolution</span>, <span class="hljs-attr">lower</span>=<span class="hljs-string">faster,</span> <span class="hljs-attr">higher</span>=<span class="hljs-string">better</span> <span class="hljs-attr">quality</span>, <span class="hljs-attr">slower</span>
+    <span class="hljs-attr">mirror</span>=<span class="hljs-string">{0}</span> // <span class="hljs-attr">Mirror</span> <span class="hljs-attr">environment</span>, <span class="hljs-attr">0</span> = <span class="hljs-string">texture</span> <span class="hljs-attr">colors</span>, <span class="hljs-attr">1</span> = <span class="hljs-string">pick</span> <span class="hljs-attr">up</span> <span class="hljs-attr">env</span> <span class="hljs-attr">colors</span>
+    <span class="hljs-attr">depthScale</span>=<span class="hljs-string">{0}</span> // <span class="hljs-attr">Scale</span> <span class="hljs-attr">the</span> <span class="hljs-attr">depth</span> <span class="hljs-attr">factor</span> (<span class="hljs-attr">0</span> = <span class="hljs-string">no</span> <span class="hljs-attr">depth</span>, <span class="hljs-attr">default</span> = <span class="hljs-string">0)</span>
+    <span class="hljs-attr">minDepthThreshold</span>=<span class="hljs-string">{0.9}</span> // <span class="hljs-attr">Lower</span> <span class="hljs-attr">edge</span> <span class="hljs-attr">for</span> <span class="hljs-attr">the</span> <span class="hljs-attr">depthTexture</span> <span class="hljs-attr">interpolation</span> (<span class="hljs-attr">default</span> = <span class="hljs-string">0)</span>
+    <span class="hljs-attr">maxDepthThreshold</span>=<span class="hljs-string">{1}</span> // <span class="hljs-attr">Upper</span> <span class="hljs-attr">edge</span> <span class="hljs-attr">for</span> <span class="hljs-attr">the</span> <span class="hljs-attr">depthTexture</span> <span class="hljs-attr">interpolation</span> (<span class="hljs-attr">default</span> = <span class="hljs-string">0)</span>
+    <span class="hljs-attr">depthToBlurRatioBias</span>=<span class="hljs-string">{0.25}</span> // <span class="hljs-attr">Adds</span> <span class="hljs-attr">a</span> <span class="hljs-attr">bias</span> <span class="hljs-attr">factor</span> <span class="hljs-attr">to</span> <span class="hljs-attr">the</span> <span class="hljs-attr">depthTexture</span> <span class="hljs-attr">before</span> <span class="hljs-attr">calculating</span> <span class="hljs-attr">the</span> <span class="hljs-attr">blur</span> <span class="hljs-attr">amount</span> [<span class="hljs-attr">blurFactor</span> = <span class="hljs-string">blurTexture</span> * (<span class="hljs-attr">depthTexture</span> + <span class="hljs-attr">bias</span>)]<span class="hljs-attr">.</span> <span class="hljs-attr">It</span> <span class="hljs-attr">accepts</span> <span class="hljs-attr">values</span> <span class="hljs-attr">between</span> <span class="hljs-attr">0</span> <span class="hljs-attr">and</span> <span class="hljs-attr">1</span>, <span class="hljs-attr">default</span> <span class="hljs-attr">is</span> <span class="hljs-attr">0.25.</span> <span class="hljs-attr">An</span> <span class="hljs-attr">amount</span> &gt;</span> 0 of bias makes sure that the blurTexture is not too sharp because of the multiplication with the depthTexture
+    distortion={1} // Amount of distortion based on the distortionMap texture
+    distortionMap={distortionTexture} // The red channel of this texture is used as the distortion map. Default is null
+    debug={0} /* Depending on the assigned value, one of the following channels is shown:
+      0 = no debug
+      1 = depth channel
+      2 = base channel
+      3 = distortion channel
+      4 = lod channel (based on the roughness)
+    */
+   reflectorOffset={0.2} // Offsets the virtual camera that projects the reflection. Useful when the reflective surface is some distance from the object's origin (default = 0)
+  &gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">mesh</span>&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="meshwobblematerial">
+  <h4>
+    <a href="#meshwobblematerial" name="meshwobblematerial" class="pilcrow"></a>
+MeshWobbleMaterial
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/shaders-meshwobblematerial--mesh-wobble-material-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>This material makes your geometry wobble and wave around. It was taken from the <a href="https://threejs.org/examples/#webgl_materials_modified">threejs-examples</a> and adapted into a self-contained material.</p>
+<pre><code class="jsx">&lt;mesh&gt;
+  &lt;boxGeometry /&gt;
+  &lt;MeshWobbleMaterial factor={1} speed={10} /&gt;
+&lt;/mesh&gt;
+</code></pre>
+<div class="pilwrap" id="meshdistortmaterial">
+  <h4>
+    <a href="#meshdistortmaterial" name="meshdistortmaterial" class="pilcrow"></a>
+MeshDistortMaterial
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/shaders-meshdistortmaterial--mesh-distort-material-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/l03yb"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/l03yb/screenshot.png" alt="Demo"/></a>
+</p>
+<p>This material makes your geometry distort following simplex noise.</p>
+<pre><code class="jsx">&lt;mesh&gt;
+  &lt;boxGeometry /&gt;
+  &lt;MeshDistortMaterial distort={1} speed={10} /&gt;
+&lt;/mesh&gt;
+</code></pre>
+<div class="pilwrap" id="pointmaterial">
+  <h4>
+    <a href="#pointmaterial" name="pointmaterial" class="pilcrow"></a>
+PointMaterial
+  </h4>
+</div>
+<p>Antialiased round dots. It takes the same props as regular THREE.PointsMaterial</p>
+<pre><code class="jsx">&lt;points&gt;
+  &lt;PointMaterial scale={20} /&gt;
+&lt;/points&gt;
+</code></pre>
+<div class="pilwrap" id="softshadows">
+  <h4>
+    <a href="#softshadows" name="softshadows" class="pilcrow"></a>
+softShadows
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/shaders-softshadows--soft-shadows-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/dh2jc"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/dh2jc/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Injects <a href="https://threejs.org/examples/#webgl_shadowmap_pcss">percent closer soft shadows (pcss)</a> into threes shader chunk.</p>
+<pre><code class="jsx">softShadows({
+  <span class="hljs-attr">frustum</span>: <span class="hljs-number">3.75</span>,
+  <span class="hljs-attr">size</span>: <span class="hljs-number">0.005</span>,
+  <span class="hljs-attr">near</span>: <span class="hljs-number">9.5</span>,
+  <span class="hljs-attr">samples</span>: <span class="hljs-number">17</span>,
+  <span class="hljs-attr">rings</span>: <span class="hljs-number">11</span>, <span class="hljs-comment">// Rings (default: 11) must be a int</span>
+})
+</code></pre>
+<div class="pilwrap" id="shadermaterial">
+  <h4>
+    <a href="#shadermaterial" name="shadermaterial" class="pilcrow"></a>
+shaderMaterial
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/shaders-shadermaterial--shader-material-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/ni6v4"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/ni6v4/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Creates a THREE.ShaderMaterial for you with easier handling of uniforms, which are also automatically declared as setter/getters on the object.</p>
+<pre><code class="jsx">import { extend } from '@react-three/fiber'
+import glsl from 'babel-plugin-glsl/macro'
+
+const ColorShiftMaterial = shaderMaterial(
+  { time: 0, color: new THREE.Color(0.2, 0.0, 0.1) },
+  // vertex shader
+  glsl`
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `,
+  // fragment shader
+  glsl`
+    uniform float time;
+    uniform vec3 color;
+    varying vec2 vUv;
+    void main() {
+      gl_FragColor.rgba = vec4(0.5 + 0.3 * sin(vUv.yxx + time) + color, 1.0);
+    }
+  `
+)
+
+extend({ ColorShiftMaterial })
+
+// in your component
+&lt;mesh&gt;
+  &lt;colorShiftMaterial color="hotpink" time={1} /&gt;
+&lt;/mesh&gt;
+</code></pre>
+<p><code>shaderMaterial</code> attaches a unique <code>key</code> property to the prototype class. If you wire it to Reacts own <code>key</code> property, you can enable hot-reload.</p>
+<pre><code class="jsx"><span class="hljs-keyword">import</span> { ColorShiftMaterial } <span class="hljs-keyword">from</span> <span class="hljs-string">'./ColorShiftMaterial'</span>
+
+extend({ ColorShiftMaterial })
+
+<span class="hljs-comment">// in your component</span>
+&lt;colorShiftMaterial key={ColorShiftMaterial.key} color=<span class="hljs-string">"hotpink"</span> time={<span class="hljs-number">1</span>} /&gt;
+</code></pre>
+<div class="pilwrap" id="modifiers">
+  <h1>
+    <a href="#modifiers" name="modifiers" class="pilcrow"></a>
+Modifiers
+  </h1>
+</div>
+<div class="pilwrap" id="curvemodifier">
+  <h4>
+    <a href="#curvemodifier" name="curvemodifier" class="pilcrow"></a>
+CurveModifier
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/modifiers-curvemodifier"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>Given a curve will replace the children of this component with a mesh that move along said curve calling the property <code>moveAlongCurve</code> on the passed ref. Uses <a href="https://threejs.org/examples/#webgl_modifier_curve">three's Curve Modifier</a></p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> curveRef = useRef()
+
+<span class="hljs-keyword">const</span> curve = React.useMemo(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">new</span> THREE.CatmullRomCurve3([...handlePos], <span class="hljs-literal">true</span>, <span class="hljs-string">'centripetal'</span>), [handlePos])
+
+<span class="hljs-keyword">return</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">CurveModifier</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{curveRef}</span> <span class="hljs-attr">curve</span>=<span class="hljs-string">{curve}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mesh</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">boxGeometry</span> <span class="hljs-attr">args</span>=<span class="hljs-string">{[10,</span> <span class="hljs-attr">10</span>]} /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mesh</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">CurveModifier</span>&gt;</span></span>
+)
+</code></pre>
+<div class="pilwrap" id="misc">
+  <h1>
+    <a href="#misc" name="misc" class="pilcrow"></a>
+Misc
+  </h1>
+</div>
+<div class="pilwrap" id="usecontextbridge">
+  <h4>
+    <a href="#usecontextbridge" name="usecontextbridge" class="pilcrow"></a>
+useContextBridge
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/misc-usecontextbridge--use-context-bridge-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>Allows you to forward contexts provided above the <code>&lt;Canvas /&gt;</code> to be consumed from within the <code>&lt;Canvas /&gt;</code> normally</p>
+<pre><code class="jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SceneWrapper</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// bridge any number of contexts</span>
+  <span class="hljs-comment">// Note: These contexts must be provided by something above this SceneWrapper component</span>
+  <span class="hljs-comment">//       You cannot render the providers for these contexts inside this component</span>
+  <span class="hljs-keyword">const</span> ContextBridge = useContextBridge(ThemeContext, GreetingContext)
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Canvas</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ContextBridge</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Scene</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ContextBridge</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Canvas</span>&gt;</span></span>
+  )
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Scene</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// we can now consume a context within the Canvas</span>
+  <span class="hljs-keyword">const</span> theme = React.useContext(ThemeContext)
+  <span class="hljs-keyword">const</span> greeting = React.useContext(GreetingContext)
+  <span class="hljs-keyword">return</span> (
+    <span class="hljs-comment">//...</span>
+  )
+}
+</code></pre>
+<div class="pilwrap" id="html">
+  <h4>
+    <a href="#html" name="html" class="pilcrow"></a>
+Html
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-html--html-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a> <img src="https://img.shields.io/badge/-Dom%C2%A0only-red" alt=""></p>
+<p>
+  <a href="https://codesandbox.io/s/qyz5r"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/qyz5r/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/9keg6"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/9keg6/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/6oei7"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/6oei7/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Allows you to tie HTML content to any object of your scene. It will be projected to the objects whereabouts automatically.</p>
+<pre><code class="jsx">&lt;Html
+  as='div' // Wrapping element (default: 'div')
+  wrapperClass // The className of the wrapping element (default: undefined)
+  prepend // Project content behind the canvas (default: false)
+  center // Adds a -50%/-50% css transform (default: false) [ignored in transform mode]
+  fullscreen // Aligns to the upper-left corner, fills the screen (default:false) [ignored in transform mode]
+  distanceFactor={10} // If set (default: undefined), children will be scaled by this factor, and also by distance to a PerspectiveCamera / zoom by a OrthographicCamera.
+  zIndexRange={[100, 0]} // Z-order range (default=[16777271, 0])
+  portal={domnodeRef} // Reference to target container (default=undefined)
+  transform // If true, applies matrix3d transformations (default=false)
+  sprite // Renders as sprite, but only in transform mode (default=false)
+  calculatePosition={(el: Object3D, camera: Camera, size: { width: number; height: number }) =&gt; number[]} // Override default positioning function. (default=undefined) [ignored in transform mode]
+  occlude={[ref]} // Can be true or a Ref&lt;Object3D&gt;[], true occludes the entire scene (default: undefined)
+  onOcclude={(visible) =&gt; null} // Callback when the visibility changes (default: undefined)
+  {...groupProps} // All THREE.Group props are valid
+  {...divProps} // All HTMLDivElement props are valid
+&gt;
+  &lt;h1&gt;hello&lt;/h1&gt;
+  &lt;p&gt;world&lt;/p&gt;
+&lt;/Html&gt;
+</code></pre>
+<p>Html can hide behind geometry using the <code>occlude</code> prop.</p>
+<pre><code class="jsx"><span class="hljs-comment">// Raytrace the entire scene</span>
+&lt;Html occlude /&gt;
+<span class="hljs-comment">// Raytrace only specific elements</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Html</span> <span class="hljs-attr">occlude</span>=<span class="hljs-string">{[ref1,</span> <span class="hljs-attr">ref2</span>]} /&gt;</span></span>
+</code></pre>
+<p>When the Html object hides it sets the opacity prop on the innermost div. If you want to animate or control the transition yourself then you can use <code>onOcclude</code>.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> [hidden, <span class="hljs-keyword">set</span>] = useState()
+
+&lt;Html
+  occlude
+  onOcclude={<span class="hljs-keyword">set</span>}
+  style={{
+    <span class="hljs-attr">transition</span>: <span class="hljs-string">'all 0.5s'</span>,
+    <span class="hljs-attr">opacity</span>: hidden ? <span class="hljs-number">0</span> : <span class="hljs-number">1</span>,
+    <span class="hljs-attr">transform</span>: <span class="hljs-string">`scale(<span class="hljs-subst">${hidden ? <span class="hljs-number">0.5</span> : <span class="hljs-number">1</span>}</span>)`</span>
+  }} /&gt;
+</code></pre>
+<div class="pilwrap" id="cycleraycast">
+  <h4>
+    <a href="#cycleraycast" name="cycleraycast" class="pilcrow"></a>
+CycleRaycast
+  </h4>
+</div>
+<p><img src="https://img.shields.io/badge/-Dom%C2%A0only-red" alt=""></p>
+<p>
+  <a href="https://codesandbox.io/s/ls503"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/ls503/screenshot.png" alt="Demo"/></a>
+</p>
+<p>This component allows you to cycle through all objects underneath the cursor with optional visual feedback. This can be useful for non-trivial selection, CAD data, housing, everything that has layers. It does this by changing the raycasters filter function and then refreshing the raycaster.</p>
+<p>For this to work properly your event handler have to call <code>event.stopPropagation()</code>, for instance in <code>onPointerOver</code> or <code>onClick</code>, only one element can be selective for cycling to make sense.</p>
+<pre><code class="jsx">&lt;CycleRaycast
+  preventDefault={<span class="hljs-literal">true</span>} <span class="hljs-comment">// Call event.preventDefault() (default: true)</span>
+  scroll={<span class="hljs-literal">true</span>} <span class="hljs-comment">// Wheel events (default: true)</span>
+  keyCode={<span class="hljs-number">9</span>} <span class="hljs-comment">// Keyboard events (default: 9 [Tab])</span>
+  onChanged={(objects, cycle) =&gt; <span class="hljs-built_in">console</span>.log(objects, cycle)} <span class="hljs-comment">// Optional onChanged event</span>
+/&gt;
+</code></pre>
+<div class="pilwrap" id="select">
+  <h4>
+    <a href="#select" name="select" class="pilcrow"></a>
+Select
+  </h4>
+</div>
+<p><img src="https://img.shields.io/badge/-Dom%C2%A0only-red" alt=""></p>
+<p>
+  <a href="https://codesandbox.io/s/ny3p4"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/ny3p4/screenshot.png" alt="Demo"/></a>
+</p>
+<p>This component allows you to select/unselect objects by clicking on them. It keeps track of the currently selected objects and can select multiple objects (with the shift key). Nested components can request the current selection (which is always an array) with the <code>useSelect</code> hook. With the <code>box</code> prop it will let you shift-box-select objects by holding and draging the cursor over multiple objects. Optionally you can filter the selected items as well as define in which shape they are stored by defining the <code>filter</code> prop.</p>
+<pre><code class="jsx">&lt;Select box multiple onChange={console.log} filter={items =&gt; items}&gt;
+  &lt;Foo /&gt;
+  &lt;Bar /&gt;
+&lt;/Select&gt;
+
+function Foo() {
+  const selected = useSelect()
+</code></pre>
+<div class="pilwrap" id="stats">
+  <h4>
+    <a href="#stats" name="stats" class="pilcrow"></a>
+Stats
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-stats--default-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>Adds <a href="https://github.com/mrdoob/stats.js/">stats</a> to document.body. It takes over the render-loop!</p>
+<pre><code class="jsx">&lt;Stats showPanel={<span class="hljs-number">0</span>} className=<span class="hljs-string">"stats"</span> {...props} /&gt;
+</code></pre>
+<p>You can choose to mount Stats to a different DOM Element - for example, for custom styling:</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> node = useRef(<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>))
+
+useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  node.current.id = <span class="hljs-string">'test'</span>
+  <span class="hljs-built_in">document</span>.body.appendChild(node.current)
+
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">document</span>.body.removeChild(node.current)
+}, [])
+
+<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Stats</span> <span class="hljs-attr">parent</span>=<span class="hljs-string">{parent}</span> /&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="usedepthbuffer">
+  <h4>
+    <a href="#usedepthbuffer" name="usedepthbuffer" class="pilcrow"></a>
+useDepthBuffer
+  </h4>
+</div>
+<p>Renders the scene into a depth-buffer. Often effects depend on it and this allows you to render a single buffer and share it, which minimizes the performance impact. It returns the buffer's <code>depthTexture</code>.</p>
+<p>Since this is a rather expensive effect you can limit the amount of frames it renders when your objects are static. For instance making it render only once by setting <code>frames: 1</code>.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> depthBuffer = useDepthBuffer({
+  <span class="hljs-attr">size</span>: <span class="hljs-number">256</span>, <span class="hljs-comment">// Size of the FBO, 256 by default</span>
+  <span class="hljs-attr">frames</span>: <span class="hljs-literal">Infinity</span>, <span class="hljs-comment">// How many frames it renders, Infinity by default</span>
+})
+<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">SomethingThatNeedsADepthBuffer</span> <span class="hljs-attr">depthBuffer</span>=<span class="hljs-string">{depthBuffer}</span> /&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="usefbo">
+  <h4>
+    <a href="#usefbo" name="usefbo" class="pilcrow"></a>
+useFBO
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-usefbo--use-fbo-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>Creates a <code>THREE.WebGLRenderTarget</code>.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> target = useFBO({
+  <span class="hljs-attr">multisample</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">stencilBuffer</span>: <span class="hljs-literal">false</span>,
+})
+</code></pre>
+<p>The rendertarget is automatically disposed when unmounted.</p>
+<div class="pilwrap" id="usecamera">
+  <h4>
+    <a href="#usecamera" name="usecamera" class="pilcrow"></a>
+useCamera
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-usecamera--use-camera-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/py4db"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/py4db/screenshot.png" alt="Demo"/></a>
+</p>
+<p>A hook for the rare case when you are using non-default cameras for heads-up-displays or portals, and you need events/raytracing to function properly (raycasting uses the default camera otherwise).</p>
+<pre><code class="jsx">&lt;mesh raycast={useCamera(customCamera)} /&gt;
+</code></pre>
+<div class="pilwrap" id="usehelper">
+  <h4>
+    <a href="#usehelper" name="usehelper" class="pilcrow"></a>
+useHelper
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-usehelper--default-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A hook for a quick way to add helpers to existing nodes in the scene. It handles removal of the helper on unmount and auto-updates it by default.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> mesh = useRef()
+useHelper(mesh, BoxHelper, <span class="hljs-string">'cyan'</span>)
+useHelper(condition &amp;&amp; mesh, BoxHelper, <span class="hljs-string">'red'</span>) <span class="hljs-comment">// you can passe false instead of the object ref to hide the helper</span>
+
+&lt;mesh ref={mesh} ... /&gt;
+</code></pre>
+<div class="pilwrap" id="usedetectgpu">
+  <h4>
+    <a href="#usedetectgpu" name="usedetectgpu" class="pilcrow"></a>
+useDetectGPU
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/misc-usedetectgpu"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>This hook uses <a href="https://github.com/TimvanScherpenzeel/detect-gpu">DetectGPU by @TimvanScherpenzeel</a>, wrapped into suspense, to determine what tier should be assigned to the user's GPU.</p>
+<p>👉 This hook CAN be used outside the @react-three/fiber <code>Canvas</code>.</p>
+<pre><code class="jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> GPUTier = useDetectGPU()
+  <span class="hljs-comment">// show a fallback for mobile or lowest tier GPUs</span>
+  <span class="hljs-keyword">return</span> (
+    {(GPUTier.tier === <span class="hljs-string">"0"</span> || GPUTier.isMobile) ? <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Fallback</span> /&gt;</span></span> : <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Canvas</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">Canvas</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Suspense</span> <span class="hljs-attr">fallback</span>=<span class="hljs-string">{null}</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>
+</span></code></pre>
+<div class="pilwrap" id="useaspect">
+  <h4>
+    <a href="#useaspect" name="useaspect" class="pilcrow"></a>
+useAspect
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-useaspect--default-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>This hook calculates aspect ratios (for now only what in css would be <code>image-size: cover</code> is supported). You can use it to make an image fill the screen. It is responsive and adapts to viewport resize. Just give the hook the image bounds in pixels. It returns an array: <code>[width, height, 1]</code>.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> scale = useAspect(
+  <span class="hljs-number">1024</span>,                     <span class="hljs-comment">// Pixel-width</span>
+  <span class="hljs-number">512</span>,                      <span class="hljs-comment">// Pixel-height</span>
+  <span class="hljs-number">1</span>                         <span class="hljs-comment">// Optional scaling factor</span>
+)
+<span class="hljs-keyword">return</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mesh</span> <span class="hljs-attr">scale</span>=<span class="hljs-string">{scale}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">planeGeometry</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meshBasicMaterial</span> <span class="hljs-attr">map</span>=<span class="hljs-string">{imageTexture}</span> /&gt;</span>
+</span></code></pre>
+<div class="pilwrap" id="usecursor">
+  <h4>
+    <a href="#usecursor" name="usecursor" class="pilcrow"></a>
+useCursor
+  </h4>
+</div>
+<p><img src="https://img.shields.io/badge/-Dom%C2%A0only-red" alt=""></p>
+<p>A small hook that sets the css body cursor according to the hover state of a mesh, so that you can give the use visual feedback when the mouse enters a shape. Arguments 1 and 2 determine the style, the defaults are: onPointerOver = 'pointer', onPointerOut = 'auto'.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> [hovered, <span class="hljs-keyword">set</span>] = useState()
+useCursor(hovered, /*'pointer', 'auto'*/)
+return (
+  &lt;mesh onPointerOver={() =&gt; <span class="hljs-keyword">set</span>(true)} onPointerOut={() =&gt; <span class="hljs-keyword">set</span>(false)}&gt;
+</code></pre>
+<div class="pilwrap" id="useintersect">
+  <h4>
+    <a href="#useintersect" name="useintersect" class="pilcrow"></a>
+useIntersect
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/gsm1y"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/gsm1y/screenshot.png" alt="Demo"/></a>
+</p>
+<p>A very cheap frustum check that gives you a reference you can observe in order to know if the object has entered the view or is outside of it. This relies on <a href="https://threejs.org/docs/#api/en/core/Object3D.onBeforeRender">THREE.Object3D.onBeforeRender</a> so it only works on objects that are effectively rendered, like meshes, lines, sprites. It won't work on groups, object3d's, bones, etc.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> ref = useIntersect(<span class="hljs-function">(<span class="hljs-params">visible</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'object is visible'</span>, visible))
+<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mesh</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{ref}</span> /&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="useboxprojectedenv">
+  <h4>
+    <a href="#useboxprojectedenv" name="useboxprojectedenv" class="pilcrow"></a>
+useBoxProjectedEnv
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/s006f"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/s006f/screenshot.png" alt="Demo"/></a>
+</p>
+<p>The cheapest possible way of getting reflections in threejs. This will box-project the current environment map onto a plane. It returns an object that you need to spread over its material. The spread object contains a ref, onBeforeCompile and customProgramCacheKey. If you combine it with drei/CubeCamera you can &quot;film&quot; a single frame of the environment and feed it to the material, thereby getting realistic reflections at no cost. Align it with the position and scale properties.</p>
+<pre><code class="jsx">const projection = useBoxProjectedEnv(
+  [0, 0, 0], // Position
+  [1, 1, 1] // Scale
+)
+
+&lt;CubeCamera frames={1}&gt;
+  {(texture) =&gt; (
+    &lt;mesh&gt;
+      &lt;planeGeometry /&gt;
+      &lt;meshStandardMaterial envMap={texture} {...projection} /&gt;
+    &lt;/mesh&gt;
+  )}
+&lt;/CubeCamera&gt;
+</code></pre>
+<div class="pilwrap" id="usetrail">
+  <h4>
+    <a href="#usetrail" name="usetrail" class="pilcrow"></a>
+useTrail
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-trail--use-trail-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A hook to obtain an array of points that make up a <a href="#trail.html">Trail</a>. You can use this array to drive your own <code>MeshLine</code> or make a trail out of anything you please.</p>
+<p>Note: The hook returns a ref (<code>MutableRefObject&lt;Vector3[]&gt;</code>) this means updates to it will not trigger a re-draw, thus keeping this cheap.</p>
+<pre><code class="js"><span class="hljs-keyword">const</span> points = useTrail(
+  target, <span class="hljs-comment">// Required target object. This object will produce the trail.</span>
+  {
+    length, <span class="hljs-comment">// Length of the line</span>
+    decay, <span class="hljs-comment">// How fast the line fades away</span>
+    local, <span class="hljs-comment">// Wether to use the target's world or local positions</span>
+    stride, <span class="hljs-comment">// Min distance between previous and current point</span>
+    interval, <span class="hljs-comment">// Number of frames to wait before next calculation</span>
+  }
+)
+
+<span class="hljs-comment">// To use...</span>
+useFrame(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  meshLineRef.current.position.setPoints(points.current)
+})
+</code></pre>
+<div class="pilwrap" id="loading">
+  <h1>
+    <a href="#loading" name="loading" class="pilcrow"></a>
+Loading
+  </h1>
+</div>
+<div class="pilwrap" id="loader">
+  <h4>
+    <a href="#loader" name="loader" class="pilcrow"></a>
+Loader
+  </h4>
+</div>
+<p><img src="https://img.shields.io/badge/-Dom%C2%A0only-red" alt=""></p>
+<p>
+  <a href="https://codesandbox.io/s/0buje"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/0buje/screenshot.png" alt="Demo"/></a>
+</p>
+<p>A quick and easy loading overlay component that you can drop on top of your canvas. It's intended to &quot;hide&quot; the whole app, so if you have multiple suspense wrappers in your application, you should use multiple loaders. It will show an animated loadingbar and a percentage.</p>
+<pre><code class="jsx">&lt;Canvas&gt;
+  &lt;Suspense fallback={null}&gt;
+    &lt;AsyncModels /&gt;
+  &lt;/Suspense&gt;
+&lt;/Canvas&gt;
+&lt;Loader /&gt;
+</code></pre>
+<p>You can override styles, too.</p>
+<pre><code class="jsx">&lt;Loader
+  containerStyles={...container} <span class="hljs-comment">// Flex layout styles</span>
+  innerStyles={...inner} <span class="hljs-comment">// Inner container styles</span>
+  barStyles={...bar} <span class="hljs-comment">// Loading-bar styles</span>
+  dataStyles={...data} <span class="hljs-comment">// Text styles</span>
+  dataInterpolation={(p) =&gt; <span class="hljs-string">`Loading <span class="hljs-subst">${p.toFixed(<span class="hljs-number">2</span>)}</span>%`</span>} <span class="hljs-comment">// Text</span>
+  initialState={(active) =&gt; active} <span class="hljs-comment">// Initial black out state</span>
+&gt;
+</code></pre>
+<div class="pilwrap" id="useprogress">
+  <h4>
+    <a href="#useprogress" name="useprogress" class="pilcrow"></a>
+useProgress
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-useprogress--use-progress-scene-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A convenience hook that wraps <code>THREE.DefaultLoadingManager</code>'s progress status.</p>
+<pre><code class="jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Loader</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> { active, progress, errors, item, loaded, total } = useProgress()
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Html</span> <span class="hljs-attr">center</span>&gt;</span>{progress} % loaded<span class="hljs-tag">&lt;/<span class="hljs-name">Html</span>&gt;</span></span>
+}
+
+<span class="hljs-keyword">return</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Suspense</span> <span class="hljs-attr">fallback</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">Loader</span> /&gt;</span>}&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">AsyncModels</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Suspense</span>&gt;</span></span>
+)
+</code></pre>
+<p>If you don't want your progress component to re-render on all changes you can be specific as to what you need, for instance if the component is supposed to collect errors only. Look into <a href="https://github.com/react-spring/zustand">zustand</a> for more info about selectors.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> errors = useProgress(<span class="hljs-function">(<span class="hljs-params">state</span>) =&gt;</span> state.errors)
+</code></pre>
+<p>👉 Note that your loading component does not have to be a suspense fallback. You can use it anywhere, even in your dom tree, for instance for overlays.</p>
+<div class="pilwrap" id="usegltf">
+  <h4>
+    <a href="#usegltf" name="usegltf" class="pilcrow"></a>
+useGLTF
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/loaders-gltf"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A convenience hook that uses <code>useLoader</code> and <code>GLTFLoader</code>, it defaults to CDN loaded draco binaries (<code>https://www.gstatic.com/draco/v1/decoders/</code>) which are only loaded for compressed models.</p>
+<pre><code class="jsx">useGLTF(url)
+
+useGLTF(url, <span class="hljs-string">'/draco-gltf'</span>)
+
+useGLTF.preload(url)
+</code></pre>
+<div class="pilwrap" id="usefbx">
+  <h4>
+    <a href="#usefbx" name="usefbx" class="pilcrow"></a>
+useFBX
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/loaders-fbx"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A convenience hook that uses <code>useLoader</code> and <code>FBXLoader</code>:</p>
+<pre><code class="jsx">useFBX(url)
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SuzanneFBX</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">let</span> fbx = useFBX(<span class="hljs-string">'suzanne/suzanne.fbx'</span>)
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">primitive</span> <span class="hljs-attr">object</span>=<span class="hljs-string">{fbx}</span> /&gt;</span></span>
+}
+</code></pre>
+<div class="pilwrap" id="usetexture">
+  <h4>
+    <a href="#usetexture" name="usetexture" class="pilcrow"></a>
+useTexture
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/loaders-texture"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A convenience hook that uses <code>useLoader</code> and <code>TextureLoader</code></p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> texture = useTexture(url)
+<span class="hljs-keyword">const</span> [texture1, texture2] = useTexture([texture1, texture2])
+</code></pre>
+<p>You can also use key: url objects:</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> props = useTexture({
+  <span class="hljs-attr">metalnessMap</span>: url1,
+  <span class="hljs-attr">map</span>: url2,
+})
+<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">meshStandardMaterial</span> {<span class="hljs-attr">...props</span>} /&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="usektx2">
+  <h4>
+    <a href="#usektx2" name="usektx2" class="pilcrow"></a>
+useKTX2
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/loaders-ktx2--use-ktx-2-scene-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A convenience hook that uses <code>useLoader</code> and <code>KTX2Loader</code></p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> texture = useKTX2(url)
+<span class="hljs-keyword">const</span> [texture1, texture2] = useKTX2([texture1, texture2])
+
+<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">meshStandardMaterial</span> <span class="hljs-attr">map</span>=<span class="hljs-string">{texture}</span> /&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="usecubetexture">
+  <h4>
+    <a href="#usecubetexture" name="usecubetexture" class="pilcrow"></a>
+useCubeTexture
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/loaders-cubetexture"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A convenience hook that uses <code>useLoader</code> and <code>CubeTextureLoader</code></p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> envMap = useCubeTexture([<span class="hljs-string">'px.png'</span>, <span class="hljs-string">'nx.png'</span>, <span class="hljs-string">'py.png'</span>, <span class="hljs-string">'ny.png'</span>, <span class="hljs-string">'pz.png'</span>, <span class="hljs-string">'nz.png'</span>], { <span class="hljs-attr">path</span>: <span class="hljs-string">'cube/'</span> })
+</code></pre>
+<div class="pilwrap" id="performance">
+  <h1>
+    <a href="#performance" name="performance" class="pilcrow"></a>
+Performance
+  </h1>
+</div>
+<div class="pilwrap" id="instances">
+  <h4>
+    <a href="#instances" name="instances" class="pilcrow"></a>
+Instances
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/h8o2d"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/h8o2d/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/i6t0j"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/i6t0j/screenshot.png" alt="Demo"/></a>
+</p>
+<p>A wrapper around <a href="https://threejs.org/docs/#api/en/objects/InstancedMesh">THREE.InstancedMesh</a>. This allows you to define hundreds of thousands of objects in a single draw call, but declaratively!</p>
+<pre><code class="jsx">&lt;Instances
+  limit={1000} // Optional: max amount of items (for calculating buffer size)
+  range={1000} // Optional: draw-range
+&gt;
+  &lt;boxGeometry /&gt;
+  &lt;meshStandardMaterial /&gt;
+  &lt;Instance
+    color="red"
+    scale={2}
+    position={[1, 2, 3]}
+    rotation={[Math.PI / 3, 0, 0]}
+    onClick={onClick} ... /&gt;
+  // As many as you want, make them conditional, mount/unmount them, lazy load them, etc ...
+&lt;/Instances&gt;
+</code></pre>
+<p>You can nest Instances and use relative coordinates!</p>
+<pre><code class="jsx">&lt;group position={[1, 2, 3]} rotation={[Math.PI / 2, 0, 0]}&gt;
+  &lt;Instance /&gt;
+&lt;/group&gt;
+</code></pre>
+<p>Instances can also receive non-instanced objects, for instance annotations!</p>
+<pre><code class="jsx">&lt;Instance&gt;
+  &lt;Html&gt;hello from the dom&lt;/Html&gt;
+&lt;/Instance&gt;
+</code></pre>
+<p>You can define events on them!</p>
+<pre><code class="jsx">&lt;Instance onClick={...} onPointerOver={...} /&gt;
+</code></pre>
+<p>👉 Note: While creating instances declaratively keeps all the power of components with reduced draw calls, it comes at the cost of CPU overhead. For cases like foliage where you want no CPU overhead with thousands of intances you should use THREE.InstancedMesh such as in this <a href="https://codesandbox.io/s/grass-shader-5xho4?file=/src/Grass.js">example</a>.</p>
+<div class="pilwrap" id="merged">
+  <h4>
+    <a href="#merged" name="merged" class="pilcrow"></a>
+Merged
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/l900i"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/l900i/screenshot.png" alt="Demo"/></a>
+</p>
+<p>This creates instances for existing meshes and allows you to use them cheaply in the same scene graph. Each type will cost you exactly one draw call, no matter how many you use. <code>meshes</code> has to be a collection of pre-existing THREE.Mesh objects.</p>
+<pre><code class="jsx">&lt;Merged meshes={[box, sphere]}&gt;
+  {(Box, Sphere) =&gt; (
+    &lt;&gt;
+      &lt;Box position={[-2, -2, 0]} color="red" /&gt;
+      &lt;Box position={[-3, -3, 0]} color="tomato" /&gt;
+      &lt;Sphere scale={0.7} position={[2, 1, 0]} color="green" /&gt;
+      &lt;Sphere scale={0.7} position={[3, 2, 0]} color="teal" /&gt;
+    &lt;/&gt;
+  )}
+&lt;/Merged&gt;
+</code></pre>
+<p>You may also use object notation, which is good for loaded models.</p>
+<pre><code class="jsx">function Model({ url }) {
+  const { nodes } = useGLTF(url)
+  return (
+    &lt;Merged meshes={nodes}&gt;
+      {({ Screw, Filter, Pipe }) =&gt; (
+        &lt;&gt;
+          &lt;Screw /&gt;
+          &lt;Filter position={[1, 2, 3]} /&gt;
+          &lt;Pipe position={[4, 5, 6]} /&gt;
+        &lt;/&gt;
+      )}
+    &lt;/Merged&gt;
+  )
+}
+</code></pre>
+<div class="pilwrap" id="points">
+  <h4>
+    <a href="#points" name="points" class="pilcrow"></a>
+Points
+  </h4>
+</div>
+<p>A wrapper around <a href="https://threejs.org/docs/#api/en/objects/Points">THREE.Points</a>. It has the same api and properties as Instances.</p>
+<pre><code class="jsx">&lt;Points
+  limit={1000} // Optional: max amount of items (for calculating buffer size)
+  range={1000} // Optional: draw-range
+&gt;
+  &lt;pointsMaterial vertexColors /&gt;
+  &lt;Point position={[1, 2, 3]} color="red" onClick={onClick} onPointerOver={onPointerOver} ... /&gt;
+  // As many as you want, make them conditional, mount/unmount them, lazy load them, etc ...
+&lt;/Points&gt;
+</code></pre>
+<p>If you just want to use buffers for position, color and size, you can use the alternative API:</p>
+<pre><code class="jsx">&lt;Points positions={positionsBuffer} colors={colorsBuffer} sizes={sizesBuffer}&gt;
+  &lt;pointsMaterial /&gt;
+&lt;/Points&gt;
+</code></pre>
+<div class="pilwrap" id="segments">
+  <h4>
+    <a href="#segments" name="segments" class="pilcrow"></a>
+Segments
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/performance-segments--many-segments"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A wrapper around <a href="https://threejs.org/docs/#api/en/objects/LineSegments">THREE.LineSegments</a>. This allows you to use thousands of segments under the same geometry.</p>
+<div class="pilwrap" id="prop-based">
+  <h5>
+    <a href="#prop-based" name="prop-based" class="pilcrow"></a>
+Prop based:
+  </h5>
+</div>
+<pre><code class="jsx">&lt;Segments limit={1000} lineWidth={1.0}&gt;
+  &lt;Segment start={[0, 0, 0]} end={[0, 10, 0]} color="red" /&gt;
+  &lt;Segment start={[0, 0, 0]} end={[0, 10, 10]} color={[1, 0, 1]} /&gt;
+&lt;/Segments&gt;
+</code></pre>
+<div class="pilwrap" id="ref-based-for-fast-updates">
+  <h5>
+    <a href="#ref-based-for-fast-updates" name="ref-based-for-fast-updates" class="pilcrow"></a>
+Ref based (for fast updates):
+  </h5>
+</div>
+<pre><code class="jsx">const ref = useRef()
+
+// E.g. to change segment position each frame.
+useFrame(() =&gt; {
+  ref.current.start.set(0,0,0)
+  ref.current.end.set(10,10,0)
+  ref.current.color.setRGB(0,0,0)
+})
+// ...
+&lt;Segments
+  limit={1000}
+  lineWidth={1.0}
+&gt;
+  &lt;Segment ref={ref} /&gt;
+&lt;/Segments&gt;
+</code></pre>
+<div class="pilwrap" id="detailed">
+  <h4>
+    <a href="#detailed" name="detailed" class="pilcrow"></a>
+Detailed
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/abstractions-detailed--detailed-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/12nmp"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/12nmp/screenshot.png" alt="Demo"/></a>
+</p>
+<p>A wrapper around <a href="https://threejs.org/docs/#api/en/objects/LOD">THREE.LOD</a> (Level of detail).</p>
+<pre><code class="jsx">&lt;Detailed distances={[0, 10, 20]} {...props}&gt;
+  &lt;mesh geometry={highDetail} /&gt;
+  &lt;mesh geometry={mediumDetail} /&gt;
+  &lt;mesh geometry={lowDetail} /&gt;
+&lt;/Detailed&gt;
+</code></pre>
+<div class="pilwrap" id="preload">
+  <h4>
+    <a href="#preload" name="preload" class="pilcrow"></a>
+Preload
+  </h4>
+</div>
+<p>The WebGLRenderer will compile materials only when they hit the frustrum, which can cause jank. This component precompiles the scene using <a href="https://threejs.org/docs/#api/en/renderers/WebGLRenderer.compile">gl.compile</a> which makes sure that your app is responsive from the get go.</p>
+<p>By default gl.compile will only preload visible objects, if you supply the <code>all</code> prop, it will circumvent that. With the <code>scene</code> and <code>camera</code> props you could also use it in portals.</p>
+<pre><code class="jsx">&lt;Canvas&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Suspense</span> <span class="hljs-attr">fallback</span>=<span class="hljs-string">{null}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Model</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Preload</span> <span class="hljs-attr">all</span> /&gt;</span>
+</span></code></pre>
+<div class="pilwrap" id="bakeshadows">
+  <h4>
+    <a href="#bakeshadows" name="bakeshadows" class="pilcrow"></a>
+BakeShadows
+  </h4>
+</div>
+<p>Sets <code>gl.shadowMap.autoUpdate</code> to <code>false</code> while mounted and requests a single <code>gl.shadowMap.needsUpdate = true</code> afterwards. This freezes all shadow maps the moment this component comes in, which makes shadows performant again (with the downside that they are now static). Mount this component in lock-step with your models, for instance by dropping it into the same suspense boundary of a model that loads.</p>
+<pre><code class="jsx">&lt;Canvas&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Suspense</span> <span class="hljs-attr">fallback</span>=<span class="hljs-string">{null}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Model</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">BakeShadows</span> /&gt;</span>
+</span></code></pre>
+<div class="pilwrap" id="meshbounds">
+  <h4>
+    <a href="#meshbounds" name="meshbounds" class="pilcrow"></a>
+meshBounds
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-meshbounds--mesh-bounds-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A very fast, but often good-enough bounds-only raycast for meshes. You can use this if performance has precedence over pointer precision.</p>
+<pre><code class="jsx">&lt;mesh raycast={meshBounds} /&gt;
+</code></pre>
+<div class="pilwrap" id="adaptivedpr">
+  <h4>
+    <a href="#adaptivedpr" name="adaptivedpr" class="pilcrow"></a>
+AdaptiveDpr
+  </h4>
+</div>
+<p>Drop this component into your scene and it will cut the pixel-ratio on regress according to the canvas's performance min/max settings. This allows you to temporarily reduce visual quality in exchange for more performance, for instance when the camera moves (look into drei's controls regress flag). Optionally, you can set the canvas to a pixelated filter, which would be even faster.</p>
+<pre><code class="jsx">&lt;AdaptiveDpr pixelated /&gt;
+</code></pre>
+<div class="pilwrap" id="adaptiveevents">
+  <h4>
+    <a href="#adaptiveevents" name="adaptiveevents" class="pilcrow"></a>
+AdaptiveEvents
+  </h4>
+</div>
+<p>Drop this component into your scene and it will switch off the raycaster while the system is in regress.</p>
+<pre><code class="jsx">&lt;AdaptiveEvents /&gt;
+</code></pre>
+<div class="pilwrap" id="usebvh">
+  <h4>
+    <a href="#usebvh" name="usebvh" class="pilcrow"></a>
+useBVH
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/performance-usebvh--default-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A hook to speed up the default raycasting by using the <a href="https://github.com/gkjohnson/three-mesh-bvh">BVH Implementation by @gkjohnnson</a>.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> mesh = useRef()
+useBVH(mesh)
+
+&lt;mesh ref={mesh} ... /&gt;
+</code></pre>
+<div class="pilwrap" id="portals">
+  <h1>
+    <a href="#portals" name="portals" class="pilcrow"></a>
+Portals
+  </h1>
+</div>
+<div class="pilwrap" id="view">
+  <h4>
+    <a href="#view" name="view" class="pilcrow"></a>
+View
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/v5i9wl"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/v5i9wl/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/bp6tmc"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/bp6tmc/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/1wmlew"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/1wmlew/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Views use gl.scissor to cut the viewport into segments. You tie a view to a tracking div which then controls the position and bounds of the viewport. This allows you to have multiple views with a single, performant canvas. These views will follow their tracking elements, scroll along, resize, etc.</p>
+<p>It is advisable to re-connect the event system to a parent that contains both the canvas and the html content. This ensures that both are accessible/selectable and even allows you to mount controls or other deeper integrations into your view.</p>
+<pre><code class="tsx">&lt;View
+  /** The tracking element, the view will be cut according to its whereabouts */
+  track: React.MutableRefObject&lt;HTMLElement&gt;
+  /** Views take over the render loop, optional render index (1 by default) */
+  index?: number
+  /** If you know your view is always at the same place set this to 1 to avoid needless getBoundingClientRect overhead. The default is Infinity, which is best for css animations */
+  frames?: number
+  /** The scene to render, if you leave this undefined it will render the default scene */
+  children?: React.ReactNode
+/&gt;
+</code></pre>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> main = useRef()
+<span class="hljs-keyword">const</span> div = useRef()
+<span class="hljs-keyword">return</span> (
+  &lt;main ref={main}&gt;
+    &lt;h1&gt;Html content here&lt;/h1&gt;
+    &lt;div ref={div} style={{ width: 200, height: 200 }} /&gt;
+    &lt;Canvas onCreated={(state) =&gt; state.events.connect(main.current)}&gt;
+      &lt;View track={div}&gt;
+        &lt;mesh /&gt;
+        &lt;OrbitControls /&gt;
+      &lt;/View&gt;
+</code></pre>
+<div class="pilwrap" id="staging">
+  <h1>
+    <a href="#staging" name="staging" class="pilcrow"></a>
+Staging
+  </h1>
+</div>
+<div class="pilwrap" id="center">
+  <h4>
+    <a href="#center" name="center" class="pilcrow"></a>
+Center
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/staging-center--default-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>Calculates a boundary box and centers its children accordingly. <code>alignTop</code> adjusts it so that it sits flush on y=0.</p>
+<pre><code class="jsx">&lt;Center alignTop&gt;
+  &lt;mesh /&gt;
+&lt;/Center&gt;
+</code></pre>
+<div class="pilwrap" id="bounds">
+  <h4>
+    <a href="#bounds" name="bounds" class="pilcrow"></a>
+Bounds
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/rz2g0"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/rz2g0/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/42glz0"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/42glz0/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Calculates a boundary box and centers the camera accordingly. If you are using controls, make sure to pass them the <code>makeDefault</code> prop. <code>fit</code> fits the current view on first render. <code>clip</code> sets the cameras near/far planes.</p>
+<pre><code class="jsx">&lt;Bounds fit clip observe damping={6} margin={1.2}&gt;
+  &lt;mesh /&gt;
+&lt;/Bounds&gt;
+</code></pre>
+<p>The Bounds component also acts as a context provider, use the <code>useBounds</code> hook to refresh the bounds, fit the camera, clip near/far planes or focus objects. <code>refresh(object?: THREE.Object3D | THREE.Box3)</code> will recalculate bounds, since this can be expensive only call it when you know the view has changed. <code>clip</code> sets the cameras near/far planes. <code>fit</code> zooms and centers the view.</p>
+<pre><code class="jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Foo</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> bounds = useBounds()
+  useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-comment">// Calculate scene bounds</span>
+    bounds.refresh().clip().fit()
+    <span class="hljs-comment">// Or, focus a specific object or box3</span>
+    <span class="hljs-comment">// bounds.refresh(ref.current).clip().fit()</span>
+    <span class="hljs-comment">// bounds.refresh(new THREE.Box3()).clip().fit()</span>
+
+&lt;Bounds&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Foo</span> /&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="camerashake">
+  <h4>
+    <a href="#camerashake" name="camerashake" class="pilcrow"></a>
+CameraShake
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/staging-camerashake--camera-shake-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/t4l0f"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/t4l0f/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/0ycwe"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/0ycwe/screenshot.png" alt="Demo"/></a>
+</p>
+<p>A component for applying a configurable camera shake effect. Currently only supports rotational camera shake. Pass a ref to recieve the <code>ShakeController</code> API.</p>
+<p>If you use shake in combination with controls make sure to set the <code>makeDefault</code> prop on your controls, in that case you do not have to pass them via the <code>controls</code> prop.</p>
+<pre><code class="js"><span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">maxYaw</span>: <span class="hljs-number">0.1</span>, <span class="hljs-comment">// Max amount camera can yaw in either direction</span>
+  <span class="hljs-attr">maxPitch</span>: <span class="hljs-number">0.1</span>, <span class="hljs-comment">// Max amount camera can pitch in either direction</span>
+  <span class="hljs-attr">maxRoll</span>: <span class="hljs-number">0.1</span>, <span class="hljs-comment">// Max amount camera can roll in either direction</span>
+  <span class="hljs-attr">yawFrequency</span>: <span class="hljs-number">0.1</span>, <span class="hljs-comment">// Frequency of the the yaw rotation</span>
+  <span class="hljs-attr">pitchFrequency</span>: <span class="hljs-number">0.1</span>, <span class="hljs-comment">// Frequency of the pitch rotation</span>
+  <span class="hljs-attr">rollFrequency</span>: <span class="hljs-number">0.1</span>, <span class="hljs-comment">// Frequency of the roll rotation</span>
+  <span class="hljs-attr">intensity</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">// initial intensity of the shake</span>
+  <span class="hljs-attr">decay</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// should the intensity decay over time</span>
+  <span class="hljs-attr">decayRate</span>: <span class="hljs-number">0.65</span>, <span class="hljs-comment">// if decay = true this is the rate at which intensity will reduce at</span>
+  <span class="hljs-attr">controls</span>: <span class="hljs-literal">undefined</span>, <span class="hljs-comment">// if using orbit controls, pass a ref here so we can update the rotation</span>
+}
+
+;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">CameraShake</span> {<span class="hljs-attr">...config</span>} /&gt;</span></span>
+</code></pre>
+<pre><code class="ts"><span class="hljs-keyword">interface</span> ShakeController {
+  getIntensity: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">number</span>
+  setIntensity: <span class="hljs-function">(<span class="hljs-params">val: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-built_in">void</span>
+}
+</code></pre>
+<div class="pilwrap" id="float">
+  <h4>
+    <a href="#float" name="float" class="pilcrow"></a>
+Float
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/2ij9u"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/2ij9u/screenshot.png" alt="Demo"/></a>
+</p>
+<p>This component makes its contents float or hover.</p>
+<pre><code class="js">&lt;Float
+  speed={1} // Animation speed, defaults to 1
+  rotationIntensity={1} // XYZ rotation intensity, defaults to 1
+  floatIntensity={1} // Up/down float intensity, defaults to 1
+&gt;
+  &lt;mesh /&gt;
+&lt;/Float&gt;
+</code></pre>
+<div class="pilwrap" id="stage">
+  <h4>
+    <a href="#stage" name="stage" class="pilcrow"></a>
+Stage
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/staging-stage--stage-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>Creates a &quot;stage&quot; with proper studio lighting, content centered and planar, shadows and ground-contact shadows.</p>
+<p>Make sure to set the <code>makeDefault</code> prop on your controls, in that case you do not need to provide <code>controls</code> via prop.</p>
+<pre><code class="jsx">&lt;Stage contactShadow shadows adjustCamera intensity={1} environment="city" preset="rembrandt" controls={controlsRef}&gt;
+  &lt;mesh /&gt;
+&lt;/Stage&gt;
+</code></pre>
+<div class="pilwrap" id="backdrop">
+  <h4>
+    <a href="#backdrop" name="backdrop" class="pilcrow"></a>
+Backdrop
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/8yfnd"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/8yfnd/screenshot.png" alt="Demo"/></a>
+</p>
+<p>A curved plane, like a studio backdrop. This is for presentational purposes, to break up light and shadows more interestingly.</p>
+<pre><code class="jsx">&lt;Backdrop
+  floor={0.25} // Stretches the floor segment, 0.25 by default
+  segments={20} // Mesh-resolution, 20 by default
+&gt;
+  &lt;meshStandardMaterial color="#353540" /&gt;
+&lt;/Backdrop&gt;
+</code></pre>
+<div class="pilwrap" id="shadow">
+  <h4>
+    <a href="#shadow" name="shadow" class="pilcrow"></a>
+Shadow
+  </h4>
+</div>
+<p><a href="https://drei.vercel.app/?path=/story/misc-shadow--shadow-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>A cheap canvas-texture-based circular gradient.</p>
+<pre><code class="jsx">&lt;Shadow
+  color=<span class="hljs-string">"black"</span>
+  colorStop={<span class="hljs-number">0</span>}
+  opacity={<span class="hljs-number">0.5</span>}
+  fog={<span class="hljs-literal">false</span>} <span class="hljs-comment">// Reacts to fog (default=false)</span>
+/&gt;
+</code></pre>
+<div class="pilwrap" id="contactshadows">
+  <h4>
+    <a href="#contactshadows" name="contactshadows" class="pilcrow"></a>
+ContactShadows
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/staging-contactshadows--contact-shadow-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/qxjoj"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/qxjoj/screenshot.png" alt="Demo"/></a>
+</p>
+<p>A <a href="https://threejs.org/examples/#webgl_shadow_contact">contact shadow</a> implementation, facing upwards (positive Y) by default. <code>scale</code> can be a positive number or a 2D array <code>[x: number, y: number]</code>.</p>
+<pre><code class="jsx">&lt;ContactShadows opacity={<span class="hljs-number">1</span>} scale={<span class="hljs-number">10</span>} blur={<span class="hljs-number">1</span>} far={<span class="hljs-number">10</span>} resolution={<span class="hljs-number">256</span>} color=<span class="hljs-string">"#000000"</span> /&gt;
+</code></pre>
+<p>Since this is a rather expensive effect you can limit the amount of frames it renders when your objects are static. For instance making it render only once:</p>
+<pre><code class="jsx">&lt;ContactShadows frames={<span class="hljs-number">1</span>} /&gt;
+</code></pre>
+<div class="pilwrap" id="spotlight">
+  <h4>
+    <a href="#spotlight" name="spotlight" class="pilcrow"></a>
+SpotLight
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/tx1pq"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/tx1pq/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/wdzv4"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/wdzv4/screenshot.png" alt="Demo"/></a>
+</p>
+<p>A Volumetric spotlight.</p>
+<pre><code class="jsx">&lt;SpotLight
+  distance={<span class="hljs-number">5</span>}
+  angle={<span class="hljs-number">0.15</span>}
+  attenuation={<span class="hljs-number">5</span>}
+  anglePower={<span class="hljs-number">5</span>} <span class="hljs-comment">// Diffuse-cone anglePower (default: 5)</span>
+/&gt;
+</code></pre>
+<p>Optionally you can provide a depth-buffer which converts the spotlight into a soft particle.</p>
+<pre><code class="jsx"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Foo</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> depthBuffer = useDepthBuffer()
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">SpotLight</span> <span class="hljs-attr">depthBuffer</span>=<span class="hljs-string">{depthBuffer}</span> /&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="environment">
+  <h4>
+    <a href="#environment" name="environment" class="pilcrow"></a>
+Environment
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/staging-environment--environment-story"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/t4l0f"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/t4l0f/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/mih0lx"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/mih0lx/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/e662p3"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/e662p3/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/lwo219"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/lwo219/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/q48jgy"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/q48jgy/screenshot.png" alt="Demo"/></a>
+  <a href="https://codesandbox.io/s/0c5hv9"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/0c5hv9/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Sets up a global cubemap, which affects the default <code>scene.environment</code>, and optionally <code>scene.background</code>, unless a custom scene has been passed. A selection of <a href="src/helpers/environment-assets.ts.html">presets</a> from <a href="https://hdrihaven.com/">HDRI Haven</a> are available for convenience. If you pass an array of files it will use THREE.CubeTextureLoader.</p>
+<p>👉 Note: <code>preset</code> property is not meant to be used in production environments. Consider using <code>files</code> property together with local files or a CDN of your choice instead.</p>
+<pre><code class="jsx">&lt;Environment
+  background={<span class="hljs-literal">false</span>} <span class="hljs-comment">// can be true, false or "only" (which only sets the background) (default: false)</span>
+  files={[<span class="hljs-string">'px.png'</span>, <span class="hljs-string">'nx.png'</span>, <span class="hljs-string">'py.png'</span>, <span class="hljs-string">'ny.png'</span>, <span class="hljs-string">'pz.png'</span>, <span class="hljs-string">'nz.png'</span>]}
+  path=<span class="hljs-string">"/"</span>
+  preset={<span class="hljs-literal">null</span>}
+  scene={<span class="hljs-literal">undefined</span>} <span class="hljs-comment">// adds the ability to pass a custom THREE.Scene, can also be a ref</span>
+/&gt;
+</code></pre>
+<p>If you provide a single string it will use THREE.RGBELoader.</p>
+<pre><code class="jsx">&lt;Environment files=<span class="hljs-string">"file.hdr"</span> /&gt;
+</code></pre>
+<p>If you already have a cube texture you can pass it directly:</p>
+<pre><code class="jsx">&lt;CubeCamera&gt;{(texture) =&gt; &lt;Environment map={texture} /&gt;}&lt;/CubeCamera&gt;
+</code></pre>
+<p>If you provide children you can even render a custom environment. It will render the contents into an off-buffer and film a single frame with a cube camera (whose props you can configure: near=1, far=1000, resolution=256).</p>
+<pre><code class="jsx">&lt;Environment background near={1} far={1000} resolution={256}&gt;
+  &lt;mesh scale={100}&gt;
+    &lt;sphereGeometry args={[1, 64, 64]} /&gt;
+    &lt;meshBasicMaterial map={texture} side={THREE.BackSide} /&gt;
+  &lt;/mesh&gt;
+&lt;/Environment&gt;
+</code></pre>
+<p>You can even mix a generic HDRI environment into a custom one with either the <code>preset</code> or the <code>files</code> prop.</p>
+<pre><code class="jsx"><span class="hljs-keyword">return</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Environment</span> <span class="hljs-attr">background</span> <span class="hljs-attr">near</span>=<span class="hljs-string">{1}</span> <span class="hljs-attr">far</span>=<span class="hljs-string">{1000}</span> <span class="hljs-attr">resolution</span>=<span class="hljs-string">{256}</span> <span class="hljs-attr">preset</span>=<span class="hljs-string">"warehouse"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mesh</span> /&gt;</span>
+</span></code></pre>
+<p>Declarative environment content can also animate with the <code>frames</code> prop, the envmap can be live. Give it a low resolution and this will happen at very little cost</p>
+<pre><code class="jsx"><span class="hljs-keyword">return</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Environment</span> <span class="hljs-attr">frames</span>=<span class="hljs-string">{Infinity}</span> <span class="hljs-attr">resolution</span>=<span class="hljs-string">{256}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Float</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">mesh</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Float</span>&gt;</span>
+</span></code></pre>
+<p>Environment can also be ground projected, that is, put your model on the &quot;ground&quot; within the environment map.</p>
+<pre><code class="jsx">&lt;Environment ground /&gt;
+</code></pre>
+<p>You can provide optional options to configure this projecion.</p>
+<pre><code class="jsx">&lt;Environment
+  ground={{
+    <span class="hljs-attr">height</span>: <span class="hljs-number">15</span>, <span class="hljs-comment">// Height of the camera that was used to create the env map (Default: 15)</span>
+    <span class="hljs-attr">radius</span>: <span class="hljs-number">60</span>, <span class="hljs-comment">// Radius of the world. (Default 60)</span>
+    <span class="hljs-attr">scale</span>: <span class="hljs-number">1000</span>, <span class="hljs-comment">// Scale of the backside projected sphere that holds the env texture (Default: 1000)</span>
+  }}
+/&gt;
+</code></pre>
+<div class="pilwrap" id="lightformer">
+  <h4>
+    <a href="#lightformer" name="lightformer" class="pilcrow"></a>
+Lightformer
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/lwo219"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/lwo219/screenshot.png" alt="Demo"/></a>
+</p>
+<p>This component draws flat rectangles, circles or rings, mimicking the look of a light-former. You can set the output <code>intensity</code>, which will effect emissiveness once you put it into an HDRI <code>&lt;Environment&gt;</code>, where it mostly belong. It will act like a real light without the expense, you can have as many as you want.</p>
+<pre><code class="jsx">&lt;Environment&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Lightformer</span>
+    <span class="hljs-attr">form</span>=<span class="hljs-string">"rect"</span> // <span class="hljs-attr">circle</span> | <span class="hljs-attr">ring</span> | <span class="hljs-attr">rect</span> (<span class="hljs-attr">optional</span>, <span class="hljs-attr">default</span> = <span class="hljs-string">rect)</span>
+    <span class="hljs-attr">intensity</span>=<span class="hljs-string">{1}</span> // <span class="hljs-attr">power</span> <span class="hljs-attr">level</span> (<span class="hljs-attr">optional</span> = <span class="hljs-string">1)</span>
+    <span class="hljs-attr">color</span>=<span class="hljs-string">"white"</span> // (<span class="hljs-attr">optional</span> = <span class="hljs-string">white)</span>
+    <span class="hljs-attr">scale</span>=<span class="hljs-string">{[10,</span> <span class="hljs-attr">5</span>]} // <span class="hljs-attr">Scale</span> <span class="hljs-attr">it</span> <span class="hljs-attr">any</span> <span class="hljs-attr">way</span> <span class="hljs-attr">you</span> <span class="hljs-attr">prefer</span> (<span class="hljs-attr">optional</span> = <span class="hljs-string">[1,</span> <span class="hljs-attr">1</span>])
+    <span class="hljs-attr">target</span>=<span class="hljs-string">{[0,</span> <span class="hljs-attr">0</span>, <span class="hljs-attr">0</span>]} // <span class="hljs-attr">Target</span> <span class="hljs-attr">position</span> (<span class="hljs-attr">optional</span> = <span class="hljs-string">undefined)</span>
+  /&gt;</span></span>
+</code></pre>
+<div class="pilwrap" id="sky">
+  <h4>
+    <a href="#sky" name="sky" class="pilcrow"></a>
+Sky
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/staging-sky--sky-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>
+  <a href="https://codesandbox.io/s/vkgi6"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/vkgi6/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Adds a <a href="https://threejs.org/examples/#webgl_shaders_sky">sky</a> to your scene.</p>
+<pre><code class="jsx">&lt;Sky distance={<span class="hljs-number">450000</span>} sunPosition={[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]} inclination={<span class="hljs-number">0</span>} azimuth={<span class="hljs-number">0.25</span>} {...props} /&gt;
+</code></pre>
+<div class="pilwrap" id="stars">
+  <h4>
+    <a href="#stars" name="stars" class="pilcrow"></a>
+Stars
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/staging-stars--stars-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a></p>
+<p>Adds a blinking shader-based starfield to your scene.</p>
+<pre><code class="jsx">&lt;Stars radius={<span class="hljs-number">100</span>} depth={<span class="hljs-number">50</span>} count={<span class="hljs-number">5000</span>} factor={<span class="hljs-number">4</span>} saturation={<span class="hljs-number">0</span>} fade speed={<span class="hljs-number">1</span>} /&gt;
+</code></pre>
+<div class="pilwrap" id="sparkles">
+  <h4>
+    <a href="#sparkles" name="sparkles" class="pilcrow"></a>
+Sparkles
+  </h4>
+</div>
+<p>
+  <a href="https://codesandbox.io/s/0c5hv9"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/0c5hv9/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Floating, glowing particles.</p>
+<pre><code class="tsx">&lt;Sparkles
+  /** Number of particles (default: 100) */
+  count?: number
+  /** Speed of particles (default: 1) */
+  speed?: number | Float32Array
+  /** Opacity of particles (default: 1) */
+  opacity?: number | Float32Array
+  /** Color of particles (default: 100) */
+  color?: THREE.ColorRepresentation | Float32Array
+  /** Size of particles (default: randomized between 0 and 1) */
+  size?: number | Float32Array
+  /** The space the particles occupy (default: 1) */
+  scale?: number | [number, number, number] | THREE.Vector3
+  /** Movement factor (default: 1) */
+  noise?: number | [number, number, number] | THREE.Vector3 | Float32Array
+/&gt;
+</code></pre>
+<div class="pilwrap" id="cloud">
+  <h4>
+    <a href="#cloud" name="cloud" class="pilcrow"></a>
+Cloud
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/staging-cloud--cloud-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a> <img src="https://img.shields.io/badge/-suspense-brightgreen" alt=""></p>
+<p>
+  <a href="https://codesandbox.io/s/mbfzf"><img width="20%" src="https://codesandbox.io/api/v1/sandboxes/mbfzf/screenshot.png" alt="Demo"/></a>
+</p>
+<p>Particle based cloud.</p>
+<p>👉 Note: <code>&lt;Cloud /&gt;</code> component is not meant to be used in production environments as it relies on third-party CDN.</p>
+<pre><code class="jsx">&lt;Cloud
+  opacity={<span class="hljs-number">0.5</span>}
+  speed={<span class="hljs-number">0.4</span>} <span class="hljs-comment">// Rotation speed</span>
+  width={<span class="hljs-number">10</span>} <span class="hljs-comment">// Width of the full cloud</span>
+  depth={<span class="hljs-number">1.5</span>} <span class="hljs-comment">// Z-dir depth</span>
+  segments={<span class="hljs-number">20</span>} <span class="hljs-comment">// Number of particles</span>
+/&gt;
+</code></pre>
+<div class="pilwrap" id="usematcaptexture">
+  <h4>
+    <a href="#usematcaptexture" name="usematcaptexture" class="pilcrow"></a>
+useMatcapTexture
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/staging-usematcaptexture--use-matcap-texture-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a> <img src="https://img.shields.io/badge/-suspense-brightgreen" alt=""></p>
+<p>Loads matcap textures from this repository: https://github.com/emmelleppi/matcaps</p>
+<p>(It is a fork of this repository: https://github.com/nidorx/matcaps)</p>
+<p>👉 Note: <code>useMatcapTexture</code> hook is not meant to be used in production environments as it relies on third-party CDN.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> [matcap, url] = useMatcapTexture(
+ <span class="hljs-number">0</span>, <span class="hljs-comment">// index of the matcap texture https://github.com/emmelleppi/matcaps/blob/master/matcap-list.json</span>
+ <span class="hljs-number">1024</span> <span class="hljs-comment">// size of the texture ( 64, 128, 256, 512, 1024 )</span>
+)
+
+<span class="hljs-keyword">return</span> (
+ ...
+ &lt;meshMatcapMaterial matcap={matcap} /&gt;
+ ...
+)
+</code></pre>
+<p>👉 You can also use the exact name of the matcap texture, like so:</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> [matcap] = useMatcapTexture(<span class="hljs-string">'3E2335_D36A1B_8E4A2E_2842A5'</span>)
+</code></pre>
+<p>👉 Use the <code>url</code> to download the texture when you are ready for production!</p>
+<div class="pilwrap" id="usenormaltexture">
+  <h4>
+    <a href="#usenormaltexture" name="usenormaltexture" class="pilcrow"></a>
+useNormalTexture
+  </h4>
+</div>
+<p><a href="https://drei.pmnd.rs/?path=/story/staging-usenormaltexture--use-normal-texture-st"><img src="https://img.shields.io/badge/-storybook-%23ff69b4" alt=""></a> <img src="https://img.shields.io/badge/-suspense-brightgreen" alt=""></p>
+<p>Loads normal textures from this repository: https://github.com/emmelleppi/normal-maps</p>
+<p>👉 Note: <code>useNormalTexture</code> hook is not meant to be used in production environments as it relies on third-party CDN.</p>
+<pre><code class="jsx"><span class="hljs-keyword">const</span> [normalMap, url] = useNormalTexture(
+  <span class="hljs-number">1</span>, <span class="hljs-comment">// index of the normal texture - https://github.com/emmelleppi/normal-maps/blob/master/normals.json</span>
+  <span class="hljs-comment">// second argument is texture attributes</span>
+  {
+    <span class="hljs-attr">offset</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
+    <span class="hljs-attr">repeat</span>: [normRepeat, normRepeat],
+    <span class="hljs-attr">anisotropy</span>: <span class="hljs-number">8</span>
+  }
+)
+
+<span class="hljs-keyword">return</span> (
+  ...
+  &lt;meshStandardMaterial normalMap={normalMap} /&gt;
+  ...
+)
+</code></pre>
+</div>
+  </div>
+</body>
+</html>

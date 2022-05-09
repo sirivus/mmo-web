@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>keyboard.html</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "game/practice/keyboard.html";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>keyboard.html</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+
+
+    <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'keydown'</span>, (event) =&gt; {
+        <span class="hljs-keyword">switch</span> (event.key) {
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'w'</span>:
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'up'</span>)
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'s'</span>:
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'down'</span>)
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'a'</span>:
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'left'</span>)
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'d'</span>:
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'right'</span>)
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">' '</span>:
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'space'</span>)
+                <span class="hljs-keyword">break</span>;            
+                <span class="hljs-comment">/*
+                console logging detection, can note out. still detecting
+                when hit ' ' space, will set attack to true and do damage
+                set player.isAttacking = false
+
+                in detection after hit once
+                then goes into timeout
+                position = this.position //canceled
+                position: {
+                    x: this.position.x,
+                    y: this.position.y
+                }    //now an object, with a property 
+                now put into update(), to draw boxes correctly
+                attack.offset.x
+                need to create offset property inside attack object
+                //object
+                this.attackBox {
+                }
+                inside a constructor
+                of sprite class
+                offset is equal to offset: offset
+                now declare
+                inside another object, offset can be set:
+
+                offset: {
+                  x: 10,
+                  y: 5
+                }
+                
+                so now the offset property is into the enemy class, meddling with the offset property of the previously declared inside a constructor of the: const enemy = new Sprite ({
+                }) 
+
+                */</span>
+               
+               <span class="hljs-comment">//alt + z is word wrap on or off</span>
+
+            <span class="hljs-comment">//case 'd':</span>
+            <span class="hljs-comment">//    console.log('up')</span>
+            <span class="hljs-comment">//    break;</span>
+            <span class="hljs-comment">//case 'd':</span>
+            <span class="hljs-comment">//    console.log('up')</span>
+            <span class="hljs-comment">//    break;</span>
+            <span class="hljs-comment">//case 'd':</span>
+            <span class="hljs-comment">//    console.log('up')</span>
+            <span class="hljs-comment">//    break;</span>
+
+        }
+        <span class="hljs-comment">//console.log(event.key)</span>
+        <span class="hljs-comment">//console.log(event)</span>
+
+        <span class="hljs-comment">//console.log(event)</span>
+        <span class="hljs-comment">//if (event.key == 'ArrowLeft') {</span>
+        <span class="hljs-comment">//    document.getElementById('left').click();</span>
+        <span class="hljs-comment">//}</span>
+        <span class="hljs-comment">//if (event.key == 'a') {</span>
+        <span class="hljs-comment">//    console.log('this character will move left now');</span>
+        <span class="hljs-comment">//}        </span>
+        <span class="hljs-comment">//yay keyboard input works for anything now.</span>
+    })
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

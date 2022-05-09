@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>webgpu.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "webgpu/webgpu.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>webgpu.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+<p>Get a GPUCanvasContext from an offscreen HTMLCanvasElement:</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>const canvas = document.createElement('canvas');
+const context = canvas.getContext('webgpu');</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>20.2. GPUCanvasContext
+[Exposed=(Window, DedicatedWorker), SecureContext]
+interface GPUCanvasContext {
+readonly attribute (HTMLCanvasElement or OffscreenCanvas) canvas;</p>
+<p>undefined configure(GPUCanvasConfiguration configuration);
+undefined unconfigure();</p>
+<p>GPUTextureFormat getPreferredFormat(GPUAdapter adapter);
+GPUTexture getCurrentTexture();</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>Configure a GPUCanvasContext to be used with a specific GPUDevice, using the preferred format for this context:
+const canvas = document.createElement(&quot;canvas&quot;);
+const context = canvas.getContext(&quot;webgpu&quot;);</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+context.configure({
+  <span class="hljs-attr">device</span>: gpuDevice,
+  <span class="hljs-attr">format</span>: context.getPreferredFormat(gpuAdapter),
+});
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>Reconfigure a GPUCanvasContext in response to canvas resize, monitored using ResizeObserver to get the exact pixel dimensions of the canvas:</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"canvas"</span>);
+<span class="hljs-keyword">const</span> context = canvas.getContext(<span class="hljs-string">"webgpu"</span>);
+
+<span class="hljs-keyword">const</span> resizeObserver = <span class="hljs-keyword">new</span> ResizeObserver(<span class="hljs-function">(<span class="hljs-params">entries</span>) =&gt;</span> {
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> entry <span class="hljs-keyword">of</span> entries) {
+    <span class="hljs-keyword">if</span> (entry.target != canvas) {
+      <span class="hljs-keyword">continue</span>;
+    }
+    context.configure({
+      <span class="hljs-attr">device</span>: gpuDevice,
+      <span class="hljs-attr">format</span>: context.getPreferredFormat(gpuAdapter),
+      <span class="hljs-attr">size</span>: {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>This reports the size of the canvas element in pixels</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        width: entry.devicePixelContentBoxSize[<span class="hljs-number">0</span>].inlineSize,
+        <span class="hljs-attr">height</span>: entry.devicePixelContentBoxSize[<span class="hljs-number">0</span>].blockSize,
+      },
+    });
+  }
+});
+resizeObserver.observe(canvas);
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

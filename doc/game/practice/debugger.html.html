@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>debugger.html</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "game/practice/debugger.html";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>debugger.html</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+
+    <span class="hljs-comment">//var age = `${debugger}`</span>
+    element.addEventListener(x, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">//statement codes  </span>
+    })
+    $<span class="hljs-keyword">debugger</span> = <span class="hljs-number">0</span>
+        <span class="hljs-comment">//document.getElementsByName('debugger').values = '&lt;?php echo $debugger; ?&gt;';</span>
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dd</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-built_in">document</span>.getElementsByName(<span class="hljs-string">'debugger'</span>).values = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                <span class="hljs-keyword">debugger</span>;
+            }
+        }dd()
+
+    <span class="hljs-comment">//$debugger</span>
+    <span class="hljs-keyword">var</span> intervalID = setInterval(myCallback, <span class="hljs-number">10</span>, <span class="hljs-string">'Parameter 1'</span>, <span class="hljs-string">'Parameter 2'</span>);
+
+    <span class="hljs-comment">//const payload = {};</span>
+    <span class="hljs-comment">//if (nameChanged) {</span>
+    <span class="hljs-comment">//    payload.name = "Beart";</span>
+    <span class="hljs-comment">//}</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myCallback</span>(<span class="hljs-params">a, b</span>) </span>{
+
+        x = <span class="hljs-number">1</span>
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">if</span> (x === <span class="hljs-number">0</span>) { }
+        } <span class="hljs-keyword">catch</span> (x) {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hi'</span>)
+
+            <span class="hljs-comment">//     while ('debugger') { } // boom boom</span>
+            <span class="hljs-comment">//console.error(error);</span>
+
+            <span class="hljs-comment">// expected output: ReferenceError: nonExistentFunction is not defined</span>
+            <span class="hljs-comment">// Note - error messages will vary depending on browser</span>
+        }
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">debugger</span>
+        } <span class="hljs-keyword">catch</span> (er1) {
+            asd()
+
+            <span class="hljs-comment">//     while ('debugger') { } // boom boom</span>
+            <span class="hljs-comment">//console.error(error);</span>
+
+            <span class="hljs-comment">// expected output: ReferenceError: nonExistentFunction is not defined</span>
+            <span class="hljs-comment">// Note - error messages will vary depending on browser</span>
+        }
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">asd</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">while</span> (<span class="hljs-string">'debugger'</span>) {
+                <span class="hljs-comment">// boom boom</span>
+            }
+        }
+
+
+        <span class="hljs-comment">// Your code here</span>
+        <span class="hljs-comment">// Parameters are purely optional.</span>
+        <span class="hljs-comment">//console.log(window)</span>
+        <span class="hljs-keyword">debugger</span>
+        <span class="hljs-comment">//while('debugger'){} // boom boom</span>
+        setInterval(myCallback, <span class="hljs-number">10</span>)
+
+        <span class="hljs-comment">// console.log(a);</span>
+        <span class="hljs-comment">// console.log(b);</span>
+    } myCallback()
+    <span class="hljs-comment">//</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">asd</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hi1'</span>)
+    } asd()
+    setInterval(asd(), <span class="hljs-number">1</span>)
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">// code here</span>
+        <span class="hljs-comment">//console.log('hi')</span>
+
+
+        requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

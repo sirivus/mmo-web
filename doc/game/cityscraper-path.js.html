@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>cityscraper-path.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/cityscraper-path.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>cityscraper-path.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> THREE <span class="hljs-keyword">from</span> <span class="hljs-string">"three"</span>;
+<span class="hljs-keyword">import</span> { OrbitControls } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://threejs.org/examples/jsm/controls/OrbitControls.js"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"#c"</span>);
+  <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer({ canvas });
+
+  <span class="hljs-keyword">const</span> fov = <span class="hljs-number">45</span>;
+  <span class="hljs-keyword">const</span> aspect = <span class="hljs-number">2</span>; <span class="hljs-comment">// the canvas default</span>
+  <span class="hljs-keyword">const</span> near = <span class="hljs-number">0.1</span>;
+  <span class="hljs-keyword">const</span> far = <span class="hljs-number">10000</span>;
+  <span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.set(<span class="hljs-number">0</span>, <span class="hljs-number">1000</span>, <span class="hljs-number">2000</span>);
+
+  <span class="hljs-keyword">const</span> controls = <span class="hljs-keyword">new</span> OrbitControls(camera, canvas);
+  controls.target.set(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>);
+  controls.update();
+
+  <span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();
+  scene.background = <span class="hljs-keyword">new</span> THREE.Color(<span class="hljs-string">"black"</span>);
+
+  scene.add(<span class="hljs-keyword">new</span> THREE.GridHelper(<span class="hljs-number">5000</span>, <span class="hljs-number">10</span>));
+
+  <span class="hljs-keyword">let</span> curve;
+  <span class="hljs-keyword">let</span> curveObject;
+  {
+    <span class="hljs-keyword">const</span> controlPoints = [
+      [<span class="hljs-number">1.118281</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-3.681386</span>],
+      [<span class="hljs-number">3.948875</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-3.641834</span>],
+      [<span class="hljs-number">3.960072</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-0.240352</span>],
+      [<span class="hljs-number">3.985447</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">4.585005</span>],
+      [<span class="hljs-number">-3.793631</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">4.585006</span>],
+      [<span class="hljs-number">-3.826839</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-14.7362</span>],
+      [<span class="hljs-number">-14.542292</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-14.765865</span>],
+      [<span class="hljs-number">-14.520929</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-3.627002</span>],
+      [<span class="hljs-number">-5.452815</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-3.634418</span>],
+      [<span class="hljs-number">-5.467251</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">4.549161</span>],
+      [<span class="hljs-number">-13.266233</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">4.567083</span>],
+      [<span class="hljs-number">-13.250067</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-13.499271</span>],
+      [<span class="hljs-number">4.081842</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-13.435463</span>],
+      [<span class="hljs-number">4.125436</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-5.334928</span>],
+      [<span class="hljs-number">-14.521364</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-5.239871</span>],
+      [<span class="hljs-number">-14.510466</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">5.486727</span>],
+      [<span class="hljs-number">5.745666</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">5.510492</span>],
+      [<span class="hljs-number">5.787942</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-14.728308</span>],
+      [<span class="hljs-number">-5.42372</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-14.761919</span>],
+      [<span class="hljs-number">-5.373599</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-3.704133</span>],
+      [<span class="hljs-number">1.004861</span>, <span class="hljs-number">5.115846</span>, <span class="hljs-number">-3.641834</span>],
+    ];
+    <span class="hljs-keyword">const</span> p0 = <span class="hljs-keyword">new</span> THREE.Vector3();
+    <span class="hljs-keyword">const</span> p1 = <span class="hljs-keyword">new</span> THREE.Vector3();
+    curve = <span class="hljs-keyword">new</span> THREE.CatmullRomCurve3(
+      controlPoints
+        .map(<span class="hljs-function">(<span class="hljs-params">p, ndx</span>) =&gt;</span> {
+          p0.set(...p);
+          p1.set(...controlPoints[(ndx + <span class="hljs-number">1</span>) % controlPoints.length]);
+          <span class="hljs-keyword">return</span> [
+            <span class="hljs-keyword">new</span> THREE.Vector3().copy(p0),
+            <span class="hljs-keyword">new</span> THREE.Vector3().lerpVectors(p0, p1, <span class="hljs-number">0.1</span>),
+            <span class="hljs-keyword">new</span> THREE.Vector3().lerpVectors(p0, p1, <span class="hljs-number">0.9</span>),
+          ];
+        })
+        .flat(),
+      <span class="hljs-literal">true</span>
+    );
+    {
+      <span class="hljs-keyword">const</span> points = curve.getPoints(<span class="hljs-number">250</span>);
+      <span class="hljs-keyword">const</span> geometry = <span class="hljs-keyword">new</span> THREE.BufferGeometry().setFromPoints(points);
+      <span class="hljs-keyword">const</span> material = <span class="hljs-keyword">new</span> THREE.LineBasicMaterial({ <span class="hljs-attr">color</span>: <span class="hljs-number">0xff0000</span> });
+      curveObject = <span class="hljs-keyword">new</span> THREE.Line(geometry, material);
+      curveObject.scale.set(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>);
+      curveObject.position.y = <span class="hljs-number">-621</span>;
+      material.depthTest = <span class="hljs-literal">false</span>;
+      curveObject.renderOrder = <span class="hljs-number">1</span>;
+      scene.add(curveObject);
+    }
+  }
+
+  <span class="hljs-keyword">const</span> geometry = <span class="hljs-keyword">new</span> THREE.BoxGeometry(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">300</span>);
+  <span class="hljs-keyword">const</span> material = <span class="hljs-keyword">new</span> THREE.MeshBasicMaterial({ <span class="hljs-attr">color</span>: <span class="hljs-string">"cyan"</span> });
+  <span class="hljs-keyword">const</span> cars = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; ++i) {
+    <span class="hljs-keyword">const</span> mesh = <span class="hljs-keyword">new</span> THREE.Mesh(geometry, material);
+    scene.add(mesh);
+    cars.push(mesh);
+  }
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>create 2 Vector3s we can use for path calculations</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">const</span> carPosition = <span class="hljs-keyword">new</span> THREE.Vector3();
+  <span class="hljs-keyword">const</span> carTarget = <span class="hljs-keyword">new</span> THREE.Vector3();
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">time</span>) </span>{
+    time *= <span class="hljs-number">0.001</span>; <span class="hljs-comment">// convert to seconds</span>
+
+    {
+      <span class="hljs-keyword">const</span> pathTime = time * <span class="hljs-number">0.01</span>;
+      <span class="hljs-keyword">const</span> targetOffset = <span class="hljs-number">0.01</span>;
+      cars.forEach(<span class="hljs-function">(<span class="hljs-params">car, ndx</span>) =&gt;</span> {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>a number between 0 and 1 to evenly space the cars</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        <span class="hljs-keyword">const</span> u = pathTime + ndx / cars.length;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>get the first point</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        curve.getPointAt(u % <span class="hljs-number">1</span>, carPosition);
+        carPosition.applyMatrix4(curveObject.matrixWorld);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>get a second point slightly further down the curve</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        curve.getPointAt((u + targetOffset) % <span class="hljs-number">1</span>, carTarget);
+        carTarget.applyMatrix4(curveObject.matrixWorld);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>put the car at the first point (temporarily)</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        car.position.copy(carPosition);
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
+</div>
+<p>point the car the second point</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        car.lookAt(carTarget);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
+</div>
+<p>put the car between the 2 points</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">        car.position.lerpVectors(carPosition, carTarget, <span class="hljs-number">0.5</span>);
+      });
+    }
+
+    renderer.render(scene, camera);
+
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
+}
+
+main();
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

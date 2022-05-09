@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>sample.html</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/sample.html";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>sample.html</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-string">'{"p": 5}'</span>, (key, value) =&gt;
+                <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'number'</span>
+                    ? value * <span class="hljs-number">2</span> <span class="hljs-comment">// return value * 2 for numbers</span>
+                    : value     <span class="hljs-comment">// return everything else unchanged</span>
+            );
+
+            <span class="hljs-comment">// { p: 10 }</span>
+
+            <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-string">'{"1": 1, "2": 2, "3": {"4": 4, "5": {"6": 6}}}'</span>, (key, value) =&gt; {
+                <span class="hljs-built_in">console</span>.log(key); <span class="hljs-comment">// log the current property name, the last is "".</span>
+                <span class="hljs-keyword">return</span> value;     <span class="hljs-comment">// return the unchanged property value.</span>
+            });
+
+<span class="hljs-comment">// 1</span>
+<span class="hljs-comment">// 2</span>
+<span class="hljs-comment">// 4</span>
+<span class="hljs-comment">// 6</span>
+<span class="hljs-comment">// 5</span>
+<span class="hljs-comment">// 3</span>
+<span class="hljs-comment">// ""</span>
+
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+        <span class="hljs-comment">/*
+        JSON.parse('{"p": 5}', (key, value) =&gt;
+                typeof value === 'number'
+                    ? value * 2 // return value * 2 for numbers
+                    : value     // return everything else unchanged
+            );
+       JSON.parse('{
+                "squadName": "Super hero squad",
+                    "homeTown": "Metro City",
+                        "formed": 2016,
+                            "secretBase": "Super tower",
+                                "active": true,
+                                    "members": [
+                                        {
+                                            "name": "Molecule Man",
+                                            "age": 29,
+                                            "secretIdentity": "Dan Jukes",
+                                            "powers": [
+                                                "Radiation resistance",
+                                                "Turning tiny",
+                                                "Radiation blast"
+                                            ]
+                                        },
+                                        {
+                                            "name": "Madame Uppercut",
+                                            "age": 39,
+                                            "secretIdentity": "Jane Wilson",
+                                            "powers": [
+                                                "Million tonne punch",
+                                                "Damage resistance",
+                                                "Superhuman reflexes"
+                                            ]
+                                        },
+                                        {
+                                            "name": "Eternal Flame",
+                                            "age": 1000000,
+                                            "secretIdentity": "Unknown",
+                                            "powers": [
+                                                "Immortality",
+                                                "Heat Immunity",
+                                                "Inferno",
+                                                "Teleportation",
+                                                "Interdimensional travel"
+                                            ]
+                                        }
+                                    ]
+            }
+, (key, value) =&gt; {
+               console.log(key); // log the current property name, the last is "".
+               return value;     // return the unchanged property value.
+           }); 
+           
+           */</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

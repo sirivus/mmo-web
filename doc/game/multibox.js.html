@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>multibox.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/multibox.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>multibox.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+<p>Three.js - Primitives
+from https://threejs.org/manual/examples/primitives.html</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> THREE <span class="hljs-keyword">from</span> <span class="hljs-string">"three"</span>;
+<span class="hljs-keyword">import</span> { FontLoader } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://unpkg.com/three@0.138.3/examples/jsm/loaders/FontLoader.js"</span>;
+<span class="hljs-keyword">import</span> { ParametricGeometry } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://unpkg.com/three@0.138.3/examples/jsm/geometries/ParametricGeometry.js"</span>;
+<span class="hljs-keyword">import</span> { TextGeometry } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://unpkg.com/three@0.138.3/examples/jsm/geometries/TextGeometry.js"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"#c"</span>);
+  <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer({ canvas });
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  renderer.setSize(<span class="hljs-built_in">window</span>.innerWidth - <span class="hljs-number">20</span>, <span class="hljs-built_in">window</span>.innerHeight); <span class="hljs-comment">//added this code by self</span>
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">const</span> fov = <span class="hljs-number">40</span>;
+  <span class="hljs-keyword">const</span> aspect = <span class="hljs-number">2</span>; <span class="hljs-comment">// the canvas default</span>
+  <span class="hljs-keyword">const</span> near = <span class="hljs-number">0.1</span>;
+  <span class="hljs-keyword">const</span> far = <span class="hljs-number">1000</span>;
+  <span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.z = <span class="hljs-number">120</span>;
+
+  <span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();
+  scene.background = <span class="hljs-keyword">new</span> THREE.Color(<span class="hljs-number">0xaaaaaa</span>);
+
+  {
+    <span class="hljs-keyword">const</span> color = <span class="hljs-number">0xffffff</span>;
+    <span class="hljs-keyword">const</span> intensity = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> light = <span class="hljs-keyword">new</span> THREE.DirectionalLight(color, intensity);
+    light.position.set(<span class="hljs-number">-1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>);
+    scene.add(light);
+  }
+  {
+    <span class="hljs-keyword">const</span> color = <span class="hljs-number">0xffffff</span>;
+    <span class="hljs-keyword">const</span> intensity = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> light = <span class="hljs-keyword">new</span> THREE.DirectionalLight(color, intensity);
+    light.position.set(<span class="hljs-number">1</span>, <span class="hljs-number">-2</span>, <span class="hljs-number">-4</span>);
+    scene.add(light);
+  }
+
+  <span class="hljs-keyword">const</span> objects = [];
+  <span class="hljs-keyword">const</span> spread = <span class="hljs-number">15</span>;
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addObject</span>(<span class="hljs-params">x, y, obj</span>) </span>{
+    obj.position.x = x * spread;
+    obj.position.y = y * spread;
+
+    scene.add(obj);
+    objects.push(obj);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createMaterial</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> material = <span class="hljs-keyword">new</span> THREE.MeshPhongMaterial({
+      <span class="hljs-attr">side</span>: THREE.DoubleSide,
+    });
+
+    <span class="hljs-keyword">const</span> hue = <span class="hljs-built_in">Math</span>.random();
+    <span class="hljs-keyword">const</span> saturation = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> luminance = <span class="hljs-number">0.5</span>;
+    material.color.setHSL(hue, saturation, luminance);
+
+    <span class="hljs-keyword">return</span> material;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addSolidGeometry</span>(<span class="hljs-params">x, y, geometry</span>) </span>{
+    <span class="hljs-keyword">const</span> mesh = <span class="hljs-keyword">new</span> THREE.Mesh(geometry, createMaterial());
+    addObject(x, y, mesh);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addLineGeometry</span>(<span class="hljs-params">x, y, geometry</span>) </span>{
+    <span class="hljs-keyword">const</span> material = <span class="hljs-keyword">new</span> THREE.LineBasicMaterial({ <span class="hljs-attr">color</span>: <span class="hljs-number">0x000000</span> });
+    <span class="hljs-keyword">const</span> mesh = <span class="hljs-keyword">new</span> THREE.LineSegments(geometry, material);
+    addObject(x, y, mesh);
+  }
+
+  {
+    <span class="hljs-keyword">const</span> width = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> height = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> depth = <span class="hljs-number">8</span>;
+    addSolidGeometry(<span class="hljs-number">-2</span>, <span class="hljs-number">2</span>, <span class="hljs-keyword">new</span> THREE.BoxGeometry(width, height, depth));
+  }
+  {
+    <span class="hljs-keyword">const</span> radius = <span class="hljs-number">7</span>;
+    <span class="hljs-keyword">const</span> segments = <span class="hljs-number">24</span>;
+    addSolidGeometry(<span class="hljs-number">-1</span>, <span class="hljs-number">2</span>, <span class="hljs-keyword">new</span> THREE.CircleGeometry(radius, segments));
+  }
+  {
+    <span class="hljs-keyword">const</span> radius = <span class="hljs-number">6</span>;
+    <span class="hljs-keyword">const</span> height = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> segments = <span class="hljs-number">16</span>;
+    addSolidGeometry(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-keyword">new</span> THREE.ConeGeometry(radius, height, segments));
+  }
+  {
+    <span class="hljs-keyword">const</span> radiusTop = <span class="hljs-number">4</span>;
+    <span class="hljs-keyword">const</span> radiusBottom = <span class="hljs-number">4</span>;
+    <span class="hljs-keyword">const</span> height = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> radialSegments = <span class="hljs-number">12</span>;
+    addSolidGeometry(
+      <span class="hljs-number">1</span>,
+      <span class="hljs-number">2</span>,
+      <span class="hljs-keyword">new</span> THREE.CylinderGeometry(
+        radiusTop,
+        radiusBottom,
+        height,
+        radialSegments
+      )
+    );
+  }
+  {
+    <span class="hljs-keyword">const</span> radius = <span class="hljs-number">7</span>;
+    addSolidGeometry(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-keyword">new</span> THREE.DodecahedronGeometry(radius));
+  }
+  {
+    <span class="hljs-keyword">const</span> shape = <span class="hljs-keyword">new</span> THREE.Shape();
+    <span class="hljs-keyword">const</span> x = <span class="hljs-number">-2.5</span>;
+    <span class="hljs-keyword">const</span> y = <span class="hljs-number">-5</span>;
+    shape.moveTo(x + <span class="hljs-number">2.5</span>, y + <span class="hljs-number">2.5</span>);
+    shape.bezierCurveTo(x + <span class="hljs-number">2.5</span>, y + <span class="hljs-number">2.5</span>, x + <span class="hljs-number">2</span>, y, x, y);
+    shape.bezierCurveTo(x - <span class="hljs-number">3</span>, y, x - <span class="hljs-number">3</span>, y + <span class="hljs-number">3.5</span>, x - <span class="hljs-number">3</span>, y + <span class="hljs-number">3.5</span>);
+    shape.bezierCurveTo(x - <span class="hljs-number">3</span>, y + <span class="hljs-number">5.5</span>, x - <span class="hljs-number">1.5</span>, y + <span class="hljs-number">7.7</span>, x + <span class="hljs-number">2.5</span>, y + <span class="hljs-number">9.5</span>);
+    shape.bezierCurveTo(x + <span class="hljs-number">6</span>, y + <span class="hljs-number">7.7</span>, x + <span class="hljs-number">8</span>, y + <span class="hljs-number">4.5</span>, x + <span class="hljs-number">8</span>, y + <span class="hljs-number">3.5</span>);
+    shape.bezierCurveTo(x + <span class="hljs-number">8</span>, y + <span class="hljs-number">3.5</span>, x + <span class="hljs-number">8</span>, y, x + <span class="hljs-number">5</span>, y);
+    shape.bezierCurveTo(x + <span class="hljs-number">3.5</span>, y, x + <span class="hljs-number">2.5</span>, y + <span class="hljs-number">2.5</span>, x + <span class="hljs-number">2.5</span>, y + <span class="hljs-number">2.5</span>);
+
+    <span class="hljs-keyword">const</span> extrudeSettings = {
+      <span class="hljs-attr">steps</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">depth</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">bevelEnabled</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">bevelThickness</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">bevelSize</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">bevelSegments</span>: <span class="hljs-number">2</span>,
+    };
+
+    addSolidGeometry(<span class="hljs-number">-2</span>, <span class="hljs-number">1</span>, <span class="hljs-keyword">new</span> THREE.ExtrudeGeometry(shape, extrudeSettings));
+  }
+  {
+    <span class="hljs-keyword">const</span> radius = <span class="hljs-number">7</span>;
+    addSolidGeometry(<span class="hljs-number">-1</span>, <span class="hljs-number">1</span>, <span class="hljs-keyword">new</span> THREE.IcosahedronGeometry(radius));
+  }
+  {
+    <span class="hljs-keyword">const</span> points = [];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; ++i) {
+      points.push(<span class="hljs-keyword">new</span> THREE.Vector2(<span class="hljs-built_in">Math</span>.sin(i * <span class="hljs-number">0.2</span>) * <span class="hljs-number">3</span> + <span class="hljs-number">3</span>, (i - <span class="hljs-number">5</span>) * <span class="hljs-number">0.8</span>));
+    }
+    addSolidGeometry(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-keyword">new</span> THREE.LatheGeometry(points));
+  }
+  {
+    <span class="hljs-keyword">const</span> radius = <span class="hljs-number">7</span>;
+    addSolidGeometry(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-keyword">new</span> THREE.OctahedronGeometry(radius));
+  }
+  {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>from: https://github.com/mrdoob/three.js/blob/b8d8a8625465bd634aa68e5846354d69f34d2ff5/examples/js/ParametricGeometries.js</p>
+</div>
+<div class="body">
+<p>The MIT License</p>
+<p>Copyright © 2010-2018 three.js authors</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">klein</span>(<span class="hljs-params">v, u, target</span>) </span>{
+      u *= <span class="hljs-built_in">Math</span>.PI;
+      v *= <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.PI;
+      u = u * <span class="hljs-number">2</span>;
+
+      <span class="hljs-keyword">let</span> x;
+      <span class="hljs-keyword">let</span> z;
+
+      <span class="hljs-keyword">if</span> (u &lt; <span class="hljs-built_in">Math</span>.PI) {
+        x =
+          <span class="hljs-number">3</span> * <span class="hljs-built_in">Math</span>.cos(u) * (<span class="hljs-number">1</span> + <span class="hljs-built_in">Math</span>.sin(u)) +
+          <span class="hljs-number">2</span> * (<span class="hljs-number">1</span> - <span class="hljs-built_in">Math</span>.cos(u) / <span class="hljs-number">2</span>) * <span class="hljs-built_in">Math</span>.cos(u) * <span class="hljs-built_in">Math</span>.cos(v);
+        z =
+          <span class="hljs-number">-8</span> * <span class="hljs-built_in">Math</span>.sin(u) -
+          <span class="hljs-number">2</span> * (<span class="hljs-number">1</span> - <span class="hljs-built_in">Math</span>.cos(u) / <span class="hljs-number">2</span>) * <span class="hljs-built_in">Math</span>.sin(u) * <span class="hljs-built_in">Math</span>.cos(v);
+      } <span class="hljs-keyword">else</span> {
+        x =
+          <span class="hljs-number">3</span> * <span class="hljs-built_in">Math</span>.cos(u) * (<span class="hljs-number">1</span> + <span class="hljs-built_in">Math</span>.sin(u)) +
+          <span class="hljs-number">2</span> * (<span class="hljs-number">1</span> - <span class="hljs-built_in">Math</span>.cos(u) / <span class="hljs-number">2</span>) * <span class="hljs-built_in">Math</span>.cos(v + <span class="hljs-built_in">Math</span>.PI);
+        z = <span class="hljs-number">-8</span> * <span class="hljs-built_in">Math</span>.sin(u);
+      }
+
+      <span class="hljs-keyword">const</span> y = <span class="hljs-number">-2</span> * (<span class="hljs-number">1</span> - <span class="hljs-built_in">Math</span>.cos(u) / <span class="hljs-number">2</span>) * <span class="hljs-built_in">Math</span>.sin(v);
+
+      target.set(x, y, z).multiplyScalar(<span class="hljs-number">0.75</span>);
+    }
+
+    <span class="hljs-keyword">const</span> slices = <span class="hljs-number">25</span>;
+    <span class="hljs-keyword">const</span> stacks = <span class="hljs-number">25</span>;
+    addSolidGeometry(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-keyword">new</span> ParametricGeometry(klein, slices, stacks));
+  }
+  {
+    <span class="hljs-keyword">const</span> width = <span class="hljs-number">9</span>;
+    <span class="hljs-keyword">const</span> height = <span class="hljs-number">9</span>;
+    <span class="hljs-keyword">const</span> widthSegments = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">const</span> heightSegments = <span class="hljs-number">2</span>;
+    addSolidGeometry(
+      <span class="hljs-number">-2</span>,
+      <span class="hljs-number">0</span>,
+      <span class="hljs-keyword">new</span> THREE.PlaneGeometry(width, height, widthSegments, heightSegments)
+    );
+  }
+  {
+    <span class="hljs-keyword">const</span> verticesOfCube = [
+      <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>,
+      <span class="hljs-number">-1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>,
+    ];
+    <span class="hljs-keyword">const</span> indicesOfFaces = [
+      <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>, <span class="hljs-number">7</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>,
+      <span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">4</span>,
+    ];
+    <span class="hljs-keyword">const</span> radius = <span class="hljs-number">7</span>;
+    <span class="hljs-keyword">const</span> detail = <span class="hljs-number">2</span>;
+    addSolidGeometry(
+      <span class="hljs-number">-1</span>,
+      <span class="hljs-number">0</span>,
+      <span class="hljs-keyword">new</span> THREE.PolyhedronGeometry(
+        verticesOfCube,
+        indicesOfFaces,
+        radius,
+        detail
+      )
+    );
+  }
+  {
+    <span class="hljs-keyword">const</span> innerRadius = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">const</span> outerRadius = <span class="hljs-number">7</span>;
+    <span class="hljs-keyword">const</span> segments = <span class="hljs-number">18</span>;
+    addSolidGeometry(
+      <span class="hljs-number">0</span>,
+      <span class="hljs-number">0</span>,
+      <span class="hljs-keyword">new</span> THREE.RingGeometry(innerRadius, outerRadius, segments)
+    );
+  }
+  {
+    <span class="hljs-keyword">const</span> shape = <span class="hljs-keyword">new</span> THREE.Shape();
+    <span class="hljs-keyword">const</span> x = <span class="hljs-number">-2.5</span>;
+    <span class="hljs-keyword">const</span> y = <span class="hljs-number">-5</span>;
+    shape.moveTo(x + <span class="hljs-number">2.5</span>, y + <span class="hljs-number">2.5</span>);
+    shape.bezierCurveTo(x + <span class="hljs-number">2.5</span>, y + <span class="hljs-number">2.5</span>, x + <span class="hljs-number">2</span>, y, x, y);
+    shape.bezierCurveTo(x - <span class="hljs-number">3</span>, y, x - <span class="hljs-number">3</span>, y + <span class="hljs-number">3.5</span>, x - <span class="hljs-number">3</span>, y + <span class="hljs-number">3.5</span>);
+    shape.bezierCurveTo(x - <span class="hljs-number">3</span>, y + <span class="hljs-number">5.5</span>, x - <span class="hljs-number">1.5</span>, y + <span class="hljs-number">7.7</span>, x + <span class="hljs-number">2.5</span>, y + <span class="hljs-number">9.5</span>);
+    shape.bezierCurveTo(x + <span class="hljs-number">6</span>, y + <span class="hljs-number">7.7</span>, x + <span class="hljs-number">8</span>, y + <span class="hljs-number">4.5</span>, x + <span class="hljs-number">8</span>, y + <span class="hljs-number">3.5</span>);
+    shape.bezierCurveTo(x + <span class="hljs-number">8</span>, y + <span class="hljs-number">3.5</span>, x + <span class="hljs-number">8</span>, y, x + <span class="hljs-number">5</span>, y);
+    shape.bezierCurveTo(x + <span class="hljs-number">3.5</span>, y, x + <span class="hljs-number">2.5</span>, y + <span class="hljs-number">2.5</span>, x + <span class="hljs-number">2.5</span>, y + <span class="hljs-number">2.5</span>);
+    addSolidGeometry(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-keyword">new</span> THREE.ShapeGeometry(shape));
+  }
+  {
+    <span class="hljs-keyword">const</span> radius = <span class="hljs-number">7</span>;
+    <span class="hljs-keyword">const</span> widthSegments = <span class="hljs-number">12</span>;
+    <span class="hljs-keyword">const</span> heightSegments = <span class="hljs-number">8</span>;
+    addSolidGeometry(
+      <span class="hljs-number">2</span>,
+      <span class="hljs-number">0</span>,
+      <span class="hljs-keyword">new</span> THREE.SphereGeometry(radius, widthSegments, heightSegments)
+    );
+  }
+  {
+    <span class="hljs-keyword">const</span> radius = <span class="hljs-number">7</span>;
+    addSolidGeometry(<span class="hljs-number">-2</span>, <span class="hljs-number">-1</span>, <span class="hljs-keyword">new</span> THREE.TetrahedronGeometry(radius));
+  }
+  {
+    <span class="hljs-keyword">const</span> loader = <span class="hljs-keyword">new</span> FontLoader();
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>promisify font loading</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadFont</span>(<span class="hljs-params">url</span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+        loader.load(url, resolve, <span class="hljs-literal">undefined</span>, reject);
+      });
+    }
+
+    <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doit</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> font = <span class="hljs-keyword">await</span> loadFont(
+        <span class="hljs-string">"https://threejs.org/examples/fonts/helvetiker_regular.typeface.json"</span>
+      );
+      <span class="hljs-keyword">const</span> geometry = <span class="hljs-keyword">new</span> TextGeometry(<span class="hljs-string">"three.js"</span>, {
+        <span class="hljs-attr">font</span>: font,
+        <span class="hljs-attr">size</span>: <span class="hljs-number">3.0</span>,
+        <span class="hljs-attr">height</span>: <span class="hljs-number">0.2</span>,
+        <span class="hljs-attr">curveSegments</span>: <span class="hljs-number">12</span>,
+        <span class="hljs-attr">bevelEnabled</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">bevelThickness</span>: <span class="hljs-number">0.15</span>,
+        <span class="hljs-attr">bevelSize</span>: <span class="hljs-number">0.3</span>,
+        <span class="hljs-attr">bevelSegments</span>: <span class="hljs-number">5</span>,
+      });
+      <span class="hljs-keyword">const</span> mesh = <span class="hljs-keyword">new</span> THREE.Mesh(geometry, createMaterial());
+      geometry.computeBoundingBox();
+      geometry.boundingBox.getCenter(mesh.position).multiplyScalar(<span class="hljs-number">-1</span>);
+
+      <span class="hljs-keyword">const</span> parent = <span class="hljs-keyword">new</span> THREE.Object3D();
+      parent.add(mesh);
+
+      addObject(<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, parent);
+    }
+    doit();
+  }
+  {
+    <span class="hljs-keyword">const</span> radius = <span class="hljs-number">5</span>;
+    <span class="hljs-keyword">const</span> tubeRadius = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">const</span> radialSegments = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> tubularSegments = <span class="hljs-number">24</span>;
+    addSolidGeometry(
+      <span class="hljs-number">0</span>,
+      <span class="hljs-number">-1</span>,
+      <span class="hljs-keyword">new</span> THREE.TorusGeometry(
+        radius,
+        tubeRadius,
+        radialSegments,
+        tubularSegments
+      )
+    );
+  }
+  {
+    <span class="hljs-keyword">const</span> radius = <span class="hljs-number">3.5</span>;
+    <span class="hljs-keyword">const</span> tube = <span class="hljs-number">1.5</span>;
+    <span class="hljs-keyword">const</span> radialSegments = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> tubularSegments = <span class="hljs-number">64</span>;
+    <span class="hljs-keyword">const</span> p = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">const</span> q = <span class="hljs-number">3</span>;
+    addSolidGeometry(
+      <span class="hljs-number">1</span>,
+      <span class="hljs-number">-1</span>,
+      <span class="hljs-keyword">new</span> THREE.TorusKnotGeometry(
+        radius,
+        tube,
+        tubularSegments,
+        radialSegments,
+        p,
+        q
+      )
+    );
+  }
+  {
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomSinCurve</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">THREE</span>.<span class="hljs-title">Curve</span> </span>{
+      <span class="hljs-keyword">constructor</span>(scale) {
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.scale = scale;
+      }
+      getPoint(t) {
+        <span class="hljs-keyword">const</span> tx = t * <span class="hljs-number">3</span> - <span class="hljs-number">1.5</span>;
+        <span class="hljs-keyword">const</span> ty = <span class="hljs-built_in">Math</span>.sin(<span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.PI * t);
+        <span class="hljs-keyword">const</span> tz = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> THREE.Vector3(tx, ty, tz).multiplyScalar(<span class="hljs-keyword">this</span>.scale);
+      }
+    }
+
+    <span class="hljs-keyword">const</span> path = <span class="hljs-keyword">new</span> CustomSinCurve(<span class="hljs-number">4</span>);
+    <span class="hljs-keyword">const</span> tubularSegments = <span class="hljs-number">20</span>;
+    <span class="hljs-keyword">const</span> radius = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> radialSegments = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> closed = <span class="hljs-literal">false</span>;
+    addSolidGeometry(
+      <span class="hljs-number">2</span>,
+      <span class="hljs-number">-1</span>,
+      <span class="hljs-keyword">new</span> THREE.TubeGeometry(
+        path,
+        tubularSegments,
+        radius,
+        radialSegments,
+        closed
+      )
+    );
+  }
+  {
+    <span class="hljs-keyword">const</span> width = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> height = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> depth = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> thresholdAngle = <span class="hljs-number">15</span>;
+    addLineGeometry(
+      <span class="hljs-number">-1</span>,
+      <span class="hljs-number">-2</span>,
+      <span class="hljs-keyword">new</span> THREE.EdgesGeometry(
+        <span class="hljs-keyword">new</span> THREE.BoxGeometry(width, height, depth),
+        thresholdAngle
+      )
+    );
+  }
+  {
+    <span class="hljs-keyword">const</span> width = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> height = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> depth = <span class="hljs-number">8</span>;
+    addLineGeometry(
+      <span class="hljs-number">1</span>,
+      <span class="hljs-number">-2</span>,
+      <span class="hljs-keyword">new</span> THREE.WireframeGeometry(<span class="hljs-keyword">new</span> THREE.BoxGeometry(width, height, depth))
+    );
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resizeRendererToDisplaySize</span>(<span class="hljs-params">renderer</span>) </span>{
+    <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+    <span class="hljs-keyword">const</span> width = canvas.clientWidth;
+    <span class="hljs-keyword">const</span> height = canvas.clientHeight;
+    <span class="hljs-keyword">const</span> needResize = canvas.width !== width || canvas.height !== height;
+    <span class="hljs-keyword">if</span> (needResize) {
+      renderer.setSize(width, height, <span class="hljs-literal">false</span>);
+    }
+    <span class="hljs-keyword">return</span> needResize;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">time</span>) </span>{
+    time *= <span class="hljs-number">0.001</span>;
+
+    <span class="hljs-keyword">if</span> (resizeRendererToDisplaySize(renderer)) {
+      <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+
+    objects.forEach(<span class="hljs-function">(<span class="hljs-params">obj, ndx</span>) =&gt;</span> {
+      <span class="hljs-keyword">const</span> speed = <span class="hljs-number">0.1</span> + ndx * <span class="hljs-number">0.05</span>;
+      <span class="hljs-keyword">const</span> rot = time * speed;
+      obj.rotation.x = rot;
+      obj.rotation.y = rot;
+    });
+
+    renderer.render(scene, camera);
+
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
+}
+
+main();
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

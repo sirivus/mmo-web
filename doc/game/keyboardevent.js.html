@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>keyboardevent.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/keyboardevent.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>keyboardevent.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">let</span> textarea = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"test-target"</span>),
+  consoleLog = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"console-log"</span>),
+  btnReset = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"btn-reset"</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logMessage</span>(<span class="hljs-params">message</span>) </span>{
+  consoleLog.innerHTML += message + <span class="hljs-string">"&lt;br&gt;"</span>;
+}
+
+textarea.addEventListener(<span class="hljs-string">"keydown"</span>, (e) =&gt; {
+  <span class="hljs-keyword">if</span> (!e.repeat) logMessage(<span class="hljs-string">`Key "<span class="hljs-subst">${e.key}</span>" pressed  [event: keydown]`</span>);
+  <span class="hljs-keyword">else</span> logMessage(<span class="hljs-string">`Key "<span class="hljs-subst">${e.key}</span>" repeating  [event: keydown]`</span>);
+});
+
+textarea.addEventListener(<span class="hljs-string">"beforeinput"</span>, (e) =&gt; {
+  logMessage(<span class="hljs-string">`Key "<span class="hljs-subst">${e.data}</span>" about to be input  [event: beforeinput]`</span>);
+});
+
+textarea.addEventListener(<span class="hljs-string">"input"</span>, (e) =&gt; {
+  logMessage(<span class="hljs-string">`Key "<span class="hljs-subst">${e.data}</span>" input  [event: input]`</span>);
+});
+
+textarea.addEventListener(<span class="hljs-string">"keyup"</span>, (e) =&gt; {
+  logMessage(<span class="hljs-string">`Key "<span class="hljs-subst">${e.key}</span>" released  [event: keyup]`</span>);
+});
+
+btnReset.addEventListener(<span class="hljs-string">"click"</span>, (e) =&gt; {
+  <span class="hljs-keyword">let</span> child = consoleLog.firstChild;
+  <span class="hljs-keyword">while</span> (child) {
+    consoleLog.removeChild(child);
+    child = consoleLog.firstChild;
+  }
+  textarea.value = <span class="hljs-string">""</span>;
+});
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">addEventListener(<span class="hljs-string">'keydown'</span>, (e) =&gt; {
+<span class="hljs-built_in">console</span>.log(e)
+})
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p><code>okkkkkkkk</code></p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"></pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

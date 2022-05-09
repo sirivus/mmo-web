@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>raf.html</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "game/practice/raf.html";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>raf.html</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-tag">html</span>, <span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+}
+<span class="hljs-selector-id">#c</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">display</span>: block;
+}
+<span class="hljs-selector-id">#screenshot</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.9</span>);
+  <span class="hljs-attribute">color</span>: white;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid gray;
+  <span class="hljs-attribute">cursor</span>: pointer;
+}
+<span class="hljs-selector-id">#screenshot</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#444</span>;
+}
+<span class="hljs-selector-id">#screenshot</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">outline</span>: none;
+}
+
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"screenshot"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Save...<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"importmap"</span>&gt;</span><span class="actionscript">{
+	<span class="hljs-string">"imports"</span>: {
+		<span class="hljs-string">"three"</span>: <span class="hljs-string">"https://threejs.org/build/three.module.js"</span>
+	}
+}</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><span class="hljs-comment">&lt;!-- Remove this when import maps will be widely supported --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> THREE <span class="hljs-keyword">from</span> <span class="hljs-string">'three'</span>;
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#c'</span>);
+            <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer({ canvas });
+
+            <span class="hljs-keyword">const</span> fov = <span class="hljs-number">75</span>;
+            <span class="hljs-keyword">const</span> aspect = <span class="hljs-number">2</span>;  <span class="hljs-comment">// the canvas default</span>
+            <span class="hljs-keyword">const</span> near = <span class="hljs-number">0.1</span>;
+            <span class="hljs-keyword">const</span> far = <span class="hljs-number">5</span>;
+            <span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(fov, aspect, near, far);
+            camera.position.z = <span class="hljs-number">2</span>;
+
+            <span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();
+
+            {
+                <span class="hljs-keyword">const</span> color = <span class="hljs-number">0xFFFFFF</span>;
+                <span class="hljs-keyword">const</span> intensity = <span class="hljs-number">1</span>;
+                <span class="hljs-keyword">const</span> light = <span class="hljs-keyword">new</span> THREE.DirectionalLight(color, intensity);
+                light.position.set(<span class="hljs-number">-1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>);
+                scene.add(light);
+            }
+
+            <span class="hljs-keyword">const</span> boxWidth = <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">const</span> boxHeight = <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">const</span> boxDepth = <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">const</span> geometry = <span class="hljs-keyword">new</span> THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeInstance</span>(<span class="hljs-params">geometry, color, x</span>) </span>{
+                <span class="hljs-keyword">const</span> material = <span class="hljs-keyword">new</span> THREE.MeshPhongMaterial({ color });
+
+                <span class="hljs-keyword">const</span> cube = <span class="hljs-keyword">new</span> THREE.Mesh(geometry, material);
+                scene.add(cube);
+
+                cube.position.x = x;
+
+                <span class="hljs-keyword">return</span> cube;
+            }
+
+            <span class="hljs-keyword">const</span> cubes = [
+                makeInstance(geometry, <span class="hljs-number">0x44aa88</span>, <span class="hljs-number">0</span>),
+                makeInstance(geometry, <span class="hljs-number">0x8844aa</span>, <span class="hljs-number">-2</span>),
+                makeInstance(geometry, <span class="hljs-number">0xaa8844</span>, <span class="hljs-number">2</span>),
+            ];
+
+            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resizeRendererToDisplaySize</span>(<span class="hljs-params">renderer</span>) </span>{
+                <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+                <span class="hljs-keyword">const</span> width = canvas.clientWidth;
+                <span class="hljs-keyword">const</span> height = canvas.clientHeight;
+                <span class="hljs-keyword">const</span> needResize = canvas.width !== width || canvas.height !== height;
+                <span class="hljs-keyword">if</span> (needResize) {
+                    renderer.setSize(width, height, <span class="hljs-literal">false</span>);
+                }
+                <span class="hljs-keyword">return</span> needResize;
+            }
+
+            <span class="hljs-keyword">const</span> state = {
+                <span class="hljs-attr">time</span>: <span class="hljs-number">0</span>,
+            };
+
+            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">if</span> (resizeRendererToDisplaySize(renderer)) {
+                    <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+                    camera.aspect = canvas.clientWidth / canvas.clientHeight;
+                    camera.updateProjectionMatrix();
+                }
+
+                cubes.forEach(<span class="hljs-function">(<span class="hljs-params">cube, ndx</span>) =&gt;</span> {
+                    <span class="hljs-keyword">const</span> speed = <span class="hljs-number">1</span> + ndx * <span class="hljs-number">.1</span>;
+                    <span class="hljs-keyword">const</span> rot = state.time * speed;
+                    cube.rotation.x = rot;
+                    cube.rotation.y = rot;
+                });
+
+                renderer.render(scene, camera);
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">animate</span>(<span class="hljs-params">time</span>) </span>{
+                state.time = time * <span class="hljs-number">0.001</span>;
+
+                render();
+
+                requestAnimationFrame(animate);
+            }
+            requestAnimationFrame(animate);
+
+            <span class="hljs-keyword">const</span> elem = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#screenshot'</span>);
+            elem.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
+                render();
+                canvas.toBlob(<span class="hljs-function">(<span class="hljs-params">blob</span>) =&gt;</span> {
+                    saveBlob(blob, <span class="hljs-string">`screencapture-<span class="hljs-subst">${canvas.width}</span>x<span class="hljs-subst">${canvas.height}</span>.png`</span>);
+                });
+            });
+
+            <span class="hljs-keyword">const</span> saveBlob = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">const</span> a = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'a'</span>);
+                <span class="hljs-built_in">document</span>.body.appendChild(a);
+                a.style.display = <span class="hljs-string">'none'</span>;
+                <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">saveData</span>(<span class="hljs-params">blob, fileName</span>) </span>{
+                    <span class="hljs-keyword">const</span> url = <span class="hljs-built_in">window</span>.URL.createObjectURL(blob);
+                    a.href = url;
+                    a.download = fileName;
+                    a.click();
+                };
+            }());
+        }
+
+        main();
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">async</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

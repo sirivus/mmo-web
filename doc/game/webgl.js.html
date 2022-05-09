@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>webgl.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/webgl.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>webgl.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WebGL</span> </span>{
+  <span class="hljs-keyword">static</span> isWebGLAvailable() {
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"canvas"</span>);
+      <span class="hljs-keyword">return</span> !!(
+        <span class="hljs-built_in">window</span>.WebGLRenderingContext &amp;&amp;
+        (canvas.getContext(<span class="hljs-string">"webgl"</span>) || canvas.getContext(<span class="hljs-string">"experimental-webgl"</span>))
+      );
+    } <span class="hljs-keyword">catch</span> (e) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+  }
+
+  <span class="hljs-keyword">static</span> isWebGL2Available() {
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"canvas"</span>);
+      <span class="hljs-keyword">return</span> !!(<span class="hljs-built_in">window</span>.WebGL2RenderingContext &amp;&amp; canvas.getContext(<span class="hljs-string">"webgl2"</span>));
+    } <span class="hljs-keyword">catch</span> (e) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+  }
+
+  <span class="hljs-keyword">static</span> getWebGLErrorMessage() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getErrorMessage(<span class="hljs-number">1</span>);
+  }
+
+  <span class="hljs-keyword">static</span> getWebGL2ErrorMessage() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getErrorMessage(<span class="hljs-number">2</span>);
+  }
+
+  <span class="hljs-keyword">static</span> getErrorMessage(version) {
+    <span class="hljs-keyword">const</span> names = {
+      <span class="hljs-number">1</span>: <span class="hljs-string">"WebGL"</span>,
+      <span class="hljs-number">2</span>: <span class="hljs-string">"WebGL 2"</span>,
+    };
+
+    <span class="hljs-keyword">const</span> contexts = {
+      <span class="hljs-number">1</span>: <span class="hljs-built_in">window</span>.WebGLRenderingContext,
+      <span class="hljs-number">2</span>: <span class="hljs-built_in">window</span>.WebGL2RenderingContext,
+    };
+
+    <span class="hljs-keyword">let</span> message =
+      <span class="hljs-string">'Your $0 does not seem to support &lt;a href="http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" style="color:#000"&gt;$1&lt;/a&gt;'</span>;
+
+    <span class="hljs-keyword">const</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"div"</span>);
+    element.id = <span class="hljs-string">"webglmessage"</span>;
+    element.style.fontFamily = <span class="hljs-string">"monospace"</span>;
+    element.style.fontSize = <span class="hljs-string">"13px"</span>;
+    element.style.fontWeight = <span class="hljs-string">"normal"</span>;
+    element.style.textAlign = <span class="hljs-string">"center"</span>;
+    element.style.background = <span class="hljs-string">"#fff"</span>;
+    element.style.color = <span class="hljs-string">"#000"</span>;
+    element.style.padding = <span class="hljs-string">"1.5em"</span>;
+    element.style.width = <span class="hljs-string">"400px"</span>;
+    element.style.margin = <span class="hljs-string">"5em auto 0"</span>;
+
+    <span class="hljs-keyword">if</span> (contexts[version]) {
+      message = message.replace(<span class="hljs-string">"$0"</span>, <span class="hljs-string">"graphics card"</span>);
+    } <span class="hljs-keyword">else</span> {
+      message = message.replace(<span class="hljs-string">"$0"</span>, <span class="hljs-string">"browser"</span>);
+    }
+
+    message = message.replace(<span class="hljs-string">"$1"</span>, names[version]);
+
+    element.innerHTML = message;
+
+    <span class="hljs-keyword">return</span> element;
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> WebGL;
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

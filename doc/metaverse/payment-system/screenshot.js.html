@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>screenshot.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "metaverse/payment-system/screenshot.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>screenshot.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> { remote } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'webdriverio'</span>);
+
+;<span class="hljs-function">(<span class="hljs-params"><span class="hljs-keyword">async</span> (</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> browser = <span class="hljs-keyword">await</span> remote({
+        <span class="hljs-attr">capabilities</span>: {
+            <span class="hljs-attr">browserName</span>: <span class="hljs-string">'chrome'</span>
+        }
+    })
+
+    <span class="hljs-keyword">await</span> browser.url(<span class="hljs-string">'https://webdriver.io'</span>)
+
+    <span class="hljs-keyword">const</span> apiLink = <span class="hljs-keyword">await</span> browser.$(<span class="hljs-string">'=API'</span>)
+    <span class="hljs-keyword">await</span> apiLink.click()
+
+    <span class="hljs-keyword">await</span> browser.saveScreenshot(<span class="hljs-string">'./screenshot.png'</span>)
+    <span class="hljs-keyword">await</span> browser.deleteSession()
+})()
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

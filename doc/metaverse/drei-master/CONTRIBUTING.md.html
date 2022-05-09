@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CONTRIBUTING.md</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "metaverse/drei-master/CONTRIBUTING.md";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+      <div class="heading h1">
+        <a href="#contributing">Contributing</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#how-to-contribute">How to Contribute</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#commit-guidelines">Commit Guidelines</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#storybook">Storybook</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#publishing">Publishing</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="docs markdown"><div class="pilwrap" id="contributing">
+  <h1>
+    <a href="#contributing" name="contributing" class="pilcrow"></a>
+Contributing
+  </h1>
+</div>
+<p>Thanks for wanting to make a contribution and wanting to improve this library for everyone! This repository uses Typescript so please continue to do so, you can always reach out in the repo or the <a href="https://pmnd.rs/discord">discord</a>. This is a guideline, use your initiative, if you don't think it makes sense to do a step in here, don't bother it's normally okay. we're chill.</p>
+<div class="pilwrap" id="how-to-contribute">
+  <h2>
+    <a href="#how-to-contribute" name="how-to-contribute" class="pilcrow"></a>
+How to Contribute
+  </h2>
+</div>
+<ol>
+<li>Fork and clone the repo</li>
+<li>Run <code>yarn install</code> to install dependencies</li>
+<li>Create a branch for your PR with <code>git checkout -b pr-type/issue-number-your-branch-name</code></li>
+<li>Let's get cooking! 👨🏻‍🍳🥓</li>
+</ol>
+<div class="pilwrap" id="commit-guidelines">
+  <h2>
+    <a href="#commit-guidelines" name="commit-guidelines" class="pilcrow"></a>
+Commit Guidelines
+  </h2>
+</div>
+<p>Be sure your commit messages follow this specification: https://www.conventionalcommits.org/en/v1.0.0-beta.4/</p>
+<div class="pilwrap" id="storybook">
+  <h2>
+    <a href="#storybook" name="storybook" class="pilcrow"></a>
+Storybook
+  </h2>
+</div>
+<p>If you're adding a brand new feature, you need to make sure you add a storybook entry, here's a few tips:</p>
+<ul>
+<li>Make use of <code>@storybook/addon-controls</code> to show component variants &amp; configuration</li>
+<li>Keep the story simple &amp; show the essence of the component, remember some people may be looking at using drei for the first time &amp; it's important the stories are clear and concise.</li>
+<li>Keep assets minimal (3D Models, textures) to avoid bloating the repository</li>
+<li>If you think a more involved example is necessary, you can always add a codesandbox to the main README while keeping the story minimalistic</li>
+</ul>
+<div class="pilwrap" id="publishing">
+  <h2>
+    <a href="#publishing" name="publishing" class="pilcrow"></a>
+Publishing
+  </h2>
+</div>
+<p>We use <code>semantic-release-action</code> to deploy the package. Because of this only certain commits will trigger the action of creating a release:</p>
+<ul>
+<li><code>fix:</code> will create a <code>0.0.x</code> version</li>
+<li><code>feat:</code> will create a <code>0.x.0</code> version</li>
+<li><code>BREAKING CHANGE:</code> will create a <code>x.0.0</code> version</li>
+</ul>
+<p>We release on <code>master</code>, <code>beta</code> &amp; <code>alpha</code>. <code>beta</code> &amp; <code>alpha</code> are configured to be prerelease. Any other commits will not fire a release.</p>
+</div>
+  </div>
+</body>
+</html>

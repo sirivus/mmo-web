@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>README.md</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "metaverse/my-svelte-app/README.md";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+      <div class="heading h1">
+        <a href="#svelte-app">svelte app</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#get-started">Get started</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#building-and-running-in-production-mode">Building and running in production mode</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#single-page-app-mode">Single-page app mode</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#using-typescript">Using TypeScript</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#deploying-to-the-web">Deploying to the web</a>
+      </div>
+
+      <div class="heading h3">
+        <a href="#with-vercel">With Vercel</a>
+      </div>
+
+      <div class="heading h3">
+        <a href="#with-surge">With surge</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="docs markdown"><p><em>Psst — looking for a more complete solution? Check out <a href="https://kit.svelte.dev">SvelteKit</a>, the official framework for building web applications of all sizes, with a beautiful development experience and flexible filesystem-based routing.</em></p>
+<p><em>Looking for a shareable component template instead? You can <a href="https://kit.svelte.dev/docs#packaging">use SvelteKit for that as well</a> or the older <a href="https://github.com/sveltejs/component-template">sveltejs/component-template</a></em></p>
+<hr>
+<div class="pilwrap" id="svelte-app">
+  <h1>
+    <a href="#svelte-app" name="svelte-app" class="pilcrow"></a>
+svelte app
+  </h1>
+</div>
+<p>This is a project template for <a href="https://svelte.dev">Svelte</a> apps. It lives at https://github.com/sveltejs/template.</p>
+<p>To create a new project based on this template using <a href="https://github.com/Rich-Harris/degit">degit</a>:</p>
+<pre><code class="bash">npx degit sveltejs/template svelte-app
+<span class="hljs-built_in">cd</span> svelte-app
+</code></pre>
+<p><em>Note that you will need to have <a href="https://nodejs.org">Node.js</a> installed.</em></p>
+<div class="pilwrap" id="get-started">
+  <h2>
+    <a href="#get-started" name="get-started" class="pilcrow"></a>
+Get started
+  </h2>
+</div>
+<p>Install the dependencies...</p>
+<pre><code class="bash"><span class="hljs-built_in">cd</span> svelte-app
+npm install
+</code></pre>
+<p>...then start <a href="https://rollupjs.org">Rollup</a>:</p>
+<pre><code class="bash">npm run dev
+</code></pre>
+<p>Navigate to <a href="http://localhost:8080">localhost:8080</a>. You should see your app running. Edit a component file in <code>src</code>, save it, and reload the page to see your changes.</p>
+<p>By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the <code>sirv</code> commands in package.json to include the option <code>--host 0.0.0.0</code>.</p>
+<p>If you're using <a href="https://code.visualstudio.com/">Visual Studio Code</a> we recommend installing the official extension <a href="https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode">Svelte for VS Code</a>. If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.</p>
+<div class="pilwrap" id="building-and-running-in-production-mode">
+  <h2>
+    <a href="#building-and-running-in-production-mode" name="building-and-running-in-production-mode" class="pilcrow"></a>
+Building and running in production mode
+  </h2>
+</div>
+<p>To create an optimised version of the app:</p>
+<pre><code class="bash">npm run build
+</code></pre>
+<p>You can run the newly built app with <code>npm run start</code>. This uses <a href="https://github.com/lukeed/sirv">sirv</a>, which is included in your package.json's <code>dependencies</code> so that the app will work when you deploy to platforms like <a href="https://heroku.com">Heroku</a>.</p>
+<div class="pilwrap" id="single-page-app-mode">
+  <h2>
+    <a href="#single-page-app-mode" name="single-page-app-mode" class="pilcrow"></a>
+Single-page app mode
+  </h2>
+</div>
+<p>By default, sirv will only respond to requests that match files in <code>public</code>. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.</p>
+<p>If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for <em>any</em> path. You can make it so by editing the <code>&quot;start&quot;</code> command in package.json:</p>
+<pre><code class="js"><span class="hljs-string">"start"</span>: <span class="hljs-string">"sirv public --single"</span>
+</code></pre>
+<div class="pilwrap" id="using-typescript">
+  <h2>
+    <a href="#using-typescript" name="using-typescript" class="pilcrow"></a>
+Using TypeScript
+  </h2>
+</div>
+<p>This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:</p>
+<pre><code class="bash">node scripts/setupTypeScript.js
+</code></pre>
+<p>Or remove the script via:</p>
+<pre><code class="bash">rm scripts/setupTypeScript.js
+</code></pre>
+<p>If you want to use <code>baseUrl</code> or <code>path</code> aliases within your <code>tsconfig</code>, you need to set up <code>@rollup/plugin-alias</code> to tell Rollup to resolve the aliases. For more info, see <a href="https://stackoverflow.com/questions/63427935/setup-tsconfig-path-in-svelte">this StackOverflow question</a>.</p>
+<div class="pilwrap" id="deploying-to-the-web">
+  <h2>
+    <a href="#deploying-to-the-web" name="deploying-to-the-web" class="pilcrow"></a>
+Deploying to the web
+  </h2>
+</div>
+<div class="pilwrap" id="with-vercel">
+  <h3>
+    <a href="#with-vercel" name="with-vercel" class="pilcrow"></a>
+With <a href="https://vercel.com">Vercel</a>
+  </h3>
+</div>
+<p>Install <code>vercel</code> if you haven't already:</p>
+<pre><code class="bash">npm install -g vercel
+</code></pre>
+<p>Then, from within your project folder:</p>
+<pre><code class="bash"><span class="hljs-built_in">cd</span> public
+vercel deploy --name my-project
+</code></pre>
+<div class="pilwrap" id="with-surge">
+  <h3>
+    <a href="#with-surge" name="with-surge" class="pilcrow"></a>
+With <a href="https://surge.sh/">surge</a>
+  </h3>
+</div>
+<p>Install <code>surge</code> if you haven't already:</p>
+<pre><code class="bash">npm install -g surge
+</code></pre>
+<p>Then, from within your project folder:</p>
+<pre><code class="bash">npm run build
+surge public my-project.surge.sh
+</code></pre>
+</div>
+  </div>
+</body>
+</html>

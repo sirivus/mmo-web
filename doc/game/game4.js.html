@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>game4.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/game4.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>game4.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();
+<span class="hljs-keyword">var</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(
+  <span class="hljs-number">75</span>,
+ (<span class="hljs-built_in">window</span>.innerWidth - _winmargin )/ <span class="hljs-built_in">window</span>.innerHeight,
+  <span class="hljs-number">0.1</span>,
+  <span class="hljs-number">1000</span>
+);
+
+<span class="hljs-keyword">var</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer();
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>renderer.setSize(window.innerWidth, window.innerHeight);</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+<span class="hljs-built_in">document</span>.body.appendChild(renderer.domElement);
+
+<span class="hljs-keyword">var</span> geometry = <span class="hljs-keyword">new</span> THREE.BoxGeometry(<span class="hljs-number">20</span>, <span class="hljs-number">20</span>, <span class="hljs-number">20</span>);
+<span class="hljs-keyword">var</span> material = <span class="hljs-keyword">new</span> THREE.MeshLambertMaterial({ <span class="hljs-attr">color</span>: <span class="hljs-number">0xfd59d7</span> });
+<span class="hljs-keyword">var</span> cube = <span class="hljs-keyword">new</span> THREE.Mesh(geometry, material);
+scene.add(cube);
+
+camera.position.z = <span class="hljs-number">100</span>;
+
+<span class="hljs-keyword">var</span> light = <span class="hljs-keyword">new</span> THREE.PointLight(<span class="hljs-number">0xffff00</span>);
+light.position.set(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>, <span class="hljs-number">25</span>);
+scene.add(light);
+
+<span class="hljs-keyword">let</span> clock = <span class="hljs-keyword">new</span> THREE.Clock();
+<span class="hljs-keyword">let</span> delta = <span class="hljs-number">0</span>;
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>_fps = 30
+let interval = 1 / _fps;</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> render = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    requestAnimationFrame(render);
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>delta += clock.getDelta();</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    renderer.setSize(<span class="hljs-built_in">window</span>.innerWidth - _winmargin, <span class="hljs-built_in">window</span>.innerHeight);
+    cube.rotation.x += <span class="hljs-number">.06</span>;
+    cube.rotation.y += <span class="hljs-number">.06</span>;
+    camera.updateProjectionMatrix();
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>if (delta &gt; interval) {
+// The draw or time dependent code are here
+renderer.render(scene, camera);
+delta = delta % interval;
+}</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    renderer.render(scene, camera);
+  };
+  render();
+}
+update();
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>dat gui</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> gui = <span class="hljs-keyword">new</span> dat.GUI();
+<span class="hljs-keyword">var</span> cameraGui = gui.addFolder(<span class="hljs-string">"camera position"</span>);
+cameraGui.add(camera.position, <span class="hljs-string">"x"</span>);
+cameraGui.add(camera.position, <span class="hljs-string">"y"</span>);
+cameraGui.add(camera.position, <span class="hljs-string">"z"</span>);
+cameraGui.open();
+
+<span class="hljs-keyword">var</span> cameraGui = gui.addFolder(<span class="hljs-string">"camera projection"</span>);
+cameraGui.add(camera, <span class="hljs-string">"fov"</span>);
+cameraGui.open();
+
+<span class="hljs-keyword">var</span> lightGui = gui.addFolder(<span class="hljs-string">"light position"</span>);
+lightGui.add(light.position, <span class="hljs-string">"x"</span>);
+lightGui.add(light.position, <span class="hljs-string">"y"</span>);
+lightGui.add(light.position, <span class="hljs-string">"z"</span>);
+lightGui.open();
+
+<span class="hljs-keyword">var</span> cubeGui = gui.addFolder(<span class="hljs-string">"cube position"</span>);
+cubeGui.add(cube.position, <span class="hljs-string">"x"</span>);
+cubeGui.add(cube.position, <span class="hljs-string">"y"</span>);
+cubeGui.add(cube.position, <span class="hljs-string">"z"</span>);
+cubeGui.open();
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

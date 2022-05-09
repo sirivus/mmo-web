@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>worldclock.html</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/worldclock.html";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>worldclock.html</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    missing daylight savings time schedule
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">language</span>=<span class="hljs-string">"JavaScript"</span>&gt;</span><span class="javascript">
+    <span class="hljs-comment">//&lt; !--</span>
+    
+            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">worldClock</span>(<span class="hljs-params">zone, region</span>) </span>{
+                <span class="hljs-keyword">var</span> dst = <span class="hljs-number">0</span>
+                <span class="hljs-keyword">var</span> time = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                <span class="hljs-keyword">var</span> gmtMS = time.getTime() + (time.getTimezoneOffset() * <span class="hljs-number">60000</span>)
+                <span class="hljs-keyword">var</span> gmtTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(gmtMS)
+                <span class="hljs-keyword">var</span> day = gmtTime.getDate()
+                <span class="hljs-keyword">var</span> month = gmtTime.getMonth()
+                <span class="hljs-keyword">var</span> year = gmtTime.getYear()
+                <span class="hljs-keyword">if</span> (year &lt; <span class="hljs-number">1000</span>) {
+                    year += <span class="hljs-number">1900</span>
+                }
+                <span class="hljs-keyword">var</span> monthArray = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-string">"January"</span>, <span class="hljs-string">"February"</span>, <span class="hljs-string">"March"</span>, <span class="hljs-string">"April"</span>, <span class="hljs-string">"May"</span>, <span class="hljs-string">"June"</span>, <span class="hljs-string">"July"</span>, <span class="hljs-string">"August"</span>,
+                    <span class="hljs-string">"September"</span>, <span class="hljs-string">"October"</span>, <span class="hljs-string">"November"</span>, <span class="hljs-string">"December"</span>)
+                <span class="hljs-keyword">var</span> monthDays = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-string">"31"</span>, <span class="hljs-string">"28"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"30"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"30"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"30"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"30"</span>, <span class="hljs-string">"31"</span>)
+                <span class="hljs-keyword">if</span> (year % <span class="hljs-number">4</span> == <span class="hljs-number">0</span>) {
+                    monthDays = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-string">"31"</span>, <span class="hljs-string">"29"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"30"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"30"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"30"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"30"</span>, <span class="hljs-string">"31"</span>)
+                }
+                <span class="hljs-keyword">if</span> (year % <span class="hljs-number">100</span> == <span class="hljs-number">0</span> &amp;&amp; year % <span class="hljs-number">400</span> != <span class="hljs-number">0</span>) {
+                    monthDays = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-string">"31"</span>, <span class="hljs-string">"28"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"30"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"30"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"30"</span>, <span class="hljs-string">"31"</span>, <span class="hljs-string">"30"</span>, <span class="hljs-string">"31"</span>)
+                }
+
+                <span class="hljs-keyword">var</span> hr = gmtTime.getHours() + zone
+                <span class="hljs-keyword">var</span> min = gmtTime.getMinutes()
+                <span class="hljs-keyword">var</span> sec = gmtTime.getSeconds()
+
+                <span class="hljs-keyword">if</span> (hr &gt;= <span class="hljs-number">24</span>) {
+                    hr = hr - <span class="hljs-number">24</span>
+                    day -= <span class="hljs-number">-1</span>
+                }
+                <span class="hljs-keyword">if</span> (hr &lt; <span class="hljs-number">0</span>) {
+                    hr -= <span class="hljs-number">-24</span>
+                    day -= <span class="hljs-number">1</span>
+                }
+                <span class="hljs-keyword">if</span> (hr &lt; <span class="hljs-number">10</span>) {
+                    hr = <span class="hljs-string">" "</span> + hr
+                }
+                <span class="hljs-keyword">if</span> (min &lt; <span class="hljs-number">10</span>) {
+                    min = <span class="hljs-string">"0"</span> + min
+                }
+                <span class="hljs-keyword">if</span> (sec &lt; <span class="hljs-number">10</span>) {
+                    sec = <span class="hljs-string">"0"</span> + sec
+                }
+                <span class="hljs-keyword">if</span> (day &lt;= <span class="hljs-number">0</span>) {
+                    <span class="hljs-keyword">if</span> (month == <span class="hljs-number">0</span>) {
+                        month = <span class="hljs-number">11</span>
+                        year -= <span class="hljs-number">1</span>
+                    }
+                    <span class="hljs-keyword">else</span> {
+                        month = month - <span class="hljs-number">1</span>
+                    }
+                    day = monthDays[month]
+                }
+                <span class="hljs-keyword">if</span> (day &gt; monthDays[month]) {
+                    day = <span class="hljs-number">1</span>
+                    <span class="hljs-keyword">if</span> (month == <span class="hljs-number">11</span>) {
+                        month = <span class="hljs-number">0</span>
+                        year -= <span class="hljs-number">-1</span>
+                    }
+                    <span class="hljs-keyword">else</span> {
+                        month -= <span class="hljs-number">-1</span>
+                    }
+                }
+                <span class="hljs-keyword">if</span> (region == <span class="hljs-string">"NAmerica"</span>) {
+                    <span class="hljs-keyword">var</span> startDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    <span class="hljs-keyword">var</span> endDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    startDST.setMonth(<span class="hljs-number">3</span>)
+                    startDST.setHours(<span class="hljs-number">2</span>)
+                    startDST.setDate(<span class="hljs-number">1</span>)
+                    <span class="hljs-keyword">var</span> dayDST = startDST.getDay()
+                    <span class="hljs-keyword">if</span> (dayDST != <span class="hljs-number">0</span>) {
+                        startDST.setDate(<span class="hljs-number">8</span> - dayDST)
+                    }
+                    <span class="hljs-keyword">else</span> {
+                        startDST.setDate(<span class="hljs-number">1</span>)
+                    }
+                    endDST.setMonth(<span class="hljs-number">9</span>)
+                    endDST.setHours(<span class="hljs-number">1</span>)
+                    endDST.setDate(<span class="hljs-number">31</span>)
+                    dayDST = endDST.getDay()
+                    endDST.setDate(<span class="hljs-number">31</span> - dayDST)
+                    <span class="hljs-keyword">var</span> currentTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    currentTime.setMonth(month)
+                    currentTime.setYear(year)
+                    currentTime.setDate(day)
+                    currentTime.setHours(hr)
+                    <span class="hljs-keyword">if</span> (currentTime &gt;= startDST &amp;&amp; currentTime &lt; endDST) {
+                        dst = <span class="hljs-number">1</span>
+                    }
+                }
+                <span class="hljs-keyword">if</span> (region == <span class="hljs-string">"Europe"</span>) {
+                    <span class="hljs-keyword">var</span> startDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    <span class="hljs-keyword">var</span> endDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    startDST.setMonth(<span class="hljs-number">2</span>)
+                    startDST.setHours(<span class="hljs-number">1</span>)
+                    startDST.setDate(<span class="hljs-number">31</span>)
+                    <span class="hljs-keyword">var</span> dayDST = startDST.getDay()
+                    startDST.setDate(<span class="hljs-number">31</span> - dayDST)
+                    endDST.setMonth(<span class="hljs-number">9</span>)
+                    endDST.setHours(<span class="hljs-number">0</span>)
+                    endDST.setDate(<span class="hljs-number">31</span>)
+                    dayDST = endDST.getDay()
+                    endDST.setDate(<span class="hljs-number">31</span> - dayDST)
+                    <span class="hljs-keyword">var</span> currentTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    currentTime.setMonth(month)
+                    currentTime.setYear(year)
+                    currentTime.setDate(day)
+                    currentTime.setHours(hr)
+                    <span class="hljs-keyword">if</span> (currentTime &gt;= startDST &amp;&amp; currentTime &lt; endDST) {
+                        dst = <span class="hljs-number">1</span>
+                    }
+                }
+
+                <span class="hljs-keyword">if</span> (region == <span class="hljs-string">"SAmerica"</span>) {
+                    <span class="hljs-keyword">var</span> startDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    <span class="hljs-keyword">var</span> endDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    startDST.setMonth(<span class="hljs-number">9</span>)
+                    startDST.setHours(<span class="hljs-number">0</span>)
+                    startDST.setDate(<span class="hljs-number">1</span>)
+                    <span class="hljs-keyword">var</span> dayDST = startDST.getDay()
+                    <span class="hljs-keyword">if</span> (dayDST != <span class="hljs-number">0</span>) {
+                        startDST.setDate(<span class="hljs-number">22</span> - dayDST)
+                    }
+                    <span class="hljs-keyword">else</span> {
+                        startDST.setDate(<span class="hljs-number">15</span>)
+                    }
+                    endDST.setMonth(<span class="hljs-number">1</span>)
+                    endDST.setHours(<span class="hljs-number">11</span>)
+                    endDST.setDate(<span class="hljs-number">1</span>)
+                    dayDST = endDST.getDay()
+                    <span class="hljs-keyword">if</span> (dayDST != <span class="hljs-number">0</span>) {
+                        endDST.setDate(<span class="hljs-number">21</span> - dayDST)
+                    }
+                    <span class="hljs-keyword">else</span> {
+                        endDST.setDate(<span class="hljs-number">14</span>)
+                    }
+                    <span class="hljs-keyword">var</span> currentTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    currentTime.setMonth(month)
+                    currentTime.setYear(year)
+                    currentTime.setDate(day)
+                    currentTime.setHours(hr)
+                    <span class="hljs-keyword">if</span> (currentTime &gt;= startDST || currentTime &lt; endDST) {
+                        dst = <span class="hljs-number">1</span>
+                    }
+                }
+                <span class="hljs-keyword">if</span> (region == <span class="hljs-string">"Cairo"</span>) {
+                    <span class="hljs-keyword">var</span> startDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    <span class="hljs-keyword">var</span> endDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    startDST.setMonth(<span class="hljs-number">3</span>)
+                    startDST.setHours(<span class="hljs-number">0</span>)
+                    startDST.setDate(<span class="hljs-number">30</span>)
+                    <span class="hljs-keyword">var</span> dayDST = startDST.getDay()
+                    <span class="hljs-keyword">if</span> (dayDST &lt; <span class="hljs-number">5</span>) {
+                        startDST.setDate(<span class="hljs-number">28</span> - dayDST)
+                    }
+                    <span class="hljs-keyword">else</span> {
+                        startDST.setDate(<span class="hljs-number">35</span> - dayDST)
+                    }
+                    endDST.setMonth(<span class="hljs-number">8</span>)
+                    endDST.setHours(<span class="hljs-number">11</span>)
+                    endDST.setDate(<span class="hljs-number">30</span>)
+                    dayDST = endDST.getDay()
+                    <span class="hljs-keyword">if</span> (dayDST &lt; <span class="hljs-number">4</span>) {
+                        endDST.setDate(<span class="hljs-number">27</span> - dayDST)
+                    }
+                    <span class="hljs-keyword">else</span> {
+                        endDST.setDate(<span class="hljs-number">34</span> - dayDST)
+                    }
+                    <span class="hljs-keyword">var</span> currentTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    currentTime.setMonth(month)
+                    currentTime.setYear(year)
+                    currentTime.setDate(day)
+                    currentTime.setHours(hr)
+                    <span class="hljs-keyword">if</span> (currentTime &gt;= startDST &amp;&amp; currentTime &lt; endDST) {
+                        dst = <span class="hljs-number">1</span>
+                    }
+                }
+                <span class="hljs-keyword">if</span> (region == <span class="hljs-string">"Israel"</span>) {
+                    <span class="hljs-keyword">var</span> startDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    <span class="hljs-keyword">var</span> endDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    startDST.setMonth(<span class="hljs-number">3</span>)
+                    startDST.setHours(<span class="hljs-number">2</span>)
+                    startDST.setDate(<span class="hljs-number">1</span>)
+                    endDST.setMonth(<span class="hljs-number">8</span>)
+                    endDST.setHours(<span class="hljs-number">2</span>)
+                    endDST.setDate(<span class="hljs-number">25</span>)
+                    dayDST = endDST.getDay()
+                    <span class="hljs-keyword">if</span> (dayDST != <span class="hljs-number">0</span>) {
+                        endDST.setDate(<span class="hljs-number">32</span> - dayDST)
+                    }
+                    <span class="hljs-keyword">else</span> {
+                        endDST.setDate(<span class="hljs-number">1</span>)
+                        endDST.setMonth(<span class="hljs-number">9</span>)
+                    }
+                    <span class="hljs-keyword">var</span> currentTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    currentTime.setMonth(month)
+                    currentTime.setYear(year)
+                    currentTime.setDate(day)
+                    currentTime.setHours(hr)
+                    <span class="hljs-keyword">if</span> (currentTime &gt;= startDST &amp;&amp; currentTime &lt; endDST) {
+                        dst = <span class="hljs-number">1</span>
+                    }
+                }
+                <span class="hljs-keyword">if</span> (region == <span class="hljs-string">"Beirut"</span>) {
+                    <span class="hljs-keyword">var</span> startDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    <span class="hljs-keyword">var</span> endDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    startDST.setMonth(<span class="hljs-number">2</span>)
+                    startDST.setHours(<span class="hljs-number">0</span>)
+                    startDST.setDate(<span class="hljs-number">31</span>)
+                    <span class="hljs-keyword">var</span> dayDST = startDST.getDay()
+                    startDST.setDate(<span class="hljs-number">31</span> - dayDST)
+                    endDST.setMonth(<span class="hljs-number">9</span>)
+                    endDST.setHours(<span class="hljs-number">11</span>)
+                    endDST.setDate(<span class="hljs-number">31</span>)
+                    dayDST = endDST.getDay()
+                    endDST.setDate(<span class="hljs-number">30</span> - dayDST)
+                    <span class="hljs-keyword">var</span> currentTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    currentTime.setMonth(month)
+                    currentTime.setYear(year)
+                    currentTime.setDate(day)
+                    currentTime.setHours(hr)
+                    <span class="hljs-keyword">if</span> (currentTime &gt;= startDST &amp;&amp; currentTime &lt; endDST) {
+                        dst = <span class="hljs-number">1</span>
+                    }
+                }
+                <span class="hljs-keyword">if</span> (region == <span class="hljs-string">"Baghdad"</span>) {
+                    <span class="hljs-keyword">var</span> startDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    <span class="hljs-keyword">var</span> endDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    startDST.setMonth(<span class="hljs-number">3</span>)
+                    startDST.setHours(<span class="hljs-number">3</span>)
+                    startDST.setDate(<span class="hljs-number">1</span>)
+                    endDST.setMonth(<span class="hljs-number">9</span>)
+                    endDST.setHours(<span class="hljs-number">3</span>)
+                    endDST.setDate(<span class="hljs-number">1</span>)
+                    dayDST = endDST.getDay()
+                    <span class="hljs-keyword">var</span> currentTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    currentTime.setMonth(month)
+                    currentTime.setYear(year)
+                    currentTime.setDate(day)
+                    currentTime.setHours(hr)
+                    <span class="hljs-keyword">if</span> (currentTime &gt;= startDST &amp;&amp; currentTime &lt; endDST) {
+                        dst = <span class="hljs-number">1</span>
+                    }
+                }
+                <span class="hljs-keyword">if</span> (region == <span class="hljs-string">"Australia"</span>) {
+                    <span class="hljs-keyword">var</span> startDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    <span class="hljs-keyword">var</span> endDST = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    startDST.setMonth(<span class="hljs-number">9</span>)
+                    startDST.setHours(<span class="hljs-number">2</span>)
+                    startDST.setDate(<span class="hljs-number">31</span>)
+                    <span class="hljs-keyword">var</span> dayDST = startDST.getDay()
+                    startDST.setDate(<span class="hljs-number">31</span> - dayDST)
+                    endDST.setMonth(<span class="hljs-number">2</span>)
+                    endDST.setHours(<span class="hljs-number">2</span>)
+                    endDST.setDate(<span class="hljs-number">31</span>)
+                    dayDST = endDST.getDay()
+                    endDST.setDate(<span class="hljs-number">31</span> - dayDST)
+                    <span class="hljs-keyword">var</span> currentTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+                    currentTime.setMonth(month)
+                    currentTime.setYear(year)
+                    currentTime.setDate(day)
+                    currentTime.setHours(hr)
+                    <span class="hljs-keyword">if</span> (currentTime &gt;= startDST || currentTime &lt; endDST) {
+                        dst = <span class="hljs-number">1</span>
+                    }
+                }
+
+
+                <span class="hljs-keyword">if</span> (dst == <span class="hljs-number">1</span>) {
+                    hr -= <span class="hljs-number">-1</span>
+                    <span class="hljs-keyword">if</span> (hr &gt;= <span class="hljs-number">24</span>) {
+                        hr = hr - <span class="hljs-number">24</span>
+                        day -= <span class="hljs-number">-1</span>
+                    }
+                    <span class="hljs-keyword">if</span> (hr &lt; <span class="hljs-number">10</span>) {
+                        hr = <span class="hljs-string">" "</span> + hr
+                    }
+                    <span class="hljs-keyword">if</span> (day &gt; monthDays[month]) {
+                        day = <span class="hljs-number">1</span>
+                        <span class="hljs-keyword">if</span> (month == <span class="hljs-number">11</span>) {
+                            month = <span class="hljs-number">0</span>
+                            year -= <span class="hljs-number">-1</span>
+                        }
+                        <span class="hljs-keyword">else</span> {
+                            month -= <span class="hljs-number">-1</span>
+                        }
+                    }
+                    <span class="hljs-keyword">return</span> monthArray[month] + <span class="hljs-string">" "</span> + day + <span class="hljs-string">", "</span> + year + <span class="hljs-string">"&lt;br&gt;"</span> + hr + <span class="hljs-string">":"</span> + min + <span class="hljs-string">":"</span> + sec + <span class="hljs-string">" DST"</span>
+                }
+                <span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">return</span> monthArray[month] + <span class="hljs-string">" "</span> + day + <span class="hljs-string">", "</span> + year + <span class="hljs-string">"&lt;br&gt;"</span> + hr + <span class="hljs-string">":"</span> + min + <span class="hljs-string">":"</span> + sec
+                }
+            }
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">worldClockZone</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"GMT"</span>).innerHTML = worldClock(<span class="hljs-number">0</span>, <span class="hljs-string">"Greenwich"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Vancouver"</span>).innerHTML = worldClock(<span class="hljs-number">-8</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"SanFrancisco"</span>).innerHTML = worldClock(<span class="hljs-number">-8</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Seattle"</span>).innerHTML = worldClock(<span class="hljs-number">-8</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"LosAngeles"</span>).innerHTML = worldClock(<span class="hljs-number">-8</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Denver"</span>).innerHTML = worldClock(<span class="hljs-number">-7</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"MexicoCity"</span>).innerHTML = worldClock(<span class="hljs-number">-6</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Houston"</span>).innerHTML = worldClock(<span class="hljs-number">-6</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Minneapolis"</span>).innerHTML = worldClock(<span class="hljs-number">-6</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"NewOrleans"</span>).innerHTML = worldClock(<span class="hljs-number">-6</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Chicago"</span>).innerHTML = worldClock(<span class="hljs-number">-6</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Montgomery"</span>).innerHTML = worldClock(<span class="hljs-number">-6</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Indianapolis"</span>).innerHTML = worldClock(<span class="hljs-number">-5</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Atlanta"</span>).innerHTML = worldClock(<span class="hljs-number">-5</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Detroit"</span>).innerHTML = worldClock(<span class="hljs-number">-5</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Miami"</span>).innerHTML = worldClock(<span class="hljs-number">-5</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"WashingtonDC"</span>).innerHTML = worldClock(<span class="hljs-number">-5</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Philadelphia"</span>).innerHTML = worldClock(<span class="hljs-number">-5</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"NewYork"</span>).innerHTML = worldClock(<span class="hljs-number">-5</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Montreal"</span>).innerHTML = worldClock(<span class="hljs-number">-5</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Boston"</span>).innerHTML = worldClock(<span class="hljs-number">-5</span>, <span class="hljs-string">"NAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"BuenosAires"</span>).innerHTML = worldClock(<span class="hljs-number">-3</span>, <span class="hljs-string">"BuenosAires"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"SaoPaulo"</span>).innerHTML = worldClock(<span class="hljs-number">-3</span>, <span class="hljs-string">"SAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"RioDeJaneiro"</span>).innerHTML = worldClock(<span class="hljs-number">-3</span>, <span class="hljs-string">"SAmerica"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Lisbon"</span>).innerHTML = worldClock(<span class="hljs-number">0</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Dublin"</span>).innerHTML = worldClock(<span class="hljs-number">0</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"London"</span>).innerHTML = worldClock(<span class="hljs-number">0</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Madrid"</span>).innerHTML = worldClock(<span class="hljs-number">1</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Barcelona"</span>).innerHTML = worldClock(<span class="hljs-number">1</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Paris"</span>).innerHTML = worldClock(<span class="hljs-number">1</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Brussels"</span>).innerHTML = worldClock(<span class="hljs-number">1</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Amsterdam"</span>).innerHTML = worldClock(<span class="hljs-number">1</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Frankfurt"</span>).innerHTML = worldClock(<span class="hljs-number">1</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Rome"</span>).innerHTML = worldClock(<span class="hljs-number">1</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Berlin"</span>).innerHTML = worldClock(<span class="hljs-number">1</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Prague"</span>).innerHTML = worldClock(<span class="hljs-number">1</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Vienna"</span>).innerHTML = worldClock(<span class="hljs-number">1</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Stockholm"</span>).innerHTML = worldClock(<span class="hljs-number">1</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Athens"</span>).innerHTML = worldClock(<span class="hljs-number">2</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Helsinki"</span>).innerHTML = worldClock(<span class="hljs-number">2</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Minsk"</span>).innerHTML = worldClock(<span class="hljs-number">2</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Istanbul"</span>).innerHTML = worldClock(<span class="hljs-number">2</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Cairo"</span>).innerHTML = worldClock(<span class="hljs-number">2</span>, <span class="hljs-string">"Cairo"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Jerusalem"</span>).innerHTML = worldClock(<span class="hljs-number">2</span>, <span class="hljs-string">"Israel"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Beirut"</span>).innerHTML = worldClock(<span class="hljs-number">2</span>, <span class="hljs-string">"Beirut"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Moscow"</span>).innerHTML = worldClock(<span class="hljs-number">3</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Baghdad"</span>).innerHTML = worldClock(<span class="hljs-number">3</span>, <span class="hljs-string">"Baghdad"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Dubai"</span>).innerHTML = worldClock(<span class="hljs-number">4</span>, <span class="hljs-string">"Dubai"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Bangkok"</span>).innerHTML = worldClock(<span class="hljs-number">7</span>, <span class="hljs-string">"Bangkok"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Jakarta"</span>).innerHTML = worldClock(<span class="hljs-number">7</span>, <span class="hljs-string">"Jakarta"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"HongKong"</span>).innerHTML = worldClock(<span class="hljs-number">8</span>, <span class="hljs-string">"HongKong"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Beijing"</span>).innerHTML = worldClock(<span class="hljs-number">8</span>, <span class="hljs-string">"Beijing"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Shanghai"</span>).innerHTML = worldClock(<span class="hljs-number">8</span>, <span class="hljs-string">"Shanghai"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Seoul"</span>).innerHTML = worldClock(<span class="hljs-number">9</span>, <span class="hljs-string">"Seoul"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Tokyo"</span>).innerHTML = worldClock(<span class="hljs-number">9</span>, <span class="hljs-string">"Tokyo"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Melbourne"</span>).innerHTML = worldClock(<span class="hljs-number">10</span>, <span class="hljs-string">"Australia"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Sydney"</span>).innerHTML = worldClock(<span class="hljs-number">10</span>, <span class="hljs-string">"Australia"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Brisbane"</span>).innerHTML = worldClock(<span class="hljs-number">10</span>, <span class="hljs-string">"Brisbane"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Vladivostok"</span>).innerHTML = worldClock(<span class="hljs-number">10</span>, <span class="hljs-string">"Europe"</span>)
+            <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"Kamchatka"</span>).innerHTML = worldClock(<span class="hljs-number">12</span>, <span class="hljs-string">"Europe"</span>)
+
+            setTimeout(<span class="hljs-string">"worldClockZone()"</span>, <span class="hljs-number">1000</span>)
+        }
+        <span class="hljs-built_in">window</span>.onload = worldClockZone;
+
+    <span class="hljs-comment">//--&gt;</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span><span class="css">
+        <span class="hljs-selector-class">.hrow</span> {
+            <span class="hljs-attribute">font-weight</span>: bold;
+            <span class="hljs-attribute">color</span>: <span class="hljs-number">#C1E97C</span>;
+        }
+    
+        <span class="hljs-selector-class">.hrow</span> <span class="hljs-selector-tag">td</span> {
+            <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">20px</span>;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">140px</span>;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    
+    World Clock
+    <span class="hljs-comment">&lt;!--Put this in the body part of the document--&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">cellspacing</span>=<span class="hljs-string">"5px"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>GMT<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Vancouver<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>San Francisco<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Seattle<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"GMT"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Vancouver"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"SanFrancisco"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Seattle"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Los Angeles<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Denver<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Mexico City<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Houston<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"LosAngeles"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Denver"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"MexicoCity"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Houston"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Minneapolis<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>New Orleans<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Chicago<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Montgomery<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Minneapolis"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"NewOrleans"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Chicago"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Montgomery"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Indianapolis<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Atlanta<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Detroit<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Miami<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Indianapolis"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Atlanta"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Detroit"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Miami"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Washington DC<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Philadelphia<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>New York<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Montreal<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"WashingtonDC"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Philadelphia"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"NewYork"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Montreal"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Boston<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Buenos Aires<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Sao Paulo<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Rio De Janeiro<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Boston"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"BuenosAires"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"SaoPaulo"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"RioDeJaneiro"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Lisbon<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Dublin<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>London<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Madrid<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Lisbon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Dublin"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"London"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Madrid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Barcelona<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Paris<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Brussels<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Amsterdam<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Barcelona"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Paris"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Brussels"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Amsterdam"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Frankfurt<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Rome<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Berlin<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Prague<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Frankfurt"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Rome"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Berlin"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Prague"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Vienna<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Stockholm<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Athens<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Helsinki<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Vienna"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Stockholm"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Athens"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Helsinki"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Minsk<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Istanbul<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Cairo<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Jerusalem<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Minsk"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Istanbul"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Cairo"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Jerusalem"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Beirut<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Moscow<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Baghdad<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Dubai<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Beirut"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Moscow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Baghdad"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Dubai"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Bangkok<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Jakarta<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Hong Kong<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Beijing<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Bangkok"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Jakarta"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"HongKong"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Beijing"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Shanghai<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Seoul<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Tokyo<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Melbourne<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Shanghai"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Seoul"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Tokyo"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Melbourne"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hrow"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Sydney<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Brisbane<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Vladivostok<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Kamchatka<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Sydney"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Brisbane"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Vladivostok"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Kamchatka"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

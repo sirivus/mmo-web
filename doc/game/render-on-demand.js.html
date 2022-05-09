@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>render-on-demand.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/render-on-demand.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>render-on-demand.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> THREE <span class="hljs-keyword">from</span> <span class="hljs-string">"three"</span>;
+<span class="hljs-keyword">import</span> { OrbitControls } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://threejs.org/examples/jsm/controls/OrbitControls.js"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"#c"</span>);
+  <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer({ canvas });
+
+  <span class="hljs-keyword">const</span> fov = <span class="hljs-number">75</span>;
+  <span class="hljs-keyword">const</span> aspect = <span class="hljs-number">2</span>; <span class="hljs-comment">// the canvas default</span>
+  <span class="hljs-keyword">const</span> near = <span class="hljs-number">0.1</span>;
+  <span class="hljs-keyword">const</span> far = <span class="hljs-number">5</span>;
+  <span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.z = <span class="hljs-number">2</span>;
+
+  <span class="hljs-keyword">const</span> controls = <span class="hljs-keyword">new</span> OrbitControls(camera, canvas);
+  controls.target.set(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+  controls.update();
+
+  <span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();
+
+  {
+    <span class="hljs-keyword">const</span> color = <span class="hljs-number">0xffffff</span>;
+    <span class="hljs-keyword">const</span> intensity = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> light = <span class="hljs-keyword">new</span> THREE.DirectionalLight(color, intensity);
+    light.position.set(<span class="hljs-number">-1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>);
+    scene.add(light);
+  }
+
+  <span class="hljs-keyword">const</span> boxWidth = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">const</span> boxHeight = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">const</span> boxDepth = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">const</span> geometry = <span class="hljs-keyword">new</span> THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeInstance</span>(<span class="hljs-params">geometry, color, x</span>) </span>{
+    <span class="hljs-keyword">const</span> material = <span class="hljs-keyword">new</span> THREE.MeshPhongMaterial({ color });
+
+    <span class="hljs-keyword">const</span> cube = <span class="hljs-keyword">new</span> THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    cube.position.x = x;
+
+    <span class="hljs-keyword">return</span> cube;
+  }
+
+  makeInstance(geometry, <span class="hljs-number">0x44aa88</span>, <span class="hljs-number">0</span>);
+  makeInstance(geometry, <span class="hljs-number">0x8844aa</span>, <span class="hljs-number">-2</span>);
+  makeInstance(geometry, <span class="hljs-number">0xaa8844</span>, <span class="hljs-number">2</span>);
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resizeRendererToDisplaySize</span>(<span class="hljs-params">renderer</span>) </span>{
+    <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+    <span class="hljs-keyword">const</span> width = canvas.clientWidth;
+    <span class="hljs-keyword">const</span> height = canvas.clientHeight;
+    <span class="hljs-keyword">const</span> needResize = canvas.width !== width || canvas.height !== height;
+    <span class="hljs-keyword">if</span> (needResize) {
+      renderer.setSize(width, height, <span class="hljs-literal">false</span>);
+    }
+    <span class="hljs-keyword">return</span> needResize;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (resizeRendererToDisplaySize(renderer)) {
+      <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+
+    renderer.render(scene, camera);
+  }
+  render();
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>const _changeEvent = { type: 'change' };
+const ??? = { type: 'resize' };
+window.addEventListener('resize', reportWindowSize);</p>
+<p>Resize the browser window to fire the <code>resize</code> event.</p>
+<p>Window height: <span id="height"></span></p>
+<p>Window width: <span id="width"></span></p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  controls.addEventListener(<span class="hljs-string">"change"</span>, render);
+  <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"resize"</span>, render);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>note: this is a workaround for an OrbitControls issue
+in an iframe. Will remove once the issue is fixed in
+three.js</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"mousedown"</span>, (e) =&gt; {
+    e.preventDefault();
+    <span class="hljs-built_in">window</span>.focus();
+  });
+  <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"keydown"</span>, (e) =&gt; {
+    e.preventDefault();
+  });
+}
+
+main();
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

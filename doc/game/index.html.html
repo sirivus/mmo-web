@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>index.html</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/index.html";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>index.html</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.location.href) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"reload anew cache"</span>);
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+    location.reload();
+  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Project SIRI<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"favicon.ico"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/x-icon"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"styles.css"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+  <span class="hljs-selector-class">.fx</span> {
+    <span class="hljs-attribute">-webkit-display</span>: flex;
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">margin-right</span>: -<span class="hljs-number">20px</span>;
+  }
+
+  <span class="hljs-selector-class">.fx</span>&gt;<span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">20px</span>;
+  }
+
+  <span class="hljs-selector-class">.fx</span>&gt;<span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:first-child</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">30%</span>;
+  }
+
+  <span class="hljs-selector-class">.flex</span> {
+    <span class="hljs-attribute">-webkit-flex</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+  }
+
+  <span class="hljs-selector-id">#test-target</span> {
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">10px</span>;
+  }
+
+  <span class="hljs-comment">/*
+  @import url("./keyboardevent.css");
+  */</span>
+  <span class="hljs-comment">/* Using a url */</span>
+  <span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">width</span>: auto;
+    <span class="hljs-attribute">height</span>: auto;
+    <span class="hljs-attribute">overflow</span>: auto;
+  }
+
+  <span class="hljs-selector-tag">canvas</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/space-texture.jpg"</span>);
+    <span class="hljs-attribute">background-size</span>: <span class="hljs-number">500px</span>;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+  <span class="hljs-comment">//document.que</span>
+  <span class="hljs-comment">//window.addEventListener("KeyboardEvent.code", function(event) {</span>
+  <span class="hljs-comment">//  console.log(event.KeyboardEvent.code);</span>
+  <span class="hljs-comment">//  event.KeyboardEvent.code == 27 ? window.close() : null;</span>
+  <span class="hljs-comment">//  //&amp; console.log('hi') &amp; console.log("space") : null;</span>
+  <span class="hljs-comment">//});</span>
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+  <span class="hljs-comment">// array();</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+<span class="hljs-comment">&lt;!--can only have one canvas--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>
+  <span class="hljs-comment">&lt;!--import map is a must for importing as &lt;name&gt;, with es-module-shims.js--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> three <span class="hljs-keyword">from</span> <span class="hljs-string">"https://threejs.org/build/three.module.js"</span>;
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> THREE <span class="hljs-keyword">from</span> <span class="hljs-string">"three"</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"importmap"</span>&gt;</span><span class="actionscript">
+  {
+    <span class="hljs-string">"imports"</span>: {
+      <span class="hljs-string">"three"</span>: <span class="hljs-string">"https://threejs.org/build/three.module.js"</span>
+    }
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- Remove this when import maps will be widely supported --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">async</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-comment">&lt;!--defer all modules--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./cleaner.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!--non-modules, none--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./node_modules/dat.gui/build/dat.gui.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./resize.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./node_modules/three/build/three.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-comment">&lt;!--modules, any import or export function--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./game3.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!--module import--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+  <span class="hljs-comment">//wait for code module to load to work, takes a few tries</span>
+  <span class="hljs-comment">//split coding breaks code or modules breaks code</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-comment">&lt;!--game--&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+  <span class="hljs-comment">///////////////</span>
+  <span class="hljs-comment">//const      //</span>
+  <span class="hljs-comment">///////////////</span>
+  _winmargin = <span class="hljs-number">15</span>;
+  _fps = <span class="hljs-number">30</span>; <span class="hljs-comment">//motion capture all must be set to this value</span>
+  <span class="hljs-comment">//_mocap = 30;</span>
+  <span class="hljs-comment">//_worldspeed = 30;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"myFunction()"</span>&gt;</span>Click Me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunction</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> x = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"myDIV"</span>);
+    <span class="hljs-keyword">if</span> (x.style.display === <span class="hljs-string">"none"</span>) {
+      x.style.display = <span class="hljs-string">"block"</span>;
+    } <span class="hljs-keyword">else</span> {
+      x.style.display = <span class="hljs-string">"none"</span>;
+    }
+  }
+
+  <span class="hljs-comment">//    document.body.addEventListener("keydown", function () {</span>
+  <span class="hljs-comment">//            THREEx.FullScreen.request();</span>
+  <span class="hljs-comment">//        }, false);</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">//    Document.fullscreenElement</span>
+  <span class="hljs-comment">//    Document.exitFullscreen()</span>
+  <span class="hljs-comment">//    Element.requestFullscreen()</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">//    THREEx.FullScreen.request = function (element) {</span>
+  <span class="hljs-comment">//            element = element || document.body;</span>
+  <span class="hljs-comment">//            if (this._hasWebkitFullScreen) {</span>
+  <span class="hljs-comment">//                element.webkitRequestFullScreen();</span>
+  <span class="hljs-comment">//                console.log("f");</span>
+  <span class="hljs-comment">//            } else if (this._hasMozFullScreen) {</span>
+  <span class="hljs-comment">//                element.mozRequestFullScreen();</span>
+  <span class="hljs-comment">//                console.log("g");</span>
+  <span class="hljs-comment">//            } else {</span>
+  <span class="hljs-comment">//                console.assert(false);</span>
+  <span class="hljs-comment">//            }</span>
+  <span class="hljs-comment">//        }</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myDIV"</span>&gt;</span>mmo-web<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!----&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+  <span class="hljs-selector-class">.info</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">242</span>);
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">75px</span>;
+    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0px</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">right</span>: <span class="hljs-number">0px</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">0px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">0px</span>;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"info"</span>&gt;</span>INFO &amp;&amp;&amp;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!----&gt;</span>
+okay information
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+  <span class="hljs-comment">//const info = document.getElementById('info');</span>
+  <span class="hljs-comment">//info.appendChild(stats.dom);</span>
+  <span class="hljs-comment">//info.appendChild(renderer.domElement);</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+  <span class="hljs-comment">//    /* Get the element you want displayed in fullscreen mode (a video in this example): */</span>
+  <span class="hljs-comment">//    var elem = document.getElementById("myvideo");</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">//    /* When the openFullscreen() function is executed, open the video in fullscreen.</span>
+  <span class="hljs-comment">//    Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */</span>
+  <span class="hljs-comment">//    function openFullscreen() {</span>
+  <span class="hljs-comment">//        if (elem.requestFullscreen) {</span>
+  <span class="hljs-comment">//            elem.requestFullscreen();</span>
+  <span class="hljs-comment">//        } else if (elem.webkitRequestFullscreen) { /* Safari */</span>
+  <span class="hljs-comment">//            elem.webkitRequestFullscreen();</span>
+  <span class="hljs-comment">//        } else if (elem.msRequestFullscreen) { /* IE11 */</span>
+  <span class="hljs-comment">//            elem.msRequestFullscreen();</span>
+  <span class="hljs-comment">//        }</span>
+  <span class="hljs-comment">//    }</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-comment">//blue two line</span>
+
+  <span class="hljs-comment">//import * as THREE from "three";</span>
+
+  <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer();
+  renderer.setSize(<span class="hljs-built_in">window</span>.innerWidth - _winmargin, <span class="hljs-built_in">window</span>.innerHeight);
+  <span class="hljs-built_in">document</span>.body.appendChild(renderer.domElement);
+  <span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(
+    <span class="hljs-number">45</span>,
+    (<span class="hljs-built_in">window</span>.innerWidth - _winmargin) / <span class="hljs-built_in">window</span>.innerHeight,
+    <span class="hljs-number">1</span>,
+    <span class="hljs-number">500</span>
+  );
+  camera.position.set(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>);
+  camera.lookAt(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+  <span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();
+  <span class="hljs-comment">//create a blue LineBasicMaterial</span>
+  <span class="hljs-keyword">const</span> material = <span class="hljs-keyword">new</span> THREE.LineBasicMaterial({ <span class="hljs-attr">color</span>: <span class="hljs-number">0x0000ff</span> });
+  <span class="hljs-keyword">const</span> points = [];
+  points.push(<span class="hljs-keyword">new</span> THREE.Vector3(<span class="hljs-number">-10</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>));
+  points.push(<span class="hljs-keyword">new</span> THREE.Vector3(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">0</span>));
+  points.push(<span class="hljs-keyword">new</span> THREE.Vector3(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>));
+  <span class="hljs-keyword">const</span> geometry = <span class="hljs-keyword">new</span> THREE.BufferGeometry().setFromPoints(points);
+  <span class="hljs-keyword">const</span> line = <span class="hljs-keyword">new</span> THREE.Line(geometry, material);
+  scene.add(line);
+
+  <span class="hljs-comment">//request animation frame (_RAF) or setInterval //</span>
+  <span class="hljs-comment">//    setInterval(() =&gt; {</span>
+  <span class="hljs-comment">//    renderer.render(scene, camera);</span>
+  <span class="hljs-comment">//    }, 1000/_fps); // use declared const _fps 24/30 fps</span>
+  <span class="hljs-comment">//        requestAnimationFrame(render);</span>
+  <span class="hljs-comment">//</span>
+
+  <span class="hljs-comment">//function update() {</span>
+  <span class="hljs-keyword">var</span> render = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    requestAnimationFrame(render);
+    <span class="hljs-comment">//    //delta += clock.getDelta();</span>
+    <span class="hljs-comment">//    renderer.setSize(window.innerWidth - _winmargin, window.innerHeight);</span>
+    <span class="hljs-comment">//    cube.rotation.x += .06;</span>
+    <span class="hljs-comment">//    cube.rotation.y += .06;</span>
+    <span class="hljs-comment">//    camera.updateProjectionMatrix();</span>
+    <span class="hljs-comment">//    //if (delta &gt; interval) {</span>
+    <span class="hljs-comment">//    //  // The draw or time dependent code are here</span>
+    <span class="hljs-comment">//    //  renderer.render(scene, camera);</span>
+    <span class="hljs-comment">//    //  delta = delta % interval;</span>
+    <span class="hljs-comment">//    //}</span>
+    renderer.render(scene, camera);
+  };
+  render();
+  <span class="hljs-comment">//}</span>
+  <span class="hljs-comment">//update();</span>
+
+  <span class="hljs-comment">////</span>
+  <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">redirect</span>(<span class="hljs-params">a</span>) </span>{
+    <span class="hljs-keyword">let</span> result;
+    <span class="hljs-keyword">if</span> (a &gt; <span class="hljs-number">0</span>) {
+      result = <span class="hljs-string">"positive"</span>;
+      <span class="hljs-built_in">window</span>.location = <span class="hljs-keyword">await</span> <span class="hljs-string">"game2.html"</span>;
+    } <span class="hljs-keyword">else</span> {
+      result = <span class="hljs-string">"NOT positive"</span>;
+    }
+    <span class="hljs-keyword">return</span> result;
+  }
+  redirect(<span class="hljs-number">0</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+  <span class="hljs-comment">/* Safari syntax */</span>
+  <span class="hljs-selector-pseudo">:-webkit-full-screen</span> {
+    <span class="hljs-attribute">background-color</span>: yellow;
+  }
+
+  <span class="hljs-comment">/* IE11 */</span>
+  <span class="hljs-selector-pseudo">:-ms-fullscreen</span> {
+    <span class="hljs-attribute">background-color</span>: yellow;
+  }
+
+  <span class="hljs-comment">/* Standard syntax */</span>
+  <span class="hljs-selector-pseudo">:fullscreen</span> {
+    <span class="hljs-attribute">background-color</span>: yellow;
+  }
+
+  <span class="hljs-comment">/* Style the button */</span>
+  <span class="hljs-selector-tag">button</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0px</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">10px</span>;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Fullscreen with JavaScript<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  Click on the "Open Fullscreen" button to open this page in fullscreen mode.
+  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+  Close it by either clicking the "Esc" key on your keyboard, or with the "Close
+  Fullscreen" button.
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"openFullscreen();"</span>&gt;</span>Open Fullscreen<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"closeFullscreen();"</span>&gt;</span>Close Fullscreen<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!--checkbox--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Please click on the checkbox control.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"id-checkbox"</span>&gt;</span>Checkbox:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"id-checkbox"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"output-box"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"#id-checkbox"</span>).addEventListener(
+    <span class="hljs-string">"click"</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+      <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"output-box"</span>).innerHTML +=
+        <span class="hljs-string">"Sorry! &lt;code&gt;preventDefault()&lt;/code&gt; won't let you check this!&lt;br&gt;"</span>;
+      event.preventDefault();
+    },
+    <span class="hljs-literal">false</span>
+  );
+  <span class="hljs-comment">// end of checkbox //</span>
+
+  <span class="hljs-keyword">var</span> elem = <span class="hljs-built_in">document</span>.documentElement;
+
+  <span class="hljs-comment">//elem.addEventListener("keydown", function (e) {</span>
+  <span class="hljs-comment">//  var charCode = e.charCode || e.keyCode || e.which;</span>
+  <span class="hljs-comment">//  if (charCode == 27) {</span>
+  <span class="hljs-comment">//    console.log("Escape is not suppressed for lightbox!");</span>
+  <span class="hljs-comment">//    return e.preventDefault;</span>
+  <span class="hljs-comment">//  }</span>
+  <span class="hljs-comment">//});</span>
+
+<span class="hljs-string">`okokokokok`</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">openFullscreen</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">void</span> webkitFullScreen();
+    <span class="hljs-keyword">if</span> (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (elem.webkitRequestFullscreen) {
+      <span class="hljs-comment">/* Safari */</span>
+      elem.webkitRequestFullscreen();
+      elem.webkitEnterFullscreen(); <span class="hljs-comment">// add</span>
+      <span class="hljs-built_in">document</span>.webkitEnterFullscreen(); <span class="hljs-comment">// add</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (elem.msRequestFullscreen) {
+      <span class="hljs-comment">/* IE11 */</span>
+      elem.msRequestFullscreen();
+    }
+   
+  }
+
+  <span class="hljs-comment">//console.log(vertexAttribPointer)</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">closeFullscreen</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">void</span> webkitCancelFullScreen();
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.exitFullscreen) {
+      <span class="hljs-built_in">document</span>.exitFullscreen();
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.webkitExitFullscreen) {
+      <span class="hljs-comment">/* Safari */</span>
+      <span class="hljs-built_in">document</span>.webkitExitFullscreen();
+      elem.webkitExitFullscreen(); <span class="hljs-comment">//add</span>
+      <span class="hljs-built_in">document</span>.webkitExitFullscreen(); <span class="hljs-comment">//add</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.msExitFullscreen) {
+      <span class="hljs-comment">/* IE11 */</span>
+      <span class="hljs-built_in">document</span>.msExitFullscreen();
+    }
+  }
+
+  <span class="hljs-built_in">document</span>
+  <span class="hljs-comment">//elem.fullscreenchange</span>
+    <span class="hljs-comment">//  .querySelector("div.lightbox")</span>
+  <span class="hljs-comment">//  elem.addEventListener("keydown", function (e) {</span>
+  <span class="hljs-comment">//    var charCode = e.charCode || e.keyCode || e.which;</span>
+  <span class="hljs-comment">//    if (charCode == 27) {</span>
+  <span class="hljs-comment">//      //this.asd = asd</span>
+  <span class="hljs-comment">//      console.log("Escape is not suppressed for lightbox!");</span>
+  <span class="hljs-comment">//      console.log(this.asd);</span>
+  <span class="hljs-comment">//      return event.preventDefault;</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">//    }</span>
+  <span class="hljs-comment">//  });</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">supports_html5_storage</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"localStorage is supported"</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-string">"localStorage"</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">window</span> &amp;&amp; <span class="hljs-built_in">window</span>[<span class="hljs-string">"localStorage"</span>] !== <span class="hljs-literal">null</span>;
+    } <span class="hljs-keyword">catch</span> (e) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"localStorage is not supported"</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+  }
+  supports_html5_storage();
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+
+<span class="hljs-comment">&lt;!--keyboard input--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-comment">//elem.addEventListener('keyChar', (event) =&gt; {</span>
+  <span class="hljs-comment">//  console.log('keyChar')</span>
+
+  <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'keydown'</span>, (event) =&gt; {
+    <span class="hljs-keyword">switch</span> (event.key) {
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'w'</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'up'</span>)
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'s'</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'down'</span>)
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'a'</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'left'</span>)
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'d'</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'right'</span>)
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> <span class="hljs-string">' '</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'space'</span>)
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-comment">/*
+      console logging detection, can note out. still detecting
+      when hit ' ' space, will set attack to true and do damage
+      set player.isAttacking = false
+
+      in detection after hit once
+      then goes into timeout
+      position = this.position //canceled
+      position: {
+          x: this.position.x,
+          y: this.position.y
+      }    //now an object, with a property 
+      now put into update(), to draw boxes correctly
+      attack.offset.x
+      need to create offset property inside attack object
+      //object
+      this.attackBox {
+      }
+      inside a constructor
+      of sprite class
+      offset is equal to offset: offset
+      now declare
+      inside another object, offset can be set:
+
+      offset: {
+        x: 10,
+        y: 5
+      }
+      
+      so now the offset property is into the enemy class, meddling with the offset property of the previously declared inside a constructor of the: const enemy = new Sprite ({
+      }) 
+
+      */</span>
+
+      <span class="hljs-comment">//alt + z is word wrap on or off</span>
+
+      <span class="hljs-comment">//case 'd':</span>
+      <span class="hljs-comment">//    console.log('up')</span>
+      <span class="hljs-comment">//    break;</span>
+      <span class="hljs-comment">//case 'd':</span>
+      <span class="hljs-comment">//    console.log('up')</span>
+      <span class="hljs-comment">//    break;</span>
+      <span class="hljs-comment">//case 'd':</span>
+      <span class="hljs-comment">//    console.log('up')</span>
+      <span class="hljs-comment">//    break;</span>
+
+    }
+    <span class="hljs-comment">//console.log(event.key)</span>
+    <span class="hljs-comment">//console.log(event)</span>
+
+    <span class="hljs-comment">//console.log(event)</span>
+    <span class="hljs-comment">//if (event.key == 'ArrowLeft') {</span>
+    <span class="hljs-comment">//    document.getElementById('left').click();</span>
+    <span class="hljs-comment">//}</span>
+    <span class="hljs-comment">//if (event.key == 'a') {</span>
+    <span class="hljs-comment">//    console.log('this character will move left now');</span>
+    <span class="hljs-comment">//}        </span>
+    <span class="hljs-comment">//yay keyboard input works for anything now.</span>
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fx"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"test-target"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"test-target"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"btn-reset"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"btn-reset"</span>&gt;</span>Reset<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">pre</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"console-log"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">'module'</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./keyboardevent.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

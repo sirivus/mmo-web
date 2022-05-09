@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>shadows.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/shadows.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>shadows.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+<p>Three.js - Shadows - Fake
+from https://threejs.org/manual/examples/shadows-fake.html</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> THREE <span class="hljs-keyword">from</span> <span class="hljs-string">"three"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"#c"</span>);
+  <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer({ canvas });
+
+  <span class="hljs-keyword">const</span> fov = <span class="hljs-number">45</span>;
+  <span class="hljs-keyword">const</span> aspect = <span class="hljs-number">2</span>; <span class="hljs-comment">// the canvas default</span>
+  <span class="hljs-keyword">const</span> near = <span class="hljs-number">0.1</span>;
+  <span class="hljs-keyword">const</span> far = <span class="hljs-number">100</span>;
+  <span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.set(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>);
+  camera.lookAt(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+
+  <span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();
+  scene.background = <span class="hljs-keyword">new</span> THREE.Color(<span class="hljs-string">"white"</span>);
+
+  <span class="hljs-keyword">const</span> loader = <span class="hljs-keyword">new</span> THREE.TextureLoader();
+
+  {
+    <span class="hljs-keyword">const</span> planeSize = <span class="hljs-number">40</span>;
+
+    <span class="hljs-keyword">const</span> texture = loader.load(
+      <span class="hljs-string">"https://threejs.org/manual/examples/resources/images/checker.png"</span>
+    );
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.magFilter = THREE.NearestFilter;
+    <span class="hljs-keyword">const</span> repeats = planeSize / <span class="hljs-number">2</span>;
+    texture.repeat.set(repeats, repeats);
+
+    <span class="hljs-keyword">const</span> planeGeo = <span class="hljs-keyword">new</span> THREE.PlaneGeometry(planeSize, planeSize);
+    <span class="hljs-keyword">const</span> planeMat = <span class="hljs-keyword">new</span> THREE.MeshBasicMaterial({
+      <span class="hljs-attr">map</span>: texture,
+      <span class="hljs-attr">side</span>: THREE.DoubleSide,
+    });
+    planeMat.color.setRGB(<span class="hljs-number">1.5</span>, <span class="hljs-number">1.5</span>, <span class="hljs-number">1.5</span>);
+    <span class="hljs-keyword">const</span> mesh = <span class="hljs-keyword">new</span> THREE.Mesh(planeGeo, planeMat);
+    mesh.rotation.x = <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">-0.5</span>;
+    scene.add(mesh);
+  }
+
+  <span class="hljs-keyword">const</span> shadowTexture = loader.load(
+    <span class="hljs-string">"https://threejs.org/manual/examples/resources/images/roundshadow.png"</span>
+  );
+  <span class="hljs-keyword">const</span> sphereShadowBases = [];
+  {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>spheres</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> sphereRadius = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> sphereWidthDivisions = <span class="hljs-number">64</span>;
+    <span class="hljs-keyword">const</span> sphereHeightDivisions = <span class="hljs-number">16</span>;
+    <span class="hljs-keyword">const</span> sphereGeo = <span class="hljs-keyword">new</span> THREE.SphereGeometry(
+      sphereRadius,
+      sphereWidthDivisions,
+      sphereHeightDivisions
+    );
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>shadows</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> planeSize = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> shadowGeo = <span class="hljs-keyword">new</span> THREE.PlaneGeometry(planeSize, planeSize);
+
+    <span class="hljs-keyword">const</span> numSpheres = <span class="hljs-number">15</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; numSpheres; ++i) {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>make a base for the shadow and the sphere.
+so they move together.</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      <span class="hljs-keyword">const</span> base = <span class="hljs-keyword">new</span> THREE.Object3D();
+      scene.add(base);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>add the shadow to the base
+note: we make a new material for each sphere
+so we can set that sphere's material transparency
+separately.</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      <span class="hljs-keyword">const</span> shadowMat = <span class="hljs-keyword">new</span> THREE.MeshBasicMaterial({
+        <span class="hljs-attr">map</span>: shadowTexture,
+        <span class="hljs-attr">transparent</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// so we can see the ground</span>
+        <span class="hljs-attr">depthWrite</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// so we don't have to sort</span>
+      });
+      <span class="hljs-keyword">const</span> shadowMesh = <span class="hljs-keyword">new</span> THREE.Mesh(shadowGeo, shadowMat);
+      shadowMesh.position.y = <span class="hljs-number">0.001</span>; <span class="hljs-comment">// so we're above the ground slightly</span>
+      shadowMesh.rotation.x = <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">-0.5</span>;
+      <span class="hljs-keyword">const</span> shadowSize = sphereRadius * <span class="hljs-number">4</span>;
+      shadowMesh.scale.set(shadowSize, shadowSize, shadowSize);
+      base.add(shadowMesh);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>add the sphere to the base</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      <span class="hljs-keyword">const</span> u = i / numSpheres;
+      <span class="hljs-keyword">const</span> sphereMat = <span class="hljs-keyword">new</span> THREE.MeshPhongMaterial();
+      sphereMat.color.setHSL(u, <span class="hljs-number">1</span>, <span class="hljs-number">0.75</span>);
+      <span class="hljs-keyword">const</span> sphereMesh = <span class="hljs-keyword">new</span> THREE.Mesh(sphereGeo, sphereMat);
+      sphereMesh.position.set(<span class="hljs-number">0</span>, sphereRadius + <span class="hljs-number">2</span>, <span class="hljs-number">0</span>);
+      base.add(sphereMesh);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
+</div>
+<p>remember all 3 plus the y position</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      sphereShadowBases.push({
+        base,
+        sphereMesh,
+        shadowMesh,
+        <span class="hljs-attr">y</span>: sphereMesh.position.y,
+      });
+    }
+  }
+
+  {
+    <span class="hljs-keyword">const</span> skyColor = <span class="hljs-number">0xb1e1ff</span>; <span class="hljs-comment">// light blue</span>
+    <span class="hljs-keyword">const</span> groundColor = <span class="hljs-number">0xb97a20</span>; <span class="hljs-comment">// brownish orange</span>
+    <span class="hljs-keyword">const</span> intensity = <span class="hljs-number">0.25</span>;
+    <span class="hljs-keyword">const</span> light = <span class="hljs-keyword">new</span> THREE.HemisphereLight(skyColor, groundColor, intensity);
+    scene.add(light);
+  }
+
+  {
+    <span class="hljs-keyword">const</span> color = <span class="hljs-number">0xffffff</span>;
+    <span class="hljs-keyword">const</span> intensity = <span class="hljs-number">0.75</span>;
+    <span class="hljs-keyword">const</span> light = <span class="hljs-keyword">new</span> THREE.DirectionalLight(color, intensity);
+    light.position.set(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">5</span>);
+    light.target.position.set(<span class="hljs-number">-5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+    scene.add(light);
+    scene.add(light.target);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resizeRendererToDisplaySize</span>(<span class="hljs-params">renderer</span>) </span>{
+    <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+    <span class="hljs-keyword">const</span> width = canvas.clientWidth;
+    <span class="hljs-keyword">const</span> height = canvas.clientHeight;
+    <span class="hljs-keyword">const</span> needResize = canvas.width !== width || canvas.height !== height;
+    <span class="hljs-keyword">if</span> (needResize) {
+      renderer.setSize(width, height, <span class="hljs-literal">false</span>);
+    }
+    <span class="hljs-keyword">return</span> needResize;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">time</span>) </span>{
+    time *= <span class="hljs-number">0.001</span>; <span class="hljs-comment">// convert to seconds</span>
+
+    resizeRendererToDisplaySize(renderer);
+
+    {
+      <span class="hljs-keyword">const</span> canvas = renderer.domElement;
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+
+    sphereShadowBases.forEach(<span class="hljs-function">(<span class="hljs-params">sphereShadowBase, ndx</span>) =&gt;</span> {
+      <span class="hljs-keyword">const</span> { base, sphereMesh, shadowMesh, y } = sphereShadowBase;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
+</div>
+<p>u is a value that goes from 0 to 1 as we iterate the spheres</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      <span class="hljs-keyword">const</span> u = ndx / sphereShadowBases.length;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9"></a>
+</div>
+<p>compute a position for there base. This will move
+both the sphere and its shadow</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      <span class="hljs-keyword">const</span> speed = time * <span class="hljs-number">0.2</span>;
+      <span class="hljs-keyword">const</span> angle = speed + u * <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">2</span> * (ndx % <span class="hljs-number">1</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">-1</span>);
+      <span class="hljs-keyword">const</span> radius = <span class="hljs-built_in">Math</span>.sin(speed - ndx) * <span class="hljs-number">10</span>;
+      base.position.set(<span class="hljs-built_in">Math</span>.cos(angle) * radius, <span class="hljs-number">0</span>, <span class="hljs-built_in">Math</span>.sin(angle) * radius);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-10" id="section-10"></a>
+</div>
+<p>yOff is a value that goes from 0 to 1</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      <span class="hljs-keyword">const</span> yOff = <span class="hljs-built_in">Math</span>.abs(<span class="hljs-built_in">Math</span>.sin(time * <span class="hljs-number">2</span> + ndx));
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-11" id="section-11"></a>
+</div>
+<p>move the sphere up and down</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      sphereMesh.position.y = y + THREE.MathUtils.lerp(<span class="hljs-number">-2</span>, <span class="hljs-number">2</span>, yOff);
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-12" id="section-12"></a>
+</div>
+<p>fade the shadow as the sphere goes up</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      shadowMesh.material.opacity = THREE.MathUtils.lerp(<span class="hljs-number">1</span>, <span class="hljs-number">0.25</span>, yOff);
+    });
+
+    renderer.render(scene, camera);
+
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
+}
+
+main();
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

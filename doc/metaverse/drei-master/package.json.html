@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>package.json</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../";
+    var thisFile = "metaverse/drei-master/package.json";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>package.json</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="json">{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"@react-three/drei"</span>,
+  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0.0.0-semantic-release"</span>,
+  <span class="hljs-attr">"private"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"useful add-ons for react-three-fiber"</span>,
+  <span class="hljs-attr">"keywords"</span>: [
+    <span class="hljs-string">"react"</span>,
+    <span class="hljs-string">"three"</span>,
+    <span class="hljs-string">"threejs"</span>,
+    <span class="hljs-string">"react-three-fiber"</span>
+  ],
+  <span class="hljs-attr">"repository"</span>: {
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"git"</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"git+https://github.com/pmndrs/drei.git"</span>
+  },
+  <span class="hljs-attr">"license"</span>: <span class="hljs-string">"MIT"</span>,
+  <span class="hljs-attr">"bugs"</span>: {
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://github.com/pmndrs/drei/issues"</span>
+  },
+  <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"https://github.com/pmndrs/drei"</span>,
+  <span class="hljs-attr">"maintainers"</span>: [
+    <span class="hljs-string">"Paul Henschel (https://github.com/drcmda)"</span>,
+    <span class="hljs-string">"Gianmarco Simone (https://github.com/gsimone)"</span>,
+    <span class="hljs-string">"Marco Perego (https://github.com/emmelleppi)"</span>,
+    <span class="hljs-string">"Josh Ellis (https://github.com/joshuaellis)"</span>
+  ],
+  <span class="hljs-attr">"main"</span>: <span class="hljs-string">"index.cjs.js"</span>,
+  <span class="hljs-attr">"module"</span>: <span class="hljs-string">"index.js"</span>,
+  <span class="hljs-attr">"types"</span>: <span class="hljs-string">"index.d.ts"</span>,
+  <span class="hljs-attr">"sideEffects"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"commitlint"</span>: {
+    <span class="hljs-attr">"extends"</span>: [
+      <span class="hljs-string">"@commitlint/config-conventional"</span>
+    ],
+    <span class="hljs-attr">"rules"</span>: {
+      <span class="hljs-attr">"body-max-line-length"</span>: [
+        <span class="hljs-number">0</span>
+      ]
+    }
+  },
+  <span class="hljs-attr">"scripts"</span>: {
+    <span class="hljs-attr">"prebuild"</span>: <span class="hljs-string">"rimraf dist &amp;&amp; npm run typegen"</span>,
+    <span class="hljs-attr">"build"</span>: <span class="hljs-string">"rollup -c &amp;&amp; npm run copy"</span>,
+    <span class="hljs-attr">"prepare"</span>: <span class="hljs-string">"npm run build &amp;&amp; husky install"</span>,
+    <span class="hljs-attr">"eslint"</span>: <span class="hljs-string">"eslint --fix ."</span>,
+    <span class="hljs-attr">"eslint:ci"</span>: <span class="hljs-string">"eslint ."</span>,
+    <span class="hljs-attr">"prettier"</span>: <span class="hljs-string">"prettier --check ."</span>,
+    <span class="hljs-attr">"prettier-fix"</span>: <span class="hljs-string">"prettier --write ."</span>,
+    <span class="hljs-attr">"test"</span>: <span class="hljs-string">"npm run eslint:ci &amp;&amp; npm run prettier"</span>,
+    <span class="hljs-attr">"typecheck"</span>: <span class="hljs-string">"tsc --noEmit --emitDeclarationOnly false --strict --jsx react"</span>,
+    <span class="hljs-attr">"typegen"</span>: <span class="hljs-string">"tsc --emitDeclarationOnly"</span>,
+    <span class="hljs-attr">"storybook"</span>: <span class="hljs-string">"start-storybook -p 6006"</span>,
+    <span class="hljs-attr">"build-storybook"</span>: <span class="hljs-string">"build-storybook"</span>,
+    <span class="hljs-attr">"copy"</span>: <span class="hljs-string">"copyfiles package.json README.md LICENSE dist &amp;&amp; json -I -f dist/package.json -e \"this.private=false; this.devDependencies=undefined; this.optionalDependencies=undefined; this.scripts=undefined; this.husky=undefined; this.prettier=undefined; this.jest=undefined; this['lint-staged']=undefined;\""</span>
+  },
+  <span class="hljs-attr">"dependencies"</span>: {
+    <span class="hljs-attr">"@babel/runtime"</span>: <span class="hljs-string">"^7.11.2"</span>,
+    <span class="hljs-attr">"@react-spring/three"</span>: <span class="hljs-string">"^9.3.1"</span>,
+    <span class="hljs-attr">"@types/nanoid"</span>: <span class="hljs-string">"^3.0.0"</span>,
+    <span class="hljs-attr">"@use-gesture/react"</span>: <span class="hljs-string">"^10.2.0"</span>,
+    <span class="hljs-attr">"detect-gpu"</span>: <span class="hljs-string">"^4.0.14"</span>,
+    <span class="hljs-attr">"glsl-noise"</span>: <span class="hljs-string">"^0.0.0"</span>,
+    <span class="hljs-attr">"lodash.omit"</span>: <span class="hljs-string">"^4.5.0"</span>,
+    <span class="hljs-attr">"lodash.pick"</span>: <span class="hljs-string">"^4.4.0"</span>,
+    <span class="hljs-attr">"meshline"</span>: <span class="hljs-string">"^2.0.4"</span>,
+    <span class="hljs-attr">"nanoid"</span>: <span class="hljs-string">"^3.3.3"</span>,
+    <span class="hljs-attr">"react-composer"</span>: <span class="hljs-string">"^5.0.2"</span>,
+    <span class="hljs-attr">"react-merge-refs"</span>: <span class="hljs-string">"^1.1.0"</span>,
+    <span class="hljs-attr">"stats.js"</span>: <span class="hljs-string">"^0.17.0"</span>,
+    <span class="hljs-attr">"suspend-react"</span>: <span class="hljs-string">"^0.0.8"</span>,
+    <span class="hljs-attr">"three-mesh-bvh"</span>: <span class="hljs-string">"^0.5.7"</span>,
+    <span class="hljs-attr">"three-stdlib"</span>: <span class="hljs-string">"^2.9.1"</span>,
+    <span class="hljs-attr">"troika-three-text"</span>: <span class="hljs-string">"^0.46.3"</span>,
+    <span class="hljs-attr">"utility-types"</span>: <span class="hljs-string">"^3.10.0"</span>,
+    <span class="hljs-attr">"zustand"</span>: <span class="hljs-string">"^3.5.13"</span>
+  },
+  <span class="hljs-attr">"devDependencies"</span>: {
+    <span class="hljs-attr">"@babel/core"</span>: <span class="hljs-string">"^7.14.3"</span>,
+    <span class="hljs-attr">"@babel/plugin-transform-modules-commonjs"</span>: <span class="hljs-string">"^7.14.0"</span>,
+    <span class="hljs-attr">"@babel/plugin-transform-runtime"</span>: <span class="hljs-string">"^7.14.3"</span>,
+    <span class="hljs-attr">"@babel/preset-env"</span>: <span class="hljs-string">"^7.14.2"</span>,
+    <span class="hljs-attr">"@babel/preset-react"</span>: <span class="hljs-string">"^7.13.13"</span>,
+    <span class="hljs-attr">"@babel/preset-typescript"</span>: <span class="hljs-string">"^7.10.4"</span>,
+    <span class="hljs-attr">"@commitlint/cli"</span>: <span class="hljs-string">"^12.0.1"</span>,
+    <span class="hljs-attr">"@commitlint/config-conventional"</span>: <span class="hljs-string">"^12.0.1"</span>,
+    <span class="hljs-attr">"@react-three/fiber"</span>: <span class="hljs-string">"^8.0.8"</span>,
+    <span class="hljs-attr">"@rollup/plugin-babel"</span>: <span class="hljs-string">"^5.3.0"</span>,
+    <span class="hljs-attr">"@rollup/plugin-commonjs"</span>: <span class="hljs-string">"^19.0.0"</span>,
+    <span class="hljs-attr">"@rollup/plugin-json"</span>: <span class="hljs-string">"^4.1.0"</span>,
+    <span class="hljs-attr">"@rollup/plugin-node-resolve"</span>: <span class="hljs-string">"^13.0.0"</span>,
+    <span class="hljs-attr">"@storybook/addon-actions"</span>: <span class="hljs-string">"^6.4.9"</span>,
+    <span class="hljs-attr">"@storybook/addon-controls"</span>: <span class="hljs-string">"^6.4.9"</span>,
+    <span class="hljs-attr">"@storybook/addon-knobs"</span>: <span class="hljs-string">"^6.4.0"</span>,
+    <span class="hljs-attr">"@storybook/addon-storysource"</span>: <span class="hljs-string">"^6.4.9"</span>,
+    <span class="hljs-attr">"@storybook/addons"</span>: <span class="hljs-string">"^6.4.9"</span>,
+    <span class="hljs-attr">"@storybook/preset-typescript"</span>: <span class="hljs-string">"^3.0.0"</span>,
+    <span class="hljs-attr">"@storybook/react"</span>: <span class="hljs-string">"^6.4.9"</span>,
+    <span class="hljs-attr">"@storybook/theming"</span>: <span class="hljs-string">"^6.4.9"</span>,
+    <span class="hljs-attr">"@types/jest"</span>: <span class="hljs-string">"^26.0.10"</span>,
+    <span class="hljs-attr">"@types/lodash-es"</span>: <span class="hljs-string">"^4.17.3"</span>,
+    <span class="hljs-attr">"@types/react"</span>: <span class="hljs-string">"^17.0.5"</span>,
+    <span class="hljs-attr">"@types/react-dom"</span>: <span class="hljs-string">"^17.0.5"</span>,
+    <span class="hljs-attr">"@types/three"</span>: <span class="hljs-string">"^0.139.0"</span>,
+    <span class="hljs-attr">"@typescript-eslint/eslint-plugin"</span>: <span class="hljs-string">"^5.4.0"</span>,
+    <span class="hljs-attr">"@typescript-eslint/parser"</span>: <span class="hljs-string">"^5.4.0"</span>,
+    <span class="hljs-attr">"babel-eslint"</span>: <span class="hljs-string">"^10.1.0"</span>,
+    <span class="hljs-attr">"babel-loader"</span>: <span class="hljs-string">"^8.1.0"</span>,
+    <span class="hljs-attr">"copyfiles"</span>: <span class="hljs-string">"^2.3.0"</span>,
+    <span class="hljs-attr">"eslint"</span>: <span class="hljs-string">"^7.7.0"</span>,
+    <span class="hljs-attr">"eslint-config-prettier"</span>: <span class="hljs-string">"^8.3.0"</span>,
+    <span class="hljs-attr">"eslint-plugin-import"</span>: <span class="hljs-string">"^2.22.0"</span>,
+    <span class="hljs-attr">"eslint-plugin-prettier"</span>: <span class="hljs-string">"^3.1.4"</span>,
+    <span class="hljs-attr">"eslint-plugin-react"</span>: <span class="hljs-string">"^7.20.6"</span>,
+    <span class="hljs-attr">"eslint-plugin-react-hooks"</span>: <span class="hljs-string">"^4.1.0"</span>,
+    <span class="hljs-attr">"glslify-loader"</span>: <span class="hljs-string">"^2.0.0"</span>,
+    <span class="hljs-attr">"husky"</span>: <span class="hljs-string">"^6.0.0"</span>,
+    <span class="hljs-attr">"jest"</span>: <span class="hljs-string">"^26.4.1"</span>,
+    <span class="hljs-attr">"json"</span>: <span class="hljs-string">"^11.0.0"</span>,
+    <span class="hljs-attr">"maath"</span>: <span class="hljs-string">"^0.0.1-alpha.21"</span>,
+    <span class="hljs-attr">"prettier"</span>: <span class="hljs-string">"^2.4.1"</span>,
+    <span class="hljs-attr">"pretty-quick"</span>: <span class="hljs-string">"^3.1.0"</span>,
+    <span class="hljs-attr">"react"</span>: <span class="hljs-string">"^18.0.0"</span>,
+    <span class="hljs-attr">"react-dom"</span>: <span class="hljs-string">"^18.0.0"</span>,
+    <span class="hljs-attr">"rimraf"</span>: <span class="hljs-string">"^3.0.2"</span>,
+    <span class="hljs-attr">"rollup"</span>: <span class="hljs-string">"^2.58.0"</span>,
+    <span class="hljs-attr">"rollup-plugin-glslify"</span>: <span class="hljs-string">"^1.2.1"</span>,
+    <span class="hljs-attr">"rollup-plugin-multi-input"</span>: <span class="hljs-string">"^1.3.1"</span>,
+    <span class="hljs-attr">"rollup-plugin-terser"</span>: <span class="hljs-string">"^7.0.2"</span>,
+    <span class="hljs-attr">"three"</span>: <span class="hljs-string">"^0.139.2"</span>,
+    <span class="hljs-attr">"ts-node"</span>: <span class="hljs-string">"^10.4.0"</span>,
+    <span class="hljs-attr">"typescript"</span>: <span class="hljs-string">"^4.5.2"</span>,
+    <span class="hljs-attr">"yarn"</span>: <span class="hljs-string">"^1.22.17"</span>
+  },
+  <span class="hljs-attr">"peerDependencies"</span>: {
+    <span class="hljs-attr">"@react-three/fiber"</span>: <span class="hljs-string">"&gt;=8.0"</span>,
+    <span class="hljs-attr">"react"</span>: <span class="hljs-string">"&gt;=18.0"</span>,
+    <span class="hljs-attr">"react-dom"</span>: <span class="hljs-string">"&gt;=18.0"</span>,
+    <span class="hljs-attr">"three"</span>: <span class="hljs-string">"&gt;=0.137"</span>
+  },
+  <span class="hljs-attr">"peerDependenciesMeta"</span>: {
+    <span class="hljs-attr">"react-dom"</span>: {
+      <span class="hljs-attr">"optional"</span>: <span class="hljs-literal">true</span>
+    }
+  }
+}
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

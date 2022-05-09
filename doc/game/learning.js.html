@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>learning.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "game/learning.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>learning.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseProtocol</span>(<span class="hljs-params">url</span>) </span>{
+  <span class="hljs-keyword">const</span> parsedURL = <span class="hljs-regexp">/^(\w+)\:\/\/([^\/]+)\/(.*)$/</span>.exec(url);
+  <span class="hljs-keyword">if</span> (!parsedURL) {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  }
+  <span class="hljs-built_in">console</span>.log(parsedURL);
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>[&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript&quot;,
+&quot;https&quot;, &quot;developer.mozilla.org&quot;, &quot;en-US/docs/Web/JavaScript&quot;]</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+  <span class="hljs-keyword">const</span> [, protocol, fullhost, fullpath] = parsedURL;
+  <span class="hljs-keyword">return</span> protocol;
+}
+
+<span class="hljs-built_in">console</span>.log(
+  parseProtocol(<span class="hljs-string">"https://developer.mozilla.org/en-US/docs/Web/JavaScript"</span>)
+);
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>&quot;https&quot;</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>
