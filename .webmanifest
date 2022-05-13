@@ -1,0 +1,16 @@
+{
+    "background_color": "purple",
+    "description": "mmo web",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "icon/fox-icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "name": "mmo",
+    "short_name": "mmo",
+    "start_url": "/index.html"
+  }
+  

@@ -1,13 +1,8 @@
-function main (){
+windows.create()
 
-    const { chromium } = require('playwright');
+/*
+let creating = browser.tabs.create(
+  createProperties   // object
+)
 
-// Create a Chromium browser instance
-const browser = await chromium.launch();
-
-// Create two isolated browser contexts
-const userContext = await browser.newContext();
-const adminContext = await browser.newContext();
-
-// Create pages and interact with contexts independently
-}
+*/
