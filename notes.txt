@@ -120,3 +120,6 @@ the server will be for only interacters permitted.
 curl https://api.github.com/users/sirivus
 
 enable security workflow
+
+// to enable cli dev environment.
+npm install -D @playwright/cli

@@ -20,6 +20,7 @@
   "homepage": "https://github.com/sirivus/mmo-web#readme",
   "devDependencies": {
     "@babel/core": "^7.17.10",
+    "@playwright/test": "^1.22.0",
     "@wdio/cli": "^7.19.6",
     "@wdio/local-runner": "^7.19.5",
     "@wdio/mocha-framework": "^7.19.5",

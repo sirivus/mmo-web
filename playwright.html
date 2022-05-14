@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!--This sets the baseUrl to the "scripts" directory, and
-    loads a script that will have a module ID of 'main'-->
-<script data-main="scripts/main.js" src="tools/r.js"></script>
+
 
 </head>
 <body>
@@ -16,8 +14,23 @@
        // window.open("https://www.google.com", "google", "width=500, height=500");
     </script>
 
+    <!--This sets the baseUrl to the "scripts" directory, and
+    loads a script that will have a module ID of 'main'-->
+    <script src="require.js">
+       // import { require } from './require.js'
+    </script>
+
     <script type='module' src="playwright.js"> </script>
 
+    <noscript>
+<script type="module">
+   // playwright.run();
+   import { playwright } from './playwright.js';
+    playwright.run();
+</script>
+    </noscript>
+
     <script src="payment.js"></script>
+
 </body>
 </html>
