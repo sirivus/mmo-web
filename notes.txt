@@ -123,3 +123,5 @@ enable security workflow
 
 // to enable cli dev environment.
 npm install -D @playwright/cli
+
+puppeteer file too big to upload
