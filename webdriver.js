@@ -1,4 +1,4 @@
-function toggleFullScreen() {
+export function toggleFullScreen() {
     if (!document.fullscreenElement) {
         document.requestFullscreen = document.requestFullscreen || document.mozRequestFullScreen || document.webkitRequestFullscreen;
     } else {
@@ -6,7 +6,9 @@ function toggleFullScreen() {
         document.exitFullscreen = document.exitFullscreen || document.mozexitFullScreen || document.webkitexitFullscreen;
       }
     }
-  }
+  };
+
+//export toggleFullScreen;
 
   /*
   document.addEventListener("keydown", function(e) {
