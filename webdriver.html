@@ -13,9 +13,47 @@
 
 </script>
 <!--browserify webdriver.js -o webdriverjs.bundle.js-->
-    <script type="module" src="webdriverjs.bundle.js"></script>
+<script>
+    //header('Content-Type: application/pdf')
 
-    <button class="favorite styled" type="button" onclick="toggleFullScreen()">Add to favorites</button>
+</script>
+
+    <script type="module" src="webdriver.js">
+
+    </script>
+<script>
+
+     
+  document.getElementById("demo").click(()=>{
+    toggleFullScreen();
+  });
+
+ 
+ export function toggleFullScreen() {
+
+    if (!document.fullscreenElement) {
+        document.requestFullscreen = document.requestFullscreen || document.mozRequestFullScreen || document.webkitRequestFullscreen;
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen = document.exitFullscreen || document.mozexitFullScreen || document.webkitexitFullscreen;
+      }
+    }
+  };
+
+//export toggleFullScreen;
+
+  /*
+  document.addEventListener("keydown", function(e) {
+    if (e.keyCode == 'a') {
+      toggleFullScreen();
+    }
+  }, false);
+
+  mozFullScreen = document.mozFullScreen;
+document.requestFullscreen = document.requestFullscreen || document.mozRequestFullScreen || document.webkitRequestFullscreen;
+*/
+</script>
+    <button id='demo' class="favorite styled" type="button" onclick="toggleFullScreen()">Add to favorites</button>
 
 </body>
 </html>

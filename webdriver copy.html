@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id='container' class="favorite styled" type="button" onclick="toggleFullScreen()">Add to favorites</button>
+  <script>
+
+   function toggleFullScreen(){
+  // element which needs to enter full-screen mode
+var element = document.querySelector("#container");
+
+// make the element go to full-screen mode
+element.requestFullscreen()
+	.then(function() {
+		// element has entered fullscreen mode successfully
+	})
+	.catch(function(error) {
+		// element could not enter fullscreen mode
+	});
+}
+</script>
+
+</body>
+</html>

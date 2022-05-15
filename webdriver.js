@@ -1,4 +1,11 @@
-export function toggleFullScreen() {
+ 
+  document.getElementById("demo").click(()=>{
+    toggleFullScreen();
+  });
+
+ 
+ export function toggleFullScreen() {
+
     if (!document.fullscreenElement) {
         document.requestFullscreen = document.requestFullscreen || document.mozRequestFullScreen || document.webkitRequestFullscreen;
     } else {
