@@ -13,7 +13,8 @@
    function toggleFullScreen(){
   // element which needs to enter full-screen mode
 var element = document.querySelector("#container");
-
+//make safari ios fullscreen
+element.webkitRequestFullscreen();
 // make the element go to full-screen mode
 element.requestFullscreen()
 	.then(function() {
@@ -23,7 +24,7 @@ element.requestFullscreen()
 		// element could not enter fullscreen mode
 	});
 
-  webkitRequestFullscreen();
+
 }
 
 </script>
