@@ -7,18 +7,29 @@
   <title>Document</title>
 </head>
 <body>
-  <button id='container' class="favorite styled" type="button" onclick="toggleFullScreen()">Add to favorites</button>
-  <script>
+  <!--<button id='container' class="favorite styled" type="button" onclick="toggleFullScreen()">Add to favorites</button>
+  -->
+  <canvas id="canvas"></canvas>
 
+  <script>
+    // open new tab
+     window.open("http://www.google.com", "newtab");
+     let creating = browser.tabs.create(
+  createProperties   // object
+)
+
+/*
    function toggleFullScreen(){
   // element which needs to enter full-screen mode
-var element = document.querySelector("#container");
+var element = document.querySelector("#canvas");
 //make safari ios fullscreen
-element.webkitRequestFullscreen();
-webkitRequestFullscreen();
+
+
 // make the element go to full-screen mode
 element.requestFullscreen()
 	.then(function() {
+    console.log("Requested fullscreen");
+    
 		// element has entered fullscreen mode successfully
 	})
 	.catch(function(error) {
@@ -26,9 +37,22 @@ element.requestFullscreen()
 	});
 
 
+
 }
+*/
+
 
 </script>
 
+<script>
+  const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+// canvas ctx increase window size
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+ctx.fillStyle = 'green';
+ctx.fillRect(10, 10, 150, 100);
+
+</script>
 </body>
 </html>
