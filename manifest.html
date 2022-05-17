@@ -9,6 +9,25 @@
 
 </head>
 <body>
+    <script>
+
+    let windowObjectReference;
+let windowFeatures = "popup";
+
+function openRequestedPopup() {
+    //open new tab
     
+  windowObjectReference = window.new("http://www.mozilla.org/", "mozillaWindow", windowFeatures);
+}
+//openRequestedPopup();
+//console.log(window.windowObjectReference);
+
+
+let creating = tabs.create(
+  createProperties   // object
+)
+
+</script>
+
 </body>
 </html>
