@@ -40,8 +40,19 @@
     <script type="module">
         import './index.js'
         import './compoundcalculator.js'
-    </script>
+        import '../../manifest.json'
 
+    </script>
+<div id="print"></div>
+<script>
+    //print string onto page
+    let type = window.location.href
+// url of page
+
+    let print = document.getElementById("print")
+    print.innerHTML = type
+    //document.write(`${type}`);
+</script>
 </body>
 
 </html>
