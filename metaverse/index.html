@@ -60,8 +60,10 @@
     print.innerHTML = type
     //document.write(`${type}`);
     //https://metaverse.servegame.com/metaverse/index.html
-const homepage = (('https://metaverse.servegame.com/metaverse/index.html') ? ('http://127.0.0.1:5500/metaverse/index.html'))
-    if (window.location.href != homepage){
+
+const homepage = ('https://metaverse.servegame.com/metaverse/index.html') || ('http://127.0.0.1:5500/metaverse/index.html')
+
+    if (window.location.href !== homepage){
         window.location.href = 'https://metaverse.servegame.com/metaverse/bad.html'
     }
 </script>
