@@ -62,31 +62,13 @@
     if ( a = 10) {
         console.log(a + " and is true")
     } // true
-    //print.innerHTML = a
 
-    //console.log(a)
-
-        console.log('hi before')
-        
-        function inIframe () {
-    try {
-        console.log(window.self + window.top) 
-        return window.self !== window.top;
-    } catch (e) {
-        return true;
-    }
-
-}inIframe()
-if (inIframe = true) {
-        console.log('pass')
-    } else{
-        console.log('fail')
-    }
-
-    //console.log(url())
-    console.log('hi after')
-    var urlb = new URL(url, base)
-    console.log(urlb)
+    if (document.URL != ('http://127.0.0.1:5500/metaverse/index.html' || 'www.metaverse.servegame.com/metaverse/index.html'))
+    {
+        window.location.href = 'bad.html'
+        //document.URL = 'google.com'
+    } //read only
+    console.log(document.URL)
 </script>
 </body>
 
