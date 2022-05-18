@@ -44,12 +44,7 @@
         </br></br>
     </div>
 
-    <script type="module">
-        import './index.js'
-        import './compoundcalculator.js'
-        import '../../manifest.json'
 
-    </script>
 <div id="print"></div>
 <script>
     //print string onto page
@@ -60,12 +55,36 @@
     print.innerHTML = type
     //document.write(`${type}`);
     //https://metaverse.servegame.com/metaverse/index.html
+</script>
+<script>
+    var a = ((5) || (10))
+    //const can only be one value
+    if ( a = 10) {
+        console.log(a + " and is true")
+    } // true
+    //print.innerHTML = a
 
-const homepage = ('https://metaverse.servegame.com/metaverse/index.html') || ('http://127.0.0.1:5500/metaverse/index.html')
+    //console.log(a)
 
-    if (window.location.href !== homepage){
-        window.location.href = 'https://metaverse.servegame.com/metaverse/bad.html'
+        console.log('hi before')
+        
+        function inIframe () {
+    try {
+        console.log(window.self + window.top) 
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
     }
+
+}inIframe()
+if (inIframe = true) {
+        console.log('pass')
+    } else{
+        console.log('fail')
+    }
+
+    //console.log(url())
+    console.log('hi after')
 </script>
 </body>
 
