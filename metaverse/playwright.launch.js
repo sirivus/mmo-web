@@ -7,6 +7,9 @@ require(['chromium'], function (playwright) {
 require('playwright')(function (chromium){
     //chromium is now loaded.
 })
+require('node')(function(node){
+
+})
 const { chromium } = require('playwright');
 
 (async () => {
