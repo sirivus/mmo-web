@@ -1,0 +1,5 @@
+https://app.meliopayments.com/meliome/pay/metaverse?totalAmount=1.00&invoiceNumber=1
+
+https://app.meliopayments.com/meliome/pay/metaverse/signUp
+
+https://app.meliopayments.com/meliome/pay/metaverse/email-verification
