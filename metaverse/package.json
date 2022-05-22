@@ -15,6 +15,7 @@
         "wdio": "wdio run wdio.conf.js"
     },
     "dependencies": {
-        "node": "^17.7.2"
+        "node": "^17.7.2",
+        "playwright-core": "^1.22.2"
     }
 }
