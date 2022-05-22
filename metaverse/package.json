@@ -18,5 +18,17 @@
         "browserify": "^17.0.0",
         "node": "^17.7.2",
         "playwright-core": "^1.22.2"
+    },
+    "browserify": {
+        "transform": [
+            [
+                "babelify",
+                {
+                    "presets": [
+                        "@babel/preset-env"
+                    ]
+                }
+            ]
+        ]
     }
 }

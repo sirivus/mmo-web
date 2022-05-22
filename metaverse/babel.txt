@@ -1,0 +1,1 @@
+browserify node.js -o node.bundle.js -t [ babelify --presets [ @babel/preset-env ] ]
