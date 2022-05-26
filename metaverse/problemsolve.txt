@@ -1,3 +1,8 @@
 take all screenshots and corresponding color values to form text and images. thats AI.
 use mouse coord and color picking coordinations to navigate server pages.
 nothing is ever free, or the market will break, i have to make them pay for it. thats how it works. only myself matters.
+server will update variables and send them to client. such as coordinates.
+dynamic is server side hosting 
+have to use http response headers to update values
+would have to communicate with github pages hosting,
+maybe to sync all data and upload it, client closed loop of 1:1 between server. using git commands or note-padding upload data to be read and download then will propagate client specific data that is encrypted and auto decrypted then javascript into known values. then concurrently updates. 
