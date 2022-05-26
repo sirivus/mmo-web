@@ -6,3 +6,4 @@ dynamic is server side hosting
 have to use http response headers to update values
 would have to communicate with github pages hosting,
 maybe to sync all data and upload it, client closed loop of 1:1 between server. using git commands or note-padding upload data to be read and download then will propagate client specific data that is encrypted and auto decrypted then javascript into known values. then concurrently updates. 
+passive
