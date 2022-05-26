@@ -1,9 +1,12 @@
-1.4 for 52 week bills.
-0.7 for account hold apr
+don't really want this product, but... 2.1% apr, full interest amount not guaranteed, may have lock period of 1 to 10 years if product risk. goes back to 1.4 since i don't want this product. so forget this.
+1.4% for 52 week bills.
+0.7% for account hold apr
 manually client has to withdraw to their external bank account.
 a landing page for the client to login and see their account balance.
 a client can also deposit money to their account.
 a client can also see their transaction history.
 a client can also see their account balance.
-5FA
+5FA security
+yearly marketing campaign
 attractive website and product description.
+need to encrypt any text i want and decrypt to read.
