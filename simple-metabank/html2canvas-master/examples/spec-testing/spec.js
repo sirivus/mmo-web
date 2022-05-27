@@ -29,6 +29,6 @@ const { chromium } = require('playwright');
   // assert.equal(page.url(), 'https://app.meliopayments.com/meliome/pay/metaverse/signUp');
 
   // ---------------------
-  await context.close();
-  await browser.close();
+  //await context.close();
+  //await browser.close();
 })();
