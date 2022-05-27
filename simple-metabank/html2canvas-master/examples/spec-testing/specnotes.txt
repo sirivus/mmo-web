@@ -5,3 +5,6 @@ artificial intelligence is a subset of AI.
 automation is my favorite part of AI.
 
 only study automation.
+
+the purpose of code is to make things easier.
+automation is the purpose of code.
