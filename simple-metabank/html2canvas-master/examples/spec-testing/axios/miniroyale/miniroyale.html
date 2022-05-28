@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mini Royale: Nations</title>
+
+    <meta name="description" content="Mini Royale: Nations is a community-owned skill-based shooter set on top of an ever-evolving social strategy game">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+    <meta name="keywords" content="battle royale, multiplayer, io, 3D Battle Royale, browser game, br, survival, game, web game">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <meta content="https://miniroyale.io/thumbnail.jpg?v=1.1.98" property="og:image">
+
+    <meta property="og:description" content="Mini Royale: Nations is a community-owned skill-based shooter set on top of an ever-evolving social strategy game">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mini Royale: Nations">
+    <meta property="og:url" content="https://miniroyale.io/">
+    <meta property="og:site_name" content="miniroyale.io">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="google-site-verification" content="cigM80uSj2Vg_S3O9poee_cR5HkV7zxGtsV14cRqVqY" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <link rel="canonical" href="https://miniroyale.io" />
+    <link rel="stylesheet" type="text/css" href="css/main.css?v=3.0">
+
+    <script
+        src="https://js.sentry-cdn.com/193a544ddf1040e2aa4427eea97aed02.min.js"
+        crossorigin="anonymous"
+    ></script>
+    <script src="js/index.iife.min.js"></script>
+    <script src="js/playcanvas-stable.min.js?v=1.1.98"></script>
+    <script src="js/__settings__.js?v=1.1.98"></script>
+    <script src="js/__override__.js?v=1.1.98"></script>
+    <script>
+        VERSION = "1.1.98";
+        BRANCH = "release-1-5-18";
+        ENVIRONMENT = "prod";
+        DOMAIN = "miniroyale.io";
+        ASSET_PREFIX = "";
+        SCRIPT_PREFIX = "";
+        SCENE_PATH = "1175392.json?v=1.1.98";
+        CONTEXT_OPTIONS = {
+            'antialias': false,
+            'alpha': false,
+            'preserveDrawingBuffer': false,
+            'preferWebGl2': true
+        };
+        CONFIG_FILENAME = "config.json?v=1.1.98";
+        MAP_PREFIX = "https://maps.miniroyale.io/";
+
+        fetch(window.location.origin + window.location.pathname + "result.json").then(  async(response) => {
+            if(response.status === 200){
+                const data = await response.json();
+                generateReportButton(data.link, data.status);
+            }
+        })
+
+        const generateReportButton = function (url, status){
+            let a = document.createElement('a');
+
+            a.text = 'AUTOTEST REPORT';
+            a.setAttribute('href', url);
+            a.setAttribute('target', '_blank');
+            a.style.position = 'absolute';
+            a.style.right = '0px';
+            a.style.top = '150px';
+            a.style.width = '120px';
+            a.style.height = '40px';
+            a.style.color = 'white';
+            a.style['text-decoration'] = 'none';
+            a.style['line-height'] = '40px';
+            a.style['text-align'] = 'center';
+            if(status == 'failure') {
+                a.style['background-color'] = 'red';
+            } else {
+                a.style['background-color'] = 'green';
+            }
+            a.style.overflow = 'hidden';
+            a.style.display = 'block';
+            a.style['z-index'] = '1000';
+            document.body.appendChild(a)
+        }
+    </script>
+</head>
+<body>
+    <div id="preroll" style="width: 100%"></div>
+
+    <div id="links">
+        <a href="changes.txt">Changes</a>
+        <a href="partners.html">Partners</a>
+    </div>
+
+    <div id="about">
+        <h1>Battle Royale - MiniRoyale</h1>
+        <p>MiniRoyale is a web browser game with battle royale game mode. The game comes with 3D graphics and unique style. Game is very similar to <b>PUBG (Player Unknown's battleground)</b>, Fortnite and Apex Legends. There are also other <b>battle royale games</b> like H1Z1 and Counter Strike Deathzone.</p>
+
+        <p>MiniRoyale works on browser without any hardware requirements. With this way all players around the world can access this battle royale game without any problem. All you need to do is a browser and internet connection.</p>
+
+        <p>In this game you join with other 10 players around the world and try to <b>survive</b> and be the last man until the end. All players collects supplies, weapons and gadgets to survive better and longer.</p>
+
+        <p>There are different kind of weapons, M16A4, AK-47, UZI, Shotgun, Sniper, grenades, smoke grenades, drones and more...</p>
+
+        <p>In this game, at some point chemical weapons appears and zone gets smaller. You should stay in the zone and be aware for other enemies.</p>
+
+        <p>You also need to select your position carefully. After jumping with parachute, you might end up with other enemies in same place. Controlling parachute is very important too!</p>
+
+        <p>Controls are easy, WASD for movement, mouse for looking around is enough on basics. Then you can use F key to pickup items, M key to open map, 1, 2, 3, 4 and 5 keys to change weapons.</p>
+
+        <p>With creating account, you can save your stats in our cloud server, follow your friends stats and contest with them in friend's leaderboard. There is also global leaderboard in the game. In global boards you can show up and be the best player around the world.</p>
+
+        <p>This is the best battle royale game in the web you can play. The game is optimized for every computer, works properly on Chrome, Safari, Brave browser and Edge.</p>
+
+        <p>Game uses PlayCanvas engine, WebGL technologies.</p>
+        <p>It's a first person shooter (FPS) game in browser. It's a battle royale game. It's an IO game!</p>
+
+        <p>Enjoy battle royale games? Then give a try to MiniRoyale, you're gonna love it!</p>
+    </div>
+
+    <script type="text/javascript" src="js/__modules__.js"></script>
+    <script type="text/javascript" src="js/__start__.js?v=1.1.98"></script>
+    <script type="text/javascript" src="js/__loading__.js?v=1.1.98"></script>
+
+    <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', 'UA-56170709-44', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>
