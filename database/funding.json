@@ -1,0 +1,24 @@
+{
+"fundings": [
+    {
+        "fundingid": "15200208146336",
+        "netsales": "10.03",
+        "totalfunding": "-27.18",
+        "fee": "0",
+        "datechanged": "2018-09-27",
+        "deposittrancode": "22",
+        "ddanumber": "3XXXXX0540",
+        "thirdparty": "-5.49",
+        "dateadded": "2018-09-27",
+        "fundingmasterid": "15200186146335",
+        "reversal": "-31.72",
+        "interchangefee": "0",
+        "adjustment": "0",
+        "currency": "USD",
+        "depositachtracenumber": "121000240002309",
+        "servicecharge": "0",
+        "otheradjustment": "0",
+        "abanumber": "121140399"
+    }
+]
+}
