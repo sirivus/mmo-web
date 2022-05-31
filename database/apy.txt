@@ -1,0 +1,8 @@
+
+    5 types of weeks:
+4 week, 8 week, 13 week, 26 week, 52 week
+0.740, 0.915, 1.060, 1.530, 2.100%. (real)
+<script src="apy.js"></script>
+0.5, 0.7, 0.9, 1.1, 1.3 (client)
+1 month, 2 month, 3 month, 6 month, 12 month (and additional settling time)
+at time of buy
