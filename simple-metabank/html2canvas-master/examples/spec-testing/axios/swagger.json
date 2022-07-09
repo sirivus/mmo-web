@@ -1,0 +1,4262 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "//flyff-api.sniegu.fr",
+      "description": "Main server"
+    }
+  ],
+  "info": {
+    "description": "<strong>Welcome to Flyff Universe Public API!</strong>\n\nThe API is still in development and specifications can change as well as the main URL.\n\nCheck <a href=\"https://drive.google.com/drive/folders/12jQHkPvKXZrDZ9h_SNS7scf2mGUKSuKl\" target=\"_blank\">Flyff Official Fansite Kit</a> for high-quality 2D assets.\n\nContact the developers by <a href=\"mailto:flyff@sniegu.fr\">mail</a> or on the official <a href=\"https://discord.com/invite/ScQwYz79rt\" target=\"_blank\">Discord</a> if you have questions, suggestions, or a bug to report.\n\n<strong>Copyright 2021-2022 &copy; Gala Lab Corp. All Rights Reserved.</strong>\n\n<em>Permission to use the data and images granted only for information sites and tools about the official game. Gala Lab reserves the right to no longer grant this permission at any time. Commercial use strictly prohibited. Use for in-game automation and cheating tools, or use in any other video game is strictly prohibited. Please contact the developers if you wish to verify that your use of this API is in accordance with the copyright.</em>\n\n<br>\n<img src=\"https://www.sniegu.fr/galalab.png\" alt=\"Gala Lab Logo\" width=\"260\">\n\n# Introduction\nCurrently limited to <strong>300 calls per minute per IP</strong>. No size limitation on the request and the response.\n\nFeel free to cache the results and fetch the data only when the <a href=\"#tag/version\">data version</a> changes.\n\nVersion History:\n<ul>\n    <li>1.0.0 - 2021/03/17 - Initial version. Class, NPC and Place basic information.</li>\n    <li>1.1.0 - 2021/07/19 - World, Monster, Item, Skill, Element and Language. Added more Class and Place icons.</li>\n    <li>1.1.1 - 2021/08/01 - Monster experience and bug fixes.</li>\n    <li>1.1.2 - 2021/09/06 - Karma levels, Boss Monsters spawns and more Monster Attack information.</li>\n    <li>1.2.0 - 2021/11/03 - Party Skill, Quest and Achievement.</li>\n    <li>1.2.1 - 2022/05/03 - Upgrade level bonus and bug fixes.</li>\n</ul>\n",
+    "version": "1.2.1",
+    "title": "Flyff Universe API",
+    "contact": {
+      "name": "Sniegu Technologies",
+      "email": "flyff@sniegu.fr",
+      "url": "https://www.sniegu.fr"
+    },
+    "x-logo": {
+      "url": "https://www.sniegu.fr/flyfflogo.png",
+      "altText": "Flyff logo"
+    }
+  },
+  "tags": [
+    {
+      "name": "localized_text",
+      "x-displayName": "LocalizedText",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/LocalizedText\" />\n"
+    },
+    {
+      "name": "place",
+      "x-displayName": "Place",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Place\" />\n"
+    },
+    {
+      "name": "element",
+      "x-displayName": "Element",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Element\" />\n"
+    },
+    {
+      "name": "spawn",
+      "x-displayName": "Spawn",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Spawn\" />\n"
+    },
+    {
+      "name": "npc",
+      "x-displayName": "NPC",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/NPC\" />\n"
+    },
+    {
+      "name": "class",
+      "x-displayName": "Class",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Class\" />\n"
+    },
+    {
+      "name": "location",
+      "x-displayName": "Location",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Location\" />\n"
+    },
+    {
+      "name": "language",
+      "x-displayName": "Language",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Language\" />\n"
+    },
+    {
+      "name": "upgradelevelbonus",
+      "x-displayName": "Upgrade Level Bonus",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/UpgradeLevelBonus\" />\n"
+    },
+    {
+      "name": "world",
+      "x-displayName": "World",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/World\" />\n"
+    },
+    {
+      "name": "monster",
+      "x-displayName": "Monster",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Monster\" />\n"
+    },
+    {
+      "name": "skill",
+      "x-displayName": "Skill",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Skill\" />\n"
+    },
+    {
+      "name": "partyskill",
+      "x-displayName": "Party Skill",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/PartySkill\" />\n"
+    },
+    {
+      "name": "item",
+      "x-displayName": "Item",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Item\" />\n"
+    },
+    {
+      "name": "equipset",
+      "x-displayName": "Equipment Set",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/EquipSet\" />\n"
+    },
+    {
+      "name": "achievement",
+      "x-displayName": "Achievement",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Achievement\" />\n"
+    },
+    {
+      "name": "quest",
+      "x-displayName": "Quest",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Quest\" />\n"
+    },
+    {
+      "name": "ability",
+      "x-displayName": "Ability",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Ability\" />\n"
+    },
+    {
+      "name": "karma",
+      "x-displayName": "Karma",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Karma\" />\n"
+    },
+    {
+      "name": "color",
+      "x-displayName": "Color",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Color\" />\n"
+    },
+    {
+      "name": "version",
+      "x-displayName": "Version"
+    }
+  ],
+  "x-tagGroups": [
+    {
+      "name": "Game Data",
+      "tags": [
+        "version",
+        "class",
+        "world",
+        "monster",
+        "item",
+        "equipset",
+        "skill",
+        "partyskill",
+        "npc",
+        "quest",
+        "karma",
+        "achievement",
+        "upgradelevelbonus"
+      ]
+    },
+    {
+      "name": "Core",
+      "tags": [
+        "language",
+        "localized_text",
+        "location",
+        "spawn",
+        "ability",
+        "place",
+        "element",
+        "color"
+      ]
+    }
+  ],
+  "paths": {
+    "/version/data": {
+      "get": {
+        "tags": [
+          "version"
+        ],
+        "summary": "Get the version of the game data",
+        "description": "Returns an unique ID representing the current version of the static game data",
+        "operation": "getDataVersion",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "example": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/version/api": {
+      "get": {
+        "tags": [
+          "version"
+        ],
+        "summary": "Get the version of the game API",
+        "description": "Returns the current version of the game API",
+        "operation": "getApiVersion",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "1.2.0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/class": {
+      "get": {
+        "tags": [
+          "class"
+        ],
+        "summary": "Get all classes IDs",
+        "description": "Returns an array containing the ID of all available classes",
+        "operation": "getClassIds",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    1689,
+                    296,
+                    2881
+                  ],
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/class/{classId}": {
+      "get": {
+        "tags": [
+          "class"
+        ],
+        "summary": "Find class by ID",
+        "description": "Returns a single class",
+        "operation": "getClassById",
+        "parameters": [
+          {
+            "name": "classId",
+            "in": "path",
+            "description": "ID of class to return",
+            "required": true,
+            "example": 1689,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Class"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Class not found"
+          }
+        }
+      }
+    },
+    "/class/{classIds}": {
+      "get": {
+        "tags": [
+          "class"
+        ],
+        "summary": "Find classes by a list of IDs",
+        "description": "Returns an array with classes",
+        "operation": "getClassByIds",
+        "parameters": [
+          {
+            "name": "classIds",
+            "in": "path",
+            "description": "IDs of classes to return separated by comma ,",
+            "required": true,
+            "example": "1689,296,2881"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Class"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid list of IDs supplied"
+          },
+          "404": {
+            "description": "Class not found"
+          }
+        }
+      }
+    },
+    "/image/class/{style}/{fileName}": {
+      "get": {
+        "tags": [
+          "class"
+        ],
+        "summary": "Get class icon",
+        "description": "Returns icon for the specified file name",
+        "parameters": [
+          {
+            "name": "style",
+            "in": "path",
+            "description": "Style of the icon. Accepted values: messenger, old_female, old_male, target.",
+            "required": true,
+            "example": "messenger"
+          },
+          {
+            "name": "fileName",
+            "in": "path",
+            "description": "File name of the icon",
+            "required": true,
+            "example": "vagrant.png"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "image/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Icon not found"
+          }
+        }
+      }
+    },
+    "/npc": {
+      "get": {
+        "tags": [
+          "npc"
+        ],
+        "summary": "Get all NPCs IDs",
+        "description": "Returns an array containing the ID of all available NPCs",
+        "operation": "getNpcIds",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    1689,
+                    296,
+                    2881
+                  ],
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/npc/{npcId}": {
+      "get": {
+        "tags": [
+          "npc"
+        ],
+        "summary": "Find NPC by ID",
+        "description": "Returns a single NPC",
+        "operation": "getNpcById",
+        "parameters": [
+          {
+            "name": "npcId",
+            "in": "path",
+            "description": "ID of NPC to return",
+            "required": true,
+            "example": 1689,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NPC"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "NPC not found"
+          }
+        }
+      }
+    },
+    "/npc/{npcIds}": {
+      "get": {
+        "tags": [
+          "npc"
+        ],
+        "summary": "Find NPCs by a list of IDs",
+        "description": "Returns an array with NPCs",
+        "operation": "getNpcByIds",
+        "parameters": [
+          {
+            "name": "npcIds",
+            "in": "path",
+            "description": "IDs of NPCs to return separated by comma ,",
+            "required": true,
+            "example": "1689,296,2881"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NPC"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid list of IDs supplied"
+          },
+          "404": {
+            "description": "NPC not found"
+          }
+        }
+      }
+    },
+    "/image/npc/{fileName}": {
+      "get": {
+        "tags": [
+          "npc"
+        ],
+        "summary": "Get NPC dialog image",
+        "description": "Returns image for the specified file name",
+        "parameters": [
+          {
+            "name": "fileName",
+            "in": "path",
+            "description": "File name of the image",
+            "required": true,
+            "example": "marche.png"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "image/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Image not found"
+          }
+        }
+      }
+    },
+    "/quest": {
+      "get": {
+        "tags": [
+          "quest"
+        ],
+        "summary": "Get all Quests IDs",
+        "description": "Returns an array containing the ID of all available Quests",
+        "operation": "getQuestIds",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    1840,
+                    821,
+                    5260
+                  ],
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/quest/{questId}": {
+      "get": {
+        "tags": [
+          "quest"
+        ],
+        "summary": "Find Quest by ID",
+        "description": "Returns a single Quest",
+        "operation": "getQuestById",
+        "parameters": [
+          {
+            "name": "questId",
+            "in": "path",
+            "description": "ID of Quest to return",
+            "required": true,
+            "example": 1840,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Quest not found"
+          }
+        }
+      }
+    },
+    "/quest/{questIds}": {
+      "get": {
+        "tags": [
+          "quest"
+        ],
+        "summary": "Find Quests by a list of IDs",
+        "description": "Returns an array with Quests",
+        "operation": "getQuestByIds",
+        "parameters": [
+          {
+            "name": "questIds",
+            "in": "path",
+            "description": "IDs of Quests to return separated by comma ,",
+            "required": true,
+            "example": "1840,821,5260"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Quest"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid list of IDs supplied"
+          },
+          "404": {
+            "description": "Quest not found"
+          }
+        }
+      }
+    },
+    "/karma": {
+      "get": {
+        "tags": [
+          "karma"
+        ],
+        "summary": "Get all Karma levels IDs",
+        "description": "Returns an array containing the ID of all available Karma levels",
+        "operation": "getKarmaIds",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    9204,
+                    4319,
+                    4581
+                  ],
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/karma/{karmaId}": {
+      "get": {
+        "tags": [
+          "karma"
+        ],
+        "summary": "Find Karma by ID",
+        "description": "Returns a single Karma",
+        "operation": "getKarmaById",
+        "parameters": [
+          {
+            "name": "karmaId",
+            "in": "path",
+            "description": "ID of Karma to return",
+            "required": true,
+            "example": 9204,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Karma"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Karma not found"
+          }
+        }
+      }
+    },
+    "/karma/{karmaIds}": {
+      "get": {
+        "tags": [
+          "karma"
+        ],
+        "summary": "Find Karma levels by a list of IDs",
+        "description": "Returns an array with Karma levels",
+        "operation": "getKarmaByIds",
+        "parameters": [
+          {
+            "name": "karmaIds",
+            "in": "path",
+            "description": "IDs of Karma levels to return separated by comma ,",
+            "required": true,
+            "example": "9204,4319,4581"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Karma"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid list of IDs supplied"
+          },
+          "404": {
+            "description": "Karma not found"
+          }
+        }
+      }
+    },
+    "/world": {
+      "get": {
+        "tags": [
+          "world"
+        ],
+        "summary": "Get all worlds IDs",
+        "description": "Returns an array containing the ID of all available worlds",
+        "operation": "getWorldIds",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    4015,
+                    4839,
+                    6063
+                  ],
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/world/{worldId}": {
+      "get": {
+        "tags": [
+          "world"
+        ],
+        "summary": "Find world by ID",
+        "description": "Returns a single world",
+        "operation": "getWorldById",
+        "parameters": [
+          {
+            "name": "worldId",
+            "in": "path",
+            "description": "ID of world to return",
+            "required": true,
+            "example": 4015,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/World"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "World not found"
+          }
+        }
+      }
+    },
+    "/world/{worldIds}": {
+      "get": {
+        "tags": [
+          "world"
+        ],
+        "summary": "Find worlds by a list of IDs",
+        "description": "Returns an array with worlds",
+        "operation": "getWorldByIds",
+        "parameters": [
+          {
+            "name": "worldIds",
+            "in": "path",
+            "description": "IDs of worlds to return separated by comma ,",
+            "required": true,
+            "example": "4015,4839,6063"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/World"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid list of IDs supplied"
+          },
+          "404": {
+            "description": "World not found"
+          }
+        }
+      }
+    },
+    "/image/world/{worldTileName}{tileX}-{tileY}-0.png": {
+      "get": {
+        "tags": [
+          "world"
+        ],
+        "summary": "Get world tile",
+        "description": "Returns tile for the specified world and position",
+        "parameters": [
+          {
+            "name": "worldTileName",
+            "in": "path",
+            "description": "Tile name of the world",
+            "required": true,
+            "example": "wdmadrigal"
+          },
+          {
+            "name": "tileX",
+            "in": "path",
+            "description": "X position of the tile",
+            "required": true,
+            "example": 0
+          },
+          {
+            "name": "tileY",
+            "in": "path",
+            "description": "Y position of the tile",
+            "required": true,
+            "example": 0
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "image/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Tile not found"
+          }
+        }
+      }
+    },
+    "/equipset": {
+      "get": {
+        "tags": [
+          "equipset"
+        ],
+        "summary": "Get all equipment set IDs",
+        "description": "Returns an array containing the ID of all available equipment sets",
+        "operation": "getEquipSetIds",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    5670,
+                    4267,
+                    5303
+                  ],
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/equipset/{equipSetId}": {
+      "get": {
+        "tags": [
+          "equipset"
+        ],
+        "summary": "Find equipment set by ID",
+        "description": "Returns a single equipment set",
+        "operation": "getEquipSetById",
+        "parameters": [
+          {
+            "name": "equipSetId",
+            "in": "path",
+            "description": "ID of equipment set to return",
+            "required": true,
+            "example": 5670,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EquipSet"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Equipment Set not found"
+          }
+        }
+      }
+    },
+    "/equipset/{equipSetIds}": {
+      "get": {
+        "tags": [
+          "equipset"
+        ],
+        "summary": "Find equipment sets by a list of IDs",
+        "description": "Returns an array with equipment sets",
+        "operation": "getEquipSetByIds",
+        "parameters": [
+          {
+            "name": "equipSetIds",
+            "in": "path",
+            "description": "IDs of equipment sets to return separated by comma ,",
+            "required": true,
+            "example": "5670,4267,5303"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EquipSet"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid list of IDs supplied"
+          },
+          "404": {
+            "description": "Equipment Set not found"
+          }
+        }
+      }
+    },
+    "/achievement": {
+      "get": {
+        "tags": [
+          "achievement"
+        ],
+        "summary": "Get all achievement IDs",
+        "description": "Returns an array containing the ID of all available achievements",
+        "operation": "getAchievementIds",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    58,
+                    77,
+                    182
+                  ],
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/achievement/{achievementId}": {
+      "get": {
+        "tags": [
+          "achievement"
+        ],
+        "summary": "Find achievement by ID",
+        "description": "Returns a single achievement",
+        "operation": "getAchievementById",
+        "parameters": [
+          {
+            "name": "achievementId",
+            "in": "path",
+            "description": "ID of achievement to return",
+            "required": true,
+            "example": 58,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Achievement"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Achievement not found"
+          }
+        }
+      }
+    },
+    "/achievement/{achievementIds}": {
+      "get": {
+        "tags": [
+          "achievement"
+        ],
+        "summary": "Find achivements by a list of IDs",
+        "description": "Returns an array with achievements",
+        "operation": "getAchievementByIds",
+        "parameters": [
+          {
+            "name": "achievementIds",
+            "in": "path",
+            "description": "IDs of achievements to return separated by comma ,",
+            "required": true,
+            "example": "58,77,182"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Achievement"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid list of IDs supplied"
+          },
+          "404": {
+            "description": "Achievement not found"
+          }
+        }
+      }
+    },
+    "/item": {
+      "get": {
+        "tags": [
+          "item"
+        ],
+        "summary": "Get all items IDs",
+        "description": "Returns an array containing the ID of all available items",
+        "operation": "getItemIds",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    4015,
+                    4839,
+                    6063
+                  ],
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/item/{itemId}": {
+      "get": {
+        "tags": [
+          "item"
+        ],
+        "summary": "Find item by ID",
+        "description": "Returns a single item",
+        "operation": "getItemById",
+        "parameters": [
+          {
+            "name": "itemId",
+            "in": "path",
+            "description": "ID of item to return",
+            "required": true,
+            "example": 7635,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Item"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Item not found"
+          }
+        }
+      }
+    },
+    "/item/{itemIds}": {
+      "get": {
+        "tags": [
+          "item"
+        ],
+        "summary": "Find items by a list of IDs",
+        "description": "Returns an array with items",
+        "operation": "getItemByIds",
+        "parameters": [
+          {
+            "name": "itemIds",
+            "in": "path",
+            "description": "IDs of items to return separated by comma ,",
+            "required": true,
+            "example": "7635,9814,3070"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Item"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid list of IDs supplied"
+          },
+          "404": {
+            "description": "Item not found"
+          }
+        }
+      }
+    },
+    "/image/item/{fileName}": {
+      "get": {
+        "tags": [
+          "item"
+        ],
+        "summary": "Get item icon",
+        "description": "Returns icon for the specified file name",
+        "parameters": [
+          {
+            "name": "fileName",
+            "in": "path",
+            "description": "File name of the icon",
+            "required": true,
+            "example": "weaswonormal.png"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "image/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Icon not found"
+          }
+        }
+      }
+    },
+    "/skill": {
+      "get": {
+        "tags": [
+          "skill"
+        ],
+        "summary": "Get all skills IDs",
+        "description": "Returns an array containing the ID of all available skills",
+        "operation": "getSkillIds",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    6482,
+                    2030,
+                    7395
+                  ],
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/skill/{skillId}": {
+      "get": {
+        "tags": [
+          "skill"
+        ],
+        "summary": "Find skill by ID",
+        "description": "Returns a single skill",
+        "operation": "getSkillById",
+        "parameters": [
+          {
+            "name": "skillId",
+            "in": "path",
+            "description": "ID of skill to return",
+            "required": true,
+            "example": 6482,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Skill"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Skill not found"
+          }
+        }
+      }
+    },
+    "/skill/{skillIds}": {
+      "get": {
+        "tags": [
+          "skill"
+        ],
+        "summary": "Find skills by a list of IDs",
+        "description": "Returns an array with skills",
+        "operation": "getSkillByIds",
+        "parameters": [
+          {
+            "name": "skillIds",
+            "in": "path",
+            "description": "IDs of skills to return separated by comma ,",
+            "required": true,
+            "example": "6482,2030,7395"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Skill"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid list of IDs supplied"
+          },
+          "404": {
+            "description": "Skill not found"
+          }
+        }
+      }
+    },
+    "/image/skill/{style}/{fileName}": {
+      "get": {
+        "tags": [
+          "skill"
+        ],
+        "summary": "Get skill icon",
+        "description": "Returns icon for the specified file name",
+        "parameters": [
+          {
+            "name": "style",
+            "in": "path",
+            "description": "Style of the icon. Accepted values: colored, old.",
+            "required": true,
+            "example": "colored"
+          },
+          {
+            "name": "fileName",
+            "in": "path",
+            "description": "File name of the icon",
+            "required": true,
+            "example": "acrbowaimeds.png"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "image/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Icon not found"
+          }
+        }
+      }
+    },
+    "/partyskill": {
+      "get": {
+        "tags": [
+          "partyskill"
+        ],
+        "summary": "Get all party skills IDs",
+        "description": "Returns an array containing the ID of all available party skills",
+        "operation": "getPartySkillIds",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    8037,
+                    2475,
+                    2651
+                  ],
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/partyskill/{partySkillId}": {
+      "get": {
+        "tags": [
+          "partyskill"
+        ],
+        "summary": "Find party skill by ID",
+        "description": "Returns a single party skill",
+        "operation": "getPartySkillById",
+        "parameters": [
+          {
+            "name": "partySkillId",
+            "in": "path",
+            "description": "ID of party skill to return",
+            "required": true,
+            "example": 8037,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PartySkill"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Party Skill not found"
+          }
+        }
+      }
+    },
+    "/partyskill/{partySkillIds}": {
+      "get": {
+        "tags": [
+          "partyskill"
+        ],
+        "summary": "Find party skills by a list of IDs",
+        "description": "Returns an array with party skills",
+        "operation": "getPartySkillByIds",
+        "parameters": [
+          {
+            "name": "partySkillIds",
+            "in": "path",
+            "description": "IDs of party skills to return separated by comma ,",
+            "required": true,
+            "example": "8037,2475,2651"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PartySkill"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid list of IDs supplied"
+          },
+          "404": {
+            "description": "Party Skill not found"
+          }
+        }
+      }
+    },
+    "/monster": {
+      "get": {
+        "tags": [
+          "monster"
+        ],
+        "summary": "Get all monsters IDs",
+        "description": "Returns an array containing the ID of all available monsters",
+        "operation": "getMonsterIds",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    5858,
+                    26,
+                    6047
+                  ],
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/monster/{monsterId}": {
+      "get": {
+        "tags": [
+          "monster"
+        ],
+        "summary": "Find monster by ID",
+        "description": "Returns a single monster",
+        "operation": "getMonsterById",
+        "parameters": [
+          {
+            "name": "monsterId",
+            "in": "path",
+            "description": "ID of monster to return",
+            "required": true,
+            "example": 26,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Monster"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Monster not found"
+          }
+        }
+      }
+    },
+    "/monster/{monsterIds}": {
+      "get": {
+        "tags": [
+          "monster"
+        ],
+        "summary": "Find monsters by a list of IDs",
+        "description": "Returns an array with monsters",
+        "operation": "getMonsterByIds",
+        "parameters": [
+          {
+            "name": "monsterIds",
+            "in": "path",
+            "description": "IDs of monsters to return separated by comma ,",
+            "required": true,
+            "example": "5858,26,6047"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Monster"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid list of IDs supplied"
+          },
+          "404": {
+            "description": "Monster not found"
+          }
+        }
+      }
+    },
+    "/image/monster/{fileName}": {
+      "get": {
+        "tags": [
+          "monster"
+        ],
+        "summary": "Get monster icon",
+        "description": "Returns icon for the specified file name",
+        "parameters": [
+          {
+            "name": "fileName",
+            "in": "path",
+            "description": "File name of the icon",
+            "required": true,
+            "example": "aibatt.png"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "image/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Icon not found"
+          }
+        }
+      }
+    },
+    "/image/place/{fileName}": {
+      "get": {
+        "tags": [
+          "place"
+        ],
+        "summary": "Get place icon",
+        "description": "Returns icon for the specified file name",
+        "parameters": [
+          {
+            "name": "fileName",
+            "in": "path",
+            "description": "File name of the icon",
+            "required": true,
+            "example": "publicoffice.png"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "image/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Icon not found"
+          }
+        }
+      }
+    },
+    "/image/element/{style}/{fileName}": {
+      "get": {
+        "tags": [
+          "element"
+        ],
+        "summary": "Get element icon",
+        "description": "Returns icon for the specified file name",
+        "parameters": [
+          {
+            "name": "style",
+            "in": "path",
+            "description": "Style of the icon. Accepted values: pc, mobile, masquerade.",
+            "required": true,
+            "example": "pc"
+          },
+          {
+            "name": "fileName",
+            "in": "path",
+            "description": "File name of the icon",
+            "required": true,
+            "example": "fire.png"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "image/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Icon not found"
+          }
+        }
+      }
+    },
+    "/upgradelevelbonus": {
+      "get": {
+        "tags": [
+          "upgradelevelbonus"
+        ],
+        "summary": "Get the upgrade bonus levels",
+        "description": "Returns an array containing all the bonus per upgrade level",
+        "operation": "getUpgradeLevelBonus",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UpgradeLevelBonus"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/language": {
+      "get": {
+        "tags": [
+          "language"
+        ],
+        "summary": "Get all languages",
+        "description": "Returns an array containing all the languages",
+        "operation": "getLanguages",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Language"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/image/language/{fileName}": {
+      "get": {
+        "tags": [
+          "language"
+        ],
+        "summary": "Get language flag",
+        "description": "Returns flag for the specified file name",
+        "parameters": [
+          {
+            "name": "fileName",
+            "in": "path",
+            "description": "File name of the flag",
+            "required": true,
+            "example": "en.png"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "image/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Flag not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Class": {
+        "type": "object",
+        "description": "Player class",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "icon",
+          "minLevel",
+          "maxLevel",
+          "maxHP",
+          "maxFP",
+          "maxMP"
+        ],
+        "properties": {
+          "id": {
+            "description": "ID of the class",
+            "type": "integer",
+            "example": 9686
+          },
+          "name": {
+            "description": "Name of the class",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "type": {
+            "description": "Type of the class",
+            "type": "string",
+            "enum": [
+              "beginner",
+              "expert",
+              "professional"
+            ]
+          },
+          "icon": {
+            "description": "Icon of the Class",
+            "type": "string",
+            "example": "vagrant.png"
+          },
+          "minLevel": {
+            "description": "Minimum player level for the Class",
+            "type": "integer",
+            "example": 1
+          },
+          "maxLevel": {
+            "description": "Maximum player level for the Class",
+            "type": "integer",
+            "example": 15
+          },
+          "parent": {
+            "description": "ID of the parent class",
+            "type": "integer",
+            "example": 764
+          },
+          "maxHP": {
+            "description": "Formula to compute the maximum Hit Points of the player",
+            "type": "string",
+            "example": "150+level*18+sta*level*0.18"
+          },
+          "maxFP": {
+            "description": "Formula to compute the maximum Fatigue Points of the player",
+            "type": "string",
+            "example": "level*0.6+sta*2.1"
+          },
+          "maxMP": {
+            "description": "Formula to compute the maximum Mana Points of the player",
+            "type": "string",
+            "example": "22+level*0.6+int*2.7"
+          }
+        }
+      },
+      "NPC": {
+        "type": "object",
+        "description": "Non Player Character",
+        "required": [
+          "id",
+          "name",
+          "menus",
+          "locations",
+          "image"
+        ],
+        "properties": {
+          "id": {
+            "description": "ID of the NPC",
+            "type": "integer",
+            "example": 1689
+          },
+          "name": {
+            "description": "Name of the NPC",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "menus": {
+            "description": "Menus available at the NPC",
+            "type": "array",
+            "example": [
+              "dialog",
+              "trade"
+            ],
+            "items": {
+              "type": "string",
+              "enum": [
+                "trade",
+                "dialog",
+                "changeelem",
+                "upgrade",
+                "inputreward",
+                "showreward",
+                "piercing",
+                "piercingremove",
+                "attribute",
+                "lodelight",
+                "bank",
+                "hairshop",
+                "itemrepair",
+                "post",
+                "skinshop",
+                "buff",
+                "arenaenter",
+                "arenaleave",
+                "guildbank",
+                "guildrank",
+                "guildrankwar",
+                "guildrankinfo",
+                "guildsiegeapply",
+                "guildsiegestate",
+                "guildsiegecancel",
+                "guildsiegejoin",
+                "guildsiegelineup",
+                "guildsiegejackpot",
+                "guildsiegebestplayer",
+                "guildsiegeranking",
+                "guildsiegejackpot2",
+                "guildsiegeinfo1",
+                "guildsiegeinfo2",
+                "guildsiegeinfo3",
+                "guildsiegeinfo4",
+                "roshambo",
+                "exchangeroshambo",
+                "upgradecard",
+                "safeelementupgrade",
+                "safeupgrade",
+                "safepiercing",
+                "createshiningpowerdice",
+                "createjewels",
+                "createuniqueweapon",
+                "exchangerareitempieces",
+                "exchangecardpieces",
+                "removelevelreduction",
+                "removecostumeblessing",
+                "arenaranking",
+                "arenareward",
+                "accessoryupgrade",
+                "safeaccessoryupgrade"
+              ]
+            }
+          },
+          "locations": {
+            "description": "Locations where you can find the NPC",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Location"
+            }
+          },
+          "image": {
+            "description": "Dialog image of the NPC",
+            "type": "string",
+            "example": "marche.png"
+          },
+          "place": {
+            "description": "Role of the NPC",
+            "$ref": "#/components/schemas/Place"
+          },
+          "shop": {
+            "description": "NPC shop data",
+            "type": "array",
+            "items": {
+              "description": "NPC shop tabs",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "description": "Name of the shop tab",
+                  "$ref": "#/components/schemas/LocalizedText"
+                },
+                "items": {
+                  "description": "List of items available",
+                  "type": "array",
+                  "example": [
+                    5997,
+                    8902,
+                    3656
+                  ],
+                  "items": {
+                    "description": "Item ID",
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Quest": {
+        "type": "object",
+        "description": "Quest",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "repeatable",
+          "removable",
+          "partyShare"
+        ],
+        "properties": {
+          "id": {
+            "description": "ID of the Quest",
+            "type": "integer",
+            "example": 1840
+          },
+          "name": {
+            "description": "Name of the Quest",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "type": {
+            "description": "Type of the Quest",
+            "type": "string",
+            "example": "chain",
+            "enum": [
+              "category",
+              "normal",
+              "repeat",
+              "chain"
+            ]
+          },
+          "repeatable": {
+            "description": "Whether the Quest can be completed several times or not",
+            "type": "boolean",
+            "example": false
+          },
+          "removable": {
+            "description": "Whether the Quest can be removed by the player or not",
+            "type": "boolean",
+            "example": true
+          },
+          "partyShare": {
+            "description": "Whether monster kill count and item drops are shared across party members on the same Quest or not",
+            "type": "boolean",
+            "example": true
+          },
+          "parent": {
+            "description": "ID of the parent Quest",
+            "type": "integer",
+            "example": 821
+          },
+          "beginNPC": {
+            "description": "ID of the NPC launching the Quest",
+            "type": "integer",
+            "example": 2595
+          },
+          "minLevel": {
+            "description": "Minimum level required to begin the Quest",
+            "type": "integer",
+            "example": 1
+          },
+          "maxLevel": {
+            "description": "Maximum level required to begin the Quest",
+            "type": "integer",
+            "example": 120
+          },
+          "beginClasses": {
+            "description": "List of player Classes able to begin the Quest",
+            "type": "array",
+            "example": [
+              9686
+            ],
+            "items": {
+              "type": "integer"
+            }
+          },
+          "beginQuests": {
+            "description": "List of Quests required to begin the Quest",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "quest",
+                "completed"
+              ],
+              "properties": {
+                "quest": {
+                  "description": "ID of the required Quest",
+                  "type": "integer",
+                  "example": 9025
+                },
+                "completed": {
+                  "description": "Whether the Quest needs to be completed or just launched",
+                  "type": "boolean",
+                  "example": true
+                }
+              }
+            }
+          },
+          "beginReceiveItems": {
+            "description": "List of Items received when launching the Quest",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "item",
+                "count"
+              ],
+              "properties": {
+                "item": {
+                  "description": "ID of the Item",
+                  "type": "integer",
+                  "example": 1586
+                },
+                "count": {
+                  "description": "Number of items received",
+                  "type": "integer",
+                  "example": 1
+                }
+              }
+            }
+          },
+          "endNPC": {
+            "description": "ID of the NPC completing the Quest",
+            "type": "integer",
+            "example": 2595
+          },
+          "endNeededItems": {
+            "description": "List of Items required to complete the Quest",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "item",
+                "count"
+              ],
+              "properties": {
+                "item": {
+                  "description": "ID of the Item required",
+                  "type": "integer",
+                  "example": 5370
+                },
+                "count": {
+                  "description": "Number of items required",
+                  "type": "integer",
+                  "example": 1
+                }
+              }
+            }
+          },
+          "endTimeLimit": {
+            "description": "Maximum time in seconds to complete the Quest",
+            "type": "integer",
+            "example": 600
+          },
+          "endTalkNPC": {
+            "description": "ID of the NPC to talk to before completing the Quest",
+            "type": "integer",
+            "example": 9779
+          },
+          "endVisitPlace": {
+            "description": "Place to visit before completing the Quest",
+            "$ref": "#/components/schemas/Spawn"
+          },
+          "endKillMonsters": {
+            "description": "List of Monsters to kill before completing the Quest",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "monster",
+                "count"
+              ],
+              "properties": {
+                "monster": {
+                  "description": "ID of the Monster to kill",
+                  "type": "integer",
+                  "example": 9320
+                },
+                "count": {
+                  "description": "Number of monsters to kill",
+                  "type": "integer",
+                  "example": 1
+                }
+              }
+            }
+          },
+          "endRemoveItems": {
+            "description": "List of Items removed when completing the Quest",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "item"
+              ],
+              "properties": {
+                "item": {
+                  "description": "ID of the Item",
+                  "type": "integer",
+                  "example": 1586
+                },
+                "count": {
+                  "description": "Number of items removed. If the value is absent then all items with the ID are removed from the player's inventory",
+                  "type": "integer",
+                  "example": 10
+                }
+              }
+            }
+          },
+          "endReceiveGold": {
+            "description": "Amount of Penya received when completing the Quest. If the value is null then the player will receive Penya but the amount is hidden",
+            "type": "integer",
+            "example": 10000,
+            "nullable": true
+          },
+          "endReceiveExperience": {
+            "description": "Amount of experience in % given to the player completing the Quest on a specific level. If the value is null then the player will receive experience but the amount is hidden",
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "number",
+              "example": 20
+            }
+          },
+          "endReceiveInventorySpaces": {
+            "description": "Inventory spaces unlocked when completing the Quest. If the value is null then the player will unlock spaces but the amount is hidden",
+            "type": "integer",
+            "example": 1,
+            "nullable": true
+          },
+          "endReceiveSkillPoints": {
+            "description": "Skill points received when completing the Quest. If the value is null then the player will receive Skill points but the amount is hidden",
+            "type": "integer",
+            "example": 40,
+            "nullable": true
+          },
+          "endReceiveKarma": {
+            "description": "Karma recovered when completing the Quest. If the value is null then the player will recover Karma but the amount is hidden",
+            "type": "string",
+            "example": "+2000",
+            "nullable": true
+          },
+          "endReceiveItems": {
+            "description": "List of Items received when completing the Quest. If the value is null then the player will receive items but they are hidden",
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "object",
+              "required": [
+                "item",
+                "count",
+                "soulLinked"
+              ],
+              "properties": {
+                "item": {
+                  "description": "ID of the Item",
+                  "example": 7676,
+                  "type": "integer"
+                },
+                "count": {
+                  "description": "Number of items received",
+                  "example": 1,
+                  "type": "integer"
+                },
+                "soulLinked": {
+                  "description": "Whether the item is Soul-Linked to the character or not",
+                  "example": true,
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "description": {
+            "description": "Description of the Quest",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "descriptionComplete": {
+            "description": "Description of the Quest once it has been completed",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "dialogsBegin": {
+            "description": "List of Dialogs when the NPC presents the Quest to the player",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedText"
+            }
+          },
+          "dialogsAccept": {
+            "description": "List of Dialogs when the player accepts the Quest",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedText"
+            }
+          },
+          "dialogsDecline": {
+            "description": "List of Dialogs when the player declines the Quest",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedText"
+            }
+          },
+          "dialogsComplete": {
+            "description": "List of Dialogs when the player completes the Quest",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedText"
+            }
+          },
+          "dialogsFail": {
+            "description": "List of Dialogs when the player fails to complete the Quest",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocalizedText"
+            }
+          }
+        }
+      },
+      "Karma": {
+        "type": "object",
+        "description": "Karma level",
+        "required": [
+          "id",
+          "name",
+          "nameColor",
+          "flying",
+          "guardAttack",
+          "deathExpLoss"
+        ],
+        "properties": {
+          "id": {
+            "description": "ID of the Karma level",
+            "type": "integer",
+            "example": 9204
+          },
+          "name": {
+            "description": "Name of the Karma level",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "minPoints": {
+            "description": "Minimum karma points required to have this Karma level",
+            "type": "integer",
+            "example": 0
+          },
+          "maxPoints": {
+            "description": "Maximum karma points required to have this Karma level",
+            "type": "integer",
+            "example": 99
+          },
+          "nameColor": {
+            "description": "Color of the player name with this Karma level",
+            "$ref": "#/components/schemas/Color"
+          },
+          "flying": {
+            "description": "Whether the player can fly or not",
+            "type": "boolean",
+            "example": true
+          },
+          "guardAttack": {
+            "description": "Whether guards attack the player or not",
+            "type": "boolean",
+            "example": false
+          },
+          "deathExpLoss": {
+            "description": "Factor in % on the experience lost when the player dies",
+            "type": "number",
+            "example": 0
+          },
+          "karmaRecoveryInterval": {
+            "description": "Interval in seconds to automatically recover a karma point",
+            "type": "integer",
+            "example": 12
+          }
+        }
+      },
+      "World": {
+        "type": "object",
+        "description": "World environment",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "width",
+          "height",
+          "tileName",
+          "tileSize",
+          "flying",
+          "pk",
+          "inDoor",
+          "places",
+          "lodestars",
+          "continents"
+        ],
+        "properties": {
+          "id": {
+            "description": "ID of the World",
+            "type": "integer",
+            "example": 6063
+          },
+          "name": {
+            "description": "Name of the World",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "type": {
+            "description": "Type of the World",
+            "type": "string",
+            "example": "dungeon",
+            "enum": [
+              "main",
+              "prison",
+              "dungeon",
+              "instance",
+              "event"
+            ]
+          },
+          "width": {
+            "description": "Width of the World in meters",
+            "type": "integer",
+            "example": 10752
+          },
+          "height": {
+            "description": "Height of the World in meters",
+            "type": "integer",
+            "example": 5632
+          },
+          "tileName": {
+            "description": "Name of the world Tiles for navigator",
+            "type": "string",
+            "example": "wdmadrigal"
+          },
+          "tileSize": {
+            "description": "World meters per Tile",
+            "type": "integer",
+            "example": 512
+          },
+          "flying": {
+            "description": "Whether players can fly in the World or not",
+            "type": "boolean",
+            "example": true
+          },
+          "pk": {
+            "description": "Whether players can kill other players in the World or not",
+            "type": "boolean",
+            "example": true
+          },
+          "inDoor": {
+            "description": "Whether the World has a sky or not",
+            "type": "boolean",
+            "example": false
+          },
+          "revivalWorld": {
+            "description": "ID of the World where players revive when they die in the World",
+            "type": "integer",
+            "example": 6063
+          },
+          "revivalKey": {
+            "description": "ID of the Lodestar where players revive when they die in the World",
+            "type": "string",
+            "example": "flaris"
+          },
+          "places": {
+            "description": "Special Places in the World",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "type",
+                "location"
+              ],
+              "properties": {
+                "type": {
+                  "description": "Type of the Place",
+                  "$ref": "#/components/schemas/Place"
+                },
+                "location": {
+                  "description": "Position of the Place",
+                  "$ref": "#/components/schemas/Location"
+                }
+              }
+            }
+          },
+          "lodestars": {
+            "description": "Revival places in the World",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "key",
+                "location"
+              ],
+              "properties": {
+                "key": {
+                  "description": "ID of the Lodestar",
+                  "type": "string",
+                  "example": "flaris"
+                },
+                "location": {
+                  "description": "Position of the Lodestar",
+                  "$ref": "#/components/schemas/Location"
+                }
+              }
+            }
+          },
+          "continents": {
+            "description": "Continents in the World",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "name",
+                "town",
+                "polygon"
+              ],
+              "properties": {
+                "id": {
+                  "description": "ID of the Continent",
+                  "type": "integer",
+                  "example": 8641
+                },
+                "name": {
+                  "description": "Name of the Continent",
+                  "$ref": "#/components/schemas/LocalizedText"
+                },
+                "town": {
+                  "description": "Whether the Continent is a Town or not",
+                  "type": "boolean",
+                  "example": true
+                },
+                "polygon": {
+                  "description": "Polygon delimiting the Continent",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "x",
+                      "z"
+                    ],
+                    "properties": {
+                      "x": {
+                        "description": "X coordinate in meters",
+                        "type": "number",
+                        "example": 6159
+                      },
+                      "z": {
+                        "description": "Z coordinate in meters",
+                        "type": "number",
+                        "example": 3407
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "EquipSet": {
+        "type": "object",
+        "description": "Equipment sets with bonus",
+        "required": [
+          "id",
+          "name",
+          "transy",
+          "parts",
+          "bonus"
+        ],
+        "properties": {
+          "id": {
+            "description": "ID of the Equipment Set",
+            "type": "integer",
+            "example": 4364
+          },
+          "name": {
+            "description": "Name of the Equipment Set",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "transy": {
+            "description": "ID of the Male/Female counterpart EquipSet",
+            "type": "integer",
+            "example": 222
+          },
+          "parts": {
+            "description": "Items included in the Set",
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "example": 1534
+            }
+          },
+          "bonus": {
+            "description": "Special Abilities when the player wears several parts of the Set",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "equipped",
+                "ability"
+              ],
+              "properties": {
+                "equipped": {
+                  "description": "Number of parts required to apply the Ability",
+                  "type": "integer",
+                  "example": 2
+                },
+                "ability": {
+                  "$ref": "#/components/schemas/Ability"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Achievement": {
+        "type": "object",
+        "description": "Achievement with goals and rewards",
+        "required": [
+          "id",
+          "name",
+          "description",
+          "type",
+          "category",
+          "accountWide",
+          "levels"
+        ],
+        "properties": {
+          "id": {
+            "description": "ID of the Achievement",
+            "type": "integer",
+            "example": 58
+          },
+          "name": {
+            "description": "Name of Achievement",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "description": {
+            "description": "Description of the Achievement",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "type": {
+            "description": "Type of the Achievement",
+            "type": "string",
+            "example": "killmonster",
+            "enum": [
+              "killmonster",
+              "useitem",
+              "jump",
+              "stat",
+              "class",
+              "level",
+              "playtime",
+              "useskill",
+              "connection"
+            ]
+          },
+          "category": {
+            "description": "Category of the Achievement",
+            "type": "string",
+            "example": "monsters",
+            "enum": [
+              "general",
+              "monsters",
+              "consumables",
+              "attendance"
+            ]
+          },
+          "accountWide": {
+            "description": "Whether the Achievement is shared per Account",
+            "type": "boolean",
+            "example": true
+          },
+          "levels": {
+            "description": "Levels of the Achievement",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "description": "Value to reach to complete the Level",
+                  "type": "integer",
+                  "example": 500
+                },
+                "name": {
+                  "description": "Name of the Level when there is one",
+                  "$ref": "#/components/schemas/LocalizedText"
+                },
+                "title": {
+                  "description": "Title unlocked when completing the Level",
+                  "$ref": "#/components/schemas/LocalizedText"
+                },
+                "attackPower": {
+                  "description": "Permanent attack power boost in % against the monsters of the list when completing the Level",
+                  "type": "number",
+                  "example": 3
+                },
+                "inventorySpaces": {
+                  "description": "Inventory spaces unlocked when completing the Level",
+                  "type": "integer",
+                  "example": 1
+                },
+                "gold": {
+                  "description": "Amount of Penya received when completing the Level",
+                  "type": "integer",
+                  "example": 42420
+                },
+                "items": {
+                  "description": "List of items received when completing the Level",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "item",
+                      "count",
+                      "soulLinked"
+                    ],
+                    "properties": {
+                      "item": {
+                        "description": "ID of the Item",
+                        "example": 2981,
+                        "type": "integer"
+                      },
+                      "count": {
+                        "description": "Number of items received",
+                        "example": 1,
+                        "type": "integer"
+                      },
+                      "soulLinked": {
+                        "description": "Whether the item is Soul-Linked to the character or not",
+                        "example": false,
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "mainMonster": {
+            "description": "ID of the main Monster to kill",
+            "type": "integer",
+            "example": 6413
+          },
+          "monsters": {
+            "description": "List of all Monsters that can be killed to complete the Achievement",
+            "type": "array",
+            "example": [
+              767,
+              6413,
+              7006,
+              5870
+            ],
+            "items": {
+              "type": "integer"
+            }
+          },
+          "mainItem": {
+            "description": "ID of the main Item to use",
+            "type": "integer",
+            "example": 5325
+          },
+          "items": {
+            "description": "List of all Items that can be used to complete the Achievement",
+            "type": "array",
+            "example": [
+              5325
+            ],
+            "items": {
+              "type": "integer"
+            }
+          },
+          "stats": {
+            "description": "List of all parameters that can be reached to complete the Achievement",
+            "type": "array",
+            "example": [
+              "str"
+            ],
+            "items": {
+              "type": "string",
+              "enum": [
+                "str",
+                "sta",
+                "dex",
+                "int"
+              ]
+            }
+          },
+          "mainSkill": {
+            "description": "ID of the main Skill to use",
+            "type": "integer",
+            "example": 9660
+          },
+          "skills": {
+            "description": "List of all Skills that can be used to complete the Achievement",
+            "type": "array",
+            "example": [
+              9660
+            ],
+            "items": {
+              "type": "integer"
+            }
+          },
+          "mainClass": {
+            "description": "ID of the main Class to reach",
+            "type": "integer",
+            "example": 764
+          },
+          "classes": {
+            "description": "List of all Classes that can be reached to complete the Achievement",
+            "type": "array",
+            "example": [
+              764
+            ],
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "Item": {
+        "type": "object",
+        "description": "Item",
+        "required": [
+          "id",
+          "name",
+          "description",
+          "category",
+          "icon",
+          "rarity",
+          "element",
+          "level",
+          "stack",
+          "sellPrice",
+          "consumable",
+          "premium",
+          "deletable",
+          "tradable",
+          "shining",
+          "durationRealTime",
+          "spawns"
+        ],
+        "properties": {
+          "id": {
+            "description": "ID of the Item",
+            "type": "integer",
+            "example": 7635
+          },
+          "name": {
+            "description": "Name of the Item",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "description": {
+            "description": "Description of the Item",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "icon": {
+            "description": "Icon of the Item",
+            "type": "string",
+            "example": "gengemgem.png"
+          },
+          "category": {
+            "description": "Category of the Item",
+            "type": "string",
+            "example": "weapon",
+            "enum": [
+              "weapon",
+              "armor",
+              "fashion",
+              "jewelry",
+              "flying",
+              "collector",
+              "quest",
+              "trans",
+              "fuel",
+              "booty",
+              "arrow",
+              "charm",
+              "recovery",
+              "blinkwing",
+              "firework",
+              "pickuppet",
+              "teleportring",
+              "material",
+              "buff",
+              "monsterball",
+              "pack",
+              "scroll",
+              "vendorskin"
+            ]
+          },
+          "subcategory": {
+            "description": "Sub category of the Item when there is one",
+            "type": "string",
+            "example": "sword",
+            "enum": [
+              "armorcolor",
+              "axe",
+              "balloon",
+              "board",
+              "book",
+              "boots",
+              "bow",
+              "broom",
+              "car",
+              "cloak",
+              "cloth",
+              "drink",
+              "earring",
+              "elementcard",
+              "event",
+              "food",
+              "gauntlet",
+              "glove",
+              "glow",
+              "hat",
+              "helmet",
+              "inventorybag",
+              "knuckle",
+              "letter",
+              "mask",
+              "mineral",
+              "necklace",
+              "petfeed",
+              "piercingcard",
+              "piercingdice",
+              "pill",
+              "protectscroll",
+              "randomscroll",
+              "refresher",
+              "ring",
+              "shield",
+              "shoes",
+              "specialstone",
+              "staff",
+              "stick",
+              "suit",
+              "sword",
+              "townblinkwing",
+              "trans",
+              "upgradedice",
+              "wand",
+              "wings",
+              "yoyo",
+              "gacha",
+              "globalgacha",
+              "giftbox",
+              "ampexp",
+              "upgradescroll",
+              "awakescroll",
+              "visualcloak",
+              "gem",
+              "piece",
+              "ultimatedice",
+              "selectblinkwing",
+              "selectbox",
+              "hoverbike"
+            ]
+          },
+          "rarity": {
+            "description": "Rarity of the Item",
+            "type": "string",
+            "example": "common",
+            "enum": [
+              "common",
+              "uncommon",
+              "rare",
+              "veryrare",
+              "unique"
+            ]
+          },
+          "class": {
+            "description": "ID of the Class required to equip or use the Item",
+            "type": "integer",
+            "example": 9686
+          },
+          "level": {
+            "description": "Player level required to equip or use the Item",
+            "type": "integer",
+            "example": 1
+          },
+          "sex": {
+            "description": "Player sex required to equip or use the Item",
+            "type": "string",
+            "example": "male",
+            "enum": [
+              "male",
+              "female"
+            ]
+          },
+          "stack": {
+            "description": "Number of units that can be stacked",
+            "type": "integer",
+            "example": 999
+          },
+          "buyPrice": {
+            "description": "Purchase price of the Item at NPC",
+            "type": "integer",
+            "example": 12
+          },
+          "sellPrice": {
+            "description": "Selling price of the Item at NPC",
+            "type": "integer",
+            "example": 3
+          },
+          "consumable": {
+            "description": "Whether the Item is a consumable or not",
+            "type": "boolean",
+            "example": true
+          },
+          "premium": {
+            "description": "Whether the Item is considered as premium or not",
+            "type": "boolean",
+            "example": false
+          },
+          "deletable": {
+            "description": "Whether the Item can be deleted or not",
+            "type": "boolean",
+            "example": true
+          },
+          "tradable": {
+            "description": "Whether the Item can be traded or not",
+            "type": "boolean",
+            "example": true
+          },
+          "shining": {
+            "description": "Whether the 3D Model of the Item has a shining effect or not",
+            "type": "boolean",
+            "example": false
+          },
+          "element": {
+            "description": "Element of the Item",
+            "$ref": "#/components/schemas/Element"
+          },
+          "durationRealTime": {
+            "description": "Whether the Buff duration is counted even when the player is offline or not",
+            "type": "boolean",
+            "example": false
+          },
+          "transy": {
+            "description": "ID of the Male/Female counterpart Item when it is an armor",
+            "type": "integer",
+            "example": 2410
+          },
+          "cooldown": {
+            "description": "Time in Seconds to use the Item again",
+            "type": "number",
+            "example": 1.5
+          },
+          "casting": {
+            "description": "Time in Seconds to equip or use the Item",
+            "type": "number",
+            "example": 2.5
+          },
+          "duration": {
+            "description": "Duration in Seconds of the Buff",
+            "type": "number",
+            "example": 6
+          },
+          "flightSpeed": {
+            "description": "Flying Speed in km/h when the Item is a flying vehicle",
+            "type": "integer",
+            "example": 54
+          },
+          "guildContribution": {
+            "description": "Amount of Guild contribution experience given when the Item is a Booty",
+            "type": "integer",
+            "example": 14
+          },
+          "attackSpeed": {
+            "description": "Attack Speed when the Item is a weapon",
+            "type": "string",
+            "example": "normal",
+            "enum": [
+              "veryslow",
+              "slow",
+              "normal",
+              "fast",
+              "veryfast",
+              "fastest"
+            ]
+          },
+          "attackRange": {
+            "description": "Maximum distance in meters to hit the target when the Item is a weapon",
+            "type": "integer",
+            "example": 2
+          },
+          "twoHanded": {
+            "description": "Whether the item is two handed or not when the Item is a weapon",
+            "type": "boolean",
+            "example": false
+          },
+          "minAttack": {
+            "description": "Minimum Attack when the Item is a weapon",
+            "type": "integer",
+            "example": 3
+          },
+          "maxAttack": {
+            "description": "Maximum Attack when the Item is a weapon",
+            "type": "integer",
+            "example": 4
+          },
+          "additionalSkillDamage": {
+            "description": "Additional Damage when using a Skill with the weapon",
+            "type": "integer",
+            "example": 6
+          },
+          "consumedMP": {
+            "description": "Consumed Mana Points when doing a Charged Attack with the wand",
+            "type": "integer",
+            "example": 15
+          },
+          "consumedItem": {
+            "description": "Category of the Item consumed when attacking with the weapon",
+            "type": "string",
+            "example": "arrow"
+          },
+          "triggerSkill": {
+            "description": "ID of the Skill that can be triggered when using the Item",
+            "type": "integer",
+            "example": 3124
+          },
+          "triggerSkillProbability": {
+            "description": "Probability in % to trigger the Skill when using the Item",
+            "type": "integer",
+            "example": 25
+          },
+          "minDefense": {
+            "description": "Minimum Defense when the Item is an armor",
+            "type": "integer",
+            "example": 110
+          },
+          "maxDefense": {
+            "description": "Maximum Defense when the Item is an armor",
+            "type": "integer",
+            "example": 113
+          },
+          "blinkwingTarget": {
+            "description": "Teleport position when the Item is a blinkwing",
+            "$ref": "#/components/schemas/Location"
+          },
+          "abilities": {
+            "description": "Special Abilities applied to the player when wearing or using the Item",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ability"
+            }
+          },
+          "location": {
+            "description": "Main location where the item drops directly on the ground",
+            "$ref": "#/components/schemas/Location"
+          },
+          "spawns": {
+            "description": "Locations where the item drops directly on the ground",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Spawn"
+            }
+          }
+        }
+      },
+      "Skill": {
+        "type": "object",
+        "description": "Skill",
+        "required": [
+          "id",
+          "name",
+          "description",
+          "icon",
+          "level",
+          "element",
+          "magic",
+          "target",
+          "combo",
+          "debuff",
+          "flying",
+          "passive",
+          "requirements",
+          "levels"
+        ],
+        "properties": {
+          "id": {
+            "description": "ID of the Skill",
+            "type": "integer",
+            "example": 6482
+          },
+          "name": {
+            "description": "Name of the Skill",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "description": {
+            "description": "Description of the Skill",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "icon": {
+            "description": "Icon of the Skill",
+            "type": "string",
+            "example": "acrsupyoymaster.png"
+          },
+          "class": {
+            "description": "ID of the Class required to use the Skill",
+            "type": "integer",
+            "example": 9686
+          },
+          "level": {
+            "description": "Player level required to use the Skill",
+            "type": "integer",
+            "example": 1
+          },
+          "element": {
+            "description": "Element of the Skill",
+            "$ref": "#/components/schemas/Element"
+          },
+          "magic": {
+            "description": "Whether the Skill is Magic or not",
+            "type": "boolean",
+            "example": true
+          },
+          "target": {
+            "description": "Target of the Skill",
+            "type": "string",
+            "example": "single",
+            "enum": [
+              "party",
+              "line",
+              "area",
+              "single",
+              "currentplayer"
+            ]
+          },
+          "combo": {
+            "description": "Where the Skill can be placed in the Action Slot",
+            "type": "string",
+            "example": "general",
+            "enum": [
+              "general",
+              "step",
+              "circle",
+              "finish"
+            ]
+          },
+          "debuff": {
+            "description": "Whether the Skill is used to attack/debuff the target or not",
+            "type": "boolean",
+            "example": true
+          },
+          "flying": {
+            "description": "Whether the Skill can be used while flying or not",
+            "type": "boolean",
+            "example": true
+          },
+          "passive": {
+            "description": "Whether the Skill is automatically used or not",
+            "type": "boolean",
+            "example": false
+          },
+          "consumedItem": {
+            "description": "Category of the Item consumed when using the Skill",
+            "type": "string",
+            "example": "arrow"
+          },
+          "triggerSkill": {
+            "description": "ID of the Skill that can be triggered when using the Skill",
+            "type": "integer",
+            "example": 1143
+          },
+          "skillPoints": {
+            "description": "Number of Skill Points consumed by Skill Level",
+            "type": "integer",
+            "example": 1
+          },
+          "weapon": {
+            "description": "Sub category of the Weapon required to use the Skill",
+            "type": "string",
+            "example": "sword"
+          },
+          "requirements": {
+            "description": "Required previous Skills",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "skill",
+                "level"
+              ],
+              "properties": {
+                "skill": {
+                  "description": "ID of the required Skill",
+                  "type": "integer",
+                  "example": 6482
+                },
+                "level": {
+                  "description": "Minimum required level of the Skill",
+                  "type": "integer",
+                  "example": 3
+                }
+              }
+            }
+          },
+          "levels": {
+            "description": "Levels of the Skill",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "level"
+              ],
+              "properties": {
+                "minAttack": {
+                  "description": "Minimum Attack if the Skill hits the target",
+                  "type": "integer",
+                  "example": 10
+                },
+                "maxAttack": {
+                  "description": "Maximum Attack if the Skill hits the target",
+                  "type": "integer",
+                  "example": 11
+                },
+                "damageMultiplier": {
+                  "description": "Factor applied to the damage value done by the Skill",
+                  "type": "number",
+                  "example": 0.8
+                },
+                "probability": {
+                  "description": "Probability in % to apply the Skill effect",
+                  "type": "integer",
+                  "example": 50
+                },
+                "probabilityPVP": {
+                  "description": "Probability in % to apply the Skill effect in PvP",
+                  "type": "integer",
+                  "example": 50
+                },
+                "flyBackProbability": {
+                  "description": "Probability in % to make the target fly back in the air",
+                  "type": "integer",
+                  "example": 30
+                },
+                "consumedMP": {
+                  "description": "Consumed Mana Points when using the Skill",
+                  "type": "integer",
+                  "example": 10
+                },
+                "consumedFP": {
+                  "description": "Consumed Fatigue Points when using the Skill",
+                  "type": "integer",
+                  "example": 10
+                },
+                "cooldown": {
+                  "description": "Time in Seconds to use the Skill again",
+                  "type": "number",
+                  "example": 1.5
+                },
+                "casting": {
+                  "description": "Time in Seconds to cast the Skill",
+                  "type": "number",
+                  "example": 0.6
+                },
+                "duration": {
+                  "description": "Duration in Seconds of the Buff",
+                  "type": "number",
+                  "example": 6
+                },
+                "durationPVP": {
+                  "description": "Duration in Seconds of the Buff in PvP",
+                  "type": "number",
+                  "example": 6
+                },
+                "dotTick": {
+                  "description": "Interval in Seconds between the Damage Over Time",
+                  "type": "number",
+                  "example": 1.5
+                },
+                "spellRange": {
+                  "description": "Maximum distance in meters to use the Skill on the target",
+                  "type": "number",
+                  "example": 6
+                },
+                "wallLives": {
+                  "description": "Number of times that the wall can hit when the Skill is Psychic Wall",
+                  "type": "integer",
+                  "example": 1
+                },
+                "reflectedDamagePVE": {
+                  "description": "Reflected Damage in % when the Skill is Reflex Hit in PvE",
+                  "type": "integer",
+                  "example": 50
+                },
+                "reflectedDamagePVP": {
+                  "description": "Reflected Damage in % when the Skill is Reflex Hit in PvP",
+                  "type": "integer",
+                  "example": 50
+                },
+                "abilities": {
+                  "description": "Special Abilities applied to the target when using the Skill",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ability"
+                  }
+                },
+                "scalingParameters": {
+                  "description": "Skill parameters scaling with one of the player stats",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "parameter",
+                      "stat",
+                      "scale",
+                      "pvp",
+                      "pve"
+                    ],
+                    "properties": {
+                      "parameter": {
+                        "description": "Parameter increased by the stat. Can be one of the Skill abilities, duration or attack.",
+                        "type": "string",
+                        "example": "duration"
+                      },
+                      "stat": {
+                        "description": "Player stat used for the scaling",
+                        "type": "string",
+                        "example": "str",
+                        "enum": [
+                          "str",
+                          "sta",
+                          "dex",
+                          "int"
+                        ]
+                      },
+                      "scale": {
+                        "description": "Scaling factor. The value added to the parameter is the player stat multiplied by this factor. If the parameter is duration then the unit is the Second.",
+                        "type": "number",
+                        "example": 0.1
+                      },
+                      "pvp": {
+                        "description": "Whether the scaling is applied in PvP or not",
+                        "type": "boolean",
+                        "example": true
+                      },
+                      "pve": {
+                        "description": "Whether the scaling is applied in PvE or not",
+                        "type": "boolean",
+                        "example": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "PartySkill": {
+        "type": "object",
+        "description": "Party Skill",
+        "required": [
+          "id",
+          "name",
+          "description",
+          "icon",
+          "level"
+        ],
+        "properties": {
+          "id": {
+            "description": "ID of the Party Skill",
+            "type": "integer",
+            "example": 8037
+          },
+          "name": {
+            "description": "Name of the Party Skill",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "description": {
+            "description": "Description of the Party Skill",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "icon": {
+            "description": "Icon of the Party Skill",
+            "type": "string",
+            "example": "trocall.png"
+          },
+          "level": {
+            "description": "Party level required to use the Party Skill",
+            "type": "integer",
+            "example": 10
+          },
+          "consumedPoints": {
+            "description": "Consumed Party Points when using the Party Skill",
+            "type": "integer",
+            "example": 1
+          },
+          "duration": {
+            "description": "Duration in Seconds of the Party Skill when it is a Buff",
+            "type": "number",
+            "example": 60
+          }
+        }
+      },
+      "Monster": {
+        "type": "object",
+        "description": "Monster",
+        "required": [
+          "id",
+          "name",
+          "level",
+          "rank",
+          "area",
+          "element",
+          "flying",
+          "hp",
+          "mp",
+          "minAttack",
+          "maxAttack",
+          "defense",
+          "magicDefense",
+          "sta",
+          "str",
+          "dex",
+          "int",
+          "hitRate",
+          "parry",
+          "runaway",
+          "summoned",
+          "speed",
+          "experience",
+          "experienceSharing",
+          "experienceTable",
+          "minDropGold",
+          "maxDropGold",
+          "drops",
+          "attacks",
+          "spawns",
+          "icon"
+        ],
+        "properties": {
+          "id": {
+            "description": "ID of the Monster",
+            "type": "integer",
+            "example": 5745
+          },
+          "name": {
+            "description": "Name of the Monster",
+            "$ref": "#/components/schemas/LocalizedText"
+          },
+          "level": {
+            "description": "Level of the Monster",
+            "type": "integer",
+            "example": 1
+          },
+          "rank": {
+            "description": "Rank of the Monster",
+            "type": "string",
+            "example": "small",
+            "enum": [
+              "small",
+              "normal",
+              "captain",
+              "giant",
+              "violet",
+              "boss",
+              "material",
+              "super",
+              "guard"
+            ]
+          },
+          "area": {
+            "description": "Type of area where the Monster spawns",
+            "type": "string",
+            "example": "normal",
+            "enum": [
+              "normal",
+              "dungeon"
+            ]
+          },
+          "element": {
+            "description": "Element of the Monster",
+            "$ref": "#/components/schemas/Element"
+          },
+          "icon": {
+            "description": "Icon of the Monster",
+            "type": "string",
+            "example": "aibatt.png"
+          },
+          "booty": {
+            "description": "ID of the booty Item dropped by the Monster",
+            "type": "integer",
+            "example": 7635
+          },
+          "mineral": {
+            "description": "ID of the mineral Item collected on the Catcher Monster",
+            "type": "integer",
+            "example": 7479
+          },
+          "flying": {
+            "description": "Whether the Monster is flying or not",
+            "type": "boolean",
+            "example": false
+          },
+          "hp": {
+            "description": "Hit Points of the Monster",
+            "type": "integer",
+            "example": 120
+          },
+          "mp": {
+            "description": "Mana Points of the Monster",
+            "type": "integer",
+            "example": 100
+          },
+          "minAttack": {
+            "description": "Minimum Attack of the Monster",
+            "type": "integer",
+            "example": 15
+          },
+          "maxAttack": {
+            "description": "Maximum Attack of the Monster",
+            "type": "integer",
+            "example": 16
+          },
+          "defense": {
+            "description": "Defense of the Monster",
+            "type": "integer",
+            "example": 3
+          },
+          "magicDefense": {
+            "description": "Magic Defense of the Monster",
+            "type": "integer",
+            "example": 1
+          },
+          "sta": {
+            "description": "Stamina of the Monster",
+            "type": "integer",
+            "example": 20
+          },
+          "str": {
+            "description": "Strength of the Monster",
+            "type": "integer",
+            "example": 15
+          },
+          "dex": {
+            "description": "Dexterity of the Monster",
+            "type": "integer",
+            "example": 15
+          },
+          "int": {
+            "description": "Intelligence of the Monster",
+            "type": "integer",
+            "example": 15
+          },
+          "hitRate": {
+            "description": "Ability of the Monster to inflict a successful hit to its target",
+            "type": "integer",
+            "example": 40
+          },
+          "parry": {
+            "description": "Ability of the Monster to receive a Miss from its attacker. This value is equivalent to lowering the attacker's hitRate",
+            "type": "integer",
+            "example": 3
+          },
+          "runaway": {
+            "description": "Whether the Monster can run away when its Hit Points are low or not",
+            "type": "boolean",
+            "example": true
+          },
+          "summoned": {
+            "description": "List of Monsters which can be summoned by the Monster",
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "example": 7212
+            }
+          },
+          "berserkThresholdHP": {
+            "description": "Threshold in % of Hit Points to activate the Monster's berserk mode",
+            "type": "integer",
+            "example": 30
+          },
+          "berserkAttackPower": {
+            "description": "Attack Power bonus in % when Monster's berserk mode is active",
+            "type": "integer",
+            "example": 80
+          },
+          "recoveryThresholdHP": {
+            "description": "Threshold in % of Hit Points to recover the Monster's Hit Points",
+            "type": "integer",
+            "example": 5
+          },
+          "recoveryAmountHP": {
+            "description": "Amount of Hit Points in % recovered when the threshold is reached",
+            "type": "integer",
+            "example": 20
+          },
+          "speed": {
+            "description": "Speed of the Monster",
+            "type": "integer",
+            "example": 75
+          },
+          "experience": {
+            "description": "Amount of experience in % given to the player killing the Monster at the same level",
+            "type": "number",
+            "example": 14.5
+          },
+          "experienceSharing": {
+            "description": "How the experience is distributed to the players\n* `normal` Experience is shared by amount of Damage done to the Monster and among Party members if there is a Party\n* `area` Experience is shared between all players in the area\n",
+            "type": "string",
+            "example": "normal",
+            "enum": [
+              "normal",
+              "area"
+            ]
+          },
+          "experienceTable": {
+            "description": "Amount of experience in % given to the player killing the Monster alone on a specific level",
+            "type": "array",
+            "items": {
+              "type": "number",
+              "example": 14.5
+            }
+          },
+          "minDropGold": {
+            "description": "Minimum amount of Penya dropped by the Monster",
+            "type": "integer",
+            "example": 10
+          },
+          "maxDropGold": {
+            "description": "Maximum amount of Penya dropped by the Monster",
+            "type": "integer",
+            "example": 40
+          },
+          "attacks": {
+            "description": "Weapons used by the Monster to attack",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "minAttack",
+                "maxAttack",
+                "attackRange",
+                "target"
+              ],
+              "properties": {
+                "minAttack": {
+                  "description": "Minimum Attack of the Weapon",
+                  "type": "integer",
+                  "example": 3
+                },
+                "maxAttack": {
+                  "description": "Maximum Attack of the Weapon",
+                  "type": "integer",
+                  "example": 4
+                },
+                "attackRange": {
+                  "description": "Maximum distance in meters to hit the target",
+                  "type": "integer",
+                  "example": 2
+                },
+                "target": {
+                  "description": "Target of the Weapon",
+                  "type": "string",
+                  "example": "single",
+                  "enum": [
+                    "area",
+                    "single"
+                  ]
+                },
+                "triggerSkill": {
+                  "description": "ID of the Skill that can be triggered",
+                  "type": "integer",
+                  "example": 5697
+                },
+                "triggerSkillLevel": {
+                  "description": "Level of the triggered Skill",
+                  "type": "integer",
+                  "example": 1
+                },
+                "triggerSkillProbability": {
+                  "description": "Probability in % to trigger the Skill",
+                  "type": "integer",
+                  "example": 10
+                }
+              }
+            }
+          },
+          "drops": {
+            "description": "List of items dropped by the Monster",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "item",
+                "probabilityRange",
+                "prob",
+                "common"
+              ],
+              "properties": {
+                "item": {
+                  "description": "ID of the Item",
+                  "type": "integer",
+                  "example": 6401
+                },
+                "probabilityRange": {
+                  "description": "Probability range in % to get the item from a killed Monster. It is the absolute probability and does not indicate the rules for the distribution of the items.",
+                  "type": "string",
+                  "example": "[10%;20%["
+                },
+                "prob": {
+                  "description": "Same as probabilityRange but deprecated.",
+                  "type": "string",
+                  "example": "[10%;20%[",
+                  "deprecated": true
+                },
+                "common": {
+                  "description": "Whether the drop is common to all monsters with this level or is specific to the Monster",
+                  "type": "boolean",
+                  "example": true
+                }
+              }
+            }
+          },
+          "location": {
+            "description": "Main location where the monster spawns",
+            "$ref": "#/components/schemas/Location"
+          },
+          "spawns": {
+            "description": "Locations where the monster spawns",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Spawn"
+            }
+          }
+        }
+      },
+      "Ability": {
+        "type": "object",
+        "description": "Special Ability",
+        "required": [
+          "parameter"
+        ],
+        "properties": {
+          "parameter": {
+            "description": "Parameter of the Ability",
+            "type": "string",
+            "example": "maxhp",
+            "enum": [
+              "str",
+              "dex",
+              "int",
+              "sta",
+              "speed",
+              "attackspeed",
+              "attackspeedrate",
+              "jumpheight",
+              "bowrange",
+              "def",
+              "parry",
+              "reflectdamage",
+              "rangedblock",
+              "meleeblock",
+              "magicdefense",
+              "electricitydefense",
+              "firedefense",
+              "winddefense",
+              "waterdefense",
+              "earthdefense",
+              "attack",
+              "hitrate",
+              "magicattack",
+              "swordattack",
+              "axeattack",
+              "knuckleattack",
+              "yoyoattack",
+              "bowattack",
+              "earthmastery",
+              "firemastery",
+              "watermastery",
+              "electricitymastery",
+              "windmastery",
+              "damage",
+              "criticalchance",
+              "elementattack",
+              "skillchance",
+              "attribute",
+              "maxhp",
+              "maxmp",
+              "maxfp",
+              "hprecovery",
+              "mprecovery",
+              "fprecovery",
+              "hprecoveryafterkill",
+              "mprecoveryafterkill",
+              "fprecoveryafterkill",
+              "decreasedmpconsumption",
+              "decreasedfpconsumption",
+              "minability",
+              "maxability",
+              "attributeimmunity",
+              "autohp",
+              "decreasedcastingtime",
+              "criticaldamage",
+              "skilldamage",
+              "hprestoration",
+              "criticalresist",
+              "healing",
+              "pvpdamagereduction",
+              "magicdefense",
+              "pvpdamage",
+              "pvedamage",
+              "penya",
+              "hp",
+              "mp",
+              "fp",
+              "allelementsdefense",
+              "allstats",
+              "attackandmaxhp",
+              "defenseandhitratedecrease",
+              "cure",
+              "movement",
+              "allelementsmastery",
+              "allrecovery",
+              "allrecoveryafterkill",
+              "decreasedfpandmpconsumption",
+              "removealldebuff",
+              "block",
+              "removedebuff",
+              "damageandstealhp",
+              "stealhp",
+              "explostdecreaseatrevival",
+              "cheerpoint",
+              "incomingdamage",
+              "spiritstrike",
+              "stealfp",
+              "exprate",
+              "droprate",
+              "fprecoveryautoattack"
+            ]
+          },
+          "add": {
+            "description": "Value added",
+            "type": "number",
+            "example": 1
+          },
+          "set": {
+            "description": "Value overwriting all added values",
+            "type": "number",
+            "example": 0
+          },
+          "rate": {
+            "description": "Whether the value is a % rate or a flat value",
+            "type": "boolean",
+            "example": true
+          },
+          "attribute": {
+            "description": "Type of Attribute when the parameter is attribute, cure or attributeimmunity",
+            "type": "string",
+            "example": "stun",
+            "enum": [
+              "rooting",
+              "stun",
+              "hitrate",
+              "invisibility",
+              "poison",
+              "slow",
+              "double",
+              "bleeding",
+              "silent",
+              "counterattackdamage",
+              "counterattack",
+              "loot",
+              "moonbeam",
+              "hitrateandpoison",
+              "hitrateandpoisonandstun",
+              "lootandslow",
+              "poisonandbleedingandmoonbeam",
+              "stunandrooting"
+            ]
+          },
+          "dotValue": {
+            "description": "Value used to compute the Damage done when attribute is poison or bleeding",
+            "type": "integer",
+            "example": 10
+          },
+          "dotMode": {
+            "description": "Method used to compute the Damage done when attribute is poison or bleeding",
+            "type": "string",
+            "example": "currentdamage",
+            "enum": [
+              "currentdamage",
+              "standardattack",
+              "fixedvalue"
+            ]
+          },
+          "skill": {
+            "description": "ID of the Skill that has a chance to trigger when parameter is skillchance",
+            "type": "integer",
+            "example": 7599
+          },
+          "skillLevel": {
+            "description": "Level of the Skill that has a chance to trigger when parameter is skillchance",
+            "type": "integer",
+            "example": 2
+          },
+          "pvp": {
+            "description": "Whether the Skill can trigger in PvP or not when parameter is skillchance",
+            "type": "boolean",
+            "example": true
+          },
+          "pve": {
+            "description": "Whether the Skill can trigger in PvE or not when parameter is skillchance",
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "UpgradeLevelBonus": {
+        "type": "object",
+        "description": "Upgrade level bonus",
+        "required": [
+          "upgradeLevel",
+          "weaponAttack",
+          "setAbilities"
+        ],
+        "properties": {
+          "upgradeLevel": {
+            "type": "integer",
+            "description": "The Upgrade Level (+X)",
+            "example": 1
+          },
+          "weaponAttack": {
+            "type": "integer",
+            "description": "Attack bonus in % when the upgraded item is a Weapon",
+            "example": 2
+          },
+          "helmetDefense": {
+            "type": "integer",
+            "description": "Defense bonus in % when the upgraded item is an Helmet",
+            "example": 2
+          },
+          "suitDefense": {
+            "type": "integer",
+            "description": "Defense bonus in % when the upgraded item is a Suit",
+            "example": 2
+          },
+          "gauntletDefense": {
+            "type": "integer",
+            "description": "Defense bonus in % when the upgraded item is a Gauntlet",
+            "example": 2
+          },
+          "bootsDefense": {
+            "type": "integer",
+            "description": "Defense bonus in % when the upgraded item is Boots",
+            "example": 2
+          },
+          "shieldDefense": {
+            "type": "integer",
+            "description": "Defense bonus in % when the upgraded item is a Shield",
+            "example": 2
+          },
+          "setAbilities": {
+            "description": "Special Abilities applied to the player when all his equipment has the upgrade level",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ability"
+            }
+          }
+        }
+      },
+      "Language": {
+        "type": "object",
+        "description": "Language properties",
+        "required": [
+          "id",
+          "name",
+          "flag"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of the Language",
+            "example": "en"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the Language",
+            "example": "English"
+          },
+          "flag": {
+            "description": "Flag of the Language",
+            "type": "string",
+            "example": "en.png"
+          }
+        }
+      },
+      "LocalizedText": {
+        "type": "object",
+        "description": "Text available in several languages",
+        "example": {
+          "en": "Julia",
+          "fr": "[Intendante de Flarine] Julia",
+          "kr": "쥬리아"
+        }
+      },
+      "Place": {
+        "type": "string",
+        "description": "Specific location in a world",
+        "example": "publicoffice",
+        "enum": [
+          "lodestar",
+          "lodelight",
+          "flyingstation",
+          "weaponstore",
+          "armorstore",
+          "foodstore",
+          "magicstore",
+          "generalstore",
+          "publicoffice",
+          "questoffice",
+          "dungeon",
+          "shieldstore",
+          "warpzone",
+          "instance"
+        ]
+      },
+      "Element": {
+        "type": "string",
+        "description": "Natural element",
+        "example": "fire",
+        "enum": [
+          "fire",
+          "water",
+          "electricity",
+          "wind",
+          "earth",
+          "none"
+        ]
+      },
+      "Location": {
+        "type": "object",
+        "required": [
+          "world",
+          "x",
+          "y",
+          "z"
+        ],
+        "properties": {
+          "world": {
+            "description": "ID of the world",
+            "type": "integer",
+            "example": 6063
+          },
+          "x": {
+            "description": "X coordinate in the world",
+            "type": "number",
+            "example": 6959.104
+          },
+          "y": {
+            "description": "Y coordinate in the world",
+            "type": "number",
+            "example": 100
+          },
+          "z": {
+            "description": "Z coordinate in the world",
+            "type": "number",
+            "example": 3213.523
+          },
+          "continent": {
+            "description": "ID of the Continent in the world",
+            "type": "integer",
+            "example": 8641
+          }
+        }
+      },
+      "Spawn": {
+        "type": "object",
+        "description": "Object spawn area in the world",
+        "required": [
+          "world",
+          "left",
+          "right",
+          "top",
+          "bottom"
+        ],
+        "properties": {
+          "world": {
+            "description": "ID of the world",
+            "type": "integer",
+            "example": 6063
+          },
+          "left": {
+            "description": "Lower X coordinate in the world",
+            "type": "number",
+            "example": 1190
+          },
+          "right": {
+            "description": "Upper X coordinate in the world",
+            "type": "number",
+            "example": 1236
+          },
+          "top": {
+            "description": "Lower Z coordinate in the world",
+            "type": "number",
+            "example": 1351
+          },
+          "bottom": {
+            "description": "Upper Z coordinate in the world",
+            "type": "number",
+            "example": 1400
+          },
+          "continent": {
+            "description": "ID of the Continent in the world",
+            "type": "integer",
+            "example": 8641
+          },
+          "aggressivity": {
+            "description": "Probability in % that a spawned monster is aggressive",
+            "type": "integer",
+            "example": 100
+          }
+        }
+      },
+      "Color": {
+        "type": "object",
+        "description": "Color",
+        "required": [
+          "r",
+          "g",
+          "b"
+        ],
+        "properties": {
+          "r": {
+            "description": "Red component",
+            "type": "integer",
+            "example": 255
+          },
+          "g": {
+            "description": "Green component",
+            "type": "integer",
+            "example": 255
+          },
+          "b": {
+            "description": "Blue component",
+            "type": "integer",
+            "example": 255
+          },
+          "a": {
+            "description": "Alpha component",
+            "type": "integer",
+            "example": 125
+          }
+        }
+      }
+    }
+  }
+}
